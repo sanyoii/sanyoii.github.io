@@ -393,6 +393,15 @@
     .stats { padding: 20px 0; margin-bottom: 26px; }
   }
 
+  /* Phones: the stats grid is two rows here, so the CTAs need a little
+     more room reclaimed than the short-screen rules above give back. */
+  @media (max-width: 620px) {
+    .hero { padding-top: 52px; }
+    .hero-sub { margin-bottom: 26px; }
+    .stats { padding: 16px 0; margin-bottom: 20px; gap: 18px 20px; }
+    .avail { margin-bottom: 18px; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after {
