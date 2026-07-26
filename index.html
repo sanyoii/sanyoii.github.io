@@ -144,7 +144,15 @@
     line-height: 0.98;
     letter-spacing: -0.04em;
     font-weight: 600;
-    margin: 0 0 24px;
+    margin: 0 0 10px;
+  }
+
+  .role {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    margin: 0 0 22px;
   }
 
   .tagline {
@@ -393,7 +401,8 @@
   .js .hero .fade:nth-child(3).in { transition-delay: 0.14s; }
   .js .hero .fade:nth-child(4).in { transition-delay: 0.21s; }
   .js .hero .fade:nth-child(5).in { transition-delay: 0.28s; }
-  .js .hero .fade:nth-child(7).in { transition-delay: 0.35s; }
+  .js .hero .fade:nth-child(6).in { transition-delay: 0.35s; }
+  .js .hero .fade:nth-child(8).in { transition-delay: 0.42s; }
 
   /* ---------- responsive ---------- */
   @media (max-width: 860px) {
@@ -416,9 +425,12 @@
   /* short viewports (laptops, small phones): tighten the hero so the
      availability line and the CTAs stay above the fold */
   @media (max-height: 820px) {
-    .hero { padding-top: 52px; }
-    .hero-sub { margin-bottom: 28px; }
-    .stats { padding: 20px 0; margin-bottom: 26px; }
+    .hero { padding-top: 40px; }
+    .role { margin-bottom: 14px; }
+    .tagline { margin-bottom: 20px; }
+    .tagline::after { margin-top: 14px; }
+    .hero-sub { margin-bottom: 22px; }
+    .stats { padding: 18px 0; margin-bottom: 18px; }
   }
 
   /* Phones: the stats grid is two rows here and the availability line
@@ -466,10 +478,14 @@
 
 <header class="hero wrap">
   <p class="eyebrow fade"
-     data-en="QA Leadership &amp; Customer Engineering · Remote · Taiwan (UTC+8)"
-     data-zh="QA 管理與客戶工程 · 全遠端 · 台灣（UTC+8）">QA Leadership &amp; Customer Engineering · Remote · Taiwan (UTC+8)</p>
+     data-en="Remote · Taiwan (UTC+8)"
+     data-zh="全遠端 · 台灣（UTC+8）">Remote · Taiwan (UTC+8)</p>
 
   <h1 class="fade">William Lu</h1>
+
+  <p class="role fade"
+     data-en="Senior QA &amp; Customer Engineering Leader"
+     data-zh="資深 QA 暨客戶工程主管">Senior QA &amp; Customer Engineering Leader</p>
 
   <p class="tagline fade"
      data-en="I lead QA teams, catch the bugs that cost money, and build my own AI tooling."
@@ -494,7 +510,7 @@
     </div>
     <div>
       <span class="stat-n">−40%</span>
-      <span class="stat-l" data-en="migration time at ASML" data-zh="ASML 環境遷移工時">migration time at ASML</span>
+      <span class="stat-l" data-en="test-env setup time at ASML" data-zh="ASML 測試環境建置工時">test-env setup time at ASML</span>
     </div>
   </div>
 
@@ -537,8 +553,8 @@
           <p class="proof-yr">2023–2024</p>
         </div>
         <p class="proof-body"
-           data-en="Led a six-person remote team serving ASML, the Dutch semiconductor-equipment maker, as their primary technical contact. Cut environment migration time by 40% and operating cost by 25%, then trained 15+ of their engineers until they could run the framework without us."
-           data-zh="帶 6 人遠端團隊服務荷蘭半導體設備商 ASML，我是對方的主要技術窗口。環境遷移工時砍掉 40%、營運成本砍掉 25%，最後把 15 位以上的工程師訓練到不用我們也能自己跑整套框架。">Led a six-person remote team serving ASML, the Dutch semiconductor-equipment maker, as their primary technical contact. Cut environment migration time by 40% and operating cost by 25%, then trained 15+ of their engineers until they could run the framework without us.</p>
+           data-en="Led a six-person remote team serving ASML, the Dutch semiconductor-equipment maker. On hardware they provisioned, we built the test environments and the test automation, then automated the environment setup itself — cutting the time to stand up a new environment by 40% and operating cost by 25%. Finally we trained 15+ of their engineers until they could run it all without us."
+           data-zh="帶 6 人遠端團隊服務荷蘭半導體設備商 ASML：硬體環境他們架好，測試環境和測試自動化由我們建，再把建置流程本身也自動化——搬建一套新環境的工時因此砍掉 40%、營運成本砍掉 25%。最後把 15 位以上的工程師訓練到不用我們也能自己跑。">Led a six-person remote team serving ASML, the Dutch semiconductor-equipment maker. On hardware they provisioned, we built the test environments and the test automation, then automated the environment setup itself — cutting the time to stand up a new environment by 40% and operating cost by 25%. Finally we trained 15+ of their engineers until they could run it all without us.</p>
       </div>
 
       <div class="proof-item fade">
