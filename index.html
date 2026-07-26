@@ -1,0 +1,757 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>William Lu — QA &amp; Solutions Engineer</title>
+<meta name="description" content="QA and Solutions Engineer with 12 years in enterprise security, automation and fintech. Taipei / Tainan, Taiwan.">
+<meta property="og:title" content="William Lu — QA &amp; Solutions Engineer">
+<meta property="og:description" content="QA and Solutions Engineer with 12 years in enterprise security, automation and fintech. Taipei / Tainan, Taiwan.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sanyoii.github.io/">
+
+<style>
+  :root {
+    --bg: #0c0c0d;
+    --bg-2: #141416;
+    --ink: #f0eae1;
+    --ink-dim: #a09a92;
+    --ink-faint: #6d6862;
+    --rule: #2a2a2d;
+    --accent: #e8853f;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+            "PingFang TC", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+            "Liberation Mono", monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- language toggle ---------- */
+  .lang {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(12, 12, 13, 0.82);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 4px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-dim);
+    cursor: pointer;
+  }
+  .lang:hover { border-color: var(--ink-faint); color: var(--ink); }
+  .lang:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .lang span { padding: 2px 8px; }
+  .lang .on { color: var(--accent); }
+  .lang .sep { color: var(--rule); padding: 2px 0; }
+
+  /* ---------- shared section ---------- */
+  section { border-top: 1px solid var(--rule); }
+
+  .sec-pad { padding: 88px 0; }
+
+  h2 {
+    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+
+  h2.has-rule {
+    padding-top: 22px;
+    border-top: 2px solid var(--accent);
+    display: inline-block;
+    margin-bottom: 44px;
+  }
+
+  .tags-flush { margin-top: 0; }
+
+  .sec-sub {
+    color: var(--ink-dim);
+    max-width: 46ch;
+    margin: 0 0 48px;
+  }
+
+  h2.has-rule + .sec-sub { margin-top: -30px; }
+
+  /* ---------- hero ---------- */
+  .hero { padding-top: 132px; padding-bottom: 80px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin: 0 0 28px;
+  }
+
+  h1 {
+    font-size: clamp(2.6rem, 8vw, 4.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    margin: 0 0 28px;
+  }
+
+  .tagline {
+    font-size: clamp(1.5rem, 4.4vw, 2.5rem);
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    max-width: 20ch;
+    margin: 0 0 28px;
+    text-wrap: balance;
+  }
+  .tagline::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 28px;
+  }
+
+  .hero-sub {
+    color: var(--ink-dim);
+    max-width: 54ch;
+    font-size: 1.02rem;
+    margin: 0 0 56px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 0;
+    margin-bottom: 48px;
+  }
+  .stat-n {
+    display: block;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(1.9rem, 4.6vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+  .stat-l {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--ink-faint);
+  }
+
+  .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 13px 24px;
+    border: 1px solid var(--accent);
+    transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  }
+  .btn-primary { background: var(--accent); color: #17110b; font-weight: 500; }
+  .btn-primary:hover { background: #f39a58; border-color: #f39a58; }
+  .btn-ghost { color: var(--ink); border-color: var(--rule); }
+  .btn-ghost:hover { border-color: var(--ink-faint); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- proof ---------- */
+  .proof-item {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    padding: 36px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .proof-item:first-of-type { border-top: none; }
+  .proof-co { font-size: 1.06rem; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .proof-role { color: var(--ink-dim); font-size: 14px; margin: 0 0 6px; }
+  .proof-yr {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+  .proof-body { margin: 0; color: var(--ink); max-width: 62ch; }
+
+  /* ---------- work ---------- */
+  .work-card { padding: 48px 0; border-top: 1px solid var(--rule); }
+  .work-card:first-of-type { border-top: none; padding-top: 0; }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 44px;
+    align-items: start;
+  }
+  .work-shot { border: 1px solid var(--rule); }
+  .work-shot img { width: 100%; height: auto; }
+
+  .work-title {
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .work-sub { color: var(--accent); font-size: 14px; margin: 0 0 24px; }
+
+  .qa-k {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 6px;
+  }
+  .qa-v { margin: 0 0 22px; color: var(--ink-dim); max-width: 56ch; }
+  .qa-v.lead { color: var(--ink); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink-dim);
+    border: 1px solid var(--rule);
+    padding: 4px 10px;
+  }
+
+  .fork {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--ink-faint);
+    border-left: 2px solid var(--rule);
+    padding-left: 14px;
+    margin: 0;
+    max-width: 56ch;
+  }
+
+  .no-shot {
+    border-left: 1px solid var(--rule);
+    padding-left: 44px;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+  }
+  .no-shot .rule-mark {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--rule);
+  }
+
+  /* ---------- timeline ---------- */
+  .tl-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .tl-row:first-of-type { border-top: none; }
+  .tl-yr {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 13.5px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .tl-what { margin: 0; }
+
+  .edu {
+    margin: 36px 0 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-dim);
+    font-size: 15px;
+  }
+
+  /* ---------- contact ---------- */
+  .contact-line {
+    font-size: clamp(1.3rem, 3.4vw, 2rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    max-width: 24ch;
+    margin: 0 0 40px;
+    text-wrap: balance;
+  }
+  .links { display: flex; flex-direction: column; gap: 14px; }
+  .link-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .link-row:last-child { border-bottom: 1px solid var(--rule); }
+  .link-k {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    width: 90px;
+    flex: none;
+  }
+  .link-v {
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    word-break: break-all;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+  .link-v:hover { color: var(--accent); border-color: var(--accent); }
+  .link-v:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--rule); padding: 40px 0 56px; }
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  .foot p { margin: 0; }
+
+  /* ---------- entrance ---------- */
+  /* only hide when JS is available to reveal it again */
+  .js .fade { opacity: 0; transform: translateY(14px); }
+  .js .fade.in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px) {
+    .work-grid { grid-template-columns: 1fr; gap: 28px; }
+    .no-shot { display: none; }
+    .proof-item { grid-template-columns: 1fr; gap: 14px; }
+  }
+
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
+    .hero { padding-top: 108px; padding-bottom: 64px; }
+    .sec-pad { padding: 64px 0; }
+    .stats { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+    .tl-row { grid-template-columns: 1fr; gap: 4px; }
+    .ctas .btn { flex: 1 1 auto; text-align: center; }
+    .link-row { flex-direction: column; gap: 6px; }
+    .link-k { width: auto; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+    .js .fade { opacity: 1; transform: none; }
+  }
+</style>
+
+<script>document.documentElement.classList.add('js');</script>
+
+<button class="lang" id="langBtn" type="button" aria-label="Switch language / 切換語言">
+  <span id="langEn" class="on">EN</span><span class="sep">/</span><span id="langZh">中</span>
+</button>
+
+<header class="hero wrap">
+  <p class="eyebrow fade"
+     data-en="QA &amp; Solutions Engineer · Taipei / Tainan, Taiwan"
+     data-zh="QA &amp; Solutions Engineer · 台北／台南">QA &amp; Solutions Engineer · Taipei / Tainan, Taiwan</p>
+
+  <h1 class="fade">William Lu</h1>
+
+  <p class="tagline fade"
+     data-en="I find the bugs that cost money — then face the customer who paid for them."
+     data-zh="我找出會讓公司賠錢的 bug，然後親自跟客戶解釋。">I find the bugs that cost money — then face the customer who paid for them.</p>
+
+  <p class="hero-sub fade"
+     data-en="12 years across enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. QA rigor on one side, customer-facing engineering on the other."
+     data-zh="12 年橫跨企業資安、半導體自動化、日交易量 3 億美元的加密交易所。一邊是 QA 的較真，一邊是面對客戶的工程師。">12 years across enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. QA rigor on one side, customer-facing engineering on the other.</p>
+
+  <div class="stats fade">
+    <div>
+      <span class="stat-n">12+</span>
+      <span class="stat-l" data-en="years in the field" data-zh="年資歷">years in the field</span>
+    </div>
+    <div>
+      <span class="stat-n">1M+</span>
+      <span class="stat-l" data-en="customers supported" data-zh="服務客戶數">customers supported</span>
+    </div>
+    <div>
+      <span class="stat-n">−25%</span>
+      <span class="stat-l" data-en="support volume" data-zh="支援量">support volume</span>
+    </div>
+    <div>
+      <span class="stat-n">−40%</span>
+      <span class="stat-l" data-en="migration time" data-zh="遷移工時">migration time</span>
+    </div>
+  </div>
+
+  <div class="ctas fade">
+    <a class="btn btn-primary" href="#work" data-en="See the work" data-zh="看我做過什麼">See the work</a>
+    <a class="btn btn-ghost" href="#contact" data-en="Get in touch" data-zh="聯絡我">Get in touch</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ PROOF ============ -->
+  <section class="sec-pad">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Track record" data-zh="具體戰績">Track record</h2>
+
+      <div class="proof-item fade">
+        <div>
+          <p class="proof-co">Nogle (BTSE)</p>
+          <p class="proof-role"
+             data-en="Senior QA Engineer, Technical Solutions"
+             data-zh="資深 QA 工程師（技術解決方案）">Senior QA Engineer, Technical Solutions</p>
+          <p class="proof-yr">2024</p>
+        </div>
+        <p class="proof-body"
+           data-en="Caught Tier-1 financial logic errors in futures pricing and referral commission algorithms before release, on a platform moving over $300M in daily trading volume."
+           data-zh="在日交易量超過 3 億美元的加密交易平台，於上線前抓出期貨定價與推薦佣金演算法的一級財務邏輯錯誤。">Caught Tier-1 financial logic errors in futures pricing and referral commission algorithms before release, on a platform moving over $300M in daily trading volume.</p>
+      </div>
+
+      <div class="proof-item fade">
+        <div>
+          <p class="proof-co">Zealogics · Client: ASML</p>
+          <p class="proof-role"
+             data-en="Project Leader &amp; Senior Automation Solutions Engineer"
+             data-zh="專案負責人暨資深自動化解決方案工程師">Project Leader &amp; Senior Automation Solutions Engineer</p>
+          <p class="proof-yr">2023–2024</p>
+        </div>
+        <p class="proof-body"
+           data-en="Led a 6-person remote team as primary SME for ASML. Cut environment migration time by 40% and operating cost by 25%. Ran Transfer-of-Information sessions that brought 15+ engineers to full adoption of the framework."
+           data-zh="以主要技術窗口身分帶領 6 人遠端團隊服務 ASML。環境遷移工時降低 40%、營運成本降低 25%。主持 TOI 交接訓練，讓 15 位以上工程師完整接手框架。">Led a 6-person remote team as primary SME for ASML. Cut environment migration time by 40% and operating cost by 25%. Ran Transfer-of-Information sessions that brought 15+ engineers to full adoption of the framework.</p>
+      </div>
+
+      <div class="proof-item fade">
+        <div>
+          <p class="proof-co">Trend Micro</p>
+          <p class="proof-role"
+             data-en="Senior QA &amp; Customer Engineering Leader (SEG)"
+             data-zh="資深 QA 暨客戶工程主管（SEG）">Senior QA &amp; Customer Engineering Leader (SEG)</p>
+          <p class="proof-yr">2010–2023</p>
+        </div>
+        <p class="proof-body"
+           data-en="12 years as the technical SME that VIP customers escalated to, owning hotfix validation and incident response for DLP SDK modules. Directed global beta programs for 100k+ users, reduced support volume by 25%, and trained 100+ engineers across APAC, EMEA and the Americas. Two-time &quot;Yearly Best SEG Engineer&quot;."
+           data-zh="12 年擔任 VIP 客戶升級後的技術窗口，負責 DLP SDK 模組的 hotfix 驗證與事故應變。主導 10 萬人以上規模的全球 beta 計畫、支援量降低 25%、訓練 APAC／EMEA／美洲逾 100 名工程師。兩度獲頒年度最佳 SEG 工程師。">12 years as the technical SME that VIP customers escalated to, owning hotfix validation and incident response for DLP SDK modules. Directed global beta programs for 100k+ users, reduced support volume by 25%, and trained 100+ engineers across APAC, EMEA and the Americas. Two-time "Yearly Best SEG Engineer".</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="sec-pad" id="work">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Things I built" data-zh="我做的東西">Things I built</h2>
+      <p class="sec-sub fade"
+         data-en="Side projects, built to solve actual problems — not demos."
+         data-zh="這些是為了解決真實問題做的，不是 demo。">Side projects, built to solve actual problems — not demos.</p>
+
+      <article class="work-card fade">
+        <div class="work-grid">
+          <div class="work-shot">
+            <img id="shot1" src="assets/work-hd-decode.jpg"
+                 alt="Screenshot of a generated Human Design report"
+                 data-alt-en="Screenshot of a generated Human Design report"
+                 data-alt-zh="人類圖解讀報告畫面截圖"
+                 width="1280" height="860" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <h3 class="work-title">hd-decode</h3>
+            <p class="work-sub"
+               data-en="Human Design reading generator"
+               data-zh="人類圖解讀報告產生器">Human Design reading generator</p>
+
+            <p class="qa-k" data-en="Problem" data-zh="問題">Problem</p>
+            <p class="qa-v lead"
+               data-en="Most personality readings are a voice memo or a flat PDF you forget by the next day."
+               data-zh="多數命理解讀是一段錄音或一頁 PDF，隔天就忘了。">Most personality readings are a voice memo or a flat PDF you forget by the next day.</p>
+
+            <p class="qa-k" data-en="Approach" data-zh="做法">Approach</p>
+            <p class="qa-v"
+               data-en="Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language — the jargon is folded away, so someone who knows nothing about the system can still finish it."
+               data-zh="輸入出生資料後自動排盤，產出 13 節的視覺化報告，每段都白話先行——術語收進摺疊區，完全不懂這套系統的人也讀得完。">Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language — the jargon is folded away, so someone who knows nothing about the system can still finish it.</p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">自建計算引擎</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card fade">
+        <div class="work-grid">
+          <div class="work-shot">
+            <img id="shot2" src="assets/work-dashboard.jpg"
+                 alt="Screenshot of the tooling dashboard"
+                 data-alt-en="Screenshot of the tooling dashboard"
+                 data-alt-zh="工具儀表板畫面截圖"
+                 width="1280" height="860" loading="lazy" decoding="async">
+          </div>
+          <div>
+            <h3 class="work-title">Claude Code Tooling Dashboard</h3>
+            <p class="work-sub"
+               data-en="Personal command center"
+               data-zh="個人工具指揮中心">Personal command center</p>
+
+            <p class="qa-k" data-en="Problem" data-zh="問題">Problem</p>
+            <p class="qa-v lead"
+               data-en="122 skills and 32 agents spread across four directories — impossible to remember what does what."
+               data-zh="122 個 Skill、32 個 Agent 散在四個目錄，永遠記不得哪個能做什麼。">122 skills and 32 agents spread across four directories — impossible to remember what does what.</p>
+
+            <p class="qa-k" data-en="Approach" data-zh="做法">Approach</p>
+            <p class="qa-v"
+               data-en="One page with search, categories and copy-ready commands, in a single dependency-free HTML file. Data is separated from presentation, so adding a tool means editing one place."
+               data-zh="一頁式儀表板：搜尋、分類、複製即用的指令，單一 HTML 檔零相依。資料與畫面分離，新增工具只要改一個地方。">One page with search, categories and copy-ready commands, in a single dependency-free HTML file. Data is separated from presentation, so adding a tool means editing one place.</p>
+
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Vanilla JS</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card fade">
+        <div class="work-grid">
+          <div>
+            <h3 class="work-title">jobsmith</h3>
+            <p class="work-sub"
+               data-en="Job-search co-pilot for the Taiwan market"
+               data-zh="台灣求職 AI Co-Pilot">Job-search co-pilot for the Taiwan market</p>
+
+            <p class="qa-k" data-en="Problem" data-zh="問題">Problem</p>
+            <p class="qa-v lead"
+               data-en="The slow part of job hunting isn't writing the resume — it's re-cutting it for every single posting."
+               data-zh="投履歷最花時間的不是寫，是把同一份履歷改成每個職缺要的樣子。">The slow part of job hunting isn't writing the resume — it's re-cutting it for every single posting.</p>
+
+            <p class="qa-k" data-en="Approach" data-zh="做法">Approach</p>
+            <p class="qa-v"
+               data-en="Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience."
+               data-zh="解析職缺、比對履歷、匯出 ATS 相容 PDF。內建關鍵字推導上限與解析防呆，讓它沒辦法偷偷編造沒有的經歷。">Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience.</p>
+
+            <p class="fork"
+               data-en="Forked from an open-source project. My contributions: PDF export, ATS compatibility checks, resume-parsing guards, keyword-inference limits."
+               data-zh="Fork 自開源專案。我負責的部分：PDF 匯出、ATS 相容檢查、履歷解析防呆、關鍵字推導上限。">Forked from an open-source project. My contributions: PDF export, ATS compatibility checks, resume-parsing guards, keyword-inference limits.</p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+          <div class="no-shot" aria-hidden="true">
+            <span class="rule-mark">— — —</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="sec-pad">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Where I've been" data-zh="經歷">Where I've been</h2>
+
+      <div class="fade">
+        <div class="tl-row">
+          <span class="tl-yr" data-en="2025 – now" data-zh="2025 – 現在">2025 – now</span>
+          <p class="tl-what"
+             data-en="Career break (caregiving) · self-directed study in AI and software architecture"
+             data-zh="職涯空檔（家庭照顧）· 自主進修 AI 與軟體架構">Career break (caregiving) · self-directed study in AI and software architecture</p>
+        </div>
+        <div class="tl-row">
+          <span class="tl-yr" data-en="2024" data-zh="2024">2024</span>
+          <p class="tl-what"
+             data-en="Senior QA Engineer · Nogle (BTSE)"
+             data-zh="資深 QA 工程師 · Nogle (BTSE)">Senior QA Engineer · Nogle (BTSE)</p>
+        </div>
+        <div class="tl-row">
+          <span class="tl-yr" data-en="2023 – 2024" data-zh="2023 – 2024">2023 – 2024</span>
+          <p class="tl-what"
+             data-en="Project Leader &amp; Senior Automation Solutions Engineer · Zealogics (client: ASML)"
+             data-zh="專案負責人暨資深自動化解決方案工程師 · Zealogics（客戶：ASML）">Project Leader &amp; Senior Automation Solutions Engineer · Zealogics (client: ASML)</p>
+        </div>
+        <div class="tl-row">
+          <span class="tl-yr" data-en="2010 – 2023" data-zh="2010 – 2023">2010 – 2023</span>
+          <p class="tl-what"
+             data-en="Senior QA &amp; Customer Engineering Leader · Trend Micro"
+             data-zh="資深 QA 暨客戶工程主管 · Trend Micro">Senior QA &amp; Customer Engineering Leader · Trend Micro</p>
+        </div>
+        <div class="tl-row">
+          <span class="tl-yr" data-en="2006 – 2010" data-zh="2006 – 2010">2006 – 2010</span>
+          <p class="tl-what"
+             data-en="Firmware Engineer · Tatung"
+             data-zh="韌體工程師 · 大同公司">Firmware Engineer · Tatung</p>
+        </div>
+      </div>
+
+      <p class="edu fade"
+         data-en="MS &amp; BS, Information Engineering and Computer Science — Feng Chia University"
+         data-zh="資訊工程與電腦科學 碩士＋學士 — 逢甲大學">MS &amp; BS, Information Engineering and Computer Science — Feng Chia University</p>
+    </div>
+  </section>
+
+  <!-- ============ TOOLBOX ============ -->
+  <section class="sec-pad">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Toolbox" data-zh="技術能力">Toolbox</h2>
+
+      <div class="tags fade tags-flush">
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
+        <span class="tag">C</span>
+        <span class="tag">SQL</span>
+        <span class="tag">XML</span>
+        <span class="tag">LDAP / Directories</span>
+        <span class="tag">Selenium</span>
+        <span class="tag">Robot Framework</span>
+        <span class="tag">TestComplete</span>
+        <span class="tag">Azure</span>
+        <span class="tag">DLP SDK</span>
+        <span class="tag">API Security</span>
+        <span class="tag">Root Cause Analysis</span>
+        <span class="tag">VIP Escalation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="sec-pad" id="contact">
+    <div class="wrap">
+      <p class="contact-line fade"
+         data-en="Hiring for QA, Support, or Solutions Engineering? Tell me what's breaking."
+         data-zh="在找 QA／Support／Solutions Engineer？告訴我你們現在什麼東西壞了。">Hiring for QA, Support, or Solutions Engineering? Tell me what's breaking.</p>
+
+      <div class="links fade">
+        <div class="link-row">
+          <span class="link-k" data-en="Email" data-zh="電子郵件">Email</span>
+          <a class="link-v" href="mailto:sanyoii@gmail.com">sanyoii@gmail.com</a>
+        </div>
+        <div class="link-row">
+          <span class="link-k" data-en="LinkedIn" data-zh="LinkedIn">LinkedIn</span>
+          <a class="link-v" href="https://www.linkedin.com/in/williamlu5405"
+             target="_blank" rel="noopener">linkedin.com/in/williamlu5405</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p>© 2026 William Lu</p>
+    <p data-en="Built as a single HTML file, no frameworks."
+       data-zh="單一 HTML 檔，零框架。">Built as a single HTML file, no frameworks.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var STORE = 'wl-lang';
+    var btn = document.getElementById('langBtn');
+    var enTab = document.getElementById('langEn');
+    var zhTab = document.getElementById('langZh');
+    var nodes = document.querySelectorAll('[data-en]');
+    var imgs = document.querySelectorAll('[data-alt-en]');
+
+    function apply(lang) {
+      var key = lang === 'zh' ? 'zh' : 'en';
+      for (var i = 0; i < nodes.length; i++) {
+        var t = nodes[i].getAttribute('data-' + key);
+        if (t !== null) nodes[i].textContent = t;
+      }
+      for (var j = 0; j < imgs.length; j++) {
+        var a = imgs[j].getAttribute('data-alt-' + key);
+        if (a !== null) imgs[j].setAttribute('alt', a);
+      }
+      document.documentElement.setAttribute('lang', key === 'zh' ? 'zh-Hant' : 'en');
+      enTab.className = key === 'en' ? 'on' : '';
+      zhTab.className = key === 'zh' ? 'on' : '';
+      btn.setAttribute('aria-label',
+        key === 'en' ? 'Switch to Chinese / 切換為中文' : '切換為英文 / Switch to English');
+    }
+
+    var saved;
+    try { saved = localStorage.getItem(STORE); } catch (e) { saved = null; }
+    apply(saved === 'zh' ? 'zh' : 'en');
+
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('lang') === 'zh-Hant' ? 'en' : 'zh';
+      apply(next);
+      try { localStorage.setItem(STORE, next); } catch (e) {}
+    });
+
+    var fades = document.querySelectorAll('.fade');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduce || !('IntersectionObserver' in window)) {
+      for (var k = 0; k < fades.length; k++) fades[k].classList.add('in');
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+    for (var m = 0; m < fades.length; m++) io.observe(fades[m]);
+  })();
+</script>
