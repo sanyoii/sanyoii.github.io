@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>William Lu — Senior QA &amp; Customer Engineering</title>
-<meta name="description" content="Senior QA and customer engineering, 12 years across enterprise security, automation and fintech. Open to fully remote roles.">
-<meta property="og:title" content="William Lu — Senior QA &amp; Customer Engineering">
-<meta property="og:description" content="Senior QA and customer engineering, 12 years across enterprise security, automation and fintech. Open to fully remote roles.">
+<title>William Lu — QA Leadership &amp; Customer Engineering</title>
+<meta name="description" content="QA leader with 12 years across enterprise security, automation, and fintech — who builds his own AI tooling. Fully remote, 4+ hours European overlap.">
+<meta property="og:title" content="William Lu — QA Leadership &amp; Customer Engineering">
+<meta property="og:description" content="QA leader with 12 years across enterprise security, automation, and fintech — who builds his own AI tooling. Fully remote, 4+ hours European overlap.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sanyoii.github.io/">
 <meta property="og:image" content="https://sanyoii.github.io/assets/og-card.png">
@@ -209,6 +209,8 @@
     max-width: 60ch;
     margin: 0 0 22px;
   }
+  /* 60ch fits only ~30 CJK glyphs — let the Chinese line use the row */
+  html[lang^="zh"] .avail { max-width: none; }
 
   .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 
@@ -414,18 +416,25 @@
   /* short viewports (laptops, small phones): tighten the hero so the
      availability line and the CTAs stay above the fold */
   @media (max-height: 820px) {
-    .hero { padding-top: 64px; }
-    .hero-sub { margin-bottom: 30px; }
+    .hero { padding-top: 52px; }
+    .hero-sub { margin-bottom: 28px; }
     .stats { padding: 20px 0; margin-bottom: 26px; }
   }
 
-  /* Phones: the stats grid is two rows here, so the CTAs need a little
-     more room reclaimed than the short-screen rules above give back. */
+  /* Phones: the stats grid is two rows here and the availability line
+     wraps to four, so the CTAs need more room reclaimed than the
+     short-screen rules above give back. */
   @media (max-width: 620px) {
-    .hero { padding-top: 52px; }
-    .hero-sub { margin-bottom: 26px; }
-    .stats { padding: 16px 0; margin-bottom: 20px; gap: 18px 20px; }
-    .avail { margin-bottom: 18px; }
+    .hero { padding-top: 32px; }
+    /* first line shares the vertical band with the fixed lang toggle —
+       wrap before running under it */
+    .eyebrow { margin-bottom: 14px; max-width: calc(100% - 92px); }
+    h1 { margin-bottom: 16px; }
+    .tagline { margin-bottom: 18px; }
+    .tagline::after { margin-top: 12px; }
+    .hero-sub { margin-bottom: 20px; }
+    .stats { padding: 12px 0; margin-bottom: 20px; gap: 14px 20px; }
+    .avail { margin-bottom: 14px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -457,18 +466,18 @@
 
 <header class="hero wrap">
   <p class="eyebrow fade"
-     data-en="QA &amp; Customer Engineering · Remote · based in Taiwan"
-     data-zh="QA 與客戶工程 · 全遠端 · 人在台灣">QA &amp; Customer Engineering · Remote · based in Taiwan</p>
+     data-en="QA Leadership &amp; Customer Engineering · Remote · Taiwan (UTC+8)"
+     data-zh="QA 管理與客戶工程 · 全遠端 · 台灣（UTC+8）">QA Leadership &amp; Customer Engineering · Remote · Taiwan (UTC+8)</p>
 
   <h1 class="fade">William Lu</h1>
 
   <p class="tagline fade"
-     data-en="Find the problem. Then face the customer. Twelve years of both."
-     data-zh="找出問題，然後面對客戶。這兩件事我做了 12 年。">Find the problem. Then face the customer. Twelve years of both.</p>
+     data-en="I lead QA teams, catch the bugs that cost money, and build my own AI tooling."
+     data-zh="我帶 QA 團隊、抓會讓公司賠錢的 bug，也自己動手做 AI 工具。">I lead QA teams, catch the bugs that cost money, and build my own AI tooling.</p>
 
   <p class="hero-sub fade"
-     data-en="Enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. I've caught pricing logic that would have cost real money, and I've been the engineer VIP customers get escalated to."
-     data-zh="待過企業資安、半導體自動化，也待過日交易量 3 億美元的加密交易所。抓過會讓公司真的賠錢的定價邏輯錯誤，也當過 VIP 客戶出狀況時第一個被找上的工程師。">Enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. I've caught pricing logic that would have cost real money, and I've been the engineer VIP customers get escalated to.</p>
+     data-en="Twelve years across enterprise security, semiconductor automation, and a crypto exchange moving $300M a day — as the engineer VIP customers get escalated to, and the project lead who ran a six-person remote team for ASML."
+     data-zh="12 年待過企業資安、半導體自動化，也待過日交易量 3 億美元的加密交易所——VIP 客戶的問題升上來是我接，替 ASML 帶 6 人遠端團隊的也是我。">Twelve years across enterprise security, semiconductor automation, and a crypto exchange moving $300M a day — as the engineer VIP customers get escalated to, and the project lead who ran a six-person remote team for ASML.</p>
 
   <div class="stats fade">
     <div>
@@ -490,8 +499,8 @@
   </div>
 
   <p class="avail"
-     data-en="Open to QA Manager, Senior QA Engineer, or Senior Customer Support Engineer roles · Fully remote · Available two weeks from offer"
-     data-zh="正在找 QA Manager、Senior QA Engineer、Senior Customer Support Engineer 職缺 · 全遠端 · 收到 Offer 後兩週內可到職">Open to QA Manager, Senior QA Engineer, or Senior Customer Support Engineer roles · Fully remote · Available two weeks from offer</p>
+     data-en="Open to QA Manager, Senior QA Engineer, or Senior Customer Support Engineer roles · Fully remote · 4+ hours overlap with European time · Available two weeks from offer"
+     data-zh="正在找 QA Manager、Senior QA Engineer、Senior Customer Support Engineer 職缺 · 全遠端 · 可配合歐洲時區重疊 4 小時以上 · 收到 Offer 後兩週內可到職">Open to QA Manager, Senior QA Engineer, or Senior Customer Support Engineer roles · Fully remote · 4+ hours overlap with European time · Available two weeks from offer</p>
 
   <div class="ctas fade">
     <a class="btn btn-primary" href="#track" data-en="See the work" data-zh="看我做過什麼">See the work</a>
@@ -510,39 +519,39 @@
         <div>
           <p class="proof-co">Nogle (BTSE)</p>
           <p class="proof-role"
-             data-en="Senior QA Engineer, Technical Solutions"
-             data-zh="資深 QA 工程師（技術解決方案）">Senior QA Engineer, Technical Solutions</p>
+             data-en="Senior QA Engineer, Technical Solutions · crypto exchange"
+             data-zh="資深 QA 工程師（技術解決方案）· 加密貨幣交易所">Senior QA Engineer, Technical Solutions · crypto exchange</p>
           <p class="proof-yr">2024</p>
         </div>
         <p class="proof-body"
-           data-en="Identified Tier-1 financial logic errors in futures pricing and referral commission algorithms, preventing critical losses, on a platform moving over $300M in daily trading volume."
-           data-zh="在日交易量超過 3 億美元的加密交易平台，抓出期貨定價與推薦佣金演算法的一級財務邏輯錯誤，擋下實際損失。">Identified Tier-1 financial logic errors in futures pricing and referral commission algorithms, preventing critical losses, on a platform moving over $300M in daily trading volume.</p>
+           data-en="Identified critical logic errors in futures pricing and referral commission calculations on a platform moving over $300M a day. On an exchange, that class of defect is money straight out the door."
+           data-zh="在日交易量超過 3 億美元的交易平台上，抓出期貨定價與推薦佣金計算的重大邏輯錯誤。在交易所，這種等級的缺陷就是直接把錢賠出去。">Identified critical logic errors in futures pricing and referral commission calculations on a platform moving over $300M a day. On an exchange, that class of defect is money straight out the door.</p>
       </div>
 
       <div class="proof-item fade">
         <div>
-          <p class="proof-co">Zealogics · Client: ASML</p>
+          <p class="proof-co">Zealogics — for ASML</p>
           <p class="proof-role"
              data-en="Project Leader &amp; Senior Automation Solutions Engineer"
              data-zh="專案負責人暨資深自動化解決方案工程師">Project Leader &amp; Senior Automation Solutions Engineer</p>
           <p class="proof-yr">2023–2024</p>
         </div>
         <p class="proof-body"
-           data-en="Led a 6-person remote team as primary SME for ASML. Cut environment migration time by 40% and operating cost by 25%. Ran Transfer-of-Information sessions that brought 15+ engineers to full adoption of the framework."
-           data-zh="帶 6 人遠端團隊服務 ASML，我是對方的主要技術窗口。環境遷移工時砍掉 40%、營運成本砍掉 25%。做完 TOI 交接訓練後，15 位以上的工程師能自己接手整套框架。">Led a 6-person remote team as primary SME for ASML. Cut environment migration time by 40% and operating cost by 25%. Ran Transfer-of-Information sessions that brought 15+ engineers to full adoption of the framework.</p>
+           data-en="Led a six-person remote team serving ASML, the Dutch semiconductor-equipment maker, as their primary technical contact. Cut environment migration time by 40% and operating cost by 25%, then trained 15+ of their engineers until they could run the framework without us."
+           data-zh="帶 6 人遠端團隊服務荷蘭半導體設備商 ASML，我是對方的主要技術窗口。環境遷移工時砍掉 40%、營運成本砍掉 25%，最後把 15 位以上的工程師訓練到不用我們也能自己跑整套框架。">Led a six-person remote team serving ASML, the Dutch semiconductor-equipment maker, as their primary technical contact. Cut environment migration time by 40% and operating cost by 25%, then trained 15+ of their engineers until they could run the framework without us.</p>
       </div>
 
       <div class="proof-item fade">
         <div>
           <p class="proof-co">Trend Micro</p>
           <p class="proof-role"
-             data-en="Senior QA &amp; Customer Engineering Leader (SEG)"
-             data-zh="資深 QA 暨客戶工程主管（SEG）">Senior QA &amp; Customer Engineering Leader (SEG)</p>
+             data-en="Senior QA &amp; Customer Engineering Leader"
+             data-zh="資深 QA 暨客戶工程主管">Senior QA &amp; Customer Engineering Leader</p>
           <p class="proof-yr">2010–2023</p>
         </div>
         <p class="proof-body"
-           data-en="12 years as the technical SME that VIP customers escalated to, owning hotfix validation and incident response for DLP SDK modules. Directed global beta programs for 100k+ users, reduced support volume by 25%, and trained 100+ personnel across APAC, EMEA and the Americas. Two-time &quot;Yearly Best SEG Engineer&quot;."
-           data-zh="VIP 客戶的問題升上來，我是接手的那個人，負責 DLP SDK 模組的 hotfix 驗證與事故處理。主導 10 萬人以上規模的全球 beta 計畫，把支援量壓低 25%，也替 APAC、EMEA、美洲超過 100 位同仁做過教育訓練。兩度拿到年度最佳 SEG 工程師。">12 years as the technical SME that VIP customers escalated to, owning hotfix validation and incident response for DLP SDK modules. Directed global beta programs for 100k+ users, reduced support volume by 25%, and trained 100+ personnel across APAC, EMEA and the Americas. Two-time "Yearly Best SEG Engineer".</p>
+           data-en="12 years as the engineer VIP customers were escalated to, owning hotfix validation and incident response for data-loss-prevention (DLP) modules in products serving 1M+ customers. Directed global beta programs for 100k+ users, cut support volume by 25%, and trained 100+ colleagues across Asia, Europe, and the Americas. Two-time &quot;Yearly Best SEG Engineer&quot;."
+           data-zh="12 年來 VIP 客戶的問題升上來都是我接，負責資料外洩防護（DLP）模組的 hotfix 驗證與事故處理——這些產品服務超過 100 萬名客戶。主導 10 萬人以上規模的全球 beta 計畫、把支援量壓低 25%，也替亞洲、歐洲、美洲超過 100 位同仁做過教育訓練。兩度獲頒「Yearly Best SEG Engineer」年度獎項。">12 years as the engineer VIP customers were escalated to, owning hotfix validation and incident response for data-loss-prevention (DLP) modules in products serving 1M+ customers. Directed global beta programs for 100k+ users, cut support volume by 25%, and trained 100+ colleagues across Asia, Europe, and the Americas. Two-time "Yearly Best SEG Engineer".</p>
       </div>
     </div>
   </section>
@@ -552,8 +561,8 @@
     <div class="wrap">
       <h2 class="fade has-rule" data-en="Things I built" data-zh="我做的東西">Things I built</h2>
       <p class="sec-sub fade"
-         data-en="Personal tools I actually use. Each one below says what problem it solves and how."
-         data-zh="都是自己會用到才做的工具，下面各自寫了解決什麼問題、怎麼做的。">Personal tools I actually use. Each one below says what problem it solves and how.</p>
+         data-en="Personal tools I actually use — and proof I can design, build, and ship AI-assisted software myself. Each one says what problem it solves and how."
+         data-zh="都是自己會用到才做的工具，也是我能自己設計、開發、出貨 AI 軟體的證明。每一個都寫了解決什麼問題、怎麼做。">Personal tools I actually use — and proof I can design, build, and ship AI-assisted software myself. Each one says what problem it solves and how.</p>
 
       <article class="work-card fade">
         <div class="work-grid">
@@ -567,8 +576,8 @@
           <div>
             <h3 class="work-title">hd-decode</h3>
             <p class="work-sub"
-               data-en="Human Design reading generator"
-               data-zh="人類圖解讀報告產生器">Human Design reading generator</p>
+               data-en="Human Design reading generator — a personal AI-tooling project"
+               data-zh="人類圖解讀報告產生器——拿來練 AI 工具開發的個人專案">Human Design reading generator — a personal AI-tooling project</p>
 
             <p class="qa-k" data-en="Problem" data-zh="問題">Problem</p>
             <p class="qa-v lead"
@@ -612,7 +621,7 @@
             <p class="qa-k" data-en="Approach" data-zh="做法">Approach</p>
             <p class="qa-v"
                data-en="One page with search, categories and copy-ready commands, in a single dependency-free HTML file. Data is separated from presentation, so adding a tool means editing one place."
-               data-zh="一頁式儀表板，可以搜尋、分類，指令直接複製就能用，單一 HTML 檔零相依。資料跟畫面分開放，新增工具只要改一個地方。">One page with search, categories and copy-ready commands, in a single dependency-free HTML file. Data is separated from presentation, so adding a tool means editing one place.</p>
+               data-zh="一頁式儀表板：搜尋、分類、指令複製就能用，單一 HTML 檔、不用安裝任何東西。資料跟畫面分開放，新增工具只要改一個地方。">One page with search, categories and copy-ready commands, in a single dependency-free HTML file. Data is separated from presentation, so adding a tool means editing one place.</p>
 
             <div class="tags">
               <span class="tag">HTML</span>
@@ -776,12 +785,12 @@
       }
       document.documentElement.setAttribute('lang', key === 'zh' ? 'zh-Hant' : 'en');
       document.title = key === 'zh'
-        ? 'William Lu — 資深 QA 與客戶工程'
-        : 'William Lu — Senior QA & Customer Engineering';
+        ? 'William Lu — QA 管理與客戶工程'
+        : 'William Lu — QA Leadership & Customer Engineering';
       var md = document.querySelector('meta[name="description"]');
       if (md) md.setAttribute('content', key === 'zh'
-        ? '12 年資深 QA 與客戶工程經驗，橫跨企業資安、自動化與金融科技。接受全遠端。'
-        : 'Senior QA and customer engineering, 12 years across enterprise security, automation and fintech. Open to fully remote roles.');
+        ? '12 年 QA 管理與客戶工程經驗，橫跨企業資安、自動化與金融科技，自己動手做 AI 工具。全遠端，可配合歐洲時區。'
+        : 'QA leader with 12 years across enterprise security, automation, and fintech — who builds his own AI tooling. Fully remote, 4+ hours European overlap.');
       enTab.className = key === 'en' ? 'on' : '';
       zhTab.className = key === 'zh' ? 'on' : '';
       btn.setAttribute('aria-label',
