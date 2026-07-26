@@ -1,9 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>William Lu — QA &amp; Solutions Engineer</title>
-<meta name="description" content="QA and Solutions Engineer with 12 years in enterprise security, automation and fintech. Taipei / Tainan, Taiwan.">
-<meta property="og:title" content="William Lu — QA &amp; Solutions Engineer">
-<meta property="og:description" content="QA and Solutions Engineer with 12 years in enterprise security, automation and fintech. Taipei / Tainan, Taiwan.">
+<title>William Lu — Senior QA &amp; Customer Engineering</title>
+<meta name="description" content="Senior QA and customer engineering, 12 years across enterprise security, automation and fintech. Open to fully remote roles.">
+<meta property="og:title" content="William Lu — Senior QA &amp; Customer Engineering">
+<meta property="og:description" content="Senior QA and customer engineering, 12 years across enterprise security, automation and fintech. Open to fully remote roles.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sanyoii.github.io/">
 
@@ -178,6 +181,16 @@
     color: var(--ink-faint);
   }
 
+  .avail {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    border-left: 4px solid var(--accent);
+    padding-left: 16px;
+    max-width: 60ch;
+    margin: 0 0 28px;
+  }
+
   .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 
   .btn {
@@ -266,19 +279,7 @@
     max-width: 56ch;
   }
 
-  .no-shot {
-    border-left: 1px solid var(--rule);
-    padding-left: 44px;
-    min-height: 160px;
-    display: flex;
-    align-items: center;
-  }
-  .no-shot .rule-mark {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    color: var(--rule);
-  }
+  .work-card--noimg .work-grid { grid-template-columns: 1fr; }
 
   /* ---------- timeline ---------- */
   .tl-row {
@@ -367,7 +368,6 @@
   /* ---------- responsive ---------- */
   @media (max-width: 860px) {
     .work-grid { grid-template-columns: 1fr; gap: 28px; }
-    .no-shot { display: none; }
     .proof-item { grid-template-columns: 1fr; gap: 14px; }
   }
 
@@ -396,46 +396,59 @@
 
 <script>document.documentElement.classList.add('js');</script>
 
+<script>
+  try {
+    var l = localStorage.getItem('wl-lang');
+    document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-Hant' : 'en');
+  } catch (e) {}
+</script>
+</head>
+<body>
+
 <button class="lang" id="langBtn" type="button" aria-label="Switch language / 切換語言">
   <span id="langEn" class="on">EN</span><span class="sep">/</span><span id="langZh">中</span>
 </button>
 
 <header class="hero wrap">
   <p class="eyebrow fade"
-     data-en="QA &amp; Solutions Engineer · Taipei / Tainan, Taiwan"
-     data-zh="QA &amp; Solutions Engineer · 台北／台南">QA &amp; Solutions Engineer · Taipei / Tainan, Taiwan</p>
+     data-en="QA &amp; Customer Engineering · Remote · based in Taiwan"
+     data-zh="QA 與客戶工程 · 全遠端 · 人在台灣">QA &amp; Customer Engineering · Remote · based in Taiwan</p>
 
   <h1 class="fade">William Lu</h1>
 
   <p class="tagline fade"
-     data-en="I find the bugs that cost money — then face the customer who paid for them."
-     data-zh="我找出會讓公司賠錢的 bug，然後親自跟客戶解釋。">I find the bugs that cost money — then face the customer who paid for them.</p>
+     data-en="Find the problem. Then face the customer. Twelve years of both."
+     data-zh="找出問題，然後面對客戶。這兩件事我做了 12 年。">Find the problem. Then face the customer. Twelve years of both.</p>
 
   <p class="hero-sub fade"
-     data-en="12 years across enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. QA rigor on one side, customer-facing engineering on the other."
-     data-zh="12 年橫跨企業資安、半導體自動化、日交易量 3 億美元的加密交易所。一邊是 QA 的較真，一邊是面對客戶的工程師。">12 years across enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. QA rigor on one side, customer-facing engineering on the other.</p>
+     data-en="Enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. I've caught pricing logic that would have cost real money, and I've been the engineer VIP customers get escalated to."
+     data-zh="待過企業資安、半導體自動化，也待過日交易量 3 億美元的加密交易所。抓過會讓公司真的賠錢的定價邏輯錯誤，也當過 VIP 客戶出狀況時第一個被找上的工程師。">Enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. I've caught pricing logic that would have cost real money, and I've been the engineer VIP customers get escalated to.</p>
 
   <div class="stats fade">
     <div>
       <span class="stat-n">12+</span>
-      <span class="stat-l" data-en="years in the field" data-zh="年資歷">years in the field</span>
+      <span class="stat-l" data-en="years in the field" data-zh="年工作資歷">years in the field</span>
     </div>
     <div>
-      <span class="stat-n">1M+</span>
-      <span class="stat-l" data-en="customers supported" data-zh="服務客戶數">customers supported</span>
+      <span class="stat-n">100k+</span>
+      <span class="stat-l" data-en="users in global betas I led" data-zh="主導的全球 beta 用戶數">users in global betas I led</span>
     </div>
     <div>
       <span class="stat-n">−25%</span>
-      <span class="stat-l" data-en="support volume" data-zh="支援量">support volume</span>
+      <span class="stat-l" data-en="support volume at Trend Micro" data-zh="Trend Micro 支援量">support volume at Trend Micro</span>
     </div>
     <div>
       <span class="stat-n">−40%</span>
-      <span class="stat-l" data-en="migration time" data-zh="遷移工時">migration time</span>
+      <span class="stat-l" data-en="migration time at ASML" data-zh="ASML 環境遷移工時">migration time at ASML</span>
     </div>
   </div>
 
+  <p class="avail"
+     data-en="Open to QA Manager, Senior QA Engineer, or Senior Customer Support Engineer roles · Fully remote · Available two weeks from offer"
+     data-zh="正在找 QA Manager、Senior QA Engineer、Senior Customer Support Engineer 職缺 · 全遠端 · 收到 Offer 後兩週內可到職">Open to QA Manager, Senior QA Engineer, or Senior Customer Support Engineer roles · Fully remote · Available two weeks from offer</p>
+
   <div class="ctas fade">
-    <a class="btn btn-primary" href="#work" data-en="See the work" data-zh="看我做過什麼">See the work</a>
+    <a class="btn btn-primary" href="#track" data-en="See the work" data-zh="看我做過什麼">See the work</a>
     <a class="btn btn-ghost" href="#contact" data-en="Get in touch" data-zh="聯絡我">Get in touch</a>
   </div>
 </header>
@@ -443,7 +456,7 @@
 <main>
 
   <!-- ============ PROOF ============ -->
-  <section class="sec-pad">
+  <section class="sec-pad" id="track">
     <div class="wrap">
       <h2 class="fade has-rule" data-en="Track record" data-zh="具體戰績">Track record</h2>
 
@@ -456,8 +469,8 @@
           <p class="proof-yr">2024</p>
         </div>
         <p class="proof-body"
-           data-en="Caught Tier-1 financial logic errors in futures pricing and referral commission algorithms before release, on a platform moving over $300M in daily trading volume."
-           data-zh="在日交易量超過 3 億美元的加密交易平台，於上線前抓出期貨定價與推薦佣金演算法的一級財務邏輯錯誤。">Caught Tier-1 financial logic errors in futures pricing and referral commission algorithms before release, on a platform moving over $300M in daily trading volume.</p>
+           data-en="Identified Tier-1 financial logic errors in futures pricing and referral commission algorithms, preventing critical losses, on a platform moving over $300M in daily trading volume."
+           data-zh="在日交易量超過 3 億美元的加密交易平台，抓出期貨定價與推薦佣金演算法的一級財務邏輯錯誤，擋下實際損失。">Identified Tier-1 financial logic errors in futures pricing and referral commission algorithms, preventing critical losses, on a platform moving over $300M in daily trading volume.</p>
       </div>
 
       <div class="proof-item fade">
@@ -470,7 +483,7 @@
         </div>
         <p class="proof-body"
            data-en="Led a 6-person remote team as primary SME for ASML. Cut environment migration time by 40% and operating cost by 25%. Ran Transfer-of-Information sessions that brought 15+ engineers to full adoption of the framework."
-           data-zh="以主要技術窗口身分帶領 6 人遠端團隊服務 ASML。環境遷移工時降低 40%、營運成本降低 25%。主持 TOI 交接訓練，讓 15 位以上工程師完整接手框架。">Led a 6-person remote team as primary SME for ASML. Cut environment migration time by 40% and operating cost by 25%. Ran Transfer-of-Information sessions that brought 15+ engineers to full adoption of the framework.</p>
+           data-zh="帶 6 人遠端團隊服務 ASML，我是對方的主要技術窗口。環境遷移工時砍掉 40%、營運成本砍掉 25%。做完 TOI 交接訓練後，15 位以上的工程師能自己接手整套框架。">Led a 6-person remote team as primary SME for ASML. Cut environment migration time by 40% and operating cost by 25%. Ran Transfer-of-Information sessions that brought 15+ engineers to full adoption of the framework.</p>
       </div>
 
       <div class="proof-item fade">
@@ -482,8 +495,8 @@
           <p class="proof-yr">2010–2023</p>
         </div>
         <p class="proof-body"
-           data-en="12 years as the technical SME that VIP customers escalated to, owning hotfix validation and incident response for DLP SDK modules. Directed global beta programs for 100k+ users, reduced support volume by 25%, and trained 100+ engineers across APAC, EMEA and the Americas. Two-time &quot;Yearly Best SEG Engineer&quot;."
-           data-zh="12 年擔任 VIP 客戶升級後的技術窗口，負責 DLP SDK 模組的 hotfix 驗證與事故應變。主導 10 萬人以上規模的全球 beta 計畫、支援量降低 25%、訓練 APAC／EMEA／美洲逾 100 名工程師。兩度獲頒年度最佳 SEG 工程師。">12 years as the technical SME that VIP customers escalated to, owning hotfix validation and incident response for DLP SDK modules. Directed global beta programs for 100k+ users, reduced support volume by 25%, and trained 100+ engineers across APAC, EMEA and the Americas. Two-time "Yearly Best SEG Engineer".</p>
+           data-en="12 years as the technical SME that VIP customers escalated to, owning hotfix validation and incident response for DLP SDK modules. Directed global beta programs for 100k+ users, reduced support volume by 25%, and trained 100+ personnel across APAC, EMEA and the Americas. Two-time &quot;Yearly Best SEG Engineer&quot;."
+           data-zh="VIP 客戶的問題升上來，我是接手的那個人，負責 DLP SDK 模組的 hotfix 驗證與事故處理。主導 10 萬人以上規模的全球 beta 計畫，把支援量壓低 25%，也替 APAC、EMEA、美洲超過 100 位同仁做過教育訓練。兩度拿到年度最佳 SEG 工程師。">12 years as the technical SME that VIP customers escalated to, owning hotfix validation and incident response for DLP SDK modules. Directed global beta programs for 100k+ users, reduced support volume by 25%, and trained 100+ personnel across APAC, EMEA and the Americas. Two-time "Yearly Best SEG Engineer".</p>
       </div>
     </div>
   </section>
@@ -493,8 +506,8 @@
     <div class="wrap">
       <h2 class="fade has-rule" data-en="Things I built" data-zh="我做的東西">Things I built</h2>
       <p class="sec-sub fade"
-         data-en="Side projects, built to solve actual problems — not demos."
-         data-zh="這些是為了解決真實問題做的，不是 demo。">Side projects, built to solve actual problems — not demos.</p>
+         data-en="Personal tools I actually use. Each one below says what problem it solves and how."
+         data-zh="都是自己會用到才做的工具，下面各自寫了解決什麼問題、怎麼做的。">Personal tools I actually use. Each one below says what problem it solves and how.</p>
 
       <article class="work-card fade">
         <div class="work-grid">
@@ -514,17 +527,17 @@
             <p class="qa-k" data-en="Problem" data-zh="問題">Problem</p>
             <p class="qa-v lead"
                data-en="Most personality readings are a voice memo or a flat PDF you forget by the next day."
-               data-zh="多數命理解讀是一段錄音或一頁 PDF，隔天就忘了。">Most personality readings are a voice memo or a flat PDF you forget by the next day.</p>
+               data-zh="一般的命理解讀不是一段錄音就是一頁 PDF，看完隔天就忘了。">Most personality readings are a voice memo or a flat PDF you forget by the next day.</p>
 
             <p class="qa-k" data-en="Approach" data-zh="做法">Approach</p>
             <p class="qa-v"
                data-en="Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language — the jargon is folded away, so someone who knows nothing about the system can still finish it."
-               data-zh="輸入出生資料後自動排盤，產出 13 節的視覺化報告，每段都白話先行——術語收進摺疊區，完全不懂這套系統的人也讀得完。">Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language — the jargon is folded away, so someone who knows nothing about the system can still finish it.</p>
+               data-zh="輸入出生資料就自動排盤，產出 13 個章節的視覺化報告。每一段都先講白話，術語收在摺疊區——完全沒碰過這套系統的人也讀得完。">Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language — the jargon is folded away, so someone who knows nothing about the system can still finish it.</p>
 
             <div class="tags">
               <span class="tag">Python</span>
               <span class="tag">HTML/CSS</span>
-              <span class="tag">自建計算引擎</span>
+              <span class="tag" data-en="Custom chart engine" data-zh="自建排盤引擎">Custom chart engine</span>
             </div>
           </div>
         </div>
@@ -553,7 +566,7 @@
             <p class="qa-k" data-en="Approach" data-zh="做法">Approach</p>
             <p class="qa-v"
                data-en="One page with search, categories and copy-ready commands, in a single dependency-free HTML file. Data is separated from presentation, so adding a tool means editing one place."
-               data-zh="一頁式儀表板：搜尋、分類、複製即用的指令，單一 HTML 檔零相依。資料與畫面分離，新增工具只要改一個地方。">One page with search, categories and copy-ready commands, in a single dependency-free HTML file. Data is separated from presentation, so adding a tool means editing one place.</p>
+               data-zh="一頁式儀表板，可以搜尋、分類，指令直接複製就能用，單一 HTML 檔零相依。資料跟畫面分開放，新增工具只要改一個地方。">One page with search, categories and copy-ready commands, in a single dependency-free HTML file. Data is separated from presentation, so adding a tool means editing one place.</p>
 
             <div class="tags">
               <span class="tag">HTML</span>
@@ -564,7 +577,7 @@
         </div>
       </article>
 
-      <article class="work-card fade">
+      <article class="work-card work-card--noimg fade">
         <div class="work-grid">
           <div>
             <h3 class="work-title">jobsmith</h3>
@@ -575,25 +588,22 @@
             <p class="qa-k" data-en="Problem" data-zh="問題">Problem</p>
             <p class="qa-v lead"
                data-en="The slow part of job hunting isn't writing the resume — it's re-cutting it for every single posting."
-               data-zh="投履歷最花時間的不是寫，是把同一份履歷改成每個職缺要的樣子。">The slow part of job hunting isn't writing the resume — it's re-cutting it for every single posting.</p>
+               data-zh="投履歷最花時間的不是寫履歷，是把同一份履歷改成每個職缺想看的樣子。">The slow part of job hunting isn't writing the resume — it's re-cutting it for every single posting.</p>
 
             <p class="qa-k" data-en="Approach" data-zh="做法">Approach</p>
             <p class="qa-v"
                data-en="Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience."
-               data-zh="解析職缺、比對履歷、匯出 ATS 相容 PDF。內建關鍵字推導上限與解析防呆，讓它沒辦法偷偷編造沒有的經歷。">Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience.</p>
+               data-zh="解析職缺內容、跟履歷比對，再匯出 ATS 讀得懂的 PDF。關鍵字推導設了上限、解析也加了防呆，避免它自己編出你沒有的經歷。">Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience.</p>
 
             <p class="fork"
                data-en="Forked from an open-source project. My contributions: PDF export, ATS compatibility checks, resume-parsing guards, keyword-inference limits."
-               data-zh="Fork 自開源專案。我負責的部分：PDF 匯出、ATS 相容檢查、履歷解析防呆、關鍵字推導上限。">Forked from an open-source project. My contributions: PDF export, ATS compatibility checks, resume-parsing guards, keyword-inference limits.</p>
+               data-zh="Fork 自開源專案。我加的部分：PDF 匯出、ATS 相容檢查、履歷解析防呆、關鍵字推導上限。">Forked from an open-source project. My contributions: PDF export, ATS compatibility checks, resume-parsing guards, keyword-inference limits.</p>
 
             <div class="tags">
               <span class="tag">Python</span>
               <span class="tag">FastAPI</span>
               <span class="tag">React</span>
             </div>
-          </div>
-          <div class="no-shot" aria-hidden="true">
-            <span class="rule-mark">— — —</span>
           </div>
         </div>
       </article>
@@ -610,7 +620,7 @@
           <span class="tl-yr" data-en="2025 – now" data-zh="2025 – 現在">2025 – now</span>
           <p class="tl-what"
              data-en="Career break (caregiving) · self-directed study in AI and software architecture"
-             data-zh="職涯空檔（家庭照顧）· 自主進修 AI 與軟體架構">Career break (caregiving) · self-directed study in AI and software architecture</p>
+             data-zh="照顧家人暫離職場，同時自學 AI 與軟體架構">Career break (caregiving) · self-directed study in AI and software architecture</p>
         </div>
         <div class="tl-row">
           <span class="tl-yr" data-en="2024" data-zh="2024">2024</span>
@@ -640,7 +650,7 @@
 
       <p class="edu fade"
          data-en="MS &amp; BS, Information Engineering and Computer Science — Feng Chia University"
-         data-zh="資訊工程與電腦科學 碩士＋學士 — 逢甲大學">MS &amp; BS, Information Engineering and Computer Science — Feng Chia University</p>
+         data-zh="逢甲大學 資訊工程與電腦科學 學士、碩士">MS &amp; BS, Information Engineering and Computer Science — Feng Chia University</p>
     </div>
   </section>
 
@@ -672,12 +682,12 @@
   <section class="sec-pad" id="contact">
     <div class="wrap">
       <p class="contact-line fade"
-         data-en="Hiring for QA, Support, or Solutions Engineering? Tell me what's breaking."
-         data-zh="在找 QA／Support／Solutions Engineer？告訴我你們現在什麼東西壞了。">Hiring for QA, Support, or Solutions Engineering? Tell me what's breaking.</p>
+         data-en="Hiring for QA management, senior QA, or senior customer support? Tell me what's breaking."
+         data-zh="在找 QA Manager、Senior QA Engineer 或 Senior Customer Support Engineer？告訴我你們現在什麼東西壞了。">Hiring for QA management, senior QA, or senior customer support? Tell me what's breaking.</p>
 
       <div class="links fade">
         <div class="link-row">
-          <span class="link-k" data-en="Email" data-zh="電子郵件">Email</span>
+          <span class="link-k" data-en="Email" data-zh="Email">Email</span>
           <a class="link-v" href="mailto:sanyoii@gmail.com">sanyoii@gmail.com</a>
         </div>
         <div class="link-row">
@@ -695,7 +705,7 @@
   <div class="wrap foot">
     <p>© 2026 William Lu</p>
     <p data-en="Built as a single HTML file, no frameworks."
-       data-zh="單一 HTML 檔，零框架。">Built as a single HTML file, no frameworks.</p>
+       data-zh="單一 HTML 檔，沒有用框架。">Built as a single HTML file, no frameworks.</p>
   </div>
 </footer>
 
@@ -719,6 +729,13 @@
         if (a !== null) imgs[j].setAttribute('alt', a);
       }
       document.documentElement.setAttribute('lang', key === 'zh' ? 'zh-Hant' : 'en');
+      document.title = key === 'zh'
+        ? 'William Lu — 資深 QA 與客戶工程'
+        : 'William Lu — Senior QA & Customer Engineering';
+      var md = document.querySelector('meta[name="description"]');
+      if (md) md.setAttribute('content', key === 'zh'
+        ? '12 年資深 QA 與客戶工程經驗，橫跨企業資安、自動化與金融科技。接受全遠端。'
+        : 'Senior QA and customer engineering, 12 years across enterprise security, automation and fintech. Open to fully remote roles.');
       enTab.className = key === 'en' ? 'on' : '';
       zhTab.className = key === 'zh' ? 'on' : '';
       btn.setAttribute('aria-label',
@@ -755,3 +772,6 @@
     for (var m = 0; m < fades.length; m++) io.observe(fades[m]);
   })();
 </script>
+
+</body>
+</html>
