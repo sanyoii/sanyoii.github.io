@@ -9,6 +9,11 @@
 <meta property="og:description" content="Senior QA and customer engineering, 12 years across enterprise security, automation and fintech. Open to fully remote roles.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sanyoii.github.io/">
+<meta property="og:image" content="https://sanyoii.github.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0c0d'/%3E%3Crect y='56' width='64' height='8' fill='%23e8853f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Menlo,Consolas,monospace' font-size='36' font-weight='600' fill='%23f0eae1'%3EW%3C/text%3E%3C/svg%3E">
 
 <style>
   :root {
@@ -47,6 +52,18 @@
   a { color: inherit; }
 
   img { max-width: 100%; display: block; }
+
+  /* film grain: breaks the flat digital surface. inline SVG turbulence,
+     no network request — the xmlns URL is a namespace, not a fetch. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 
   .wrap {
     width: 100%;
@@ -208,6 +225,7 @@
   .btn-ghost { color: var(--ink); border-color: var(--rule); }
   .btn-ghost:hover { border-color: var(--ink-faint); }
   .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .btn:active { transform: translateY(1px); }
 
   /* ---------- proof ---------- */
   .proof-item {
@@ -367,6 +385,14 @@
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
+  /* hero elements are all in view on load — cascade them instead of
+     landing everything at once. scroll-triggered fades keep no delay. */
+  .js .hero .fade:nth-child(2).in { transition-delay: 0.07s; }
+  .js .hero .fade:nth-child(3).in { transition-delay: 0.14s; }
+  .js .hero .fade:nth-child(4).in { transition-delay: 0.21s; }
+  .js .hero .fade:nth-child(5).in { transition-delay: 0.28s; }
+  .js .hero .fade:nth-child(7).in { transition-delay: 0.35s; }
+
   /* ---------- responsive ---------- */
   @media (max-width: 860px) {
     .work-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -408,6 +434,7 @@
       animation-duration: 0.001ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.001ms !important;
+      transition-delay: 0ms !important;
     }
     .js .fade { opacity: 1; transform: none; }
   }
