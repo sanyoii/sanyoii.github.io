@@ -119,6 +119,10 @@
 
   .tags-flush { margin-top: 0; }
 
+  .toolgroup { margin-bottom: 30px; }
+  .toolgroup:last-child { margin-bottom: 0; }
+  .toolgroup .qa-k { margin-bottom: 12px; }
+
   .sec-sub {
     color: var(--ink-dim);
     max-width: 46ch;
@@ -730,21 +734,53 @@
     <div class="wrap">
       <h2 class="fade has-rule" data-en="Toolbox" data-zh="技術能力">Toolbox</h2>
 
-      <div class="tags fade tags-flush">
-        <span class="tag">Python</span>
-        <span class="tag">Java</span>
-        <span class="tag">C</span>
-        <span class="tag">SQL</span>
-        <span class="tag">XML</span>
-        <span class="tag">LDAP / Directories</span>
-        <span class="tag">Selenium</span>
-        <span class="tag">Robot Framework</span>
-        <span class="tag">TestComplete</span>
-        <span class="tag">Azure</span>
-        <span class="tag">DLP SDK</span>
-        <span class="tag">API Security</span>
-        <span class="tag">Root Cause Analysis</span>
-        <span class="tag">VIP Escalation</span>
+      <div class="toolgroup fade">
+        <p class="qa-k" data-en="Test craft" data-zh="測試方法">Test craft</p>
+        <div class="tags tags-flush">
+          <span class="tag">Test Design</span>
+          <span class="tag" data-en="Exploratory &amp; Manual Testing" data-zh="探索式與手動測試">Exploratory &amp; Manual Testing</span>
+          <span class="tag" data-en="Test Strategy &amp; Planning" data-zh="測試策略與規劃">Test Strategy &amp; Planning</span>
+          <span class="tag" data-en="E2E &amp; API Testing" data-zh="E2E 與 API 測試">E2E &amp; API Testing</span>
+          <span class="tag">Regression Testing</span>
+          <span class="tag">Defect Management</span>
+          <span class="tag">Root Cause Analysis</span>
+        </div>
+      </div>
+
+      <div class="toolgroup fade">
+        <p class="qa-k" data-en="Automation" data-zh="自動化">Automation</p>
+        <div class="tags tags-flush">
+          <span class="tag">Selenium</span>
+          <span class="tag">Robot Framework</span>
+          <span class="tag">TestComplete</span>
+          <span class="tag" data-en="Automation Framework Design" data-zh="自動化框架設計">Automation Framework Design</span>
+        </div>
+      </div>
+
+      <div class="toolgroup fade">
+        <p class="qa-k" data-en="Customer engineering" data-zh="客戶工程">Customer engineering</p>
+        <div class="tags tags-flush">
+          <span class="tag">VIP Escalation</span>
+          <span class="tag">Hotfix Validation</span>
+          <span class="tag">Incident Response</span>
+          <span class="tag" data-en="Beta Program Management" data-zh="Beta 計畫管理">Beta Program Management</span>
+          <span class="tag" data-en="Technical Training" data-zh="教育訓練">Technical Training</span>
+        </div>
+      </div>
+
+      <div class="toolgroup fade">
+        <p class="qa-k" data-en="Languages &amp; platforms" data-zh="語言與平台">Languages &amp; platforms</p>
+        <div class="tags tags-flush">
+          <span class="tag">Python</span>
+          <span class="tag">Java</span>
+          <span class="tag">C</span>
+          <span class="tag">SQL</span>
+          <span class="tag">XML</span>
+          <span class="tag">LDAP / Directories</span>
+          <span class="tag">Azure</span>
+          <span class="tag">DLP SDK</span>
+          <span class="tag">API Security</span>
+        </div>
       </div>
     </div>
   </section>
