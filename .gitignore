@@ -1,2 +1,4 @@
 .claude-flow/
 *.log
+.pytest_cache/
+__pycache__/
