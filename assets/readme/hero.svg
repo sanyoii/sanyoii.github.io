@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="360" viewBox="0 0 1200 360"
+     role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">sanyoii.github.io — a zero-dependency bilingual portfolio with a twelve-check test suite</title>
+  <desc id="hero-desc">Left: the repository name, a one-line description, and the toolchain. Right: the twelve automated checks from TESTPLAN.md, listed in two columns, with one documented accepted exception noted below.</desc>
+
+  <defs>
+    <style>
+      .u { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .m { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" rx="12" fill="#0d0d0e"/>
+
+  <!-- title block -->
+  <g id="title-block" transform="translate(56 66)">
+    <text class="m" x="0" y="0" font-size="18" letter-spacing="2.4" fill="#e68541">PERSONAL SITE · NO BUILD STEP</text>
+
+    <text class="u" x="0" y="76" font-size="62" font-weight="300" fill="#efeae1">sanyoii.github.io</text>
+
+    <rect x="0" y="104" width="56" height="2" fill="#e68541"/>
+
+    <text class="u" x="0" y="152" font-size="27" font-weight="400" fill="#efeae1">One HTML file. Two languages.</text>
+    <text class="u" x="0" y="188" font-size="27" font-weight="400" fill="#8a847c">Twelve tests that say so.</text>
+
+    <text class="m" x="0" y="240" font-size="18" fill="#8a847c">pytest · Playwright · Chromium · CI on push to main</text>
+  </g>
+
+  <!-- real project material: the test inventory from TESTPLAN.md -->
+  <g id="test-inventory" transform="translate(648 52)">
+    <text class="m" x="0" y="0" font-size="18" letter-spacing="1.8" fill="#8a847c">TEST INVENTORY</text>
+    <line x1="0" y1="16" x2="496" y2="16" stroke="#2a2724" stroke-width="1"/>
+
+    <!-- column 1 -->
+    <g transform="translate(0 48)">
+      <g><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Bilingual pairing</text></g>
+      <g transform="translate(0 38)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Phone not published</text></g>
+      <g transform="translate(0 76)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Doctype + one h1</text></g>
+      <g transform="translate(0 114)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">URL allowlist</text></g>
+      <g transform="translate(0 152)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Zero network calls</text></g>
+      <g transform="translate(0 190)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Standards mode</text></g>
+    </g>
+
+    <!-- column 2 -->
+    <g transform="translate(264 48)">
+      <g><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">No h-overflow</text></g>
+      <g transform="translate(0 38)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Language persists</text></g>
+      <g transform="translate(0 76)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Hero fold budget</text></g>
+      <g transform="translate(0 114)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Mobile overlap</text></g>
+      <g transform="translate(0 152)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">Reduced motion</text></g>
+      <g transform="translate(0 190)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">404 noindex</text></g>
+    </g>
+
+    <line x1="0" y1="266" x2="496" y2="266" stroke="#2a2724" stroke-width="1"/>
+    <text class="m" x="0" y="290" font-size="18" fill="#8a847c">1 accepted exception, documented in TESTPLAN.md</text>
+  </g>
+</svg>
