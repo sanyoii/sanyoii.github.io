@@ -15,6 +15,9 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 BASE = Path(__file__).parent
 INDEX = BASE / "index.html"
 TARGET = BASE / "assets" / "og-card.png"
@@ -28,8 +31,8 @@ SCRAPE = """
     if (!node) throw new Error('missing element: ' + sel);
     return node.textContent.trim().replace(/\\s+/g, ' ');
   };
-  // the card's supporting paragraph is the Track record section intro
-  const lede = document.querySelector('#track .sec-sub');
+  // the card's supporting paragraph is the Web3 impact section intro
+  const lede = document.querySelector('#impact .sec-sub');
   const stats = [...document.querySelectorAll('.stats > *')].map((cell) => ({
     n: cell.querySelector('.stat-n').textContent.trim(),
     l: cell.querySelector('.stat-l').textContent.trim(),
@@ -49,6 +52,7 @@ SCRAPE = """
     rule: tokens.getPropertyValue('--rule').trim(),
     accent: tokens.getPropertyValue('--accent').trim(),
     sans: tokens.getPropertyValue('--sans').trim(),
+    display: tokens.getPropertyValue('--display').trim(),
     mono: tokens.getPropertyValue('--mono').trim(),
   };
 }
@@ -73,10 +77,10 @@ def card_html(d: dict) -> str:
   }}
   .eyebrow {{ font-family: {d['mono']}; font-size: 15px; letter-spacing: 3.4px;
              text-transform: uppercase; color: {esc['faint']}; }}
-  h1 {{ font-size: 78px; font-weight: 300; letter-spacing: -1.5px;
+  h1 {{ font-family: {d['display']}; font-size: 78px; font-weight: 500; letter-spacing: -2.5px;
        line-height: 1.02; margin: 20px 0 10px; }}
-  .role {{ font-size: 25px; font-weight: 500; color: {esc['accent']}; }}
-  .tagline {{ font-size: 39px; font-weight: 300; line-height: 1.28;
+  .role {{ font-size: 25px; font-weight: 500; color: {esc['dim']}; }}
+  .tagline {{ font-family: {d['display']}; font-size: 39px; font-weight: 400; line-height: 1.2;
              margin-top: 22px; max-width: 940px; }}
   .rule {{ width: 62px; height: 3px; background: {esc['accent']}; margin: 28px 0 0;
           flex: none; }}
@@ -117,6 +121,7 @@ with sync_playwright() as play:
     overflow = card.evaluate("() => document.body.scrollHeight - 630")
     card.screenshot(path=str(out))
     browser.close()
+    draft.unlink(missing_ok=True)
 
 print(f"role    : {data['role']}")
 print(f"stats   : {', '.join(s['n'] for s in data['stats'])}")

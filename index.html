@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>William Lu - QA Leadership and Customer Support</title>
-<meta name="description" content="QA leader with 12 years across enterprise security, automation, and fintech, who builds his own AI tooling. Fully remote, 4+ hours European overlap.">
-<meta property="og:title" content="William Lu - QA Leadership and Customer Support">
-<meta property="og:description" content="QA leader with 12 years across enterprise security, automation, and fintech, who builds his own AI tooling. Fully remote, 4+ hours European overlap.">
+<title>William Lu — Senior Web3 QA Engineer</title>
+<meta name="description" content="Senior QA engineer with crypto-exchange, fintech, automation, and enterprise-security experience. I find the product risks that become financial loss.">
+<meta property="og:title" content="William Lu — Senior Web3 QA Engineer">
+<meta property="og:description" content="Senior QA engineer with crypto-exchange, fintech, automation, and enterprise-security experience. I find the product risks that become financial loss.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sanyoii.github.io/">
 <meta property="og:image" content="https://sanyoii.github.io/assets/og-card.png">
@@ -17,18 +17,21 @@
 
 <style>
   :root {
-    --bg: #0c0c0d;
-    --bg-2: #141416;
-    --ink: #f0eae1;
-    --ink-dim: #a09a92;
-    --ink-faint: #6d6862;
-    --rule: #2a2a2d;
-    --accent: #e8853f;
-    /* single accent, three intensities. no second hue anywhere on the page. */
-    --accent-wash: rgba(232, 133, 63, 0.09);
-    --accent-hair: rgba(232, 133, 63, 0.22);
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
-            "PingFang TC", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+    --bg: #091016;
+    --bg-2: #101922;
+    --bg-3: #15212b;
+    --ink: #edf1ed;
+    --ink-dim: #aab4b1;
+    --ink-faint: #6f7d7b;
+    --rule: rgba(184, 203, 195, 0.14);
+    --accent: #91b5a5;
+    --accent-strong: #b7d1c5;
+    --accent-wash: rgba(145, 181, 165, 0.09);
+    --accent-hair: rgba(145, 181, 165, 0.24);
+    --sans: "Aptos", "Segoe UI Variable", "Segoe UI", "Noto Sans TC",
+            "PingFang TC", "Microsoft JhengHei", Helvetica, Arial, sans-serif;
+    --display: "Iowan Old Style", "Palatino Linotype", "Noto Serif TC",
+               Georgia, serif;
     --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
             "Liberation Mono", monospace;
   }
@@ -43,7 +46,10 @@
 
   body {
     margin: 0;
-    background: var(--bg);
+    background:
+      radial-gradient(circle at 83% 8%, rgba(145, 181, 165, 0.08), transparent 27rem),
+      radial-gradient(circle at 10% 34%, rgba(73, 105, 118, 0.08), transparent 30rem),
+      var(--bg);
     color: var(--ink);
     font-family: var(--sans);
     font-size: 17px;
@@ -70,25 +76,65 @@
 
   .wrap {
     width: 100%;
-    max-width: 1120px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
-  /* every corner on this page is square. one shape system, no exceptions. */
+  .skip-link {
+    position: fixed;
+    top: 10px;
+    left: 12px;
+    z-index: 100;
+    transform: translateY(-160%);
+    background: var(--ink);
+    color: var(--bg);
+    padding: 10px 14px;
+    text-decoration: none;
+  }
+  .skip-link:focus { transform: none; }
+
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    border-bottom: 1px solid var(--rule);
+    background: rgba(9, 16, 22, 0.82);
+    backdrop-filter: blur(18px) saturate(130%);
+  }
+  .nav-inner {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .brand {
+    font-family: var(--display);
+    font-size: 1.08rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 24px; }
+  .nav-links { display: flex; align-items: center; gap: 22px; }
+  .nav-links a {
+    color: var(--ink-dim);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
 
   /* ---------- language toggle ---------- */
   .lang {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 50;
+    position: static;
     display: flex;
     align-items: center;
     gap: 0;
-    background: rgba(12, 12, 13, 0.82);
+    background: rgba(145, 181, 165, 0.06);
     border: 1px solid var(--rule);
-    border-radius: 0;
+    border-radius: 999px;
     padding: 4px;
     font-family: var(--mono);
     font-size: 12px;
@@ -105,20 +151,22 @@
   /* ---------- shared section ---------- */
   section { border-top: 1px solid var(--rule); }
 
-  .sec-pad { padding: 96px 0; }
+  .sec-pad { padding: 112px 0 124px; }
 
   h2 {
-    font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+    font-family: var(--display);
+    font-size: clamp(2rem, 4vw, 3.15rem);
     line-height: 1.15;
     letter-spacing: -0.02em;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0 0 12px;
   }
 
   h2.has-rule {
-    padding-top: 22px;
-    border-top: 2px solid var(--accent);
-    display: inline-block;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent);
+    display: block;
+    max-width: 8.5em;
     margin-bottom: 44px;
   }
 
@@ -131,14 +179,14 @@
   h2.has-rule + .sec-sub { margin-top: -30px; }
 
   /* ---------- hero: asymmetric split ---------- */
-  .hero { padding-top: 88px; padding-bottom: 80px; }
+  .hero { padding-top: 72px; padding-bottom: 88px; }
 
   .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
-    gap: 56px;
-    align-items: end;
-    margin-bottom: 40px;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    gap: clamp(42px, 7vw, 92px);
+    align-items: center;
+    margin-bottom: 34px;
   }
 
   .eyebrow {
@@ -146,32 +194,34 @@
     font-size: 12.5px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ink-dim);
+    color: var(--accent);
     margin: 0 0 20px;
   }
 
   h1 {
-    font-size: clamp(2.6rem, 8vw, 4.6rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
-    font-weight: 600;
-    margin: 0 0 10px;
+    font-family: var(--display);
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    font-weight: 500;
+    margin: 0 0 18px;
   }
 
   .role {
     font-size: clamp(1.05rem, 2.4vw, 1.3rem);
     font-weight: 500;
     letter-spacing: -0.01em;
-    color: var(--accent);
-    margin: 0 0 24px;
+    color: var(--ink-dim);
+    margin: 0 0 30px;
   }
 
   .tagline {
-    font-size: clamp(1.5rem, 4.4vw, 2.5rem);
-    line-height: 1.22;
-    letter-spacing: -0.02em;
+    font-family: var(--display);
+    font-size: clamp(1.65rem, 3.8vw, 2.75rem);
+    line-height: 1.13;
+    letter-spacing: -0.035em;
     font-weight: 400;
-    max-width: 30ch;
+    max-width: 25ch;
     margin: 0;
     text-wrap: pretty;
   }
@@ -189,8 +239,8 @@
   .tagline::after {
     content: "";
     display: block;
-    width: 56px;
-    height: 2px;
+    width: 88px;
+    height: 1px;
     background: var(--accent);
     margin-top: 22px;
   }
@@ -199,10 +249,14 @@
   .stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 26px 20px;
-    background: var(--bg-2);
-    border: 1px solid var(--rule);
-    padding: 24px;
+    gap: 30px 22px;
+    background:
+      linear-gradient(145deg, rgba(145, 181, 165, 0.08), transparent 58%),
+      var(--bg-2);
+    border: 1px solid var(--accent-hair);
+    border-radius: 24px 24px 6px 24px;
+    padding: 30px;
+    box-shadow: 0 28px 70px rgba(0, 13, 20, 0.26), inset 0 1px rgba(255,255,255,0.03);
   }
   .stat-n {
     display: block;
@@ -211,7 +265,7 @@
     font-size: clamp(1.7rem, 3.2vw, 2.3rem);
     line-height: 1;
     letter-spacing: -0.03em;
-    color: var(--accent);
+    color: var(--accent-strong);
   }
   .stat-l {
     display: block;
@@ -226,9 +280,9 @@
     font-size: 14px;
     line-height: 1.55;
     color: var(--ink-dim);
-    border-left: 4px solid var(--accent);
+    border-left: 1px solid var(--accent);
     padding-left: 16px;
-    max-width: 68ch;
+    max-width: 72ch;
     margin: 0 0 26px;
   }
   /* same `ch` problem here: measure the Chinese line in em so it sets in two
@@ -244,10 +298,11 @@
     padding: 13px 26px;
     white-space: nowrap;
     border: 1px solid var(--accent);
+    border-radius: 3px 14px 3px 14px;
     transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
   }
-  .btn-primary { background: var(--accent); color: #17110b; font-weight: 500; }
-  .btn-primary:hover { background: #f39a58; border-color: #f39a58; }
+  .btn-primary { background: var(--accent); color: #07110e; font-weight: 600; }
+  .btn-primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); transform: translateY(-2px); }
   .btn-ghost { color: var(--ink); border-color: var(--rule); }
   .btn-ghost:hover { border-color: var(--ink-faint); }
   .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -259,6 +314,10 @@
     grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
     gap: 52px;
     align-items: start;
+    padding: 34px;
+    background: linear-gradient(115deg, rgba(145, 181, 165, 0.055), transparent 52%);
+    border: 1px solid var(--rule);
+    border-radius: 4px 28px 4px 4px;
   }
   .proof + .proof {
     margin-top: 52px;
@@ -298,9 +357,10 @@
     gap: 20px;
   }
   .cell {
-    background: var(--bg-2);
+    background: linear-gradient(160deg, rgba(255,255,255,0.018), transparent 45%), var(--bg-2);
     border: 1px solid var(--rule);
-    padding: 28px;
+    border-radius: 4px 26px 4px 4px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 22px;
@@ -360,6 +420,7 @@
     letter-spacing: 0.05em;
     color: var(--ink-dim);
     border: 1px solid var(--rule);
+    border-radius: 999px;
     padding: 4px 10px;
   }
 
@@ -427,12 +488,18 @@
   .kit {
     background: var(--bg-2);
     border: 1px solid var(--rule);
+    border-radius: 4px 22px 4px 4px;
     padding: 26px;
   }
   .kit-1 { grid-column: span 7; }
   .kit-2 { grid-column: span 5; }
   .kit-3 { grid-column: span 5; }
   .kit-4 { grid-column: span 7; }
+  .kit-5 {
+    grid-column: span 12;
+    background: linear-gradient(115deg, var(--accent-wash), transparent 60%), var(--bg-2);
+    border-color: var(--accent-hair);
+  }
   .kit-h {
     font-size: 0.98rem;
     font-weight: 600;
@@ -443,6 +510,7 @@
 
   /* ---------- contact: oversized reach block ---------- */
   .contact-line {
+    font-family: var(--display);
     font-size: clamp(1.5rem, 4.2vw, 2.6rem);
     line-height: 1.2;
     letter-spacing: -0.025em;
@@ -514,7 +582,7 @@
   /* ---------- responsive ---------- */
   @media (max-width: 980px) {
     .cell-a, .cell-b { grid-column: span 12; }
-    .kit-1, .kit-2, .kit-3, .kit-4 { grid-column: span 12; }
+    .kit-1, .kit-2, .kit-3, .kit-4, .kit-5 { grid-column: span 12; }
   }
 
   @media (max-width: 860px) {
@@ -530,7 +598,7 @@
   @media (max-width: 620px) {
     body { font-size: 16px; }
     .wrap { padding: 0 20px; }
-    .hero { padding-top: 88px; padding-bottom: 64px; }
+    .hero { padding-top: 48px; padding-bottom: 64px; }
     .sec-pad { padding: 68px 0; }
     .cell { padding: 22px; }
     .kit { padding: 22px; }
@@ -562,6 +630,9 @@
     .hero-grid { gap: 22px; margin-bottom: 20px; }
     .stats { padding: 16px; gap: 16px 18px; }
     .avail { margin-bottom: 16px; }
+    .nav-links { display: none; }
+    .nav-actions { margin-left: auto; }
+    .brand { font-size: 1rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -588,32 +659,47 @@
 </head>
 <body>
 
-<button class="lang" id="langBtn" type="button" aria-label="Switch language / 切換語言">
-  <span id="langEn" class="on">EN</span><span class="sep">/</span><span id="langZh">中</span>
-</button>
+<a class="skip-link" href="#main" data-en="Skip to content" data-zh="跳到主要內容">Skip to content</a>
 
-<header class="hero wrap">
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="William Lu home"><span class="brand-mark">W/</span> William Lu</a>
+    <div class="nav-actions">
+      <div class="nav-links">
+        <a href="#impact" data-en="Web3 impact" data-zh="Web3 戰績">Web3 impact</a>
+        <a href="#work" data-en="Systems" data-zh="作品">Systems</a>
+        <a href="#capabilities" data-en="Capabilities" data-zh="能力">Capabilities</a>
+        <a href="#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      </div>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language / 切換語言">
+        <span id="langEn" class="on">EN</span><span class="sep">/</span><span id="langZh">中</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
   <div class="hero-grid">
     <div class="hero-lead">
       <p class="eyebrow fade"
-         data-en="Remote · Taiwan (UTC+8)"
-         data-zh="全遠端 · 台灣（UTC+8）">Remote · Taiwan (UTC+8)</p>
+         data-en="Web3 product quality · Taiwan (UTC+8)"
+         data-zh="Web3 產品品質 · 台灣（UTC+8）">Web3 product quality · Taiwan (UTC+8)</p>
 
       <h1 class="fade">William Lu</h1>
 
       <p class="role fade"
-         data-en="Senior QA and Customer Support Team Lead"
-         data-zh="資深 QA 暨客戶技術支援團隊負責人">Senior QA and Customer Support Team Lead</p>
+         data-en="Senior QA Engineer · Crypto, fintech and security"
+         data-zh="資深 QA 工程師 · 加密金融、Fintech、資安">Senior QA Engineer · Crypto, fintech and security</p>
 
       <p class="tagline fade"
-         data-en="I lead QA teams, catch the bugs that cost money, and build my own AI tooling."
-         data-zh="我帶 QA 團隊、抓會讓公司賠錢的 bug，也自己動手做 AI 工具。">I lead QA teams, catch the bugs that cost money, and build my own AI tooling.</p>
+         data-en="I test systems where one logic error can become a financial loss."
+         data-zh="我測的是一個邏輯錯誤，就會變成真實損失的系統。">I test systems where one logic error can become a financial loss.</p>
     </div>
 
     <div class="stats fade">
       <div>
-        <span class="stat-n">12+</span>
-        <span class="stat-l" data-en="years in the field" data-zh="年工作資歷">years in the field</span>
+        <span class="stat-n">$300M+</span>
+        <span class="stat-l" data-en="daily exchange volume I tested at BTSE" data-zh="曾負責測試的 BTSE 日交易量">daily exchange volume I tested at BTSE</span>
       </div>
       <div>
         <span class="stat-n">100k+</span>
@@ -624,31 +710,31 @@
         <span class="stat-l" data-en="support volume at Trend Micro" data-zh="Trend Micro 支援量">support volume at Trend Micro</span>
       </div>
       <div>
-        <span class="stat-n">−40%</span>
-        <span class="stat-l" data-en="test-env setup time at ASML" data-zh="ASML 測試環境建置工時">test-env setup time at ASML</span>
+        <span class="stat-n">12+</span>
+        <span class="stat-l" data-en="years across QA and technical support" data-zh="年 QA 與技術支援經驗">years across QA and technical support</span>
       </div>
     </div>
   </div>
 
   <p class="avail fade"
-     data-en="Open to QA Manager, Senior QA Engineer, or Senior Customer Support Engineer roles. Fully remote, with 4+ hours of overlap with European time. Available two weeks from offer."
-     data-zh="正在找 QA Manager、Senior QA Engineer、Senior Customer Support Engineer 職缺。全遠端，可配合歐洲時區重疊 4 小時以上，收到 Offer 後兩週內可到職。">Open to QA Manager, Senior QA Engineer, or Senior Customer Support Engineer roles. Fully remote, with 4+ hours of overlap with European time. Available two weeks from offer.</p>
+     data-en="At BTSE, I found critical defects in futures pricing and referral commissions. Now focused on Web3 QA, product quality, and technical support roles. Remote from Taiwan, with 4+ hours of European overlap."
+     data-zh="在 BTSE，我找出期貨定價與推薦佣金的重大邏輯錯誤。現在專注尋找 Web3 QA、Product Quality 與 Technical Support 職位。台灣遠端，可配合歐洲時區重疊 4 小時以上。">At BTSE, I found critical defects in futures pricing and referral commissions. Now focused on Web3 QA, product quality, and technical support roles. Remote from Taiwan, with 4+ hours of European overlap.</p>
 
   <div class="ctas fade">
-    <a class="btn btn-primary" href="#track" data-en="See the work" data-zh="看我做過什麼">See the work</a>
-    <a class="btn btn-ghost" href="#contact" data-en="Get in touch" data-zh="聯絡我">Get in touch</a>
+    <a class="btn btn-primary" href="#impact" data-en="View Web3 impact" data-zh="看 Web3 戰績">View Web3 impact</a>
+    <a class="btn btn-ghost" href="#contact" data-en="Discuss a role" data-zh="聯絡我">Discuss a role</a>
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <!-- ============ PROOF ============ -->
-  <section class="sec-pad" id="track">
+  <section class="sec-pad" id="impact">
     <div class="wrap">
-      <h2 class="fade has-rule" data-en="Track record" data-zh="具體戰績">Track record</h2>
+      <h2 class="fade has-rule" data-en="Quality where failure has consequences" data-zh="失誤有代價的品質工作">Quality where failure has consequences</h2>
       <p class="sec-sub fade"
-         data-en="Twelve years across enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. The engineer VIP customers get escalated to, and the project lead who ran a six-person remote team for ASML."
-         data-zh="12 年待過企業資安、半導體自動化，也待過日交易量 3 億美元的加密交易所。VIP 客戶的問題升上來是我接，替 ASML 帶 6 人遠端團隊的也是我。">Twelve years across enterprise security, semiconductor automation, and a crypto exchange moving $300M a day. The engineer VIP customers get escalated to, and the project lead who ran a six-person remote team for ASML.</p>
+         data-en="My work sits at the intersection of product risk, technical investigation, and operational response—from crypto exchange logic to enterprise security incidents."
+         data-zh="我的工作落在產品風險、技術調查與事故處理的交界，從加密交易所的計算邏輯到企業資安事件都是如此。">My work sits at the intersection of product risk, technical investigation, and operational response—from crypto exchange logic to enterprise security incidents.</p>
 
       <article class="proof fade">
         <div class="proof-id">
@@ -659,8 +745,8 @@
              data-zh="資深 QA 工程師（技術解決方案）· 加密貨幣交易所">Senior QA Engineer, Technical Solutions · crypto exchange</p>
         </div>
         <p class="proof-body"
-           data-en="Identified critical logic errors in futures pricing and referral commission calculations on a platform moving over $300M a day. On an exchange, that class of defect is money straight out the door."
-           data-zh="在日交易量超過 3 億美元的交易平台上，抓出期貨定價與推薦佣金計算的重大邏輯錯誤。在交易所，這種等級的缺陷就是直接把錢賠出去。">Identified critical logic errors in futures pricing and referral commission calculations on a platform moving over $300M a day. On an exchange, that class of defect is money straight out the door.</p>
+           data-en="Found critical logic errors in futures pricing and referral-commission calculations on an exchange moving more than $300M per day. These were not cosmetic defects; they sat directly in financially sensitive product flows."
+           data-zh="在日交易量超過 3 億美元的交易平台上，找出期貨定價與推薦佣金計算的重大邏輯錯誤。這不是介面瑕疵，而是位在直接影響資金的產品流程裡。">Found critical logic errors in futures pricing and referral-commission calculations on an exchange moving more than $300M per day. These were not cosmetic defects; they sat directly in financially sensitive product flows.</p>
       </article>
 
       <article class="proof fade">
@@ -694,10 +780,10 @@
   <!-- ============ WORK ============ -->
   <section class="sec-pad" id="work">
     <div class="wrap">
-      <h2 class="fade has-rule" data-en="Things I built" data-zh="我做的東西">Things I built</h2>
+      <h2 class="fade has-rule" data-en="Systems I build" data-zh="我建立的系統">Systems I build</h2>
       <p class="sec-sub fade"
-         data-en="Personal tools I actually use, and proof I can design, build, and ship AI-assisted software myself. Each one says what problem it solves and how."
-         data-zh="都是自己會用到才做的工具，也是我能自己設計、開發、出貨 AI 軟體的證明。每一個都寫了解決什麼問題、怎麼做。">Personal tools I actually use, and proof I can design, build, and ship AI-assisted software myself. Each one says what problem it solves and how.</p>
+         data-en="I build tools around real constraints: traceable data, explicit guardrails, and workflows another person can verify."
+         data-zh="我做工具時先處理真實限制：資料可追溯、規則寫清楚，而且別人能接手驗證。">I build tools around real constraints: traceable data, explicit guardrails, and workflows another person can verify.</p>
 
       <div class="bento">
 
@@ -795,7 +881,7 @@
   </section>
 
   <!-- ============ TIMELINE ============ -->
-  <section class="sec-pad">
+  <section class="sec-pad" id="capabilities">
     <div class="wrap">
       <h2 class="fade has-rule" data-en="Where I've been" data-zh="經歷">Where I've been</h2>
 
@@ -841,7 +927,7 @@
   <!-- ============ TOOLBOX ============ -->
   <section class="sec-pad">
     <div class="wrap">
-      <h2 class="fade has-rule" data-en="Toolbox" data-zh="技術能力">Toolbox</h2>
+      <h2 class="fade has-rule" data-en="Capabilities" data-zh="核心能力">Capabilities</h2>
 
       <div class="kitgrid">
         <div class="kit kit-1 fade">
@@ -892,6 +978,18 @@
             <span class="tag">API Security</span>
           </div>
         </div>
+
+        <div class="kit kit-5 fade">
+          <p class="kit-h" data-en="Web3 and financial product quality" data-zh="Web3 與金融產品品質">Web3 and financial product quality</p>
+          <div class="tags">
+            <span class="tag" data-en="Crypto Exchange QA" data-zh="加密交易所 QA">Crypto Exchange QA</span>
+            <span class="tag" data-en="Futures Pricing Logic" data-zh="期貨定價邏輯">Futures Pricing Logic</span>
+            <span class="tag" data-en="Commission Logic" data-zh="佣金計算邏輯">Commission Logic</span>
+            <span class="tag" data-en="Financial Risk Testing" data-zh="金融風險測試">Financial Risk Testing</span>
+            <span class="tag" data-en="Technical Solutions" data-zh="技術解決方案">Technical Solutions</span>
+            <span class="tag" data-en="Evidence-led Investigation" data-zh="證據導向調查">Evidence-led Investigation</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -900,8 +998,8 @@
   <section class="sec-pad" id="contact">
     <div class="wrap">
       <p class="contact-line fade"
-         data-en="Hiring for QA management, senior QA, or senior customer support? Tell me what's breaking."
-         data-zh="在找 QA Manager、Senior QA Engineer 或 Senior Customer Support Engineer？告訴我你們現在什麼東西壞了。">Hiring for QA management, senior QA, or senior customer support? Tell me what's breaking.</p>
+         data-en="Building a Web3 product where correctness, trust, and money meet? Tell me what must not fail."
+         data-zh="你正在做一個正確性、信任與資金交會的 Web3 產品？告訴我什麼絕對不能出錯。">Building a Web3 product where correctness, trust, and money meet? Tell me what must not fail.</p>
 
       <div class="reach fade">
         <a class="reach-a" href="mailto:sanyoii@gmail.com">sanyoii@gmail.com<span></span></a>
@@ -916,8 +1014,8 @@
 <footer>
   <div class="wrap foot">
     <p>© 2026 William Lu</p>
-    <p data-en="Built as a single HTML file, no frameworks."
-       data-zh="單一 HTML 檔，沒有用框架。">Built as a single HTML file, no frameworks.</p>
+    <p data-en="Designed, written, tested, and shipped as one dependency-free file."
+       data-zh="設計、文案、測試與發布都收在一個零依賴檔案裡。">Designed, written, tested, and shipped as one dependency-free file.</p>
   </div>
 </footer>
 
@@ -942,12 +1040,12 @@
       }
       document.documentElement.setAttribute('lang', key === 'zh' ? 'zh-Hant' : 'en');
       document.title = key === 'zh'
-        ? 'William Lu — QA 管理與客戶技術支援'
-        : 'William Lu - QA Leadership and Customer Support';
+        ? 'William Lu — 資深 Web3 QA 工程師'
+        : 'William Lu — Senior Web3 QA Engineer';
       var md = document.querySelector('meta[name="description"]');
       if (md) md.setAttribute('content', key === 'zh'
-        ? '12 年 QA 管理與客戶技術支援經驗，橫跨企業資安、自動化與金融科技，自己動手做 AI 工具。全遠端，可配合歐洲時區。'
-        : 'QA leader with 12 years across enterprise security, automation, and fintech, who builds his own AI tooling. Fully remote, 4+ hours European overlap.');
+        ? '資深 QA 工程師，具加密交易所、Fintech、自動化與企業資安經驗，專注找出會造成金融損失的產品風險。'
+        : 'Senior QA engineer with crypto-exchange, fintech, automation, and enterprise-security experience. I find the product risks that become financial loss.');
       enTab.className = key === 'en' ? 'on' : '';
       zhTab.className = key === 'zh' ? 'on' : '';
       btn.setAttribute('aria-label',

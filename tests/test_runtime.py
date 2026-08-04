@@ -65,10 +65,10 @@ def test_language_choice_updates_metadata_and_survives_reload(browser, site_url)
     page.locator("#langBtn").click()
 
     assert page.locator("html").get_attribute("lang") == "zh-Hant"
-    assert page.title() == "William Lu — QA 管理與客戶技術支援"
+    assert page.title() == "William Lu — 資深 Web3 QA 工程師"
     assert page.locator('meta[name="description"]').get_attribute("content") == (
-        "12 年 QA 管理與客戶技術支援經驗，橫跨企業資安、自動化與金融科技，"
-        "自己動手做 AI 工具。全遠端，可配合歐洲時區。"
+        "資深 QA 工程師，具加密交易所、Fintech、自動化與企業資安經驗，"
+        "專注找出會造成金融損失的產品風險。"
     )
     image_alts = page.locator("img[data-alt-zh]").evaluate_all(
         "(images) => images.map((image) => ({"

@@ -9,8 +9,8 @@
   <a href="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/tests.yml"><img src="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
 </p>
 
-Personal site for **William Lu** — Senior QA and Customer Support Team Lead, working
-remote from Taiwan (UTC+8).
+Personal site for **William Lu** — Senior QA Engineer focused on Web3 product
+quality, fintech risk, and technical support, working remote from Taiwan (UTC+8).
 
 The site itself is one hand-written `index.html`. No framework, no build step, and no
 external requests at runtime. It is bilingual (English / 繁體中文) through paired

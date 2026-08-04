@@ -9,7 +9,7 @@
   <a href="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/tests.yml"><img src="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
 </p>
 
-這是 **William Lu**（呂理瑋）的個人網站——資深 QA 與客戶技術支援團隊負責人，於台灣（UTC+8）遠端工作。
+這是 **William Lu**（呂理瑋）的個人網站——專注 Web3 產品品質、Fintech 風險與技術支援的資深 QA 工程師，於台灣（UTC+8）遠端工作。
 
 網站本體是一個手寫的 `index.html`。沒有框架、沒有建置流程、執行期零外部請求。
 雙語（English／繁體中文）靠成對的 `data-en`／`data-zh` 屬性實現，而不是路由層或翻譯函式庫。
