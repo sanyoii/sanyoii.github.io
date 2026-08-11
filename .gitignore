@@ -2,10 +2,12 @@
 *.log
 .pytest_cache/
 __pycache__/
+.venv/
 
 # Private career working records; publish only sanitized copies under /career.
 /MASTER_CAREER_TIMELINE.md
 /PROJECT_MEMORY.md
 /QUANTIFIED_ACHIEVEMENT_LEDGER.md
 /CLAIM_VERIFICATION_SHEET.md
+/STAR_STORY_BANK.md
 /handoff/

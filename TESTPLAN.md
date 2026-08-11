@@ -64,7 +64,13 @@ Chinese `.avail`, plus the Chinese `.ctas`, to remain within the viewport.
 Local:
 
 ```text
-C:/Python314/python.exe -m pytest tests/ -v
+# One-time setup from the repository root
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --requirement tests\requirements.txt
+.\.venv\Scripts\python.exe -m playwright install chromium
+
+# Repeatable test execution with a machine-readable result
+.\.venv\Scripts\python.exe -m pytest tests\ -v --junitxml=test-records\pytest-results.xml
 ```
 
 CI runs on `ubuntu-latest`, installs the pinned Python dependencies and Chromium,
