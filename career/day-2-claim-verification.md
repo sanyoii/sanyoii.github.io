@@ -12,12 +12,13 @@
 | Trend Micro beta programs | Qualitative | `Led large-scale external beta deployments across customer environments.` |
 | Trend Micro support improvement | Qualitative | `Converted recurring escalations into product fixes, standardized validation, and support documentation.` |
 | Trend Micro internal recognition | Optional, accurately scoped | `Received internal Service Engineer Group recognition twice.` |
-| ASML leadership scope | Allowed | `Led six automation engineers in a fully remote, globally distributed engagement.` |
-| ASML automation impact | Qualitative | `Streamlined repeatable test-environment deployment and expanded regression coverage through automation.` |
+| ASML leadership scope | Allowed | `Led the ASML-side STA team of six Zealogics Automation Engineers, maintained Jira Wiki evidence for annual reviews, created Test Case, system-design, and newcomer-onboarding documentation, and used Jira Filters with JQL for delivery reporting.` |
+| ASML team transition | Allowed | `After STA funding ended, documented each engineer's capabilities and arranged work handoffs while coordinating with my direct manager; the Engineering Head and HR made the final placement decisions.` |
+| ASML automation impact | Qualitative | `Improved an existing automation architecture, modularized repeated Test Case behavior, and proposed partial-automation solutions when full automation was impractical.` |
 | ASML client enablement | Qualitative | `Delivered TOI and technical advisory to client-side engineering teams.` |
 | BTSE defect discovery | Sanitized | `Identified and escalated three high-severity financial-logic defects across trading, referral-commission, and conversion flows.` |
 | BTSE platform scale | No undated number | `Worked on a high-volume centralized crypto exchange.` |
-| European collaboration | No fixed overlap duration | `Available for remote collaboration from Taiwan across Taiwan-to-Europe time zones.` |
+| European collaboration | Allowed within the confirmed schedule | `Available for remote collaboration on weekdays from 09:00 to 24:00 Taiwan time, including 4+ hours of European overlap.` |
 
 ## Prohibited transformations
 
@@ -28,7 +29,7 @@
 - Do not change `Senior Automation Test Engineer` into `Solutions Engineer`.
 - Do not substitute a current exchange-volume snapshot for historical employment-period evidence.
 - Do not describe confidential defect discovery as a verified amount of loss prevented.
-- Do not publish exact timezone overlap without an agreed sustainable work schedule.
+- Do not expand the confirmed weekday 09:00–24:00 Taiwan schedule into 24-hour availability or coverage of every European timezone.
 
 ## Sanitization checklist
 

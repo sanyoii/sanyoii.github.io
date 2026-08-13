@@ -11,7 +11,7 @@
 | May 2010–Jun 2013 | Trend Micro | QA Engineer | Worry-Free Business Security Advanced; Scan、WRS、URL Filtering、WIFI-Advisor、MSA | Owned feature QA, test design, internal beta, and external beta activities; deployed beta builds in customer environments and analyzed logs and telemetry. | Taipei, on-site |
 | Jun 2013–Jul 2014 | Trend Micro | Senior Customer Service Engineer | Worry-Free Business Security Advanced | Led final-escalation work for severe post-release performance issues; provided live troubleshooting, dump analysis, workarounds, and engineering feedback. | Taipei, on-site |
 | Jul 2014–Jan 2023 | Trend Micro | Senior QA Engineer & Senior Customer Service Engineer | DLP SDK for enterprise security products | Served as SEG／QA leader, primary escalation engineer, and owner of hotfix validation, incident response, system／performance testing, and root-cause analysis. | Taipei, on-site |
-| May 2023–Apr 2024 | Zealogics | Project Leader / Senior Automation Test Engineer | ASML HMI eP5; iCDU、MM Flow、ADEL | Led six automation engineers in a globally distributed engagement; coordinated automation delivery, modular deployment, risk, tickets, schedules, documentation, code review, and TOI. | Fully remote |
+| May 2023–Apr 2024 | Zealogics | Project Leader / Senior Automation Test Engineer | ASML HMI eP5; iCDU、MM Flow、ADEL | Led the ASML-side STA team of six Zealogics Automation Engineers, maintained Jira Wiki evidence for annual reviews, created Test Case／system-design and newcomer-onboarding documentation, reported to ASML Management, planned reusable modules, and improved the existing automation architecture. | Fully remote |
 | Sep 2024–Nov 2024 | Nogle／BTSE | Senior QA Engineer | Centralized crypto exchange; wallet-related、Referral／Affiliate、Spot、Futures、Convert flows | Performed manual and E2E Web API testing and escalated high-severity financial-logic defects in sanitized trading, commission, and conversion scenarios. | Taipei, on-site |
 | Feb 2025–Present | Career break | — | Continuing education, personal tools, and Web3 portfolio development | Maintained technical development in AI and software architecture while preparing for a Web3 product-quality transition. | Available for full-time remote work |
 
@@ -20,6 +20,7 @@
 - `Module Owner`、`Internal Beta Owner`、`External Beta Owner`、`SEG Leader` and `QA Leader` describe actual assignments, not separate employer titles.
 - Trend Micro role changes were internal job rotations.
 - At Zealogics, the employment title remains `Project Leader / Senior Automation Test Engineer`; `Solutions Engineer` is not used as a substitute title.
+- `STA` is the ASML-side team name for the Zealogics automation team, not an employment title; a formal full name existed, but it is not remembered and must not be inferred.
 - At Nogle／BTSE, the employment title remains `Senior QA Engineer`; the role is not presented as QA Manager or team lead.
 
 ## Neutral transition language
@@ -38,6 +39,7 @@
 
 - EN: `The client reduced outsourced-software funding, and no suitable internal reassignment was available, so the position was eliminated.`
 - ZH: `客戶縮減軟體外包預算，且當時沒有適合的內部轉調職位，因此職位結束。`
+- Handoff boundary: the user documented each member's capabilities and arranged work handoffs while working with his direct manager; the Engineering Head and HR made final placement decisions, and specific destination teams are not recorded.
 
 ### Nogle／BTSE
 
@@ -52,7 +54,7 @@
 ## Current search boundary
 
 - Fully Remote only.
-- Collaboration across Taiwan through European time zones; no fixed overlap duration is claimed.
+- Available for remote collaboration on weekdays from 09:00 to 24:00 Taiwan time, including 4+ hours of European overlap.
 - Travel up to 25%.
 - Target direction: Web3／Crypto／Fintech QA, Product Quality, and Technical Support roles.
 
