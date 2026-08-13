@@ -478,6 +478,11 @@
     color: var(--ink-dim);
     font-size: 15px;
   }
+  .edu + .edu {
+    margin-top: 12px;
+    padding-top: 0;
+    border-top: 0;
+  }
 
   /* ---------- toolbox: asymmetric panels ---------- */
   .kitgrid {
@@ -520,7 +525,7 @@
   }
   .reach {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     border-top: 1px solid var(--rule);
   }
@@ -919,8 +924,11 @@
       </ol>
 
       <p class="edu fade"
-         data-en="MS and BS, Information Engineering and Computer Science, Feng Chia University"
-         data-zh="逢甲大學 資訊工程 學士、碩士">MS and BS, Information Engineering and Computer Science, Feng Chia University</p>
+         data-en="MS, Information Engineering and Computer Science · Feng Chia University · 2003–2005"
+         data-zh="資訊工程與電腦科學碩士 · 逢甲大學 · 2003–2005">MS, Information Engineering and Computer Science · Feng Chia University · 2003–2005</p>
+      <p class="edu fade"
+         data-en="BS, Information Engineering and Computer Science · Feng Chia University · 1998–2003"
+         data-zh="資訊工程與電腦科學學士 · 逢甲大學 · 1998–2003">BS, Information Engineering and Computer Science · Feng Chia University · 1998–2003</p>
     </div>
   </section>
 
@@ -1005,6 +1013,8 @@
         <a class="reach-a" href="mailto:sanyoii@gmail.com">sanyoii@gmail.com<span></span></a>
         <a class="reach-a" href="https://www.linkedin.com/in/williamlu5405"
            target="_blank" rel="noopener">linkedin.com/in/williamlu5405<span></span></a>
+        <a class="reach-a" href="https://github.com/sanyoii"
+           target="_blank" rel="noopener">github.com/sanyoii<span></span></a>
       </div>
     </div>
   </section>

@@ -46,6 +46,7 @@ def test_external_urls_are_allowlisted(repo_root):
             if not (
                 url.startswith("https://sanyoii.github.io/")
                 or url.startswith("https://www.linkedin.com/")
+                or url.startswith("https://github.com/sanyoii")
                 or url == "http://www.w3.org/2000/svg"
             )
         )
