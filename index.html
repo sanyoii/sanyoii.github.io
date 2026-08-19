@@ -477,18 +477,24 @@
     max-width: 56ch;
   }
 
-  .edu {
-    margin: 44px 0 0;
+  .edu-heading {
+    margin: 44px 0 16px;
     padding-top: 26px;
     border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .edu {
+    margin: 0;
     color: var(--ink-dim);
     font-size: 15px;
   }
   .work-shot--dashboard img { aspect-ratio: 16 / 10; }
   .edu + .edu {
     margin-top: 12px;
-    padding-top: 0;
-    border-top: 0;
   }
 
   /* ---------- toolbox: asymmetric panels ---------- */
@@ -537,7 +543,10 @@
     border-top: 1px solid var(--rule);
   }
   .reach-a {
-    display: block;
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 10px;
     padding: 26px 0 0;
     font-size: clamp(1.05rem, 2.2vw, 1.35rem);
     letter-spacing: -0.01em;
@@ -546,8 +555,15 @@
     color: var(--ink);
     transition: color 0.18s ease;
   }
-  .reach-a span {
+  .reach-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+  }
+  .reach-text { min-width: 0; }
+  .reach-rule {
     display: block;
+    grid-column: 1 / -1;
     width: 100%;
     height: 1px;
     margin-top: 14px;
@@ -557,7 +573,7 @@
     transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .reach-a:hover { color: var(--accent); }
-  .reach-a:hover span, .reach-a:focus-visible span { transform: scaleX(1); }
+  .reach-a:hover .reach-rule, .reach-a:focus-visible .reach-rule { transform: scaleX(1); }
   .reach-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
   /* ---------- footer ---------- */
@@ -656,7 +672,7 @@
       transition-delay: 0ms !important;
     }
     .js .fade { opacity: 1; transform: none; }
-    .reach-a span { transform: scaleX(1); }
+    .reach-rule { transform: scaleX(1); }
   }
 </style>
 
@@ -959,6 +975,7 @@
         </li>
       </ol>
 
+      <h3 class="edu-heading fade" data-en="Education" data-zh="學歷">Education</h3>
       <p class="edu fade"
          data-en="MS, Information Engineering and Computer Science · Feng Chia University · 2003–2005"
          data-zh="資訊工程與電腦科學碩士 · 逢甲大學 · 2003–2005">MS, Information Engineering and Computer Science · Feng Chia University · 2003–2005</p>
@@ -1046,11 +1063,29 @@
          data-zh="你的 Web3 產品同時牽涉正確性、信任和資金嗎？告訴我哪些地方絕對不能出錯。">Building a Web3 product where correctness, trust, and money meet? Tell me what must not fail.</p>
 
       <div class="reach fade">
-        <a class="reach-a" href="mailto:sanyoii@gmail.com">sanyoii@gmail.com<span></span></a>
+        <a class="reach-a" href="mailto:sanyoii@gmail.com">
+          <svg class="reach-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.75 5.25h16.5A1.75 1.75 0 0 1 22 7v10a1.75 1.75 0 0 1-1.75 1.75H3.75A1.75 1.75 0 0 1 2 17V7a1.75 1.75 0 0 1 1.75-1.75Zm16.5 2.08-7.4 5.21a1.5 1.5 0 0 1-1.7 0l-7.4-5.21V17a.25.25 0 0 0 .25.25h16a.25.25 0 0 0 .25-.25V7.33ZM5.4 6.75 12 11.4l6.6-4.65H5.4Z"/>
+          </svg>
+          <span class="reach-text">sanyoii@gmail.com</span>
+          <span class="reach-rule" aria-hidden="true"></span>
+        </a>
         <a class="reach-a" href="https://www.linkedin.com/in/williamlu5405"
-           target="_blank" rel="noopener">linkedin.com/in/williamlu5405<span></span></a>
+           target="_blank" rel="noopener">
+          <svg class="reach-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67v-8.6h2.67V18ZM7 8.23A1.55 1.55 0 1 1 7 5.14a1.55 1.55 0 0 1 0 3.09ZM18.33 18h-2.66v-4.18c0-1-.02-2.28-1.39-2.28-1.39 0-1.6 1.08-1.6 2.2V18h-2.66V9.4h2.55v1.18h.04c.35-.68 1.22-1.4 2.51-1.4 2.69 0 3.19 1.77 3.19 4.07V18Z"/>
+          </svg>
+          <span class="reach-text">linkedin.com/in/williamlu5405</span>
+          <span class="reach-rule" aria-hidden="true"></span>
+        </a>
         <a class="reach-a" href="https://github.com/sanyoii"
-           target="_blank" rel="noopener">github.com/sanyoii<span></span></a>
+           target="_blank" rel="noopener">
+          <svg class="reach-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.57 9.57 0 0 1 12 7.01c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.77c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
+          </svg>
+          <span class="reach-text">github.com/sanyoii</span>
+          <span class="reach-rule" aria-hidden="true"></span>
+        </a>
       </div>
     </div>
   </section>
