@@ -68,7 +68,7 @@ def test_language_choice_updates_metadata_and_survives_reload(browser, site_url)
     assert page.title() == "William Lu — 資深 QA 工程師｜Web3 與加密產品"
     assert page.locator('meta[name="description"]').get_attribute("content") == (
         "資深 QA 工程師，具 BTSE 中心化加密貨幣交易所測試經驗；"
-        "在 Trend Micro 近 13 年經歷中，工作涵蓋資安產品 QA、incident RCA 與 customer engineering。"
+        "在 Trend Micro 近 13 年經歷中，工作涵蓋資安產品 QA、事件 RCA 與客戶工程。"
     )
     image_alts = page.locator("img[data-alt-zh]").evaluate_all(
         "(images) => images.map((image) => ({"
