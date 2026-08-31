@@ -51,3 +51,13 @@ def test_external_urls_are_allowlisted(repo_root):
             )
         )
     assert unexpected == []
+
+
+def test_portfolio_publishes_only_canonical_claim_wording(repo_root):
+    html = (repo_root / "index.html").read_text(encoding="utf-8")
+
+    assert "critical defects" not in html
+    assert "重大邏輯錯誤" not in html
+    assert ">TypeScript</span>" not in html
+    assert "high-severity defects" in html
+    assert "高嚴重度缺陷" in html
