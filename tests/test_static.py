@@ -61,3 +61,10 @@ def test_portfolio_publishes_only_canonical_claim_wording(repo_root):
     assert ">TypeScript</span>" not in html
     assert "high-severity defects" in html
     assert "高嚴重度缺陷" in html
+
+
+def test_contact_urls_display_their_https_scheme(repo_root):
+    html = (repo_root / "index.html").read_text(encoding="utf-8")
+
+    assert '<span class="reach-text">https://www.linkedin.com/in/williamlu5405</span>' in html
+    assert '<span class="reach-text">https://github.com/sanyoii</span>' in html
