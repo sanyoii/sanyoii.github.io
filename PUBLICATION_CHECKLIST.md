@@ -1,24 +1,24 @@
 # Day 16 / Day 20 — Portfolio Controlled Release Checklist
 
-> Status: `Day 16 Production PASS / Day 20 Website release authorized · Pre-push PASS`
+> Status: `Day 20 Website Production PASS · LinkedIn / platforms pending`
 > Audit date: 2026-09-01 (Asia/Taipei)
 > Scope: `index.html`、三份 case studies、公開 Resume、`404.html`、`assets/og-card.png`、GitHub Pages production 與 release／rollback path
 > Canonical content source: `PROFILE_CONTENT_SOURCE.md` (`Frozen v1.2`)
 > Production URL: `https://sanyoii.github.io/`
-> Boundary: Day 16 已完成授權部署與 production verification；Day 20 網站發布已獲授權並在隔離 worktree 執行，LinkedIn／其他平台仍未修改，也未送出表單。
+> Boundary: Day 16 與 Day 20 網站均已完成授權部署與 production verification；LinkedIn／其他平台仍未修改，也未送出表單。
 
 ## 1. Release decision
 
-**Decision: `DAY 20 WEBSITE RELEASE AUTHORIZED / PRE-PUSH PASS`**
+**Decision: `DAY 20 WEBSITE PRODUCTION PASS / PROFILE UPDATES PENDING`**
 
 Day 16 audit 發現的兩個 content blockers 已在 local candidate 修正：
 
 1. Hero 已改為 canonical `high-severity defects`／`高嚴重度缺陷`。
 2. 未取得 verified evidence 的 `TypeScript` badge 已移除。
 
-Day 16 已在取得當次授權後完成部署，最後驗證的 production commit 為 `7870505`。Day 20 website candidate 已將三份 case studies、公開 Resume 與網站互相連結；發布前須在隔離 worktree 通過完整 Portfolio suite 與 staged-diff gate。
+Day 16 已在取得當次授權後完成部署，最後驗證的 production commit 為 `7870505`。Day 20 website content commit `07247a6` 已將三份 case studies、公開 Resume 與網站互相連結；隔離 worktree 的完整 Portfolio suite 與 staged-diff gate 均通過。
 
-2026-09-01 已取得 Day 20 網站發布授權。發布前以公開 GitHub commit history 重新確認 `main` 最新 commit 為 `7870505`，status checks `2 / 2`；production `https://sanyoii.github.io/` 仍沒有 `#evidence`，因此確定尚未包含 Day 20 candidate。LinkedIn／其他 live profiles 不在本次授權範圍。
+2026-09-01 已取得 Day 20 網站發布授權。非 force push 將 `main` 從 `7870505` 前進到 `07247a6`；GitHub Pages run `33520661052` 在 `1m 39s` 後成功。fresh production verification 已確認 `#evidence`、四份公開文件、桌面／手機、EN／繁中、3 張作品圖片與空 console。LinkedIn／其他 live profiles 不在本次授權範圍。
 
 ### Status legend
 
@@ -30,7 +30,7 @@ Day 16 已在取得當次授權後完成部署，最後驗證的 production comm
 | `Unknown` | 沒有足夠 fresh evidence；不得推定為 Pass |
 | `N/A` | 不屬於本次 scope，並記錄原因 |
 
-Local required items 全為 `Pass` 時，Day 20 website candidate 才能 push。網站發布須等 Pages success 與 fresh production verification 後才能標為 `Production PASS`；LinkedIn 與選定平台更新仍是 Day 20 的獨立未完成項目。
+網站發布 required items 已全為 `Pass`，因此 Day 20 website 標為 `Production PASS`；LinkedIn 與選定平台更新仍是 Day 20 的獨立未完成項目。
 
 ## 2. Candidate and evidence identity
 
@@ -38,7 +38,8 @@ Local required items 全為 `Pass` 時，Day 20 website candidate 才能 push。
 |---|---|---|
 | Release worktree | Base `7870505`；branch `codex/day20-controlled-release`；isolated path `.worktrees/day20-controlled-release-20260901` | `Pass` |
 | Day 20 staged scope | `index.html`、`tests/test_static.py`、三份 case studies、公開 Resume、此 checklist，共 7 files | `Pass` |
-| Current remote source | Public GitHub commit history shows `main` = `7870505` with status checks `2 / 2`; CLI `git ls-remote` remained blocked by local credential error `SEC_E_NO_CREDENTIALS` | `Pass` |
+| Published content source | GitHub `main` content commit = `07247a6984e0b56b132bfacfb6bd849a78546111`；non-force push range `7870505..07247a6` | `Pass` |
+| Day 20 Pages deployment | GitHub Actions run `33520661052`，head `07247a6`，conclusion `success`，duration `1m 39s` | `Pass` |
 | Last verified Day 16 production | Last-fetched `refs/remotes/origin/main` = `7870505`；Pages content run `33413123839` and docs run `33413694716` concluded `success` | `Pass` |
 | RiskQA release gate | `RiskQADemoSite` public `main` = `481ee31`；evidence state `Unknown/Stale`，`expiresAt=2026-09-07T23:56:31+08:00`；`npm test`、`npm run lint`、`npm run build` 均通過 | `Pass` |
 | Original repository scope | 原始 dirty working tree 保留；發布只在隔離 worktree 操作，未清理、stash 或覆寫其他變更 | `Pass` |
@@ -76,20 +77,20 @@ Local required items 全為 `Pass` 時，Day 20 website candidate 才能 push。
 | L-03 | LinkedIn contact link 可到達指定 profile | Production direct navigation | `Pass` | Final URL `https://www.linkedin.com/in/williamlu5405/`；title `William Lu \| LinkedIn` |
 | L-04 | GitHub contact link可到達指定 profile | Production direct navigation | `Pass` | Final URL `https://github.com/sanyoii`；title `sanyoii · GitHub` |
 | L-05 | Email link schema 正確 | DOM inspection | `Pass` | `mailto:sanyoii@gmail.com`；未實際寄信 |
-| L-06 | Portfolio images 在 production 載入成功 | Full-page production rendering＋DOM image state | `Pass` | 3 張 work images 均 complete，`naturalWidth > 0` |
-| L-07 | Day 20 Evidence section 暴露三份 case studies 與公開 Resume | Static test＋local Browser DOM inspection | `Pass` | 4 個 GitHub `blob/main` URLs 均有 accessible link name、`target=_blank` 與 `rel=noopener` |
+| L-06 | Portfolio images 在 production 載入成功 | Production lazy-load scroll＋DOM image state | `Pass` | 3 張 work images 均 `complete=true`，尺寸為 1440×900、2560×1720、1440×900 |
+| L-07 | Day 20 Evidence section 暴露三份 case studies 與公開 Resume | Production DOM＋公開 GitHub main 檔案清單 | `Pass` | 4 個 GitHub `blob/main` URLs 均有 accessible link name、`target=_blank` 與 `rel=noopener`；四個檔名都公開可見 |
 
 ## 6. Production rendering and responsive behavior
 
 | ID | Requirement | Method／evidence | Status | Notes |
 |---|---|---|---|---|
 | P-01 | Production document 完整載入並使用 standards mode | Production DOM inspection | `Pass` | `readyState=complete`、`CSS1Compat`、1 個 `h1` |
-| P-02 | Desktop rendering 無缺圖或 console error | 1280×720 production full-page visual inspection＋console log check | `Pass` | 0 broken images、0 console errors |
-| P-03 | 375／768／1440 widths 無 horizontal overflow | Fresh local browser suite | `Pass` | 3 個 widths 均通過 |
-| P-04 | 375×812 mobile Hero 不與 language toggle 重疊，CTA 在 viewport budget 內 | Fresh local browser suite＋production 375×812 inspection | `Pass` | Production `scrollWidth=360`、viewport width `375`、CTA bottom約 `708 < 813` |
+| P-02 | Desktop rendering 無缺圖或 console error | Production 1440×900 target viewport＋DOM／console inspection | `Pass` | Browser 實際回報 1441×900；3 images loaded；console `[]` |
+| P-03 | 375／768／1440 widths 無 horizontal overflow | Fresh automated suite＋production desktop／mobile DOM | `Pass` | automated widths 全通過；production 1441 desktop 與 391 mobile 均無 horizontal overflow |
+| P-04 | 390×844 mobile Hero 不與 language toggle 重疊，CTA 在 viewport budget 內 | Production mobile geometry inspection | `Pass` | EN CTA bottom `788.81 < 844`；ZH CTA bottom `668.43 < 844`；toggle overlap = false |
 | P-05 | EN／ZH Hero fold budget 均符合 test contract | Fresh local browser suite | `Pass` | 1366×768、1440×900、390×844、375×812 均通過 |
 | P-06 | 404 page 不被索引且能回首頁 | Fresh local browser suite | `Pass` | `noindex`＋home link |
-| P-07 | Day 20 Evidence cards 在 desktop／mobile 不重疊或水平溢出 | Codex in-app Browser，1440×900 與 390×844 | `Pass` | Desktop 2×2；mobile 單欄；4 cards 均在 viewport width 內，overlap count = 0 |
+| P-07 | Day 20 Evidence cards 在 desktop／mobile 不重疊或水平溢出 | Codex in-app Browser，1440×900 target 與 390×844 target | `Pass` | Desktop 2×2；mobile 單欄；out-of-viewport = 0，overlap count = 0 |
 
 ## 7. Accessibility and runtime
 
@@ -104,13 +105,13 @@ Local required items 全為 `Pass` 時，Day 20 website candidate 才能 push。
 | R-01 | 首頁不產生 external runtime requests | Fresh runtime test | `Pass` | Dependency-free runtime contract 通過 |
 | R-02 | Language choice 更新內容、metadata 並在 reload 後保留 | Fresh runtime test | `Pass` | `wl-lang` persistence 通過 automated test |
 | R-03 | Browser runtime suite | `./.venv/Scripts/python.exe -m pytest tests/ -q` | `Pass` | Day 20 release candidate fresh run：`21 passed in 10.64s` |
-| R-04 | Day 20 visible Browser smoke check | Codex in-app Browser | `Pass` | EN／繁中切換同步 `html lang` 與 accessible toggle name；3 images complete；0 console warnings／errors |
+| R-04 | Day 20 production Browser gate | Codex in-app Browser on `https://sanyoii.github.io/?day20=07247a6` | `Pass` | EN／繁中切換同步 title、`html lang` 與 accessible toggle name；3 images complete；console `[]` |
 
 ## 8. Rollback readiness
 
 | ID | Requirement | Method／evidence | Status | Notes |
 |---|---|---|---|---|
-| RB-01 | 可識別最後驗證的 production recovery point | Day 16 handoff／local remote-tracking ref | `Pass` | `7870505`；successful Pages docs run `33413694716`；執行 Day 20 release 前仍需重新確認 current remote |
+| RB-01 | 可識別目前網站內容的 production recovery point | GitHub main／Actions evidence | `Pass` | content commit `07247a6`；successful Pages run `33520661052` |
 | RB-02 | Rollback 不改寫 Git history | Procedure review | `Pass` | 使用 `git revert <bad-commit>`，禁止 `reset --hard`／force-push |
 | RB-03 | Rollback 後重新通過 deployment 與 production gate | Procedure documented below | `Pass` | 必須等待 Pages success，再重跑本清單 required checks |
 | RB-04 | 實際 production rollback drill | 本次沒有刻意製造 production failure | `N/A` | 不把未執行的 rollback 說成已驗證 |
@@ -134,7 +135,7 @@ Local required items 全為 `Pass` 時，Day 20 website candidate 才能 push。
 - [x] Day 20 網站發布已取得當次明確授權，並已建立隔離 worktree。
 - [x] Day 20 完整 suite：`21 passed in 10.64s`。
 - [x] Day 20 staged-diff gate：精確 7 files，沒有 missing／extra，`git diff --cached --check` 通過。
-- [ ] Day 20 commit／push、Pages 與 fresh production verification。
+- [x] Day 20 content commit `07247a6` 已 non-force push；Pages run `33520661052` 成功；fresh production verification 通過。
 - [ ] LinkedIn 與選定平台更新；不在本次網站發布授權範圍。
 
 ## 10. Execution notes
@@ -147,3 +148,5 @@ Local required items 全為 `Pass` 時，Day 20 website candidate 才能 push。
 - Day 20 先新增 cross-link／public-resume regression tests，實作前為 `2 failed, 5 passed`；保留 Day 16 contact URL 顯示 regression test 後，targeted static tests 為 `8 passed`，完整 suite 為 `21 passed in 10.64s`。
 - Day 20 Browser 的 full-page capture 因長頁面與進場動畫再次出現 stitching 重影；單一 viewport、DOM counts、card rectangles 與 overlap calculation 均正常，因此不視為頁面 duplication。
 - Day 20 external read-only precheck：GitHub public commit history 顯示 `main` 最新 commit `7870505`、checks `2 / 2`；production DOM 沒有 `#evidence`，0 console warning／error，確認 Day 20 candidate 尚未發布。
+- Day 20 content commit `07247a6` 已以非 force `HEAD:main` push；Pages run `33520661052` 成功。production 1440×900 target 與 390×844 target 均無 overflow／Evidence card overlap，EN／繁中、4 個公開文件、3 張圖片與 console gate 全部通過。
+- `raw.githubusercontent.com` 被 Browser client policy 以 `ERR_BLOCKED_BY_CLIENT` 擋下；未將此誤判為 source 404，改以 4 個 `blob/main` 頁面 title 與公開 repository main 檔案清單交叉確認。
