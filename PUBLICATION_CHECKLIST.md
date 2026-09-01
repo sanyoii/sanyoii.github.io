@@ -1,44 +1,47 @@
-# Day 16 — Portfolio Publication Checklist
+# Day 16 / Day 20 — Portfolio Controlled Release Checklist
 
-> Status: `Complete v1 / Production PASS`
+> Status: `Day 16 Production PASS / Day 20 Website release authorized · Pre-push PASS`
 > Audit date: 2026-09-01 (Asia/Taipei)
-> Scope: `index.html`、`404.html`、`assets/og-card.png`、GitHub Pages production 與 release／rollback path
+> Scope: `index.html`、三份 case studies、公開 Resume、`404.html`、`assets/og-card.png`、GitHub Pages production 與 release／rollback path
 > Canonical content source: `PROFILE_CONTENT_SOURCE.md` (`Frozen v1.2`)
 > Production URL: `https://sanyoii.github.io/`
-> Day 16 boundary: 本次完成 local audit、content remediation、regression test、授權部署與 production verification；未修改 live profiles、未送出表單。
+> Boundary: Day 16 已完成授權部署與 production verification；Day 20 網站發布已獲授權並在隔離 worktree 執行，LinkedIn／其他平台仍未修改，也未送出表單。
 
 ## 1. Release decision
 
-**Decision: `PRODUCTION PASS`**
+**Decision: `DAY 20 WEBSITE RELEASE AUTHORIZED / PRE-PUSH PASS`**
 
 Day 16 audit 發現的兩個 content blockers 已在 local candidate 修正：
 
 1. Hero 已改為 canonical `high-severity defects`／`高嚴重度缺陷`。
 2. 未取得 verified evidence 的 `TypeScript` badge 已移除。
 
-Local Portfolio suite fresh result 為 `19 passed`，且新增 regression tests 防止 canonical wording、unsupported badge 與 contact URL 顯示回歸。經使用者明確授權後，Portfolio commits `62adfc6`、`0915582` 與 RiskQA freshness commit `481ee31` 已推送；GitHub Pages run `33413123839` 成功部署，production read-only verification 通過。
+Day 16 已在取得當次授權後完成部署，最後驗證的 production commit 為 `7870505`。Day 20 website candidate 已將三份 case studies、公開 Resume 與網站互相連結；發布前須在隔離 worktree 通過完整 Portfolio suite 與 staged-diff gate。
+
+2026-09-01 已取得 Day 20 網站發布授權。發布前以公開 GitHub commit history 重新確認 `main` 最新 commit 為 `7870505`，status checks `2 / 2`；production `https://sanyoii.github.io/` 仍沒有 `#evidence`，因此確定尚未包含 Day 20 candidate。LinkedIn／其他 live profiles 不在本次授權範圍。
 
 ### Status legend
 
 | Status | Definition |
 |---|---|
-| `Pass` | 2026-08-31 有 fresh evidence，且符合本清單 requirement |
+| `Pass` | 2026-09-01 有 fresh evidence，且符合本清單 requirement |
 | `Fail` | 已確認違反 requirement；publication blocker |
 | `Blocked` | 受環境或權限阻擋，無法完成驗證 |
 | `Unknown` | 沒有足夠 fresh evidence；不得推定為 Pass |
 | `N/A` | 不屬於本次 scope，並記錄原因 |
 
-Local required items 全為 `Pass` 時，local candidate 才能標為 `PASS`。Production 已完成授權部署與 fresh live verification，因此本清單解除 `HOLD`。
+Local required items 全為 `Pass` 時，Day 20 website candidate 才能 push。網站發布須等 Pages success 與 fresh production verification 後才能標為 `Production PASS`；LinkedIn 與選定平台更新仍是 Day 20 的獨立未完成項目。
 
 ## 2. Candidate and evidence identity
 
 | Item | Evidence | Status |
 |---|---|---|
-| Local source | Release worktree `HEAD` = `0915582f63a1858c3e1d4a8c3c3693cad4361ac3` | `Pass` |
-| Remote source | GitHub `main` = `0915582f63a1858c3e1d4a8c3c3693cad4361ac3` | `Pass` |
-| Local／remote content boundary | Release worktree 與 remote main 指向同一 content commit；`404.html` 未變更 | `Pass` |
-| Latest Pages deployment | GitHub Actions run `33413123839`，head `0915582`，conclusion `success` | `Pass` |
-| Local repository scope | 隔離 release worktree 僅含兩個 Portfolio fixes 與本清單；原始 dirty worktree 未納入 commit | `Pass` |
+| Release worktree | Base `7870505`；branch `codex/day20-controlled-release`；isolated path `.worktrees/day20-controlled-release-20260901` | `Pass` |
+| Day 20 staged scope | `index.html`、`tests/test_static.py`、三份 case studies、公開 Resume、此 checklist，共 7 files | `Pass` |
+| Current remote source | Public GitHub commit history shows `main` = `7870505` with status checks `2 / 2`; CLI `git ls-remote` remained blocked by local credential error `SEC_E_NO_CREDENTIALS` | `Pass` |
+| Last verified Day 16 production | Last-fetched `refs/remotes/origin/main` = `7870505`；Pages content run `33413123839` and docs run `33413694716` concluded `success` | `Pass` |
+| RiskQA release gate | `RiskQADemoSite` public `main` = `481ee31`；evidence state `Unknown/Stale`，`expiresAt=2026-09-07T23:56:31+08:00`；`npm test`、`npm run lint`、`npm run build` 均通過 | `Pass` |
+| Original repository scope | 原始 dirty working tree 保留；發布只在隔離 worktree 操作，未清理、stash 或覆寫其他變更 | `Pass` |
 
 ## 3. Content consistency and claim boundary
 
@@ -52,6 +55,7 @@ Local required items 全為 `Pass` 時，local candidate 才能標為 `PASS`。P
 | C-06 | Skills／technology badges 不得包含 canonical source 明列的 unsupported claim | `TypeScript` badge scan＋regression test | `Pass` | Local candidate 已移除 `TypeScript` badge |
 | C-07 | Career break 不公開 health、relationship 或其他 private details | Timeline 只寫 caregiving 與 self-directed study | `Pass` | 未暴露被禁止的 private details |
 | C-08 | CTA 與 contact wording 符合目前 QA／Product Quality／Technical Support routing | Hero CTA 與 contact section inspection | `Pass` | 沒有導向 excluded Customer Success／general PM positioning |
+| C-09 | 三份 case studies 與公開 Resume 維持 evidence limits 並有雙向 cross-links | Static tests＋文件 inspection | `Pass` | 公開 Resume 不含私人電話或 application-only appendix；四份文件均連回 Portfolio |
 
 ## 4. SEO and social preview
 
@@ -68,11 +72,12 @@ Local required items 全為 `Pass` 時，local candidate 才能標為 `PASS`。P
 | ID | Requirement | Method／evidence | Status | Notes |
 |---|---|---|---|---|
 | L-01 | Internal anchors 有對應 target | Static test＋DOM inspection | `Pass` | `#main`、`#top`、`#impact`、`#work`、`#capabilities`、`#contact` 均存在 |
-| L-02 | External URL 僅使用 allowlist | `tests/test_static.py::test_external_urls_are_allowlisted` | `Pass` | GitHub、LinkedIn、production assets only；LinkedIn／GitHub 顯示文字含完整 `https://` |
+| L-02 | External URL 僅使用 allowlist | `tests/test_static.py::test_external_urls_are_allowlisted` | `Pass` | GitHub、LinkedIn、production assets only；LinkedIn／GitHub 顯示文字保留完整 `https://` |
 | L-03 | LinkedIn contact link 可到達指定 profile | Production direct navigation | `Pass` | Final URL `https://www.linkedin.com/in/williamlu5405/`；title `William Lu \| LinkedIn` |
 | L-04 | GitHub contact link可到達指定 profile | Production direct navigation | `Pass` | Final URL `https://github.com/sanyoii`；title `sanyoii · GitHub` |
 | L-05 | Email link schema 正確 | DOM inspection | `Pass` | `mailto:sanyoii@gmail.com`；未實際寄信 |
 | L-06 | Portfolio images 在 production 載入成功 | Full-page production rendering＋DOM image state | `Pass` | 3 張 work images 均 complete，`naturalWidth > 0` |
+| L-07 | Day 20 Evidence section 暴露三份 case studies 與公開 Resume | Static test＋local Browser DOM inspection | `Pass` | 4 個 GitHub `blob/main` URLs 均有 accessible link name、`target=_blank` 與 `rel=noopener` |
 
 ## 6. Production rendering and responsive behavior
 
@@ -84,6 +89,7 @@ Local required items 全為 `Pass` 時，local candidate 才能標為 `PASS`。P
 | P-04 | 375×812 mobile Hero 不與 language toggle 重疊，CTA 在 viewport budget 內 | Fresh local browser suite＋production 375×812 inspection | `Pass` | Production `scrollWidth=360`、viewport width `375`、CTA bottom約 `708 < 813` |
 | P-05 | EN／ZH Hero fold budget 均符合 test contract | Fresh local browser suite | `Pass` | 1366×768、1440×900、390×844、375×812 均通過 |
 | P-06 | 404 page 不被索引且能回首頁 | Fresh local browser suite | `Pass` | `noindex`＋home link |
+| P-07 | Day 20 Evidence cards 在 desktop／mobile 不重疊或水平溢出 | Codex in-app Browser，1440×900 與 390×844 | `Pass` | Desktop 2×2；mobile 單欄；4 cards 均在 viewport width 內，overlap count = 0 |
 
 ## 7. Accessibility and runtime
 
@@ -97,16 +103,17 @@ Local required items 全為 `Pass` 時，local candidate 才能標為 `PASS`。P
 | A-06 | Full WCAG 2.1 AA、screen reader 與 color-contrast certification | 本次未執行完整 conformance audit | `N/A` | 本清單只證明 smoke checks；不得宣稱 WCAG conformance |
 | R-01 | 首頁不產生 external runtime requests | Fresh runtime test | `Pass` | Dependency-free runtime contract 通過 |
 | R-02 | Language choice 更新內容、metadata 並在 reload 後保留 | Fresh runtime test | `Pass` | `wl-lang` persistence 通過 automated test |
-| R-03 | Browser runtime suite | `./.venv/Scripts/python.exe -m pytest tests/ -q` | `Pass` | 最終 release candidate fresh run：`19 passed` |
+| R-03 | Browser runtime suite | `./.venv/Scripts/python.exe -m pytest tests/ -q` | `Pass` | Day 20 release candidate fresh run：`21 passed in 10.64s` |
+| R-04 | Day 20 visible Browser smoke check | Codex in-app Browser | `Pass` | EN／繁中切換同步 `html lang` 與 accessible toggle name；3 images complete；0 console warnings／errors |
 
 ## 8. Rollback readiness
 
 | ID | Requirement | Method／evidence | Status | Notes |
 |---|---|---|---|---|
-| RB-01 | 可識別目前 production recovery point | GitHub API／Actions evidence | `Pass` | Remote main `0915582`；successful Pages run `33413123839` |
+| RB-01 | 可識別最後驗證的 production recovery point | Day 16 handoff／local remote-tracking ref | `Pass` | `7870505`；successful Pages docs run `33413694716`；執行 Day 20 release 前仍需重新確認 current remote |
 | RB-02 | Rollback 不改寫 Git history | Procedure review | `Pass` | 使用 `git revert <bad-commit>`，禁止 `reset --hard`／force-push |
 | RB-03 | Rollback 後重新通過 deployment 與 production gate | Procedure documented below | `Pass` | 必須等待 Pages success，再重跑本清單 required checks |
-| RB-04 | 實際 production rollback drill | 本次未故意製造 production failure | `N/A` | 不把未執行的 rollback 說成已驗證 |
+| RB-04 | 實際 production rollback drill | 本次沒有刻意製造 production failure | `N/A` | 不把未執行的 rollback 說成已驗證 |
 
 ### Rollback procedure
 
@@ -122,17 +129,21 @@ Local required items 全為 `Pass` 時，local candidate 才能標為 `PASS`。P
 - [x] 將 Hero EN `critical defects` 改為 canonical `high-severity defects`。
 - [x] 將 Hero ZH `重大邏輯錯誤` 改為 canonical `高嚴重度缺陷`。
 - [x] 從 Portfolio 移除沒有 verified evidence 的 `TypeScript` badge。
-- [x] 修正後重跑 `./.venv/Scripts/python.exe -m pytest tests/ -q`：`19 passed`。
+- [x] Day 16 最終 release candidate：`19 passed`。
 - [x] 重新檢查 content diff，沒有新增未核准 claims。
-- [x] 取得當次明確授權後完成 commit／push／deploy；run `33413123839` 成功。
-- [x] Production 驗證 EN／ZH、1440／390 widths、contact URLs、3 張 lazy images 與 console：全部通過。
+- [x] Day 20 網站發布已取得當次明確授權，並已建立隔離 worktree。
+- [x] Day 20 完整 suite：`21 passed in 10.64s`。
+- [x] Day 20 staged-diff gate：精確 7 files，沒有 missing／extra，`git diff --cached --check` 通過。
+- [ ] Day 20 commit／push、Pages 與 fresh production verification。
+- [ ] LinkedIn 與選定平台更新；不在本次網站發布授權範圍。
 
 ## 10. Execution notes
 
 - 第一次從 repository root 執行未限定路徑的 `pytest`，誤收進 nested `cex-market-data-quality-lab` tests，因該 project dependencies／import path 不屬於 Portfolio environment 而 collection failed。這不是 Portfolio test result。
-- 限定正確 scope `tests/` 後，sandbox 內 Chromium 因 `spawn EPERM` 無法啟動；獲准在 sandbox 外執行相同 command 後，初次 audit 為 `17 passed`，canonical claim regression 後為 `18 passed`，contact URL display regression 後最終為 `19 passed`。
+- 限定正確 scope `tests/` 後，sandbox 內 Chromium 因 `spawn EPERM` 無法啟動；獲准在 sandbox 外執行相同 command 後，初次 audit 為 `17 passed`，blocker remediation 加入 regression test 後為 `18 passed`，Day 16 contact URL 顯示 regression test 後最終為 `19 passed`。
 - `wmux browser` 當次無法連線，因此依 project fallback rule 使用 Codex in-app browser 完成 production read-only inspection。
 - Production full-page screenshot 在 capture stitching 中出現重複區塊；DOM count 複核為 3 個 Proof cards、4 個 Work cards、1 個 Education heading、1 個 Contact line，故判定為 screenshot artifact，不是 production DOM duplication。
 - Blocker remediation 採 test-first：新增 canonical claim wording regression test，修正前 `1 failed`，修改 Hero wording 並移除 `TypeScript` badge 後 targeted test 與完整 suite 均通過。
-- Contact URL display 亦採 test-first：新增完整 `https://` 顯示測試後先得到 `1 failed`，修正 LinkedIn／GitHub 顯示文字後 targeted 與完整 suite 均通過。
-- Production run `33413123839` 對 head `0915582` 完成 build 與 deploy；in-app browser fresh verification 為 desktop/mobile 無 overflow、EN/ZH 正確、3 張 lazy images `complete=true` 且 `naturalWidth>0`、console 0 error/warn。
+- Day 20 先新增 cross-link／public-resume regression tests，實作前為 `2 failed, 5 passed`；保留 Day 16 contact URL 顯示 regression test 後，targeted static tests 為 `8 passed`，完整 suite 為 `21 passed in 10.64s`。
+- Day 20 Browser 的 full-page capture 因長頁面與進場動畫再次出現 stitching 重影；單一 viewport、DOM counts、card rectangles 與 overlap calculation 均正常，因此不視為頁面 duplication。
+- Day 20 external read-only precheck：GitHub public commit history 顯示 `main` 最新 commit `7870505`、checks `2 / 2`；production DOM 沒有 `#evidence`，0 console warning／error，確認 Day 20 candidate 尚未發布。

@@ -350,6 +350,60 @@
     padding-top: 8px;
   }
 
+  /* ---------- evidence: public case studies and resume ---------- */
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .evidence-card {
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+    padding: 28px;
+    color: var(--ink);
+    text-decoration: none;
+    background: linear-gradient(155deg, rgba(145, 181, 165, 0.055), transparent 58%), var(--bg-2);
+    border: 1px solid var(--rule);
+    border-radius: 4px 24px 4px 4px;
+    transition: border-color 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
+  }
+  .evidence-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .evidence-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  .evidence-kicker {
+    margin: 0 0 16px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .evidence-title {
+    margin: 0 0 14px;
+    font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .evidence-copy {
+    margin: 0;
+    color: var(--ink-dim);
+    max-width: 48ch;
+  }
+  .evidence-link {
+    margin-top: auto;
+    padding-top: 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--accent-strong);
+  }
+
   /* ---------- work: bento ---------- */
   .bento {
     display: grid;
@@ -618,6 +672,8 @@
     .cell-c-inner, .cell-wide-inner { grid-template-columns: 1fr; gap: 26px; }
     .proof { grid-template-columns: 1fr; gap: 18px; }
     .proof-body { padding-top: 0; }
+    .evidence-grid { grid-template-columns: 1fr; }
+    .evidence-card { min-height: 0; }
     .reach { grid-template-columns: 1fr; gap: 0; }
     .reach-a { padding-bottom: 24px; }
     .reach-a + .reach-a { border-top: 1px solid var(--rule); padding-top: 24px; }
@@ -695,6 +751,7 @@
     <div class="nav-actions">
       <div class="nav-links">
         <a href="#impact" data-en="Web3 impact" data-zh="Web3 經驗">Web3 impact</a>
+        <a href="#evidence" data-en="Evidence" data-zh="案例">Evidence</a>
         <a href="#work" data-en="Systems" data-zh="作品">Systems</a>
         <a href="#capabilities" data-en="Capabilities" data-zh="能力">Capabilities</a>
         <a href="#contact" data-en="Contact" data-zh="聯絡">Contact</a>
@@ -802,6 +859,62 @@
            data-en="Spent nearly 13 years across security product QA and customer engineering. Led beta programs, handled enterprise incident RCA and customer escalation, validated hotfixes, and improved testing and support processes. Received Trend Micro's internal &quot;Yearly Best SEG Engineer&quot; award in 2019 and 2021."
            data-zh="我在 Trend Micro 工作近 13 年，歷經資安產品 QA 與客戶工程；曾主導多項 Beta 測試計畫、處理企業事件 RCA 與客戶升級案件、驗證 hotfix，也改善測試與支援流程。2019 和 2021 年兩度獲得公司內部的「Yearly Best SEG Engineer」獎項。">Spent nearly 13 years across security product QA and customer engineering. Led beta programs, handled enterprise incident RCA and customer escalation, validated hotfixes, and improved testing and support processes. Received Trend Micro's internal "Yearly Best SEG Engineer" award in 2019 and 2021.</p>
       </article>
+    </div>
+  </section>
+
+  <!-- ============ PUBLIC EVIDENCE ============ -->
+  <section class="sec-pad" id="evidence">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Case studies and resume" data-zh="案例與履歷">Case studies and resume</h2>
+      <p class="sec-sub fade"
+         data-en="Sanitized work evidence with claim boundaries, ownership, and unknowns kept visible."
+         data-zh="經過去識別化的工作證據，保留 claim boundary、ownership 與 Unknown。">Sanitized work evidence with claim boundaries, ownership, and unknowns kept visible.</p>
+
+      <div class="evidence-grid">
+        <a class="evidence-card fade"
+           href="https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="CEX product quality" data-zh="CEX 產品品質">CEX product quality</p>
+          <h3 class="evidence-title">BTSE</h3>
+          <p class="evidence-copy"
+             data-en="Trading, referral commission, and conversion findings tested through boundaries, APIs, WebSocket, SQL, and expected-versus-observed comparisons."
+             data-zh="交易、推薦佣金與兌換案例，使用 boundary、API、WebSocket、SQL 與 expected／observed comparison 驗證。">Trading, referral commission, and conversion findings tested through boundaries, APIs, WebSocket, SQL, and expected-versus-observed comparisons.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+        <a class="evidence-card fade"
+           href="https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="Incident and support" data-zh="Incident 與支援">Incident and support</p>
+          <h3 class="evidence-title">Trend Micro</h3>
+          <p class="evidence-copy"
+             data-en="Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct."
+             data-zh="四個獨立 incident、P1 escalation、hotfix 與 external beta 案例，明確區分 recovery 與 fix state。">Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+        <a class="evidence-card fade"
+           href="https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="Automation leadership" data-zh="Automation leadership">Automation leadership</p>
+          <h3 class="evidence-title">ASML</h3>
+          <p class="evidence-copy"
+             data-en="TestComplete lifecycle design, reusable modules, six-engineer delivery leadership, enablement evidence, and technical handoff."
+             data-zh="TestComplete lifecycle design、reusable modules、6 位 engineers 的 delivery leadership、enablement evidence 與 technical handoff。">TestComplete lifecycle design, reusable modules, six-engineer delivery leadership, enablement evidence, and technical handoff.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+        <a class="evidence-card fade"
+           href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="Public resume" data-zh="公開履歷">Public resume</p>
+          <h3 class="evidence-title" data-en="QA / Product Quality" data-zh="QA／Product Quality">QA / Product Quality</h3>
+          <p class="evidence-copy"
+             data-en="A privacy-safe role history with approved tools, case-study links, evidence limits, and remote availability."
+             data-zh="不含私人電話的公開履歷，保留 approved tools、案例連結、evidence limits 與 remote availability。">A privacy-safe role history with approved tools, case-study links, evidence limits, and remote availability.</p>
+          <span class="evidence-link" data-en="Read resume ↗" data-zh="閱讀履歷 ↗">Read resume ↗</span>
+        </a>
+      </div>
     </div>
   </section>
 

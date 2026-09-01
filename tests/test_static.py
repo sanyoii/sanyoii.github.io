@@ -68,3 +68,45 @@ def test_contact_urls_display_their_https_scheme(repo_root):
 
     assert '<span class="reach-text">https://www.linkedin.com/in/williamlu5405</span>' in html
     assert '<span class="reach-text">https://github.com/sanyoii</span>' in html
+
+
+def test_day20_public_evidence_is_cross_linked(repo_root):
+    base = "https://github.com/sanyoii/sanyoii.github.io/blob/main/"
+    public_resume = "PUBLIC_QA_PRODUCT_QUALITY_RESUME.md"
+    case_studies = (
+        "BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md",
+        "TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md",
+        "ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md",
+    )
+    html = (repo_root / "index.html").read_text(encoding="utf-8")
+
+    assert 'id="evidence"' in html
+    assert f'{base}{public_resume}' in html
+    for filename in case_studies:
+        assert f'{base}{filename}' in html
+
+    resume = (repo_root / public_resume).read_text(encoding="utf-8")
+    assert "https://sanyoii.github.io/" in resume
+    assert f'{base}{public_resume}' not in resume
+    assert "Public 2026-09-01" in resume
+    assert "Local release candidate" not in resume
+    for filename in case_studies:
+        assert f'{base}{filename}' in resume
+        case_study = (repo_root / filename).read_text(encoding="utf-8")
+        assert "https://sanyoii.github.io/" in case_study
+        assert f'{base}{public_resume}' in case_study
+        assert "Public 2026-09-01" in case_study
+        assert "Local only" not in case_study
+        assert "Do not publish or link" not in case_study
+
+
+def test_public_resume_excludes_private_application_content(repo_root):
+    resume = (repo_root / "PUBLIC_QA_PRODUCT_QUALITY_RESUME.md").read_text(
+        encoding="utf-8"
+    )
+
+    assert "+886" not in resume
+    assert "0922" not in resume
+    assert "922 596 190" not in resume
+    assert "Private Day 13 Appendix" not in resume
+    assert "private role-specific source" not in resume
