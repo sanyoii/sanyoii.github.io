@@ -82,6 +82,7 @@ jobs:
             --exclude '__pycache__' \
             --exclude 'test-records' \
             --exclude 'tests' \
+            --exclude '/test-status/' \
             site/ public/
           node dashboard/scripts/prepare-pages-artifact.mjs \
             --source dashboard/dist/client \
