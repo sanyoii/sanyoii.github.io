@@ -110,3 +110,16 @@ def test_public_resume_excludes_private_application_content(repo_root):
     assert "922 596 190" not in resume
     assert "Private Day 13 Appendix" not in resume
     assert "private role-specific source" not in resume
+
+
+def test_role_paths_and_work_evidence_are_reachable(repo_root):
+    html = (repo_root / "index.html").read_text(encoding="utf-8")
+    for anchor in ("btse-evidence", "support-evidence", "asml-evidence", "cex-lab"):
+        assert f'href="#{anchor}"' in html
+        assert f'id="{anchor}"' in html
+    assert 'href="test-status/"' in html
+    assert (repo_root / "test-status/index.html").is_file()
+    assert 'href="https://github.com/sanyoii/cex-market-data-quality-lab"' in html
+    assert 'href="https://github.com/sanyoii/cex-market-data-quality-lab/actions"' in html
+    assert html.count("no public demo or source linked.") == 6
+    assert "my work at Binance" not in html

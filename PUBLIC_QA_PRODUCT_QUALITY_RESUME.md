@@ -1,6 +1,7 @@
 # William Lu
 
 > Status: `Day 20 public resume v1 / Public 2026-09-01`
+> Revision: `2026-09-06 reviewed revision`
 > Role: Senior QA Engineer / Product Quality Engineer | Web3 & Crypto
 > Evidence: Sanitized from `PROFILE_CONTENT_SOURCE.md` (`Frozen v1.2`)
 > Privacy boundary: This public version omits phone, private application notes, internal artifacts, blocked metrics, and unresolved personal fields.
@@ -11,15 +12,15 @@ Taiwan | UTC+8 | Fully Remote | sanyoii@gmail.com
 
 ## Professional summary
 
-Senior QA Engineer with 12+ years across product QA, customer engineering, and technical support. Direct CEX testing experience at BTSE covered Wallet, Referral and Affiliate, Spot, Futures, Convert, fees, funding, liquidation, and KYC. Trend Micro work included enterprise-security QA, incident RCA, customer escalation, hotfix validation, system and performance testing, and test automation. Led six Automation Engineers during a fully remote ASML engagement.
+Senior QA Engineer with 12+ years across product QA and customer engineering. Identified and escalated three high-severity financial-logic defects at BTSE. At Trend Micro, combined test automation with incident RCA and hotfix validation. Led six Automation Engineers on an ASML engagement and designed the normal setup-to-reset workflow for unattended execution. Personal portfolio includes Python/pytest REST and WebSocket market-data checks.
 
 ## Core skills
 
-- Product quality: Manual Testing, Exploratory Testing, Risk-based Testing, Test Design, Functional Testing, Regression Testing, Boundary Testing, Negative Testing
-- Web3 and financial logic: Centralized Exchange QA, Wallet, Deposit, Withdrawal, Blockchain Confirmation, Spot, Futures, Convert, Fees, Funding, Liquidation, KYC
-- Automation, API, and data: Python, Selenium, Robot Framework, TMSTAF, TestComplete, API Testing, WebSocket, Browser DevTools, SQL, TablePlus
-- Delivery and diagnostics: System Testing, Performance Testing, Jenkins, Bamboo, CI/CD, Defect Triage, Release Validation, Hotfix Validation, Incident RCA
-- Leadership and investigation: Automation Leadership, Risk Management, Log Analysis, Dump Analysis, WinDbg, ProcMon, Jira, JQL, Technical Documentation
+- Product quality: Exploratory Testing, Risk-based Testing, Test Design, Regression, Boundary and Negative Testing
+- Web3 and financial logic: CEX QA, Wallet, Spot, Futures, Convert, Fees, Funding, Liquidation, KYC
+- Automation, API, and data: Python, Selenium, Robot Framework, TestComplete, API Testing, WebSocket, Browser DevTools, SQL
+- Delivery and diagnostics: System and Performance Testing, Jenkins, Bamboo, Defect Triage, Hotfix Validation, Incident RCA
+- Leadership and investigation: Automation Planning, Log and Dump Analysis, WinDbg, ProcMon, Jira, Technical Handover
 
 ## Professional experience
 
@@ -42,9 +43,9 @@ Sep 2024–Nov 2024 | Taipei, Taiwan | On-site
 May 2023–Apr 2024 | Fully Remote
 
 - Led six Automation Engineers across HMI eP5 modules iCDU, MM Flow, and ADEL.
-- Improved the existing TestComplete architecture, planned reusable modules and repeatable test environments, and coordinated delivery risk and technical handover.
+- Designed the setup, execution, cleanup, and reset lifecycle in the existing TestComplete architecture. The normal workflow ran unattended; connection failures required manual investigation.
 - Used Bitbucket for source control and Bamboo with TestComplete for CI test orchestration and result review.
-- Implemented some Test Cases; the six engineers completed most coding.
+- Planned reusable modules and reviewed cases before assignment; the six engineers completed most implementation coding. Delivered TOI and technical handover.
 
 ### Trend Micro | Senior QA Engineer & Senior Customer Service Engineer
 
@@ -87,6 +88,7 @@ The case studies use sanitized categories and user-attested evidence. Former-emp
 
 - [QA Portfolio](https://sanyoii.github.io/): bilingual work and employment evidence with static, runtime, responsive, and accessibility smoke checks.
 - [Public repository](https://github.com/sanyoii/sanyoii.github.io): source, tests, and publication evidence.
+- [CEX Market Data Quality Lab](https://github.com/sanyoii/cex-market-data-quality-lab): Python/pytest checks for REST snapshots, WebSocket sequencing, and order-book invariants. Public market data only; no accounts, orders, or funds. The repository records tested revisions and limitations.
 
 ## Education
 

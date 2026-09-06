@@ -2,11 +2,13 @@
   <img src="./assets/readme/hero-zh.svg" width="100%" alt="sanyoii.github.io — 一個 HTML 檔、兩種語言，以及覆蓋它的十二條自動化測試">
 </p>
 
+*上圖保留最初的 smoke-test 範圍示意；目前的驗證結果以本文連結的實跑紀錄為準。*
+
 <p align="center">
   <a href="https://sanyoii.github.io/"><strong>sanyoii.github.io</strong></a> ·
   <a href="TESTPLAN.md">測試計畫</a> ·
   <a href="README.md">English</a> ·
-  <a href="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/tests.yml"><img src="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+  <a href="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/pages.yml"><img src="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/pages.yml/badge.svg" alt="Test and deploy Pages"></a>
 </p>
 
 這是 **William Lu**（呂理瑋）的個人網站——專注 Web3 產品品質、Fintech 風險與技術支援的資深 QA 工程師，於台灣（UTC+8）遠端工作。
@@ -15,9 +17,11 @@
 雙語（English／繁體中文）靠成對的 `data-en`／`data-zh` 屬性實現，而不是路由層或翻譯函式庫。
 
 這個 repo 公開的理由是：一個有工作經驗的 QA，應該拿得出自己的簡單作品集風險分析。
-所以這裡附有 [TESTPLAN.md](TESTPLAN.md) 與十二條自動化測試——把參數化的視窗尺寸
-算進去是十七個案例——每次 push 到 `main` 都在 CI 上執行。
+所以這裡附有 [TESTPLAN.md](TESTPLAN.md)，以及 static、runtime、responsive 與 artifact checks。
+Pages workflow 每次 push 到 `main` 都會執行 Portfolio suite。
 如果你是來評估我怎麼工作、而不只是光看 Title——從那裡開始看。
+
+2026-09-06 修訂加入職位閱讀入口與 CEX Lab 連結。[發布驗證紀錄](test-records/2026-09-06-public-release.md) 保留驗證範圍；部署狀態以 Pages workflow 為準。Portfolio 測試不代表 Dashboard 可以發布，也不證明獨立面試能力。首頁本身不需 build；Pages workflow 另有 Dashboard 建置步驟。
 
 <p align="center">
   <img src="./assets/og-card.png" width="100%" alt="網站首屏：姓名、職稱、一句話定位與四個職涯數字">

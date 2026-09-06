@@ -228,7 +228,7 @@
   /* CJK balances rather than fills. `ch` is the width of "0", so it under-
      measures CJK by half: size the Chinese lines in em, and step the display
      size down so the two lines break on the comma, not mid-phrase. */
-  /* balance optimises for equal line length and ignores punctuation, which
+  /* balance optimizes for equal line length and ignores punctuation, which
      lands the break mid-phrase. fill instead, with the measure set so line
      one runs out just after the comma. */
   html[lang^="zh"] .tagline {
@@ -422,7 +422,7 @@
   .cell-a { grid-column: span 7; }
   .cell-b { grid-column: span 5; }
   /* the third cell has no screenshot, so it earns its variation from a
-     brand-tinted wash instead of sitting there as a third grey box */
+     brand-tinted wash instead of sitting there as a third gray box */
   .cell-c {
     grid-column: span 12;
     background:
@@ -472,6 +472,8 @@
   }
   .work-lead--gap { margin-top: 22px; }
   .work-body { margin: 0; color: var(--ink-dim); max-width: 52ch; }
+  #cex-lab, #btse-evidence, #support-evidence, #asml-evidence { scroll-margin-top: 100px; }
+  .review-paths { margin: 0 0 28px; line-height: 1.8; color: var(--ink-dim); }
 
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag {
@@ -843,8 +845,8 @@
              data-zh="Project Leader／Senior Automation Test Engineer">Project Leader / Senior Automation Test Engineer</p>
         </div>
         <p class="proof-body"
-           data-en="Led six Automation Engineers on an ASML engagement. Improved the existing test automation architecture, planned reusable modules, and managed progress, risk, and technical handover. The engineers completed most implementation coding; I handled architecture improvements, planning, and some Test Cases."
-           data-zh="我在 ASML 專案中帶領 6 位自動化測試工程師，改善既有的測試自動化架構、規劃可重用模組，並管理進度、風險與技術交接。多數程式實作由團隊完成；我負責架構改善、規劃及部分測試案例。">Led six Automation Engineers on an ASML engagement. Improved the existing test automation architecture, planned reusable modules, and managed progress, risk, and technical handover. The engineers completed most implementation coding; I handled architecture improvements, planning, and some Test Cases.</p>
+           data-en="Led six Automation Engineers across three ASML HMI modules. Designed the setup-to-reset lifecycle within the existing TestComplete architecture so the normal workflow could run unattended. Planned reusable modules and technical handover; the engineers completed most implementation coding."
+           data-zh="在 ASML 專案帶領 6 位自動化測試工程師，涵蓋 3 個 HMI 模組。在既有 TestComplete 架構中設計從環境設定到清理重置的流程，讓正常路徑能無人值守執行。我負責可重用模組規劃與技術交接，多數程式實作由團隊完成。">Led six Automation Engineers across three ASML HMI modules. Designed the setup-to-reset lifecycle within the existing TestComplete architecture so the normal workflow could run unattended. Planned reusable modules and technical handover; the engineers completed most implementation coding.</p>
       </article>
 
       <article class="proof fade">
@@ -867,12 +869,18 @@
     <div class="wrap">
       <h2 class="fade has-rule" data-en="Case studies and resume" data-zh="案例與履歷">Case studies and resume</h2>
       <p class="sec-sub fade"
-         data-en="Sanitized work evidence with claim boundaries, ownership, and unknowns kept visible."
-         data-zh="經過去識別化的工作證據，保留 claim boundary、ownership 與 Unknown。">Sanitized work evidence with claim boundaries, ownership, and unknowns kept visible.</p>
+         data-en="Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result."
+         data-zh="依職位查看 CEX 產品品質、自動化領導或技術支援案例。每個案例都說明我負責的部分與結果。">Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result.</p>
+      <p class="review-paths fade">
+        <a href="#btse-evidence" data-en="Product Quality: BTSE" data-zh="產品品質：BTSE">Product Quality: BTSE</a> ·
+        <a href="#cex-lab" data-en="Automation / API: CEX Lab" data-zh="自動化／API：CEX Lab">Automation / API: CEX Lab</a> ·
+        <a href="#support-evidence" data-en="Technical Support: Trend Micro" data-zh="技術支援：Trend Micro">Technical Support: Trend Micro</a> ·
+        <a href="#asml-evidence" data-en="Hands-on Lead: ASML" data-zh="技術帶領：ASML">Hands-on Lead: ASML</a>
+      </p>
 
       <div class="evidence-grid">
         <a class="evidence-card fade"
-           href="https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md"
+           id="btse-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md"
            target="_blank" rel="noopener">
           <p class="evidence-kicker" data-en="CEX product quality" data-zh="CEX 產品品質">CEX product quality</p>
           <h3 class="evidence-title">BTSE</h3>
@@ -883,7 +891,7 @@
         </a>
 
         <a class="evidence-card fade"
-           href="https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md"
+           id="support-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md"
            target="_blank" rel="noopener">
           <p class="evidence-kicker" data-en="Incident and support" data-zh="Incident 與支援">Incident and support</p>
           <h3 class="evidence-title">Trend Micro</h3>
@@ -894,7 +902,7 @@
         </a>
 
         <a class="evidence-card fade"
-           href="https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"
+           id="asml-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"
            target="_blank" rel="noopener">
           <p class="evidence-kicker" data-en="Automation leadership" data-zh="Automation leadership">Automation leadership</p>
           <h3 class="evidence-title">ASML</h3>
@@ -910,8 +918,8 @@
           <p class="evidence-kicker" data-en="Public resume" data-zh="公開履歷">Public resume</p>
           <h3 class="evidence-title" data-en="QA / Product Quality" data-zh="QA／Product Quality">QA / Product Quality</h3>
           <p class="evidence-copy"
-             data-en="A privacy-safe role history with approved tools, case-study links, evidence limits, and remote availability."
-             data-zh="不含私人電話的公開履歷，保留 approved tools、案例連結、evidence limits 與 remote availability。">A privacy-safe role history with approved tools, case-study links, evidence limits, and remote availability.</p>
+             data-en="Experience in exchange QA, enterprise incident investigation, and automation leadership. Includes case studies and remote availability."
+             data-zh="交易所 QA、企業事件調查與自動化領導經驗，附案例與遠端工作資訊。">Experience in exchange QA, enterprise incident investigation, and automation leadership. Includes case studies and remote availability.</p>
           <span class="evidence-link" data-en="Read resume ↗" data-zh="閱讀履歷 ↗">Read resume ↗</span>
         </a>
       </div>
@@ -928,10 +936,26 @@
 
       <div class="bento">
 
+        <article class="cell cell-c fade" id="cex-lab">
+          <h3 class="work-title">CEX Market Data Quality Lab</h3>
+          <p class="work-sub" data-en="Python / pytest · REST and WebSocket testing" data-zh="Python／pytest · REST 與 WebSocket 測試">Python / pytest · REST and WebSocket testing</p>
+          <p class="work-body" data-en="Tests public market-data snapshots and updates for stale events, sequence gaps, and invalid order-book values. Includes test design, executable checks, and versioned results. Uses Binance public APIs; separate from my employment at BTSE."
+             data-zh="檢查公開市場資料的 snapshot 與更新，涵蓋過期事件、序列缺口及無效訂單簿數值。附測試設計、可執行測試與版本結果。使用 Binance 公開 API，與 BTSE 任職經驗分開。">Tests public market-data snapshots and updates for stale events, sequence gaps, and invalid order-book values. Includes test design, executable checks, and versioned results. Uses Binance public APIs; separate from my employment at BTSE.</p>
+          <p class="work-body" data-en="Public market data only. No account, order, or funds testing. Live results apply to the recorded revision and date."
+             data-zh="僅使用公開市場資料，不測帳戶、下單或資金。Live 結果只適用於紀錄中的版本與日期。">Public market data only. No account, order, or funds testing. Live results apply to the recorded revision and date.</p>
+          <p>
+            <a class="evidence-link" href="https://github.com/sanyoii/cex-market-data-quality-lab" target="_blank" rel="noopener" data-en="Source and test design ↗" data-zh="原始碼與測試設計 ↗">Source and test design ↗</a> ·
+            <a class="evidence-link" href="https://github.com/sanyoii/cex-market-data-quality-lab/actions" target="_blank" rel="noopener" data-en="CI run history ↗" data-zh="CI 執行紀錄 ↗">CI run history ↗</a>
+          </p>
+        </article>
+
         <article class="cell cell-c fade">
           <div class="cell-wide-inner">
             <div>
               <h3 class="work-title">QA Decision Desk</h3>
+              <p><a class="evidence-link" href="test-status/" data-en="Open dashboard ↗" data-zh="開啟 Dashboard ↗">Open dashboard ↗</a> · <a class="evidence-link" href="https://github.com/sanyoii/RiskQADemoSite" target="_blank" rel="noopener" data-en="Source ↗" data-zh="原始碼 ↗">Source ↗</a></p>
+              <p class="work-body" data-en="Portfolio demonstration. Check each record's scope, revision, and freshness before interpreting its status."
+                 data-zh="作品集展示。判讀狀態前，請查看各筆紀錄的範圍、版本與證據時效。">Portfolio demonstration. Check each record's scope, revision, and freshness before interpreting its status.</p>
               <p class="work-sub"
                  data-en="Low-tech, evidence-first testing dashboard"
                  data-zh="低維護、以證據為主的測試 Dashboard">Low-tech, evidence-first testing dashboard</p>
@@ -968,6 +992,7 @@
           <div class="cell-body">
             <div>
               <h3 class="work-title">hd-decode</h3>
+              <p class="work-sub" data-en="Preview only here; no public demo or source linked." data-zh="本頁僅展示預覽，未提供公開 demo 或原始碼連結。">Preview only here; no public demo or source linked.</p>
               <p class="work-sub"
                  data-en="Human Design reading generator, a personal AI-tooling project"
                  data-zh="人類圖解讀報告產生器，拿來練 AI 工具開發的個人專案">Human Design reading generator, a personal AI-tooling project</p>
@@ -992,6 +1017,7 @@
           <div class="cell-body">
             <div>
               <h3 class="work-title">Codex Skill Dashboard</h3>
+              <p class="work-sub" data-en="Preview only here; no public demo or source linked." data-zh="本頁僅展示預覽，未提供公開 demo 或原始碼連結。">Preview only here; no public demo or source linked.</p>
               <p class="work-sub"
                  data-en="Searchable capability map for my Codex setup"
                  data-zh="我的 Codex 能力地圖">Searchable capability map for my Codex setup</p>
@@ -1022,6 +1048,7 @@
           <div class="cell-c-inner">
             <div>
               <h3 class="work-title">jobsmith</h3>
+              <p class="work-sub" data-en="Description only here; no public demo or source linked." data-zh="本頁僅介紹專案，未提供公開 demo 或原始碼連結。">Description only here; no public demo or source linked.</p>
               <p class="work-sub"
                  data-en="Job-search co-pilot for the Taiwan market"
                  data-zh="台灣求職 AI 助手">Job-search co-pilot for the Taiwan market</p>

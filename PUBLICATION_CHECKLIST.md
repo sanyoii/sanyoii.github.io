@@ -1,5 +1,7 @@
 # Day 16 / Day 20 — Portfolio Controlled Release Checklist
 
+> Current revision, 2026-09-06: user reviewed the resume and Portfolio and authorized commit/push. See [release verification](test-records/2026-09-06-public-release.md). Historical PASS records below apply only to their named revisions. The existing Pages workflow remains responsible for Dashboard checks and deployment.
+
 > Status: `Day 20 Website Production PASS · LinkedIn / platforms pending`
 > Audit date: 2026-09-01 (Asia/Taipei)
 > Scope: `index.html`、三份 case studies、公開 Resume、`404.html`、`assets/og-card.png`、GitHub Pages production 與 release／rollback path
