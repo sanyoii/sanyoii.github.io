@@ -63,11 +63,13 @@ def test_portfolio_publishes_only_canonical_claim_wording(repo_root):
     assert "高嚴重度缺陷" in html
 
 
-def test_contact_urls_display_their_https_scheme(repo_root):
+def test_contact_links_use_short_labels_and_preserve_destinations(repo_root):
     html = (repo_root / "index.html").read_text(encoding="utf-8")
 
-    assert '<span class="reach-text">https://www.linkedin.com/in/williamlu5405</span>' in html
-    assert '<span class="reach-text">https://github.com/sanyoii</span>' in html
+    assert '<span class="reach-text">LinkedIn</span>' in html
+    assert '<span class="reach-text">GitHub</span>' in html
+    assert 'href="https://www.linkedin.com/in/williamlu5405"' in html
+    assert 'href="https://github.com/sanyoii"' in html
 
 
 def test_day20_public_evidence_is_cross_linked(repo_root):

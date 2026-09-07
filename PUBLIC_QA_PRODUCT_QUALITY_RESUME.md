@@ -1,7 +1,7 @@
 # William Lu
 
 > Status: `Day 20 public resume v1 / Public 2026-09-01`
-> Revision: `2026-09-06 reviewed revision`
+> Revision: `2026-09-07 layout revision`
 > Role: Senior QA Engineer / Product Quality Engineer | Web3 & Crypto
 > Evidence: Sanitized from `PROFILE_CONTENT_SOURCE.md` (`Frozen v1.2`)
 > Privacy boundary: This public version omits phone, private application notes, internal artifacts, blocked metrics, and unresolved personal fields.
@@ -12,15 +12,31 @@ Taiwan | UTC+8 | Fully Remote | sanyoii@gmail.com
 
 ## Professional summary
 
-Senior QA Engineer with 12+ years across product QA and customer engineering. Identified and escalated three high-severity financial-logic defects at BTSE. At Trend Micro, combined test automation with incident RCA and hotfix validation. Led six Automation Engineers on an ASML engagement and designed the normal setup-to-reset workflow for unattended execution. Personal portfolio includes Python/pytest REST and WebSocket market-data checks.
+Senior QA Engineer with 12+ years across product QA and customer engineering. Identified and escalated three high-severity financial-logic defects at BTSE. At Trend Micro, combined test automation with incident RCA and hotfix validation.
+
+Led six Automation Engineers on an ASML engagement and designed the normal setup-to-reset workflow for unattended execution. Personal portfolio includes Python/pytest REST and WebSocket market-data checks.
 
 ## Core skills
 
-- Product quality: Exploratory Testing, Risk-based Testing, Test Design, Regression, Boundary and Negative Testing
-- Web3 and financial logic: CEX QA, Wallet, Spot, Futures, Convert, Fees, Funding, Liquidation, KYC
-- Automation, API, and data: Python, Selenium, Robot Framework, TestComplete, API Testing, WebSocket, Browser DevTools, SQL
-- Delivery and diagnostics: System and Performance Testing, Jenkins, Bamboo, Defect Triage, Hotfix Validation, Incident RCA
-- Leadership and investigation: Automation Planning, Log and Dump Analysis, WinDbg, ProcMon, Jira, Technical Handover
+### Product quality
+
+Exploratory Testing, Risk-based Testing, Test Design, Regression, Boundary and Negative Testing
+
+### Web3 and financial logic
+
+CEX QA, Wallet, Spot, Futures, Convert, Fees, Funding, Liquidation, KYC
+
+### Automation, API, and data
+
+Python, Selenium, Robot Framework, TestComplete, API Testing, WebSocket, Browser DevTools, SQL
+
+### Delivery and diagnostics
+
+System and Performance Testing, Jenkins, Bamboo, Defect Triage, Hotfix Validation, Incident RCA
+
+### Leadership and investigation
+
+Automation Planning, Log and Dump Analysis, WinDbg, ProcMon, Jira, Technical Handover
 
 ## Professional experience
 
