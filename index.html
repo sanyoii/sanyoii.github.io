@@ -270,9 +270,9 @@
   .stat-l {
     display: block;
     margin-top: 10px;
-    font-size: 12.5px;
+    font-size: 14px;
     line-height: 1.4;
-    color: var(--ink-faint);
+    color: var(--ink-dim);
     text-wrap: balance;
   }
 
@@ -356,6 +356,16 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
+  .evidence-featured { grid-column: 1 / -1; }
+  .evidence-card.evidence-featured { border-color: var(--accent); min-height: 0; }
+  .evidence-featured .evidence-copy { max-width: 68ch; }
+  .resume-entry { margin: -24px 0 32px; }
+  .resume-entry a { display: inline-flex; align-items: center; min-height: 44px; }
+  .experiments { margin-top: 44px; }
+  .experiments > summary { cursor: pointer; padding: 20px 0; font-size: 1.2rem; color: var(--ink); }
+  .experiments > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .experiment-overview { color: var(--ink-dim); max-width: 68ch; margin-bottom: 24px; }
+  .experiment-overview li + li { margin-top: 10px; }
   .evidence-card {
     display: flex;
     min-height: 250px;
@@ -487,9 +497,9 @@
   }
 
   .fork {
-    font-size: 12.5px;
+    font-size: 14px;
     line-height: 1.55;
-    color: var(--ink-faint);
+    color: var(--ink-dim);
     border-left: 2px solid var(--rule);
     padding-left: 14px;
     margin: 0 0 20px;
@@ -706,19 +716,27 @@
      wraps to four, so the CTAs need more room reclaimed than the
      short-screen rules above give back. */
   @media (max-width: 620px) {
-    .hero { padding-top: 34px; }
+    .hero { padding-top: 20px; }
     /* first line shares the vertical band with the fixed lang toggle,
        wrap before running under it */
-    .eyebrow { margin-bottom: 14px; max-width: calc(100% - 92px); }
+    .eyebrow { margin-bottom: 14px; max-width: 100%; letter-spacing: 0.08em; }
     h1 { margin-bottom: 12px; }
     .role { margin-bottom: 16px; }
     .tagline::after { margin-top: 14px; }
-    .hero-grid { gap: 22px; margin-bottom: 20px; }
+    .hero-grid { gap: 16px; margin-bottom: 16px; }
     .stats { padding: 16px; gap: 16px 18px; }
-    .avail { margin-bottom: 16px; }
-    .nav-links { display: none; }
-    .nav-actions { margin-left: auto; }
-    .brand { font-size: 1rem; }
+    .avail { margin-bottom: 12px; }
+    .nav-inner { gap: 12px; padding-top: 8px; padding-bottom: 8px; }
+    .nav-actions { margin-left: auto; gap: 14px; }
+    .nav-links { display: flex; gap: 14px; }
+    .nav-links a { display: none; min-height: 44px; align-items: center; }
+    .nav-links a[href="#evidence"], .nav-links a[href="#contact"] { display: inline-flex; }
+    .lang { min-height: 44px; }
+    .brand { font-size: 0; }
+    .brand-mark { font-size: 1.08rem; }
+    .ctas { display: grid; grid-template-columns: 1fr 1fr; }
+    .ctas .btn-primary { grid-column: 1 / -1; }
+    .ctas .btn { padding-left: 10px; padding-right: 10px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -808,7 +826,8 @@
      data-zh="我在 BTSE 找出期貨定價與推薦佣金的高嚴重度缺陷。目前鎖定 Web3 QA、產品品質與技術支援職位；可在台灣遠端工作，並能與歐洲時區重疊至少 4 小時。">At BTSE, I found high-severity defects in futures pricing and referral commissions. Now focused on Web3 QA, product quality, and technical support roles. Remote from Taiwan, with 4+ hours of European overlap.</p>
 
   <div class="ctas fade">
-    <a class="btn btn-primary" href="#impact" data-en="View Web3 impact" data-zh="查看 Web3 經驗">View Web3 impact</a>
+    <a class="btn btn-primary" href="#btse-evidence" data-en="Explore my QA case" data-zh="查看代表 QA 案例">Explore my QA case</a>
+    <a class="btn btn-ghost" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md" target="_blank" rel="noopener" data-en="Read resume ↗" data-zh="閱讀履歷 ↗">Read resume ↗</a>
     <a class="btn btn-ghost" href="#contact" data-en="Discuss a role" data-zh="聯絡我">Discuss a role</a>
   </div>
 </header>
@@ -871,57 +890,44 @@
       <p class="sec-sub fade"
          data-en="Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result."
          data-zh="依職位查看 CEX 產品品質、自動化領導或技術支援案例。每個案例都說明我負責的部分與結果。">Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result.</p>
-      <p class="review-paths fade">
-        <a href="#btse-evidence" data-en="Product Quality: BTSE" data-zh="產品品質：BTSE">Product Quality: BTSE</a> ·
-        <a href="#cex-lab" data-en="Automation / API: CEX Lab" data-zh="自動化／API：CEX Lab">Automation / API: CEX Lab</a> ·
-        <a href="#support-evidence" data-en="Technical Support: Trend Micro" data-zh="技術支援：Trend Micro">Technical Support: Trend Micro</a> ·
-        <a href="#asml-evidence" data-en="Hands-on Lead: ASML" data-zh="技術帶領：ASML">Hands-on Lead: ASML</a>
+      <p class="resume-entry fade">
+        <a href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md" target="_blank" rel="noopener" data-en="Read QA / Product Quality resume ↗" data-zh="閱讀 QA／產品品質履歷 ↗">Read QA / Product Quality resume ↗</a>
       </p>
 
       <div class="evidence-grid">
-        <a class="evidence-card fade"
+        <a class="evidence-card evidence-featured fade"
            id="btse-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md"
            target="_blank" rel="noopener">
-          <p class="evidence-kicker" data-en="CEX product quality" data-zh="CEX 產品品質">CEX product quality</p>
+          <p class="evidence-kicker" data-en="Start here · CEX product quality" data-zh="從這裡開始 · CEX 產品品質">Start here · CEX product quality</p>
           <h3 class="evidence-title">BTSE</h3>
           <p class="evidence-copy"
-             data-en="Trading, referral commission, and conversion findings tested through boundaries, APIs, WebSocket, SQL, and expected-versus-observed comparisons."
-             data-zh="交易、推薦佣金與兌換案例，使用 boundary、API、WebSocket、SQL 與 expected／observed comparison 驗證。">Trading, referral commission, and conversion findings tested through boundaries, APIs, WebSocket, SQL, and expected-versus-observed comparisons.</p>
+             data-en="I found three high-severity defects across trading, referral commissions, and conversion. I reproduced boundary failures and compared expected commission allocations with actual results. This case explains my tests, the reported issues, and what remained unresolved."
+             data-zh="我在交易、推薦佣金與兌換流程找到三個高嚴重度缺陷，重現邊界輸入問題，並比對預期佣金與實際結果。案例說明我如何驗證、回報，以及哪些問題仍未解決。">I found three high-severity defects across trading, referral commissions, and conversion. I reproduced boundary failures and compared expected commission allocations with actual results. This case explains my tests, the reported issues, and what remained unresolved.</p>
           <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
         </a>
 
         <a class="evidence-card fade"
            id="support-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md"
            target="_blank" rel="noopener">
-          <p class="evidence-kicker" data-en="Incident and support" data-zh="Incident 與支援">Incident and support</p>
+          <p class="evidence-kicker" data-en="Incident and support" data-zh="事件調查與技術支援">Incident and support</p>
           <h3 class="evidence-title">Trend Micro</h3>
           <p class="evidence-copy"
              data-en="Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct."
-             data-zh="四個獨立 incident、P1 escalation、hotfix 與 external beta 案例，明確區分 recovery 與 fix state。">Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct.</p>
+             data-zh="四個獨立案例，涵蓋事件調查、P1 升級處理、緊急修補與外部測試；清楚交代服務是否恢復、問題是否修復。">Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct.</p>
           <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
         </a>
 
         <a class="evidence-card fade"
            id="asml-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"
            target="_blank" rel="noopener">
-          <p class="evidence-kicker" data-en="Automation leadership" data-zh="Automation leadership">Automation leadership</p>
+          <p class="evidence-kicker" data-en="Automation leadership" data-zh="自動化測試團隊帶領">Automation leadership</p>
           <h3 class="evidence-title">ASML</h3>
           <p class="evidence-copy"
-             data-en="TestComplete lifecycle design, reusable modules, six-engineer delivery leadership, enablement evidence, and technical handoff."
-             data-zh="TestComplete lifecycle design、reusable modules、6 位 engineers 的 delivery leadership、enablement evidence 與 technical handoff。">TestComplete lifecycle design, reusable modules, six-engineer delivery leadership, enablement evidence, and technical handoff.</p>
+             data-en="I led six automation engineers, designed the TestComplete test lifecycle and reusable modules, and supported training and technical handoff. The case separates my leadership and design work from the team's implementation."
+             data-zh="我帶領 6 位自動化測試工程師，設計 TestComplete 測試生命週期與共用模組，並協助培訓及技術交接。案例分開說明我的帶領、設計工作與團隊的程式實作。">I led six automation engineers, designed the TestComplete test lifecycle and reusable modules, and supported training and technical handoff. The case separates my leadership and design work from the team's implementation.</p>
           <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
         </a>
 
-        <a class="evidence-card fade"
-           href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md"
-           target="_blank" rel="noopener">
-          <p class="evidence-kicker" data-en="Public resume" data-zh="公開履歷">Public resume</p>
-          <h3 class="evidence-title" data-en="QA / Product Quality" data-zh="QA／Product Quality">QA / Product Quality</h3>
-          <p class="evidence-copy"
-             data-en="Experience in exchange QA, enterprise incident investigation, and automation leadership. Includes case studies and remote availability."
-             data-zh="交易所 QA、企業事件調查與自動化領導經驗，附案例與遠端工作資訊。">Experience in exchange QA, enterprise incident investigation, and automation leadership. Includes case studies and remote availability.</p>
-          <span class="evidence-link" data-en="Read resume ↗" data-zh="閱讀履歷 ↗">Read resume ↗</span>
-        </a>
       </div>
     </div>
   </section>
@@ -981,6 +987,17 @@
           </div>
         </article>
 
+      </div>
+
+      <details class="experiments">
+        <summary data-en="Other experiments (3) — previews and contributions" data-zh="其他實驗（3）— 預覽與本人貢獻">Other experiments (3) — previews and contributions</summary>
+        <ul class="experiment-overview">
+          <li data-en="hd-decode: a personal AI-tooling project that generates visual reports." data-zh="hd-decode：產生視覺化報告的個人 AI 工具專案。">hd-decode: a personal AI-tooling project that generates visual reports.</li>
+          <li data-en="Codex Skill Dashboard: a searchable inventory of my active Skills." data-zh="Codex Skill Dashboard：整理我目前啟用的 Skill，提供搜尋。">Codex Skill Dashboard: a searchable inventory of my active Skills.</li>
+          <li data-en="JobSmith: my additions to an open-source fork cover PDF export, ATS checks, and parsing guards." data-zh="JobSmith：基於開源專案，我加入 PDF 匯出、ATS 檢查與解析防呆。">JobSmith: my additions to an open-source fork cover PDF export, ATS checks, and parsing guards.</li>
+        </ul>
+        <p class="experiment-overview" data-en="Preview or description only; no public demo or source is linked for these projects." data-zh="以下僅提供預覽或介紹，未連結公開 demo 或原始碼。">Preview or description only; no public demo or source is linked for these projects.</p>
+        <div class="bento">
         <article class="cell cell-a fade">
           <div class="work-shot">
             <img id="shot1" src="assets/work-hd-decode.jpg"
@@ -1072,7 +1089,8 @@
           </div>
         </article>
 
-      </div>
+        </div>
+      </details>
     </div>
   </section>
 

@@ -117,8 +117,10 @@ def test_public_resume_excludes_private_application_content(repo_root):
 def test_role_paths_and_work_evidence_are_reachable(repo_root):
     html = (repo_root / "index.html").read_text(encoding="utf-8")
     for anchor in ("btse-evidence", "support-evidence", "asml-evidence", "cex-lab"):
-        assert f'href="#{anchor}"' in html
         assert f'id="{anchor}"' in html
+    assert 'href="#btse-evidence"' in html
+    for case in ("BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md", "TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md", "ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"):
+        assert f'href="https://github.com/sanyoii/sanyoii.github.io/blob/main/{case}"' in html
     assert 'href="test-status/"' in html
     assert (repo_root / "test-status/index.html").is_file()
     assert 'href="https://github.com/sanyoii/cex-market-data-quality-lab"' in html
