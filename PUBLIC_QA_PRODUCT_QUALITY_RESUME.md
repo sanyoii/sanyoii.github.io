@@ -8,31 +8,37 @@ Taiwan | UTC+8 | Fully Remote | sanyoii@gmail.com
 
 ## Professional summary
 
-Senior QA Engineer with 12+ years across product QA and customer engineering. Identified and escalated three high-severity financial-logic defects at BTSE. At Trend Micro, built proactive Chrome compatibility monitoring and improved escalation intake quality alongside incident RCA and hotfix validation.
-
-Led six Automation Engineers on an ASML engagement and designed the normal setup-to-reset workflow for unattended execution. Personal portfolio includes Python/pytest REST and WebSocket market-data checks.
+Senior QA Engineer with 12+ years across product QA and customer engineering. Identified and escalated three high-severity financial-logic defects at BTSE. At Trend Micro, combined Python test automation with incident RCA and hotfix validation. Led six Automation Engineers on an ASML engagement, designing the normal setup-to-reset workflow for unattended execution. Personal portfolio includes Python/pytest REST and WebSocket market-data checks.
 
 ## Core skills
 
-### Product quality
+### Test Planning & Leadership
 
-Exploratory Testing, Risk-based Testing, Test Design, Regression, Boundary and Negative Testing
+Risk-based Testing, Test Specifications, Test Case and Test Data Design, Test Reviews, QA Leadership, Beta Planning
 
-### Web3 and financial logic
+### Functional & Acceptance Testing
 
-CEX QA, Wallet, Spot, Futures, Convert, Fees, Funding, Liquidation, KYC
+Manual, Exploratory, Functional, Regression, Boundary Test, Negative, FET (Force-Error Test); RAT (Release Acceptance Test), FAST (Functional Acceptance Simple Test), TOFT (Task-Oriented Function Test)
 
-### Automation, API, and data
+### System & Performance Testing
 
-Python, Selenium, Robot Framework, TestComplete, API Testing, WebSocket, Browser DevTools, SQL
+System, Compatibility, Cross-browser, Performance, Load, Stress
 
-### Delivery and diagnostics
+### API & Data Validation
 
-System and Performance Testing, Jenkins, Bamboo, Defect Triage, Hotfix Validation, Incident RCA
+E2E Web API Validation, WebSocket Inspection, Browser DevTools, SQL
 
-### Leadership and investigation
+### Automation & CI
 
-Automation Planning, Log and Dump Analysis, WinDbg, ProcMon, Jira, Technical Handover
+Python, Selenium, Robot Framework, TMSTAF, TestComplete, Jenkins, Bamboo
+
+### Troubleshooting & Diagnostics
+
+Defect Triage, Incident RCA, Hotfix Validation, Log and Dump Analysis, Windows Event Log, WinDbg, ProcMon, Process Explorer
+
+### Product Domains
+
+Security-product Functional Validation; CEX, Wallet, Spot, Futures, Convert, Referral/Affiliate, Fees, Funding, Liquidation, KYC
 
 ## Professional experience
 
@@ -40,54 +46,55 @@ Automation Planning, Log and Dump Analysis, WinDbg, ProcMon, Jira, Technical Han
 
 Feb 2025–Present
 
-- Maintained current QA practice through a personal Python, pytest, Playwright, and GitHub Actions portfolio.
+- Career break for family caregiving; maintained current QA practice through a personal Python, pytest, Playwright, and GitHub Actions portfolio.
 
 ### Nogle (BTSE) | Senior QA Engineer
 
 Sep 2024–Nov 2024 | Taipei, Taiwan | On-site
 
 - Identified and escalated three high-severity financial-logic defects across trading, referral commission, and conversion flows through boundary, negative, API, WebSocket, and SQL validation.
-- Tested Wallet, deposit, withdrawal, blockchain confirmation, Referral and Affiliate, Spot, Futures, Convert, fees, funding, liquidation, and KYC.
+- Tested Wallet, deposit, withdrawal, blockchain confirmation, Referral and Affiliate, Spot, Futures, Convert, fees, funding, liquidation, and KYC on BTSE's centralized crypto exchange.
 - Used Manual and Exploratory Testing, E2E Web API validation, Browser DevTools network inspection, SQL through TablePlus, and cross-browser testing.
 
 ### Zealogics / ASML | Project Leader / Senior Automation Test Engineer
 
 May 2023–Apr 2024 | Fully Remote
 
-- Led six Automation Engineers across HMI eP5 modules iCDU, MM Flow, and ADEL.
+- Led six Automation Engineers in a fully remote ASML engagement covering HMI eP5 modules iCDU, MM Flow, and ADEL.
 - Designed the setup, execution, cleanup, and reset lifecycle in the existing TestComplete architecture. The normal workflow ran unattended; connection failures required manual investigation.
 - Used Bitbucket for source control and Bamboo with TestComplete for CI test orchestration and result review.
-- Planned reusable modules and reviewed cases before assignment; the six engineers completed most implementation coding. Provided user training and technical handover.
+- Planned reusable modules and reviewed cases before assignment; the six engineers completed most implementation coding. Tracked work and defects in Jira and delivered TOI and technical handover.
 
 ### Trend Micro | Senior QA Engineer & Senior Customer Service Engineer
 
 Jul 2014–Jan 2023 | Taipei, Taiwan | On-site
 
-- Built Python monitoring for Chrome Beta/Stable releases that triggered browser updates, DLP sensitive-file upload tests, and failure alerts, helping the team address compatibility issues before customer reports.
-- Proposed a DLP troubleshooting guide organized by issue type, with step-by-step instructions for collecting diagnostic data. In its first month, the share of cases returned by SEG to L2 for missing information fell by 20 percentage points, according to manager-reported figures.
-- Proposed a supported-site DLP scanning design adopted by the team. QA performance tests comparing this design change showed at least 10% lower CPU and memory consumption each; unlisted sites were documented as unsupported, with a user configuration and Support review path.
-- Used logs, dumps, Windows Event Log, WinDbg, ProcMon, Process Explorer, VMware, Hyper-V, and Azure environments to reproduce and diagnose complex customer issues.
+- Served as SEG Leader and QA Leader for enterprise security products, combining incident RCA, hotfix validation, and system and performance testing.
+- Wrote Python monitoring for Chrome Beta and Stable releases through Google APIs, triggering browser updates, sensitive-file upload tests, and email alerts when DLP failed to block an upload. This helped the team address compatibility issues before customer reports.
+- Proposed supported-site scanning, adopted and implemented by the team. Based on my recollection of the QA performance test report, this design change alone reduced CPU and memory use by at least 10% each relative to the previous design. Unlisted sites were explicitly unsupported; users could try adding sites to a configuration file and report failures to Support for the team to assess whether to support them.
+- Initiated an issue-type-based DLP diagnostic guide. In its first month, the share of cases SEG returned to L2 for missing information fell by 20 percentage points, according to figures shared by my manager.
+- Automated validation with Python, Selenium, Robot Framework and TMSTAF, using Jenkins and GitHub for CI and code collaboration. Reproduced incidents in VMware, Hyper-V and Azure environments and investigated logs and dumps with WinDbg and ProcMon.
 - Received Trend Micro's internal Yearly Best SEG Engineer recognition in 2019 and 2021.
 
 ### Trend Micro | Senior Customer Service Engineer
 
 Jun 2013–Jul 2014 | Taipei, Taiwan | On-site
 
-- Served as the final escalation point for complex customer incidents, coordinating reproduction, root-cause analysis, workarounds, hotfix validation, and engineering handoff.
-- Proposed replacing the WFBS Survival Guide with a practical Guide Book for new Support staff; after rollout, missing-information case returns declined month by month despite continued staff turnover.
+- Acted as SEG Leader and final escalation point for complex customer incidents, coordinating reproduction, root-cause analysis, workarounds, hotfix validation, and engineering handoff.
+- Translated recurring escalations into product fixes, validation improvements, and support documentation.
 
 ### Trend Micro | QA Engineer
 
 May 2010–Jun 2013 | Taipei, Taiwan | On-site
 
-- Owned module and beta testing for Worry-Free Business Security Advanced across functional, regression, system, performance, and customer-environment validation.
-- Led external beta deployments and expanded scan, system, and performance tests using patterns from customer incidents.
+- Owned module and beta testing for Worry-Free Business Security Advanced, including functional, regression, system, performance, and customer-environment validation.
+- Designed test specifications, cases, and test data; led reviews and tracked follow-up actions. Planned internal beta scope and designed and executed external beta scenarios in customer environments.
 
 ### Tatung | Firmware Engineer
 
 Apr 2006–Apr 2010 | Taipei, Taiwan | On-site
 
-- Developed and validated C and Java firmware for LCD TV and smart-meter systems.
+- Developed and validated C and Java firmware for LCD TV and smart-meter systems, contributing to stable product delivery and an OEM engagement.
 
 ## Selected case studies
 

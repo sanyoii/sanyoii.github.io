@@ -20,9 +20,9 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_BASE = 'https://github.com/sanyoii/sanyoii.github.io/blob/main/'
 PAGES = (
-    ('BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md', 'btse-case.html', 'BTSE｜CEX 產品品質案例'),
-    ('TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md', 'trend-support-case.html', 'Trend Micro｜事件診斷與技術支援案例'),
-    ('ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md', 'asml-case.html', 'ASML｜自動化與團隊帶領案例'),
+    ('BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md', 'btse-case.html', '交易、佣金與兌換測試'),
+    ('TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md', 'trend-support-case.html', '客戶問題排查與產品改善'),
+    ('ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md', 'asml-case.html', '自動化測試規劃與團隊帶領'),
     ('PUBLIC_QA_PRODUCT_QUALITY_RESUME.md', 'resume.html', None),
 )
 LINKS = {SOURCE_BASE + source: output for source, output, _ in PAGES}

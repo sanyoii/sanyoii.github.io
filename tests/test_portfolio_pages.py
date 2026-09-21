@@ -80,6 +80,39 @@ def test_metadata_fields_and_navigation_do_not_run_together(browser, site_url, w
     page.close()
 
 
+@pytest.mark.parametrize('width', [390, 1440])
+@pytest.mark.parametrize('lang', ['en', 'zh-Hant'])
+def test_published_case_journeys_preserve_language(browser, site_url, width, lang):
+    context = browser.new_context(viewport={'width': width, 'height': 900})
+    page = context.new_page()
+    errors = []
+    page.on('pageerror', lambda error: errors.append(str(error)))
+    page.goto(site_url)
+    if page.locator('html').get_attribute('lang') != lang:
+        page.locator('#langBtn').click()
+    assert page.locator('a[href="resume.html"]').count() == 1
+    assert page.locator('.review-banner, .experience-strip, .full-notes').count() == 0
+    for filename in ['btse-case.html', 'asml-case.html', 'trend-support-case.html', 'dlp-case.html']:
+        page.locator(f'#evidence a[href="{filename}"]').click()
+        assert page.locator('html').get_attribute('lang') == lang
+        if filename != 'dlp-case.html':
+            selected = 'en' if lang == 'en' else 'zh'
+            assert page.locator(f'[data-source-body="{selected}"]').is_visible()
+        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+        page.reload()
+        assert page.locator('html').get_attribute('lang') == lang
+        page.locator('footer a[href="index.html#evidence"]').click()
+        assert page.locator('html').get_attribute('lang') == lang
+    assert not errors
+    context.close()
+
+
+def test_published_sources_match_approved_candidates():
+    candidates = ROOT / 'docs/reviews/2026-09-21-portfolio-revision/candidate-sources'
+    for source, _, _ in build.PAGES:
+        assert (ROOT / source).read_text(encoding='utf-8') == (candidates / source).read_text(encoding='utf-8')
+
+
 @pytest.mark.parametrize('bad', ['[^note]: Hidden footnote', ':::note', '![image](asset.png)'])
 def test_unsupported_source_fails_explicitly(bad):
     with pytest.raises(ValueError):
@@ -166,7 +199,7 @@ def test_home_destinations_and_mobile_baseline(browser, site_url):
         assert not page.locator('.experiments').get_attribute('open')
         if lang == 'en':
             page.locator('#langBtn').click()
-    for selector, dest in [('#btse-evidence', 'btse-case.html'), ('#incident-evidence', 'trend-support-case.html'), ('#asml-evidence', 'asml-case.html'), ('.ctas a[href="resume.html"]', 'resume.html')]:
+    for selector, dest in [('#btse-evidence a', 'btse-case.html'), ('#support-evidence a[href="trend-support-case.html"]', 'trend-support-case.html'), ('#asml-evidence a', 'asml-case.html'), ('.ctas a[href="resume.html"]', 'resume.html')]:
         page.goto(site_url)
         page.locator(selector).click()
         assert page.url.endswith(dest)
