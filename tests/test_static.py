@@ -90,14 +90,14 @@ def test_day20_public_evidence_is_cross_linked(repo_root):
     resume = (repo_root / public_resume).read_text(encoding="utf-8")
     assert "https://sanyoii.github.io/" in resume
     assert f'{base}{public_resume}' not in resume
-    assert "Public 2026-09-01" in resume
+    assert "independent verification" in resume
     assert "Local release candidate" not in resume
     for filename in case_studies:
         assert f'{base}{filename}' in resume
         case_study = (repo_root / filename).read_text(encoding="utf-8")
         assert "https://sanyoii.github.io/" in case_study
         assert f'{base}{public_resume}' in case_study
-        assert "Public 2026-09-01" in case_study
+        assert "independent verification" in case_study
         assert "Local only" not in case_study
         assert "Do not publish or link" not in case_study
 

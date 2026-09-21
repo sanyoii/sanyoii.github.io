@@ -1,19 +1,48 @@
 # Trend Micro Incident, Beta, and Support Case Study
 
-> Status: `Day 18 Complete v1 / Public 2026-09-01`
 > Period: May 2010–Jan 2023
 > Roles: QA Engineer; Senior Customer Service Engineer; Senior QA Engineer & Senior Customer Service Engineer
-> Evidence: `User-attested / confidential internal sources inaccessible / not independently document-verifiable`
-> Public boundary: This file uses sanitized product and incident categories. It omits customer names, locations, environment counts, internal metrics, exact upgrade chains, third-party product names, and security-component disabling methods.
 > Public navigation: [Portfolio](https://sanyoii.github.io/) | [Public QA resume](https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md)
+
+> Source: Based on my direct work and recollection. Original employer records are no longer available for independent verification. Confidential details are omitted.
 
 ## English
 
 ### The product-quality problem
 
-Enterprise endpoint security has two quality obligations at the same time: enforce protection without interruption, and keep the customer's business environment usable. A failed upgrade, a driver conflict, or an incomplete policy action can appear as different symptoms across endpoints. The first support report is therefore evidence, not yet the root cause.
+Endpoint security needs to protect data while allowing customers to keep working. A failed upgrade, a driver conflict, or an incomplete policy action can appear as different symptoms across endpoints. The first support report is therefore evidence, not yet the root cause.
 
-Across Trend Micro QA and customer escalation roles, I worked on high-volume incidents, P1 support cases, hotfix validation, and an external beta in production environments. My responsibility was to turn incomplete symptoms into a reviewable evidence package, recover the affected environment when possible, and give Engineering a testable failure model.
+Across Trend Micro QA and customer escalation roles, I worked on high-volume incidents, P1 support cases, hotfix validation, and an external beta in production environments. I gathered diagnostic information, helped restore the affected environment where possible, and gave Engineering the evidence needed to reproduce and test the problem.
+
+### Proactive DLP checks after Chrome updates
+
+Chrome major and minor releases sometimes broke the browser integration used to block sensitive-file uploads. We initially learned about failures from customer cases and then rushed compatibility hotfixes.
+
+I wrote a Python program that checked Google's official API for Chrome Beta and Stable versions. On detecting a new version, the workflow triggered a browser update and a sensitive-file upload test. If DLP failed to block the upload, it emailed the team to flag the need for a correction.
+
+`New Chrome version → browser update → DLP upload-blocking test → email alert on failure`
+
+This helped the team address compatibility issues before customers discovered them and reduced manual effort around Chrome releases. DLP QA usually had four people and at most five, combining feature QA and SEG work; this case occurred with four. I do not have retained measurements of time saved or defects caught. The API endpoint and proprietary implementation are not reproduced here.
+
+### Supported-site scanning: performance and scope
+
+During a team-led DLP refactor, I proposed replacing scanning across all websites with a supported-site list. The team adopted the design. The previous browser integration sent website data through DLP scanning, and customers frequently reported slower browsing.
+
+With the new design, scanning applied to supported sites. Documentation explicitly marked unlisted sites as unsupported. Users could add a site to a configuration file to try enabling support; if it did not work, they could open a Support case for the team to assess whether to support that site. Adding a site did not guarantee protection.
+
+**Based on my recollection of the QA performance test report, switching this site-list design alone reduced CPU consumption and memory consumption by at least 10% each, relative to the previous design.** This was a comparison of the site-list design, not a combined result for the entire refactor. I proposed the design; the team adopted and implemented it.
+
+The tradeoff was a narrower default scanning scope with a documented path for requesting additional site support. These resource reductions do not establish faster page loads by the same percentage or unchanged protection across all websites. The original report, baseline values, and test-environment details are not available for independent verification.
+
+### Case information and support training
+
+As SEG Leader, I checked each case for a clear problem description, reproduction steps, and required diagnostic information. I returned incomplete cases to L2 with specific collection requests. Complete cases were assigned by priority, complexity, and team workload.
+
+Frequent WFBS Support staff changes left newcomers struggling to handle cases. I proposed replacing the rough Survival Guide with a practical WFBS Guide Book. After rollout, missing-information case returns declined month by month, even though staff turnover did not decline.
+
+I applied that experience to DLP by initiating an illustrated diagnostic-data collection guide organized by issue type. It explained how to classify the problem, which evidence was needed, and how to collect it step by step. We continued maintaining and updating the material.
+
+**In the first month after the DLP guide rolled out, the share of cases returned by SEG to L2 for missing information fell by 20 percentage points, according to figures shared by my manager at the time.** This is an absolute change in the case-return percentage, not a relative 20% reduction or a measure of resolution time. The baseline, final percentage, case count, and original report are not available for independent verification. The WFBS improvement remains qualitative; the DLP figure does not apply to WFBS or Chrome monitoring.
 
 ### How I handled incidents
 
@@ -52,9 +81,9 @@ Across Trend Micro QA and customer escalation roles, I worked on high-volume inc
 
 ### Evidence limits
 
-- The four cases come from direct work and user-attested memory. Former-employer records are no longer accessible.
-- Internal case volumes, customer counts, support-reduction percentages, coverage percentages, and turnaround figures are intentionally excluded.
-- Customer identities, locations, endpoint counts, exact upgrade paths, third-party product names, and security-control details are not disclosed.
+- The proactive testing, support training, and four incident/beta cases come from direct work and my recollection. Former-employer records are no longer accessible.
+- The 20-percentage-point case-return change comes from figures shared by my manager. CPU and memory reductions come from my recollection of the QA performance report and apply to a change in scanning scope. These are separate outcomes, and neither has been independently verified.
+- Customer identities, locations, endpoint counts, exact upgrade paths, customer-specific third-party conflicts, and security-control bypass details are not disclosed.
 - The case study does not claim a breach, a universal fix, sole ownership of team outcomes, or original-environment retesting where it did not occur.
 - Product fixes, customer rollout, and case closure are attributed to the responsible Engineering and Support teams.
 
@@ -62,49 +91,78 @@ Across Trend Micro QA and customer escalation roles, I worked on high-volume inc
 
 ### 產品品質問題
 
-企業端點防護同時有兩個品質責任：安全功能要有效，客戶的工作環境也要維持可用。Upgrade failure、driver conflict 或不完整的 policy action，可能在不同 endpoints 呈現不同症狀。因此，Support 收到的第一份描述只是 evidence，還不是 root cause。
+端點防護除了要有效阻擋威脅，也不能妨礙客戶工作。升級失敗、驅動程式衝突或原則未正確套用，在不同環境可能呈現不同症狀；我會先蒐集資料、重現問題，再判斷原因。
 
-我在 Trend Micro 的 QA 與 customer escalation 工作涵蓋高量 incident、P1 support case、hotfix validation，以及 production environments 中的 external beta。我的責任是把不完整症狀整理成可 review 的 evidence package，在可行時先恢復環境，並提供 Engineering 可測試的 failure model。
+我在 Trend Micro 的 QA 與客戶技術支援工作涵蓋大量客戶問題、P1 緊急案件、hotfix 驗證，以及客戶正式環境中的外部 Beta 測試。我負責整理症狀與診斷資料、在可行時協助恢復環境，並提供工程團隊可重現及驗證的問題資訊。
 
-### 我怎麼處理 incident
+### Chrome 更新後的主動 DLP 驗證
 
-- 在改動 endpoint 前，先檢查 problem statement、reproduce steps、logs、dumps、system information 與 environment history。
-- 當環境允許時，在內部 lab 或 customer-provided VM 重現問題。
-- 使用 Windows Event Log、WinDbg、ProcMon、Process Explorer、performance data、product logs 與 system state，把症狀和可能原因分開。
-- Isolation result 先視為 working hypothesis；直到 logs、dumps、reproduction 與 component state 指向同一原因，才形成 RCA。
-- Hotfix handoff 前驗證 target behavior 與 side effects。客戶端 deployment 與 case closure 仍由 Support 負責。
-- 把重複出現的 incident patterns 轉成 regression、system、performance、upgrade 與 recovery coverage。
+Chrome 大、小版本更新有時會讓阻擋敏感檔案上傳的瀏覽器整合失效。團隊原先直到收到客戶案件，才得知相容性問題，接著緊急提供 hotfix。
+
+我撰寫 Python 程式，從 Google 官方 API 取得 Chrome Beta 與 Stable 版本。偵測到新版本後，流程觸發瀏覽器更新及敏感檔案上傳測試；若 DLP 未能阻擋，就寄信通知團隊修正。
+
+`偵測 Chrome 新版本 → 更新瀏覽器 → 驗證 DLP 上傳阻擋 → 失敗時寄信通知`
+
+這讓團隊能在客戶回報前處理相容性問題，減少 Chrome 更新時的人工處理工作。DLP QA 通常 4 人、最多 5 人，同時負責新功能 QA 與 SEG 工作；這個案例發生時有 4 人。節省工時與提早發現的缺陷數沒有保留量測資料，本文也不公開 API 網址細節或公司專有實作。
+
+### 支援網站清單：效能與掃描範圍
+
+原有瀏覽器整合會將所有網站的資料交給 DLP 掃描，客戶經常反映瀏覽速度變慢。團隊決定重構 DLP 時，我提出改用支援網站清單，不再預設掃描所有網站，團隊採用並實作了這個設計。
+
+改版後只針對支援網站掃描。文件明確將未列網站標為不支援，並說明使用者可先將網站加入設定檔嘗試；若仍無法作用，再向技術支援團隊回報，由團隊評估是否支援。加入設定檔不保證防護有效。
+
+**依我對當時 QA 效能測試報告的回憶，單獨切換網站清單設計後，CPU 與記憶體消耗各相對於改善前降低至少 10%。** 這是網站清單設計的比較結果，不是整體重構的合併成效。原始報告、基準值與測試環境細節目前無法取得，未經獨立核實。
+
+降低資源消耗的同時，預設掃描範圍也縮小了。這項設計提供了申請新增網站支援的流程，但不代表所有網站的防護範圍不變，也不能將資源消耗降幅解讀為網頁載入速度提升相同比例。
+
+### 案件資料完整度與技術支援訓練
+
+擔任 SEG Leader 時，我先檢查案件描述、重現步驟與必要診斷資料。資料不足就退回 L2，明確說明需要補哪些資訊；完整案件則依優先序、複雜度與成員手上的工作量分派。
+
+WFBS 技術支援團隊的人員流動頻繁，新人常不熟悉案件處理。我提出將較粗略的 Survival Guide 重寫成 WFBS Guide Book，協助新人認識產品與處理客戶問題。上線後，人員流動率沒有下降，但案件因資料不足被退回的比例逐月下降。
+
+在 DLP 遇到相似問題時，我運用 WFBS 的經驗，提出按問題類型編排的圖文診斷資料蒐集指南。先說明如何判斷問題類型，再逐步列出要收哪些資料、如何蒐集，團隊也持續維護及更新。
+
+**依當時主管分享的數據，DLP 指南上線首月，案件因資料不足被 SEG 退回 L2 補件的比例下降 20 個百分點。** 這是退回比例的絕對變化，不是相對下降 20%，也不是案件處理時間。基準、改善後比例、案件數與原始報表目前無法取得，未經獨立核實。WFBS 的改善沒有保留量化數據；這個 DLP 數字也不適用於 Chrome 監測案例。
+
+### 我怎麼處理客戶問題
+
+- 改動客戶端點前，先檢查問題描述、重現步驟、日誌、記憶體傾印、系統資訊及環境變更紀錄。
+- 環境允許時，在內部測試環境或客戶提供的虛擬機器重現問題。
+- 使用 Windows Event Log、WinDbg、ProcMon、Process Explorer、效能資料、產品日誌與系統狀態，分辨症狀與可能原因。
+- 隔離測試的結果先作為假設，再用日誌、記憶體傾印、重現結果及元件狀態交叉確認原因。
+- 交付 hotfix 前，驗證目標問題與可能副作用；客戶端部署與結案由技術支援團隊負責。
+- 將反覆出現的客戶問題納入回歸、系統、效能、升級及復原測試。
 
 ### 四個案例
 
-| 案例 | 失敗訊號 | 證據與處理 | 已知結果 | 證據邊界 |
+| 案例 | 問題現象 | 證據與處理 | 已知結果 | 驗證限制 |
 |---|---|---|---|---|
-| WFBS 7.0 incident response／SP1 | Release 後出現資源使用升高、系統變慢、hang 與 endpoint instability | 我擔任日班 Ticket Owner；資料不足就列出明確缺口退回補件，可重現時整理 logs／dumps 給 Engineering，之後驗證 hotfix target 與 side effects。我再把 incident patterns 納入 SP1 的 Scan、Messaging Security Agent、system 與 performance coverage | 當時內部回報顯示，團隊應變與 SP1 後的 support demand 下降；這是 QA、Engineering 與 Support 的團隊成果 | 原始內部統計與 artifacts 已無法存取；本文不把團隊 tickets 或 support reduction 寫成個人成果 |
-| OfficeScan DLP P1 escalation | 兩套具 DLP 能力的產品同時運作時，policy enforcement 失效並發生 endpoint crash | 我先確認 policy／service state，收集 logs、Windows events、full memory dump 與 process data，再用 customer-provided VM 重現衝突。Driver 與 process hook 的資源競爭能解釋兩種症狀 | 客戶接受一次只運行一套 DLP 產品；日常操作恢復，Support 關閉 case，之後未再收到相關 ticket | 這是 operational workaround，不是 permanent compatibility fix；沒有 evidence 顯示發生 data breach |
-| WFBS P1 upgrade escalation | Upgrade 後 Real-time／Manual Scan 漏掉 test sample | Upgrade evidence 顯示 file replacement／cleanup 失敗，留下 mixed-version components，必要 processes 也未正常運作。Clean removal 與 fresh install 先恢復 expected detection；我再重建 customer upgrade path，驗證 hotfix、完整功能與 side effects | Hotfix 通過重建的 customer path；客戶端 deployment 與 closure 由 Support 處理 | 相同症狀可能有其他 root causes；本文不聲稱 hotfix 解決所有 scan failures，也不把 customer rollout 寫成我的工作 |
-| WFBS 7.0 external beta | 不同 production environments 的 client upgrade 出現功能遺失、crash、hang 或 slowdown | Recovery 前先收集 logs、system information、events 與 dumps，再以 clean removal／fresh install 恢復 affected endpoints；每天把 evidence package 交回 product team，後續 builds 則在下一個 customer environment 檢查 | Field evidence 成為後續 builds 與 product fixes 的輸入，同時先讓客戶環境恢復可用 | 下一個環境的結果屬 cross-environment validation，不是原 endpoint retest。正式版後仍有 upgrade failures，因此不能說 beta 消除風險 |
+| WFBS 7.0 客戶問題處理與 SP1 | 發布後出現資源消耗增加、系統變慢、停止回應及端點不穩定 | 我擔任日班案件負責人；缺資料時明確要求補件，可重現時整理日誌與記憶體傾印給工程團隊，再驗證 hotfix 與副作用。後續將問題納入 SP1 的 Scan、Messaging Security Agent、系統及效能測試 | 當時內部回報顯示，團隊處理與 SP1 發布後，支援需求下降；這是 QA、工程及技術支援團隊的共同成果 | 原始統計與紀錄已無法取得，不能把團隊的案件處理量或支援需求下降全歸為個人成果 |
+| OfficeScan DLP P1 案件 | 兩套具 DLP 功能的產品同時運作時，防護原則失效，端點也會當機 | 確認原則與服務狀態，蒐集日誌、Windows 事件、完整記憶體傾印及處理程序資料，再用客戶提供的虛擬機器重現。驅動程式與處理程序攔截機制的資源競爭能解釋兩種症狀 | 客戶接受一次只執行一套 DLP 產品，恢復日常操作；技術支援團隊結案後，未再收到相關案件 | 這是暫時處理方式，不是永久的相容性修正；沒有資料外洩的證據 |
+| WFBS P1 升級案件 | 升級後，即時與手動掃描都未偵測到測試樣本 | 升級資料顯示檔案替換及清理失敗，造成元件版本混雜，必要處理程序也未正常運作。先完整移除再重新安裝，恢復預期偵測；之後重建客戶升級流程，驗證 hotfix、完整功能及副作用 | hotfix 通過重建環境中的測試；客戶端部署與結案由技術支援團隊處理 | 相同症狀可能有其他原因，這個結果不代表修正所有掃描失敗情況 |
+| WFBS 7.0 外部 Beta | 不同客戶正式環境升級用戶端後，出現功能遺失、當機、停止回應或速度變慢 | 復原前先蒐集日誌、系統資訊、事件及記憶體傾印，再完整移除並重新安裝。每天將診斷資料交回產品團隊，後續版本則在下一個客戶環境檢查 | 現場資料協助後續版本修正，同時先恢復客戶環境的可用性 | 下一個客戶環境的驗證，不等於原端點複測。正式版發布後仍有升級問題，因此 Beta 並未消除這項風險 |
 
 ### 品質判斷
 
-1. Recovery 前先保留 evidence。Uninstall 或 fresh install 能恢復服務，也可能清掉 RCA 所需的原始狀態。
-2. 把 recovery 與 correction 分開。Fresh install 或 product-isolation workaround 可以恢復 operation，但不能證明底層 defect 已修正。
-3. 重建客戶實際路徑。通用 clean environment 不能取代真正觸發問題的 upgrade sequence、software interaction、policy state 或 system condition。
-4. Partial mitigation 不能當 fix。DLP case 的 whitelisting 只延後 crash，enforcement 仍會失效，所以我沒有把它判定為解決方案。
-5. 明確標示 ownership。我負責整理證據、重現、hotfix validation 與 handoff；Support 負責 customer rollout／closure，Engineering 負責 code changes。
+1. 復原前先保留證據。移除或重新安裝能恢復服務，也可能清掉分析根因所需的狀態。
+2. 分開記錄服務復原與缺陷修正。重新安裝或隔離衝突產品，不代表底層問題已經修好。
+3. 重建客戶實際操作流程。一般乾淨環境無法取代觸發問題的升級順序、軟體互動、原則設定或系統狀態。
+4. 確認緩解措施是否真的解決問題。在 DLP 衝突案例中，加入排除清單只延後當機，防護仍會失效，因此不能判定為修復。
+5. 清楚交接責任。我負責整理證據、重現及 hotfix 驗證；技術支援團隊負責客戶部署與結案，工程團隊負責程式修改。
 
-### 可重用的 incident／beta controls
+### 可沿用的方法
 
-- 定義 escalation 的最低 evidence package：reproduce steps、timestamps、product logs、Windows events、system information、可取得的 dumps，以及近期環境變更。
-- Cleanup、upgrade rollback、driver removal 或 product isolation 前先保存原始狀態。
-- 記錄 validation 發生在 original environment、reconstructed environment，還是另一個 customer environment。
-- 同時驗證 target fix 與 side effects，範圍包含 services、processes、drivers、policy enforcement、scan behavior 與常用 user workflows。
-- 把 recovery、workaround、hotfix validation、customer deployment 與 permanent correction 分成不同狀態追蹤。
-- 將重複 field failures 轉成 regression、upgrade、performance、recovery 與 compatibility coverage。
+- 定義轉交案件的必要資料：重現步驟、時間、產品日誌、Windows 事件、系統資訊、可取得的記憶體傾印及近期環境變更。
+- 清理、還原升級、移除驅動程式或隔離產品前，先保存原始狀態。
+- 記錄測試是在原環境、重建環境，或另一個客戶環境執行。
+- 同時驗證目標問題與副作用，涵蓋服務、處理程序、驅動程式、原則執行、掃描行為及常用操作流程。
+- 分別追蹤復原、暫時處理方式、hotfix 驗證、客戶部署與永久修正。
+- 將重複出現的客戶問題納入回歸、升級、效能、復原及相容性測試。
 
-### 證據限制
+### 資料來源與限制
 
-- 四個案例來自本人直接參與及回憶確認；離職後已無法存取前雇主資料。
-- 本文刻意排除 internal case volumes、customer counts、support-reduction／coverage percentages 與 turnaround figures。
-- 本文不揭露 customer identity、location、endpoint count、exact upgrade path、third-party product name 或 security-control details。
-- 本文不聲稱發生 breach、存在 universal fix、團隊成果由個人獨力完成，或在沒有發生時寫成 original-environment retest。
-- Product fix、customer rollout 與 case closure 均歸屬實際負責的 Engineering／Support teams。
+- 案例來自我直接參與的工作與回憶，離職後已無法取得前雇主的原始資料供獨立核實。
+- 20 個百分點的案件退回比例變化，來自主管分享的數據；CPU 與記憶體降幅則來自我對 QA 效能報告的回憶，兩者是不同成果。
+- 不公開客戶身分、地點、端點數量、精確升級流程、客戶環境中的第三方產品衝突細節或繞過防護的操作。
+- 驗證範圍以各案例記錄為準，沒有資料外洩、通用修復或未曾執行的原環境複測主張。團隊修正、部署與結案均保留實際分工。

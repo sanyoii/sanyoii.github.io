@@ -1,10 +1,6 @@
 # William Lu
 
-> Status: `Day 20 public resume v1 / Public 2026-09-01`
-> Revision: `2026-09-07 layout revision`
 > Role: Senior QA Engineer / Product Quality Engineer | Web3 & Crypto
-> Evidence: Sanitized from `PROFILE_CONTENT_SOURCE.md` (`Frozen v1.2`)
-> Privacy boundary: This public version omits phone, private application notes, internal artifacts, blocked metrics, and unresolved personal fields.
 
 Taiwan | UTC+8 | Fully Remote | sanyoii@gmail.com
 
@@ -12,7 +8,7 @@ Taiwan | UTC+8 | Fully Remote | sanyoii@gmail.com
 
 ## Professional summary
 
-Senior QA Engineer with 12+ years across product QA and customer engineering. Identified and escalated three high-severity financial-logic defects at BTSE. At Trend Micro, combined test automation with incident RCA and hotfix validation.
+Senior QA Engineer with 12+ years across product QA and customer engineering. Identified and escalated three high-severity financial-logic defects at BTSE. At Trend Micro, built proactive Chrome compatibility monitoring and improved escalation intake quality alongside incident RCA and hotfix validation.
 
 Led six Automation Engineers on an ASML engagement and designed the normal setup-to-reset workflow for unattended execution. Personal portfolio includes Python/pytest REST and WebSocket market-data checks.
 
@@ -61,14 +57,15 @@ May 2023–Apr 2024 | Fully Remote
 - Led six Automation Engineers across HMI eP5 modules iCDU, MM Flow, and ADEL.
 - Designed the setup, execution, cleanup, and reset lifecycle in the existing TestComplete architecture. The normal workflow ran unattended; connection failures required manual investigation.
 - Used Bitbucket for source control and Bamboo with TestComplete for CI test orchestration and result review.
-- Planned reusable modules and reviewed cases before assignment; the six engineers completed most implementation coding. Delivered TOI and technical handover.
+- Planned reusable modules and reviewed cases before assignment; the six engineers completed most implementation coding. Provided user training and technical handover.
 
 ### Trend Micro | Senior QA Engineer & Senior Customer Service Engineer
 
 Jul 2014–Jan 2023 | Taipei, Taiwan | On-site
 
-- Combined enterprise-security system and performance testing with incident RCA, customer escalation, hotfix validation, and engineering feedback.
-- Led test automation and validation using Python, Selenium, Robot Framework, TMSTAF, Jenkins, and GitHub.
+- Built Python monitoring for Chrome Beta/Stable releases that triggered browser updates, DLP sensitive-file upload tests, and failure alerts, helping the team address compatibility issues before customer reports.
+- Proposed a DLP troubleshooting guide organized by issue type, with step-by-step instructions for collecting diagnostic data. In its first month, the share of cases returned by SEG to L2 for missing information fell by 20 percentage points, according to manager-reported figures.
+- Proposed a supported-site DLP scanning design adopted by the team. QA performance tests comparing this design change showed at least 10% lower CPU and memory consumption each; unlisted sites were documented as unsupported, with a user configuration and Support review path.
 - Used logs, dumps, Windows Event Log, WinDbg, ProcMon, Process Explorer, VMware, Hyper-V, and Azure environments to reproduce and diagnose complex customer issues.
 - Received Trend Micro's internal Yearly Best SEG Engineer recognition in 2019 and 2021.
 
@@ -77,14 +74,14 @@ Jul 2014–Jan 2023 | Taipei, Taiwan | On-site
 Jun 2013–Jul 2014 | Taipei, Taiwan | On-site
 
 - Served as the final escalation point for complex customer incidents, coordinating reproduction, root-cause analysis, workarounds, hotfix validation, and engineering handoff.
-- Turned recurring escalation patterns into validation improvements and support documentation.
+- Proposed replacing the WFBS Survival Guide with a practical Guide Book for new Support staff; after rollout, missing-information case returns declined month by month despite continued staff turnover.
 
 ### Trend Micro | QA Engineer
 
 May 2010–Jun 2013 | Taipei, Taiwan | On-site
 
 - Owned module and beta testing for Worry-Free Business Security Advanced across functional, regression, system, performance, and customer-environment validation.
-- Led external beta deployments and expanded high-impact feature coverage through broader Test Cases and scope.
+- Led external beta deployments and expanded scan, system, and performance tests using patterns from customer incidents.
 
 ### Tatung | Firmware Engineer
 
@@ -94,11 +91,11 @@ Apr 2006–Apr 2010 | Taipei, Taiwan | On-site
 
 ## Selected case studies
 
-- [BTSE CEX Product Quality](https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md): sanitized trading, referral commission, and conversion risk cases with explicit evidence limits.
-- [Trend Micro Incident, Beta, and Support](https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md): evidence-first incident handling, hotfix validation, recovery boundaries, and external beta work.
-- [ASML Automation and Leadership](https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md): automation lifecycle design, six-engineer delivery leadership, enablement evidence, and technical handoff.
+- [BTSE CEX Product Quality](https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md): trading, referral commission, and conversion cases, with test methods and known outcomes.
+- [Trend Micro Incident, Beta, and Support](https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md): proactive Chrome regression checks, SEG intake improvement, incident RCA, and external beta work.
+- [ASML Automation and Leadership](https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md): test workflow design, leadership of six automation engineers, training, and technical handover.
 
-The case studies use sanitized categories and user-attested evidence. Former-employer source records are inaccessible. They do not disclose customer identities, internal data, proprietary implementation details, or blocked metrics.
+The case studies describe my direct work without confidential customer or implementation details. Original employer records are no longer available for independent verification. The DLP case-return change comes from figures shared by my manager; resource reductions come from my recollection of the QA performance report. Baseline values and original reports are unavailable.
 
 ## Selected portfolio
 

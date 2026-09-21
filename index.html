@@ -750,6 +750,51 @@
     .js .fade { opacity: 1; transform: none; }
     .reach-rule { transform: scaleX(1); }
   }
+
+/* Case-first portfolio refinement, 2026-09-21 */
+body { background: #0c151b; }
+body::before, body::after { display: none; }
+.site-nav { background: #0c151b; backdrop-filter: none; }
+.hero { padding-top: 40px; padding-bottom: 0; }
+.hero-grid { display: block; margin-bottom: 16px; }
+.hero h1 { font-size: 48px; line-height: 1.1; letter-spacing: -.025em; margin-bottom: 12px; }
+.hero .eyebrow { margin-bottom: 14px; font-size: 11px; }
+.hero .role { margin-bottom: 12px; font-size: 17px; }
+.hero .tagline, html[lang^="zh"] .hero .tagline { font-family: var(--sans); font-size: 17px; line-height: 1.65; max-width: 72ch; letter-spacing: 0; }
+.hero .tagline::after { display: none; }
+.hero .avail { margin: 0 0 18px; padding: 0; border: 0; font-size: 13px; max-width: 76ch; }
+.hero .ctas { margin-top: 0; }
+.experience-strip { display: flex; justify-content: space-between; gap: 18px; border-top: 1px solid var(--rule); margin-top: 28px; padding: 20px 0; font-size: 12px; color: var(--ink-dim); }
+.sec-pad { padding: 56px 0 64px; }
+h2.has-rule { border: 0; padding-top: 0; max-width: none; font-size: 32px; margin-bottom: 18px; }
+h2.has-rule + .sec-sub { margin-top: 0; }
+.sec-sub { max-width: 76ch; margin-bottom: 20px; }
+.resume-entry { margin: 0 0 20px; }
+.evidence-grid { display: block; }
+.evidence-card, .evidence-card.evidence-featured { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) auto; column-gap: 32px; row-gap: 8px; padding: 26px 0; min-height: 0; border: 0; border-top: 1px solid var(--rule); border-radius: 0; background: none; box-shadow: none; transform: none; }
+.evidence-card:hover { background: #101d24; transform: none; }
+.evidence-kicker { display: none; }
+.evidence-title { grid-column: 1; grid-row: 1; margin: 0; font-size: 22px; line-height: 1.35; }
+.case-company { grid-column: 1; grid-row: 2; margin: 0; font-size: 12px; color: var(--accent); }
+.evidence-copy { grid-column: 2; grid-row: 1 / 3; margin: 0; font-size: 14px; line-height: 1.7; color: var(--ink-dim); }
+.evidence-link { grid-column: 3; grid-row: 1 / 3; align-self: center; margin: 0; white-space: nowrap; }
+.full-notes { margin: 16px 0 0; font-size: 12px; color: var(--ink-dim); }
+.proof { gap: 32px; padding: 28px 0; }
+.js .fade, .js .fade.in { opacity: 1; transform: none; transition: none; }
+@media(max-width:760px) {
+ .hero { padding-top: 24px; }
+ .hero h1 { font-size: 38px; }
+ .hero .role { font-size: 15px; }
+ .hero .tagline, html[lang^="zh"] .hero .tagline { font-size: 15px; }
+ .experience-strip { flex-direction: column; gap: 6px; margin-top: 22px; padding: 16px 0; }
+ .sec-pad { padding: 32px 0 40px; }
+ .evidence-card, .evidence-card.evidence-featured { display: flex; gap: 10px; padding: 24px 0; }
+ .evidence-title { font-size: 21px; }
+ .evidence-link { align-self: flex-start; padding: 8px 0; }
+ .evidence-copy { font-size: 14px; }
+ h2.has-rule { font-size: 28px; }
+}
+
 </style>
 
 <script>document.documentElement.classList.add('js');</script>
@@ -793,54 +838,86 @@
       <h1 class="fade">William Lu</h1>
 
       <p class="role fade"
-         data-en="Senior QA Engineer · Web3 and Crypto"
-         data-zh="資深 QA 工程師 · Web3 與加密產品">Senior QA Engineer · Web3 and Crypto</p>
+         data-en="Senior QA Engineer · Product Quality · Web3 / Crypto"
+         data-zh="資深 QA 工程師 · 產品品質 · Web3／Crypto">Senior QA Engineer · Product Quality · Web3 / Crypto</p>
 
       <p class="tagline fade"
-         data-en="I test product flows where logic errors can affect users, transactions, and assets."
-         data-zh="我專注測試邏輯錯誤可能影響使用者、交易與資產的產品流程。">I test product flows where logic errors can affect users, transactions, and assets.</p>
+         data-en="I identify product risks early and turn technical findings into better product quality and more effective ways of working."
+         data-zh="我提早辨識產品風險，將技術分析轉化為產品品質與團隊工作方式的改善。">I identify product risks early and turn technical findings into better product quality and more effective ways of working.</p>
     </div>
 
-    <div class="stats fade">
-      <div>
-        <span class="stat-n">3</span>
-        <span class="stat-l" data-en="high-severity financial-logic defects found at BTSE" data-zh="個在 BTSE 找出的高嚴重度金融邏輯缺陷">high-severity financial-logic defects found at BTSE</span>
-      </div>
-      <div>
-        <span class="stat-n">6</span>
-        <span class="stat-l" data-en="Automation Engineers led on the ASML engagement" data-zh="位在 ASML 專案中帶領的自動化測試工程師">Automation Engineers led on the ASML engagement</span>
-      </div>
-      <div>
-        <span class="stat-n">2</span>
-        <span class="stat-l" data-en="internal SEG awards at Trend Micro (2019, 2021)" data-zh="次 Trend Micro 內部 SEG 年度獎項（2019、2021）">internal SEG awards at Trend Micro (2019, 2021)</span>
-      </div>
-      <div>
-        <span class="stat-n">12+</span>
-        <span class="stat-l" data-en="years across QA, customer engineering, and technical support" data-zh="年 QA、客戶工程與技術支援經驗">years across QA, customer engineering, and technical support</span>
-      </div>
-    </div>
   </div>
 
   <p class="avail fade"
-     data-en="At BTSE, I found high-severity defects in futures pricing and referral commissions. Now focused on Web3 QA, product quality, and technical support roles. Remote from Taiwan, with 4+ hours of European overlap."
-     data-zh="我在 BTSE 找出期貨定價與推薦佣金的高嚴重度缺陷。目前鎖定 Web3 QA、產品品質與技術支援職位；可在台灣遠端工作，並能與歐洲時區重疊至少 4 小時。">At BTSE, I found high-severity defects in futures pricing and referral commissions. Now focused on Web3 QA, product quality, and technical support roles. Remote from Taiwan, with 4+ hours of European overlap.</p>
+     data-en="Taiwan · Fully Remote · 4+ hours of European overlap. 12+ years across QA and customer engineering."
+     data-zh="台灣 · 全遠端 · 可與歐洲時區重疊至少 4 小時。12 年以上 QA 與客戶工程經驗。">Taiwan · Fully Remote · 4+ hours of European overlap. 12+ years across QA and customer engineering.</p>
 
   <div class="ctas fade">
     <a class="btn btn-primary" href="#btse-evidence" data-en="Explore my QA case" data-zh="查看代表 QA 案例">Explore my QA case</a>
     <a class="btn btn-ghost" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md" target="_blank" rel="noopener" data-en="Read resume ↗" data-zh="閱讀履歷 ↗">Read resume ↗</a>
     <a class="btn btn-ghost" href="#contact" data-en="Discuss a role" data-zh="聯絡我">Discuss a role</a>
   </div>
+<div class="experience-strip"><span data-en="BTSE / Product risk" data-zh="BTSE／產品風險">BTSE / Product risk</span><span data-en="ASML / Automation delivery" data-zh="ASML／自動化交付">ASML / Automation delivery</span><span data-en="Trend Micro / Proactive validation" data-zh="Trend Micro／主動驗證">Trend Micro / Proactive validation</span></div>
 </header>
 
 <main id="main">
+
+  <!-- ============ PUBLIC EVIDENCE ============ -->
+  <section class="sec-pad" id="evidence">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Selected cases" data-zh="代表案例">Selected cases</h2>
+      <p class="sec-sub fade"
+         data-en="Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result."
+         data-zh="依職位查看 CEX 產品品質、自動化領導或技術支援案例。每個案例都說明我負責的部分與結果。">Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result.</p>
+      <p class="resume-entry fade">
+        <a href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md" target="_blank" rel="noopener" data-en="Read QA / Product Quality resume ↗" data-zh="閱讀 QA／產品品質履歷 ↗">Read QA / Product Quality resume ↗</a>
+      </p>
+
+      <div class="evidence-grid">
+        <a class="evidence-card evidence-featured fade"
+           id="btse-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="Start here · CEX product quality" data-zh="從這裡開始 · CEX 產品品質">Start here · CEX product quality</p>
+          <h3 class="evidence-title" data-en="Testing financial logic at a crypto exchange" data-zh="驗證加密交易所的金融邏輯">Testing financial logic at a crypto exchange</h3><p class="case-company">BTSE</p>
+          <p class="evidence-copy"
+             data-en="I found three high-severity defects across trading, referral commissions, and conversion. I reproduced boundary failures and compared expected commission allocations with actual results. This case explains my tests, the reported issues, and what remained unresolved."
+             data-zh="我在交易、推薦佣金與兌換流程找到三個高嚴重度缺陷，重現邊界輸入問題，並比對預期佣金與實際結果。案例說明我如何驗證、回報，以及哪些問題仍未解決。">I found three high-severity defects across trading, referral commissions, and conversion. I reproduced boundary failures and compared expected commission allocations with actual results. This case explains my tests, the reported issues, and what remained unresolved.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+        <a class="evidence-card fade"
+           id="support-evidence" href="dlp-case.html">
+          <p class="evidence-kicker" data-en="Proactive testing and SEG leadership" data-zh="主動驗證與 SEG 領導">Proactive testing and SEG leadership</p>
+          <h3 class="evidence-title" data-en="Keeping DLP usable as Chrome changes" data-zh="讓 DLP 因應 Chrome 變更與效能需求">Keeping DLP usable as Chrome changes</h3><p class="case-company">Trend Micro</p>
+          <p class="evidence-copy"
+             data-en="I wrote a Python release monitor, proposed scanning based on a supported-site list, and improved the diagnostic guide used by L2 support."
+             data-zh="我撰寫 Python 版本監測程式、提出依支援網站清單掃描的設計，並改善 L2 技術支援使用的診斷指南。">I wrote a Python release monitor, proposed scanning based on a supported-site list, and improved the diagnostic guide used by L2 support.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+        <a class="evidence-card fade"
+           id="asml-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="Automation leadership" data-zh="自動化測試團隊帶領">Automation leadership</p>
+          <h3 class="evidence-title" data-en="From setup to unattended testing" data-zh="從環境設定到自動執行測試">From setup to unattended testing</h3><p class="case-company">ASML</p>
+          <p class="evidence-copy"
+             data-en="I led six automation engineers, designed the test workflow and reusable modules within the existing TestComplete architecture, and provided training and technical handover. The team wrote most of the code."
+             data-zh="我帶領 6 位自動化測試工程師，在既有 TestComplete 架構中設計測試流程與共用模組，並提供操作訓練與技術交接。多數程式由團隊完成。">I led six automation engineers, designed the test workflow and reusable modules within the existing TestComplete architecture, and provided training and technical handover. The team wrote most of the code.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+      </div>
+      <p class="full-notes"><a href="https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md" target="_blank" rel="noopener" data-en="Full Trend Micro incident and beta notes ↗" data-zh="完整 Trend Micro 事件與 Beta 紀錄 ↗">Full Trend Micro incident and beta notes ↗</a></p>
+    </div>
+  </section>
 
   <!-- ============ PROOF ============ -->
   <section class="sec-pad" id="impact">
     <div class="wrap">
       <h2 class="fade has-rule" data-en="Quality where failure has consequences" data-zh="當錯誤會帶來實際代價">Quality where failure has consequences</h2>
       <p class="sec-sub fade"
-         data-en="My work sits at the intersection of product risk, technical investigation, and operational response—from crypto exchange logic to enterprise security incidents."
-         data-zh="我的工作涵蓋產品風險、技術調查與事故處理，從加密交易所的計算邏輯到企業資安事件都有。">My work sits at the intersection of product risk, technical investigation, and operational response—from crypto exchange logic to enterprise security incidents.</p>
+         data-en="My experience spans crypto exchange testing, security incident investigation, and test automation."
+         data-zh="我的經驗涵蓋加密貨幣交易所測試、資安事件調查與測試自動化。">My experience spans crypto exchange testing, security incident investigation, and test automation.</p>
 
       <article class="proof fade">
         <div class="proof-id">
@@ -865,7 +942,7 @@
         </div>
         <p class="proof-body"
            data-en="Led six Automation Engineers across three ASML HMI modules. Designed the setup-to-reset lifecycle within the existing TestComplete architecture so the normal workflow could run unattended. Planned reusable modules and technical handover; the engineers completed most implementation coding."
-           data-zh="在 ASML 專案帶領 6 位自動化測試工程師，涵蓋 3 個 HMI 模組。在既有 TestComplete 架構中設計從環境設定到清理重置的流程，讓正常路徑能無人值守執行。我負責可重用模組規劃與技術交接，多數程式實作由團隊完成。">Led six Automation Engineers across three ASML HMI modules. Designed the setup-to-reset lifecycle within the existing TestComplete architecture so the normal workflow could run unattended. Planned reusable modules and technical handover; the engineers completed most implementation coding.</p>
+           data-zh="在 ASML 專案帶領 6 位自動化測試工程師，涵蓋 3 個 HMI 模組。在既有 TestComplete 架構中設計從環境設定到清理重置的流程，讓正常流程不需全程人工操作。我負責可重用模組規劃與技術交接，多數程式實作由團隊完成。">Led six Automation Engineers across three ASML HMI modules. Designed the setup-to-reset lifecycle within the existing TestComplete architecture so the normal workflow could run unattended. Planned reusable modules and technical handover; the engineers completed most implementation coding.</p>
       </article>
 
       <article class="proof fade">
@@ -877,58 +954,9 @@
              data-zh="QA Engineer → Senior Customer Service Engineer → Senior QA／Customer Service Engineer">QA Engineer → Senior Customer Service Engineer → Senior QA / Customer Service Engineer</p>
         </div>
         <p class="proof-body"
-           data-en="Spent nearly 13 years across security product QA and customer engineering. Led beta programs, handled enterprise incident RCA and customer escalation, validated hotfixes, and improved testing and support processes. Received Trend Micro's internal &quot;Yearly Best SEG Engineer&quot; award in 2019 and 2021."
-           data-zh="我在 Trend Micro 工作近 13 年，歷經資安產品 QA 與客戶工程；曾主導多項 Beta 測試計畫、處理企業事件 RCA 與客戶升級案件、驗證 hotfix，也改善測試與支援流程。2019 和 2021 年兩度獲得公司內部的「Yearly Best SEG Engineer」獎項。">Spent nearly 13 years across security product QA and customer engineering. Led beta programs, handled enterprise incident RCA and customer escalation, validated hotfixes, and improved testing and support processes. Received Trend Micro's internal "Yearly Best SEG Engineer" award in 2019 and 2021.</p>
+           data-en="As SEG Leader, I checked escalation evidence and assigned cases by priority, complexity, and workload. I initiated a DLP diagnostic guide; manager-reported figures showed a 20-percentage-point drop in missing-data case returns in its first month. I also built Python monitoring for Chrome updates and proposed a supported-site scanning design to reduce resource use. Received internal SEG awards in 2019 and 2021."
+           data-zh="擔任 SEG Leader 時，我把關案件資料，依優先序、複雜度與成員手上的工作量分派案件。我提出 DLP 診斷指南；依主管分享的數據，上線首月缺件退回比例下降 20 個百分點。另撰寫 Python 監測 Chrome 更新，並提出支援網站清單設計以降低資源消耗。2019、2021 年獲公司內部 SEG 年度獎項。">As SEG Leader, I checked escalation evidence and assigned cases by priority, complexity, and workload. I initiated a DLP diagnostic guide; manager-reported figures showed a 20-percentage-point drop in missing-data case returns in its first month. I also built Python monitoring for Chrome updates and proposed a supported-site scanning design to reduce resource use. Received internal SEG awards in 2019 and 2021.</p>
       </article>
-    </div>
-  </section>
-
-  <!-- ============ PUBLIC EVIDENCE ============ -->
-  <section class="sec-pad" id="evidence">
-    <div class="wrap">
-      <h2 class="fade has-rule" data-en="Case studies and resume" data-zh="案例與履歷">Case studies and resume</h2>
-      <p class="sec-sub fade"
-         data-en="Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result."
-         data-zh="依職位查看 CEX 產品品質、自動化領導或技術支援案例。每個案例都說明我負責的部分與結果。">Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result.</p>
-      <p class="resume-entry fade">
-        <a href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md" target="_blank" rel="noopener" data-en="Read QA / Product Quality resume ↗" data-zh="閱讀 QA／產品品質履歷 ↗">Read QA / Product Quality resume ↗</a>
-      </p>
-
-      <div class="evidence-grid">
-        <a class="evidence-card evidence-featured fade"
-           id="btse-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md"
-           target="_blank" rel="noopener">
-          <p class="evidence-kicker" data-en="Start here · CEX product quality" data-zh="從這裡開始 · CEX 產品品質">Start here · CEX product quality</p>
-          <h3 class="evidence-title">BTSE</h3>
-          <p class="evidence-copy"
-             data-en="I found three high-severity defects across trading, referral commissions, and conversion. I reproduced boundary failures and compared expected commission allocations with actual results. This case explains my tests, the reported issues, and what remained unresolved."
-             data-zh="我在交易、推薦佣金與兌換流程找到三個高嚴重度缺陷，重現邊界輸入問題，並比對預期佣金與實際結果。案例說明我如何驗證、回報，以及哪些問題仍未解決。">I found three high-severity defects across trading, referral commissions, and conversion. I reproduced boundary failures and compared expected commission allocations with actual results. This case explains my tests, the reported issues, and what remained unresolved.</p>
-          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
-        </a>
-
-        <a class="evidence-card fade"
-           id="support-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md"
-           target="_blank" rel="noopener">
-          <p class="evidence-kicker" data-en="Incident and support" data-zh="事件調查與技術支援">Incident and support</p>
-          <h3 class="evidence-title">Trend Micro</h3>
-          <p class="evidence-copy"
-             data-en="Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct."
-             data-zh="四個獨立案例，涵蓋事件調查、P1 升級處理、緊急修補與外部測試；清楚交代服務是否恢復、問題是否修復。">Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct.</p>
-          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
-        </a>
-
-        <a class="evidence-card fade"
-           id="asml-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"
-           target="_blank" rel="noopener">
-          <p class="evidence-kicker" data-en="Automation leadership" data-zh="自動化測試團隊帶領">Automation leadership</p>
-          <h3 class="evidence-title">ASML</h3>
-          <p class="evidence-copy"
-             data-en="I led six automation engineers, designed the TestComplete test lifecycle and reusable modules, and supported training and technical handoff. The case separates my leadership and design work from the team's implementation."
-             data-zh="我帶領 6 位自動化測試工程師，設計 TestComplete 測試生命週期與共用模組，並協助培訓及技術交接。案例分開說明我的帶領、設計工作與團隊的程式實作。">I led six automation engineers, designed the TestComplete test lifecycle and reusable modules, and supported training and technical handoff. The case separates my leadership and design work from the team's implementation.</p>
-          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
-        </a>
-
-      </div>
     </div>
   </section>
 
@@ -946,7 +974,7 @@
           <h3 class="work-title">CEX Market Data Quality Lab</h3>
           <p class="work-sub" data-en="Python / pytest · REST and WebSocket testing" data-zh="Python／pytest · REST 與 WebSocket 測試">Python / pytest · REST and WebSocket testing</p>
           <p class="work-body" data-en="Tests public market-data snapshots and updates for stale events, sequence gaps, and invalid order-book values. Includes test design, executable checks, and versioned results. Uses Binance public APIs; separate from my employment at BTSE."
-             data-zh="檢查公開市場資料的 snapshot 與更新，涵蓋過期事件、序列缺口及無效訂單簿數值。附測試設計、可執行測試與版本結果。使用 Binance 公開 API，與 BTSE 任職經驗分開。">Tests public market-data snapshots and updates for stale events, sequence gaps, and invalid order-book values. Includes test design, executable checks, and versioned results. Uses Binance public APIs; separate from my employment at BTSE.</p>
+             data-zh="檢查公開市場資料的快照與更新，涵蓋過期事件、序列缺口及無效訂單簿數值。附測試設計、可執行的測試與各版本的結果。使用 Binance 公開 API，與 BTSE 任職經驗分開。">Tests public market-data snapshots and updates for stale events, sequence gaps, and invalid order-book values. Includes test design, executable checks, and versioned results. Uses Binance public APIs; separate from my employment at BTSE.</p>
           <p class="work-body" data-en="Public market data only. No account, order, or funds testing. Live results apply to the recorded revision and date."
              data-zh="僅使用公開市場資料，不測帳戶、下單或資金。Live 結果只適用於紀錄中的版本與日期。">Public market data only. No account, order, or funds testing. Live results apply to the recorded revision and date.</p>
           <p>
@@ -963,11 +991,11 @@
               <p class="work-body" data-en="Portfolio demonstration. Check each record's scope, revision, and freshness before interpreting its status."
                  data-zh="作品集展示。判讀狀態前，請查看各筆紀錄的範圍、版本與證據時效。">Portfolio demonstration. Check each record's scope, revision, and freshness before interpreting its status.</p>
               <p class="work-sub"
-                 data-en="Low-tech, evidence-first testing dashboard"
-                 data-zh="低維護、以證據為主的測試 Dashboard">Low-tech, evidence-first testing dashboard</p>
+                 data-en="A dashboard for reviewing test results and evidence"
+                 data-zh="集中查看測試結果與證據的儀表板">A dashboard for reviewing test results and evidence</p>
               <p class="work-lead work-lead--gap"
-                 data-en="A green test run means little without a release, scope, and evidence trail."
-                 data-zh="測試顯示 PASS，如果沒有對應的版本、測試範圍與證據紀錄，幾天後就很難再相信這個結果。">A green test run means little without a release, scope, and evidence trail.</p>
+                 data-en="A passing result needs a tested version, a clear scope, and supporting evidence."
+                 data-zh="測試通過的結果，需要對應的版本、明確的測試範圍與佐證資料。">A passing result needs a tested version, a clear scope, and supporting evidence.</p>
               <p class="work-body"
                  data-en="Consolidates test evidence from two repositories into traceable release decisions. Each row shows the decision, rationale, and evidence link. The dashboard keeps freshness, Unknown states, Gate Flow, and sanitized public boundaries explicit."
                  data-zh="把兩個 repo 的測試證據整理成可追溯的發布判斷。每一列都會寫清楚能不能發、原因和證據在哪裡；證據時效、Unknown、Gate Flow 與公開範圍也都有明確標示。">Consolidates test evidence from two repositories into traceable release decisions. Each row shows the decision, rationale, and evidence link. The dashboard keeps freshness, Unknown states, Gate Flow, and sanitized public boundaries explicit.</p>
@@ -1016,11 +1044,11 @@
             </div>
             <div>
               <p class="work-lead"
-                 data-en="Most personality readings are a voice memo or a flat PDF you forget by the next day."
-                 data-zh="一般的命理解讀不是一段錄音就是一頁 PDF，看完隔天就忘了。">Most personality readings are a voice memo or a flat PDF you forget by the next day.</p>
+                 data-en="A personal project that presents Human Design readings as a visual report."
+                 data-zh="這是我的人類圖報告專案，以視覺化版面呈現解讀。">A personal project that presents Human Design readings as a visual report.</p>
               <p class="work-body"
-                 data-en="Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language. The jargon is folded away, so someone who knows nothing about the system can still finish it."
-                 data-zh="輸入出生資料就自動排盤，產出 13 個章節的視覺化報告。每一段都先講白話，術語收在摺疊區，完全沒碰過這套系統的人也讀得完。">Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language. The jargon is folded away, so someone who knows nothing about the system can still finish it.</p>
+                 data-en="Uses birth details to calculate a chart and generate a 13-section visual report. Each section starts with a plain-language explanation, with terminology available in expandable sections."
+                 data-zh="輸入出生資料後自動排盤，產出 13 個章節的視覺化報告。每段先用白話說明，讀者可展開查看術語解釋。">Uses birth details to calculate a chart and generate a 13-section visual report. Each section starts with a plain-language explanation, with terminology available in expandable sections.</p>
             </div>
             <div class="tags">
               <span class="tag">Python</span>
@@ -1070,11 +1098,11 @@
                  data-en="Job-search co-pilot for the Taiwan market"
                  data-zh="台灣求職 AI 助手">Job-search co-pilot for the Taiwan market</p>
               <p class="work-lead work-lead--gap"
-                 data-en="The slow part of job hunting isn't writing the resume. It's re-cutting it for every single posting."
-                 data-zh="投履歷最花時間的不是寫履歷，是把同一份履歷改成每個職缺想看的樣子。">The slow part of job hunting isn't writing the resume. It's re-cutting it for every single posting.</p>
+                 data-en="This project compares job requirements with resume content to prepare tailored drafts."
+                 data-zh="這個專案比對職缺要求與履歷內容，產生對應職缺的草稿。">This project compares job requirements with resume content to prepare tailored drafts.</p>
               <p class="work-body"
-                 data-en="Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience."
-                 data-zh="解析職缺內容、跟履歷比對，再匯出 ATS 讀得懂的 PDF。關鍵字推導設了上限、解析也加了防呆，避免它自己編出你沒有的經歷。">Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience.</p>
+                 data-en="Parses job postings, compares them with a resume, and exports PDFs. It includes ATS compatibility checks and limits on inferred keywords. Generated content still needs review."
+                 data-zh="解析職缺、比對履歷，再匯出 PDF。功能包含 ATS 相容性檢查與關鍵字推導上限；產生的內容仍需人工核對。">Parses job postings, compares them with a resume, and exports PDFs. It includes ATS compatibility checks and limits on inferred keywords. Generated content still needs review.</p>
             </div>
             <div>
               <p class="fork"
@@ -1216,8 +1244,8 @@
   <section class="sec-pad" id="contact">
     <div class="wrap">
       <p class="contact-line fade"
-         data-en="Building a Web3 product where correctness, trust, and money meet? Tell me what must not fail."
-         data-zh="你的 Web3 產品同時牽涉正確性、信任和資金嗎？告訴我哪些地方絕對不能出錯。">Building a Web3 product where correctness, trust, and money meet? Tell me what must not fail.</p>
+         data-en="Hiring for a Web3 QA role? Contact me to discuss your product and testing needs."
+         data-zh="正在招募 Web3 QA 嗎？歡迎聯絡我，討論產品與測試需求。">Hiring for a Web3 QA role? Contact me to discuss your product and testing needs.</p>
 
       <div class="reach fade">
         <a class="reach-a" href="mailto:sanyoii@gmail.com">
@@ -1252,8 +1280,6 @@
 <footer>
   <div class="wrap foot">
     <p>© 2026 William Lu</p>
-    <p data-en="Designed, written, tested, and shipped as one dependency-free file."
-       data-zh="設計、文案、測試與發布都收在一個零依賴檔案裡。">Designed, written, tested, and shipped as one dependency-free file.</p>
   </div>
 </footer>
 
