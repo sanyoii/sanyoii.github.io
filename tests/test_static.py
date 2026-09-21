@@ -83,9 +83,12 @@ def test_day20_public_evidence_is_cross_linked(repo_root):
     html = (repo_root / "index.html").read_text(encoding="utf-8")
 
     assert 'id="evidence"' in html
-    assert f'{base}{public_resume}' in html
-    for filename in case_studies:
-        assert f'{base}{filename}' in html
+    assert 'href="resume.html"' in html
+    pages = ('btse-case.html', 'trend-support-case.html', 'asml-case.html')
+    for filename, page in zip(case_studies, pages):
+        assert f'href="{page}"' in html
+        assert f'{base}{filename}' in (repo_root / page).read_text(encoding='utf-8')
+    assert f'{base}{public_resume}' in (repo_root / 'resume.html').read_text(encoding='utf-8')
 
     resume = (repo_root / public_resume).read_text(encoding="utf-8")
     assert "https://sanyoii.github.io/" in resume
@@ -119,8 +122,9 @@ def test_role_paths_and_work_evidence_are_reachable(repo_root):
     for anchor in ("btse-evidence", "support-evidence", "asml-evidence", "cex-lab"):
         assert f'id="{anchor}"' in html
     assert 'href="#btse-evidence"' in html
-    for case in ("BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md", "TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md", "ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"):
-        assert f'href="https://github.com/sanyoii/sanyoii.github.io/blob/main/{case}"' in html
+    for case in ('btse-case.html', 'trend-support-case.html', 'asml-case.html'):
+        assert f'href="{case}"' in html
+        assert (repo_root / case).is_file()
     assert 'href="test-status/"' in html
     assert (repo_root / "test-status/index.html").is_file()
     assert 'href="https://github.com/sanyoii/cex-market-data-quality-lab"' in html
