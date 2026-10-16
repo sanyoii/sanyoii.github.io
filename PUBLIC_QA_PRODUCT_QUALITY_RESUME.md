@@ -8,20 +8,20 @@ Taiwan | UTC+8 | Open to Fully Remote | [sanyoii@gmail.com](mailto:sanyoii@gmail
 
 ## Professional summary
 
-Senior QA Engineer and QA/Support Leader with **12+ years in software quality assurance and escalation engineering** (plus 4 years in embedded firmware) across **Enterprise Security & DLP (Trend Micro)**, **Semiconductor Automation (Zealogics / ASML)**, and **FinTech / Crypto Exchange (BTSE)**. Proven track record of catching high-severity financial logic defects before release, leading remote automation teams, designing unattended CI test lifecycles, and resolving complex customer production incidents through deep root-cause analysis (RCA). Two-time **Yearly Best SEG Engineer (2019, 2021)**.
+Senior QA Engineer and QA/Support Leader with **12+ years in software quality assurance and escalation engineering** (plus 4 years in embedded firmware) across **Enterprise Security & DLP (Trend Micro)**, **Semiconductor Automation (Zealogics / ASML)**, and **FinTech / Crypto Exchange (BTSE)**. Proven track record of identifying and escalating high-severity financial-logic defects, leading remote automation teams, designing unattended CI test lifecycles, and resolving complex customer production incidents through deep root-cause analysis (RCA). Two-time recipient of Trend Micro's **internal Yearly Best SEG Engineer** recognition (2019, 2021).
 
 ## Career highlights
 
-- **12+ Yrs QA · 2× Best SEG Engineer:** 12+ years in QA & escalation leadership (+4 yrs firmware); named Trend Micro Yearly Best SEG Engineer in **2019 & 2021**.
-- **3 High-Severity Financial Logic Bugs @BTSE:** Escalated before release across Futures margin/price-band checks, Spot fee calculations, and Convert pricing, alongside **50+ structured TestRail cases**.
-- **Led 6 Remote Automation Engineers @ASML:** Directed HMI eP5 automation delivery (`iCDU`, `MM Flow`, `ADEL`) and built **unattended TestComplete + Bamboo CI** execution.
-- **-10% CPU/RAM & -20pp Escalation Returns @Trend Micro:** Proposed DLP supported-site scanning (**≥10% CPU/RAM reduction**) and authored a diagnostic guide cutting L2 missing-evidence returns by **20 percentage points**.
+- **12+ Yrs QA · 2× Internal Best SEG Engineer:** 12+ years in QA & escalation leadership (+4 yrs firmware); received Trend Micro's **internal Yearly Best SEG Engineer** recognition in **2019 & 2021**.
+- **3 High-Severity Financial Logic Defects @BTSE:** Reproduced, documented, and escalated across trading (Futures/Spot), referral commission, and conversion flows, alongside **30–50 Referral/Affiliate TestRail cases** and **~20 Convert internal Wiki cases**.
+- **Led 6 Remote Automation Engineers @ASML:** Directed HMI eP5 automation delivery (`iCDU`, `MM Flow`, `ADEL`) within the existing TestComplete architecture and designed the **unattended normal-path execution lifecycle** via Atlassian Bamboo.
+- **-10% CPU/RAM & -20pp Escalation Returns @Trend Micro:** Proposed DLP supported-site scanning (**≥10% CPU/RAM reduction** per recalled QA performance report; unlisted sites unsupported) and initiated a diagnostic guide cutting first-month L2 missing-info returns by **20 percentage points** (per manager-shared figures).
 
 ## Core skills
 
 ### Test Strategy & QA Leadership
 
-Risk-based Testing, Test Specifications & Test Data Design, Test Reviews, QA Leadership, Beta Planning, Automation Feasibility Assessment, Reusable-Module Planning, Release Sign-off & Shift Handover
+Risk-based Testing, Test Specifications & Test Data Design, Test Reviews, QA Leadership, Beta Planning, Automation Feasibility Assessment, Reusable-Module Planning, Technical Handover (TOI) & Onboarding Documentation
 
 ### Functional, System & Performance Testing
 
@@ -41,22 +41,22 @@ Python, `pytest`, `Playwright`, `GitHub Actions`; Enterprise Endpoint Security &
 
 ## Professional experience
 
-### Independent QA Engineering & Family Caregiving
+### Career Break | Family Caregiving
 
 Feb 2025–Present | Taiwan (UTC+8)
 
-- Family caregiving career break while maintaining active QA engineering practice through public Python, `pytest`, `Playwright`, and `GitHub Actions` verification suites for real-time market data and bilingual web quality.
+- Career break for family caregiving while maintaining hands-on QA engineering practice through personal Python, `pytest`, `Playwright`, and `GitHub Actions` verification projects for public market data and bilingual web quality.
 
 ### Nogle (BTSE) | Senior QA Engineer
 
 Sep 2024–Nov 2024 | Taipei, Taiwan | On-site · [Full Case Study](https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md)
 
-- **End-to-End Exchange Quality:** Owned functional, financial-logic, and regression verification across **Wallet, Spot, Futures, Convert, and Referral/Affiliate** workflows on Web and mobile apps, validating UI state, REST APIs, and **WebSocket** events (`order book`, `ticker`, `trade history`, `liquidation`, `position updates`, `ADL`) via Browser DevTools, `TablePlus` SQL, and independent Excel models.
-- **High-Severity Financial Defect Discovery:** Identified and escalated **three high-severity financial-logic defects** prior to production release:
-  1. *Futures Sub-Account Isolation:* Main-account balance was erroneously counted during sub-account margin checks, enabling unbacked leverage exposure.
-  2. *Futures Price-Band Bypass & Referral Tier Boundary:* Post-placement order price edits bypassed the ±2% mark-price protection check, and boundary checks uncovered a referral rebate tier miscalculation (`> 10,000 USDT` vs. `>= 10,000 USDT`).
-  3. *Convert Quote & Fee Regression:* Identified an inverted base/quote conversion rate and split-order fee-waiver state loss through DevTools payload inspection and Excel verification.
-- **Test Asset & Handover Standardization:** Authored **50+ structured TestRail cases** across happy, boundary, negative, and permission paths; built an environment matrix (`dev` / `staging` / `pre-prod`), test-account inventory, and cross-shift handover checklist.
+- **End-to-End Exchange Quality:** Executed manual, exploratory, functional, boundary, negative, and regression testing across **Wallet (deposit, withdrawal, blockchain confirmation), Referral/Affiliate, Spot, Futures, Convert, maker/taker fees, funding rate calculation/settlement, liquidation/partial liquidation, and Individual/Corporate KYC** on Web workflows across **Chrome, Edge, and Firefox**, validating UI state, REST APIs, **WebSocket** events (`executionReport`, `orderUpdate`, `outboundAccountPosition`, `positionUpdate`, `Balance Update`) via Browser DevTools, `TablePlus` SQL, and spreadsheet formula models.
+- **High-Severity Financial Defect Discovery:** Reproduced, documented, and escalated **three high-severity financial-logic defects** for engineering prioritization:
+  1. *Futures & Spot Boundary Handling:* Boundary purchase quantity/value inputs produced inconsistent pricing or left the UI without a usable result across multiple assets and three browsers (`Chrome`, `Edge`, `Firefox`), while the API returned HTTP `200 OK` with an unreadable response body.
+  2. *Referral & Affiliate Multi-Tier Commission:* Under a deeper multi-account hierarchy with active trading, actual commission values across upper tiers exceeded the expected allocation when reconciled against a multi-account test model, admin results, and spreadsheet calculations.
+  3. *Convert Cross-Entry Boundary Handling:* Boundary inputs across different product entry points, three browsers, and source/target asset pairs left the UI without a usable result and returned an unreadable Convert API response body, exposing a shared-service risk for connected flows.
+- **Test Case Design & Onboarding Documentation:** Authored **30–50 Referral/Affiliate test cases in TestRail** (first review completed before departure), **~20 Convert test cases and study scenarios in the internal Wiki**, Wallet test cases in TestRail, and newcomer onboarding study notes and defect investigation pages in the internal Wiki.
 
 ### Zealogics / ASML | Project Leader / Senior Automation Test Engineer
 
@@ -72,9 +72,9 @@ Jul 2014–Jan 2023 | Taipei, Taiwan | On-site · [Incident & Beta Case Study](h
 
 - **QA & SEG Leadership:** Served as **QA Leader and Service Engineer Group (SEG) Leader** for the Data Loss Prevention (DLP) SDK and enterprise security products (`OfficeScan`, `WFBS-SVC`, `IMSVA`), bridging system/performance QA with global customer-escalation RCA and hotfix validation.
 - **Proactive Chrome Compatibility Automation:** Built Python monitoring via Google APIs (`googleapis.com`) to detect Chrome Beta and Stable releases, trigger browser updates and sensitive-file upload tests, and send email alerts when DLP failed to block an upload—catching browser breaks before customer reports.
-- **Performance Optimization (-10% CPU/RAM):** Proposed **supported-site scanning**, adopted and implemented by the team during a DLP refactor; based on my recollection of the QA performance test report, **CPU and memory usage each fell by at least 10%** relative to the previous design.
+- **Performance Optimization (-10% CPU/RAM):** Proposed **supported-site scanning**, adopted and implemented by the team during a DLP refactor; based on my recollection of the QA performance test report, **CPU and memory usage each fell by at least 10%** relative to the previous design (unlisted sites were explicitly unsupported; users could test adding sites to a configuration file and report failures to Support for team assessment).
 - **Support Diagnostic Standardization (-20pp Returns):** Initiated an issue-type-based DLP diagnostic guide; in its first month, **the share of cases SEG returned to L2 for missing information fell by 20 percentage points** according to figures shared by my manager.
-- **Deep Escalation RCA & Recognition:** Automated regression suites (Python, Selenium, Robot Framework, TMSTAF, Jenkins) and reproduced complex customer crashes/leaks across VMware, VirtualBox, Hyper-V, and Azure labs using `WinDbg`, `ProcMon`, and `Process Explorer`; named **Yearly Best SEG Engineer in 2019 and 2021**.
+- **Deep Escalation RCA & Recognition:** Automated regression suites (Python, Selenium, Robot Framework, TMSTAF, Jenkins) and reproduced complex customer crashes/leaks across VMware, VirtualBox, Hyper-V, and Azure labs using `WinDbg`, `ProcMon`, and `Process Explorer`; received Trend Micro's **internal Yearly Best SEG Engineer recognition in 2019 and 2021**.
 
 ### Trend Micro | Senior Customer Service Engineer
 
