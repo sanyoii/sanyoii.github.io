@@ -27,6 +27,8 @@ PAGES = (
 )
 LINKS = {SOURCE_BASE + source: output for source, output, _ in PAGES}
 LINKS['https://sanyoii.github.io/'] = 'index.html'
+LINKS['https://sanyoii.github.io/dlp-case.html'] = 'dlp-case.html'
+LINKS['https://sanyoii.github.io/assets/William-Lu-Public-QA-Resume.pdf'] = 'assets/William-Lu-Public-QA-Resume.pdf'
 
 
 def parser():
@@ -109,8 +111,10 @@ def build_page(root, source, output, chinese_title):
     for name in [source, 'scripts/build_portfolio_pages.py', 'scripts/templates/portfolio-page.html', 'assets/portfolio-pages.css', 'assets/portfolio-pages.js']:
         digest.update((root / name).read_text(encoding='utf-8-sig').encode('utf-8'))
     digest.update(version('markdown-it-py').encode())
+    page_title = title if chinese_title else 'Public QA Resume'
     return Template(template).substitute(
         title=escape(title), title_zh=escape(chinese_title or title),
+        page_title=escape(page_title),
         kind='Case study' if chinese_title else 'Public QA resume',
         kind_zh='工作案例' if chinese_title else 'Public QA resume',
         bilingual='true' if chinese_title else 'false', toggle=toggle,

@@ -8,7 +8,7 @@ over broad but low-value coverage.
 
 ## Scope
 
-- Static validation of `index.html` and `404.html`
+- Static validation of `index.html`, `404.html`, `dlp-case.html`, `resume.html`, and generated case-study HTML pages
 - Chromium runtime behavior served over a local HTTP server
 - Responsive layouts at the widths and viewport sizes named below
 - English and Traditional Chinese language behavior

@@ -13,17 +13,27 @@ class HeadingCounter(HTMLParser):
 
 
 def test_bilingual_text_and_alt_attributes_are_paired(repo_root):
-    html = (repo_root / "index.html").read_text(encoding="utf-8")
+    for filename in ("index.html", "404.html", "dlp-case.html"):
+        html = (repo_root / filename).read_text(encoding="utf-8")
 
-    assert html.count("data-en=") == html.count("data-zh=")
-    assert html.count("data-alt-en=") == html.count("data-alt-zh=")
+        assert html.count("data-en=") == html.count("data-zh="), f"Unpaired data-en/data-zh in {filename}"
+        assert html.count("data-alt-en=") == html.count("data-alt-zh="), f"Unpaired data-alt-en/data-alt-zh in {filename}"
 
 
 def test_personal_phone_number_is_not_published(repo_root):
-    for filename in ("index.html", "404.html"):
+    for filename in (
+        "index.html",
+        "404.html",
+        "dlp-case.html",
+        "resume.html",
+        "btse-case.html",
+        "trend-support-case.html",
+        "asml-case.html",
+    ):
         html = (repo_root / filename).read_text(encoding="utf-8")
         assert "0922" not in html, f"{filename} contains a mobile-number fragment"
         assert "+886" not in html, f"{filename} contains a country-code fragment"
+        assert "922 596 190" not in html, f"{filename} contains a phone-number fragment"
 
 
 def test_index_has_one_primary_heading_and_standards_doctype(repo_root):
@@ -37,7 +47,15 @@ def test_index_has_one_primary_heading_and_standards_doctype(repo_root):
 
 def test_external_urls_are_allowlisted(repo_root):
     unexpected = []
-    for filename in ("index.html", "404.html"):
+    for filename in (
+        "index.html",
+        "404.html",
+        "dlp-case.html",
+        "resume.html",
+        "btse-case.html",
+        "trend-support-case.html",
+        "asml-case.html",
+    ):
         html = (repo_root / filename).read_text(encoding="utf-8")
         urls = re.findall(r"https?://[^\"'\s<>]+", html)
         unexpected.extend(
@@ -122,9 +140,11 @@ def test_role_paths_and_work_evidence_are_reachable(repo_root):
     for anchor in ("btse-evidence", "support-evidence", "asml-evidence", "cex-lab"):
         assert f'id="{anchor}"' in html
     assert 'href="#btse-evidence"' in html
-    for case in ('btse-case.html', 'trend-support-case.html', 'asml-case.html'):
+    for case in ('btse-case.html', 'trend-support-case.html', 'asml-case.html', 'dlp-case.html'):
         assert f'href="{case}"' in html
         assert (repo_root / case).is_file()
+    assert 'href="assets/William-Lu-Public-QA-Resume.pdf"' in html
+    assert (repo_root / "assets/William-Lu-Public-QA-Resume.pdf").is_file()
     assert 'href="test-status/"' in html
     assert (repo_root / "test-status/index.html").is_file()
     assert 'href="https://github.com/sanyoii/cex-market-data-quality-lab"' in html
