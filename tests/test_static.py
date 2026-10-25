@@ -81,6 +81,22 @@ def test_portfolio_publishes_only_canonical_claim_wording(repo_root):
     assert "高嚴重度缺陷" in html
 
 
+def test_bilingual_readmes_switch_and_stay_off_the_site(repo_root):
+    english = (repo_root / "README.md").read_text(encoding="utf-8")
+    chinese = (repo_root / "README.zh-TW.md").read_text(encoding="utf-8")
+    workflow = (repo_root / ".github/workflows/pages.yml").read_text(encoding="utf-8")
+
+    assert english.startswith("**English** | [繁體中文](README.zh-TW.md)\n")
+    assert chinese.startswith("[English](README.md) | **繁體中文**\n")
+    assert "--exclude '/README.md'" in workflow
+    assert "--exclude '/README.zh-TW.md'" in workflow
+    assert (repo_root / "index.html").is_file()
+    assert (repo_root / ".nojekyll").is_file()
+    assert "sanyoii@gmail.com" in (repo_root / "index.html").read_text(encoding="utf-8")
+    for banned in ("D:/", "D:\\", "docs/reviews", "（台灣說法待確認）", "複測", "出場", "優先級"):
+        assert banned not in chinese
+
+
 def test_contact_links_use_short_labels_and_preserve_destinations(repo_root):
     html = (repo_root / "index.html").read_text(encoding="utf-8")
 
