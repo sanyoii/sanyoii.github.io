@@ -83,6 +83,8 @@ jobs:
             --exclude 'test-records' \
             --exclude 'tests' \
             --exclude '/test-status/' \
+            --exclude '/README.md' \
+            --exclude '/README.zh-TW.md' \
             site/ public/
           node dashboard/scripts/prepare-pages-artifact.mjs \
             --source dashboard/dist/client \

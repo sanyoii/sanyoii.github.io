@@ -1,3 +1,5 @@
+**English** | [繁體中文](README.zh-TW.md)
+
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="sanyoii.github.io — one HTML file, two languages, and the twelve automated checks that cover it">
 </p>
