@@ -92,7 +92,7 @@ Day 16 已在取得當次授權後完成部署，最後驗證的 production comm
 | P-04 | 390×844 mobile Hero 不與 language toggle 重疊，CTA 在 viewport budget 內 | Production mobile geometry inspection | `Pass` | EN CTA bottom `788.81 < 844`；ZH CTA bottom `668.43 < 844`；toggle overlap = false |
 | P-05 | EN／ZH Hero fold budget 均符合 test contract | Fresh local browser suite | `Pass` | 1366×768、1440×900、390×844、375×812 均通過 |
 | P-06 | 404 page 不被索引且能回首頁 | Fresh local browser suite | `Pass` | `noindex`＋home link |
-| P-07 | Day 20 Evidence cards 在 desktop／mobile 不重疊或水平溢出 | Codex in-app Browser，1440×900 target 與 390×844 target | `Pass` | Desktop 2×2；mobile 單欄；out-of-viewport = 0，overlap count = 0 |
+| P-07 | Day 20 Evidence cards 在 desktop／mobile 不重疊或水平溢位 | Codex in-app Browser，1440×900 target 與 390×844 target | `Pass` | Desktop 2×2；mobile 單欄；out-of-viewport = 0，overlap count = 0 |
 
 ## 7. Accessibility and runtime
 

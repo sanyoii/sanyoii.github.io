@@ -44,7 +44,7 @@
 
     <!-- column 2 -->
     <g transform="translate(264 48)">
-      <g><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">無水平溢出</text></g>
+      <g><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">無水平溢位</text></g>
       <g transform="translate(0 38)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">語言選擇持久化</text></g>
       <g transform="translate(0 76)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">首屏高度預算</text></g>
       <g transform="translate(0 114)"><path d="M0 -5 l5 6 l9 -12" stroke="#e68541" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="u" x="26" y="0" font-size="20" fill="#efeae1">行動版不重疊</text></g>
