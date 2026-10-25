@@ -1,0 +1,27 @@
+/tmp/qa-procedure.nrzTbe
+✖ QA templates expose a reviewable test-design decision contract (17.4543ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.7331
+
+✖ failing tests:
+
+test at tests\template-contract.test.mjs:8:1
+✖ QA templates expose a reviewable test-design decision contract (17.4543ms)
+  AssertionError [ERR_ASSERTION]: Test Spec is missing Target risk／failure mode
+      at TestContext.<anonymous> (file:///C:/Users/sanyo/AppData/Local/Temp/qa-followthrough-v86py4uf/negative-fixture/tests/template-contract.test.mjs:25:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '---\r\ntype: test-spec\r\ntemplateVersion: 0.2.0\r\nstatus: draft\r\nspecId:\r\nrepository:\r\nreleaseTarget:\r\ncandidateSha:\r\nriskTier:\r\nqaOwner:\r\nreviewer:\r\npublicDisclosure: internal\r\ntags:\r\n  - qa\r\n  - test-strategy\r\n---\r\n\r\n# Test Spec\r\n\r\n> 定義這次如何取得足以支持 release decision 的 evidence。測試數量本身不能代表 coverage 或 Ready。\r\n\r\n## Purpose and decision\r\n\r\n- Purpose：\r\n- Decision to support：\r\n- Risk tier：\r\n\r\n## Subject\r\n\r\n| Field | Value |\r\n|---|---|\r\n| Repository | |\r\n| Release／tag | |\r\n| Branch | |\r\n| Full SHA | |\r\n| Environment | |\r\n| Worktree state | |\r\n\r\n## Scope\r\n\r\n### Tested scope\r\n\r\n- <!-- fill in -->\r\n\r\n### Out of scope\r\n\r\n- <!-- fill in -->\r\n\r\n## Coverage design\r\n\r\n| Product Area | Related risk | Target coverage | Test type | Approach | Evidence output | Owner |\r\n|---|---|---|---|---|---|---|\r\n| | | | Functional / Non-Functional / Change-related | automated / manual / exploratory / inspection / live | | |\r\n\r\n## Test design decisions\r\n\r\n> 先用 risk／failure mode、規格特徵及可觀察性限制選擇 technique，再由 human reviewer 核准。不要用案例數量代替 coverage，也不要讓模型補完未定義的 expected behavior。\r\n\r\n| REMOVED_FOR_NEGATIVE_CONTROL | Spec characteristic | Observability／environment constraint | Selected technique | Technique parameters | Oracle／source | Coverage claim | Exclusions／residual risk | Reviewer |\r\n|---|---|---|---|---|---|---|---|---|\r\n| | | | | | | | | |\r\n\r\n### Oracle and testability rules\r\n\r\n- Oracle hierarchy：approved requirement／AC → approved business rule／API or schema contract → reviewed domain decision → current behavior as characterization evidence → `Assumption` → `Unknown／needs-clarification`。\r\n- Observability／testability gap：<!-- UI, API response, event, log, database state or external side effect that cannot be observed or controlled -->\r\n- Test data／dependency constraint：\r\n- Stopping rule：<!-- the risk-based condition that ends design or execution; not a target number of cases -->\r\n- Run／Defect／Escape feedback：<!-- how later evidence will confirm or revise technique, parameters, coverage claim and residual risk -->\r\n\r\n## Entry, suspension and exit\r\n\r\n### Entry criteria\r\n\r\n- <!-- fill in -->\r\n\r\n### Suspension criteria\r\n\r\n- <!-- fill in -->\r\n\r\n### Resumption criteria\r\n\r\n- <!-- fill in -->\r\n\r\n### Exit criteria\r\n\r\n- <!-- fill in -->\r\n\r\n## Environment, data and dependencies\r\n\r\n- Environment／versions：\r\n- Test data identity／generation：\r\n- External dependencies：\r\n- Observability／health checks：\r\n- Secrets／PII handling：\r\n\r\n## Execution plan\r\n\r\n| Sequence | Test activity | Exact command／procedure source | Timebox | Executor | Expected artifact |\r\n|---|---|---|---|---|---|\r\n| 1 | | | | | |\r\n\r\n## Evidence handling\r\n\r\n- Artifact root：\r\n- Retention：\r\n- Hash／integrity method：\r\n- Reviewer method：\r\n- Evidence accessibility check：\r\n\r\n## Defects, reruns and exceptions\r\n\r\n- Defect triage rule：\r\n- Retest rule：\r\n- Regression rule：\r\n- Retry／flakiness rule：\r\n- Waiver／override authority：\r\n- Escalation path：\r\n\r\n## Roles and schedule\r\n\r\n| Role | Person／system | Responsibility | Role overlap disclosed |\r\n|---|---|---|---|\r\n| QA owner | | | |\r\n| Test executor | | | |\r\n| Reviewer | | | |\r\n| Decision owner | | | |\r\n\r\n## Known limitations\r\n\r\n- 本次 evidence 不會證明：\r\n- 未執行範圍對 decision 的影響：\r\n- Resource limitations：\r\n\r\n## Approval\r\n\r\n- Review outcome：`approved` / `changes-required` / `blocked`\r\n- Approved by：\r\n- Approved at：\r\n',
+    expected: /Target risk／failure mode/,
+    operator: 'match',
+    diff: 'simple'
+  }
+exit_code=1

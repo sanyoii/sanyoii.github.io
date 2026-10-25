@@ -1,0 +1,13 @@
+{
+  "index.html": "768ecac564c8195dcff0ded72280b3381822629dfd4f0a75d0a934cf8c76441f",
+  "btse-case.html": "77e4ea6302503adfea9416da5bf142f0e2d8a66ae4c68b2df1265aff7536919a",
+  "trend-support-case.html": "818264dbb2965e479fb50f18b0cfea185feec7891c0790131525b23d865ff1c1",
+  "asml-case.html": "70f4f21191ee8ea6cf70192f71c189f995a7ab7b98d2c51a8b28914d42966bb5",
+  "resume.html": "655efe837744f4ad3d691fca262a3efbc93f2aad11454c6ae5f6ec131ecb82fa",
+  "scripts/build_portfolio_pages.py": "8690cb7637de80a083a5510d60a2931103b0eb22d4a51ab11af4654f4fa28a9d",
+  "scripts/templates/portfolio-page.html": "f4b6b1792ffb8c607b293f0b13b380a2dd0446c690bec7c6e461655626dd9fae",
+  "assets/portfolio-pages.css": "21a746e5d95d18d28187d4c676251491a6f665abf7d6d1403b88f8ee86518f9e",
+  "assets/portfolio-pages.js": "c76a0bcc318b71cb76ec0a2a8ddb4e851947e0cb53b3157c696ef3aace27042f",
+  "tests/test_static.py": "81ee79ccf79b775f79f65f5e11e0259dd995e7524e108a4c405b570972043726",
+  "tests/test_portfolio_pages.py": "89c09eace584d9f9320c6d72a67d47f306fe86afdc32719cad8e74b826c54ddb"
+}

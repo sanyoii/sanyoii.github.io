@@ -1,0 +1,14 @@
+{
+  "status": "source comparison completed; candidate content awaiting user approval",
+  "source_sha256": {
+    "PROFILE_CONTENT_SOURCE.md": "4d7008329056846c3addb2c3848db2fb1716e68f8b188258f3203e5f266395cb",
+    "application-packets/2026-09-21-profile-sync/qa-source.md": "8bda2ebe3965832be73132614486b14448c842db3c6a1a42ffae7de9ec5ba258",
+    "CLAIM_VERIFICATION_SHEET.md": "cd79764401c16ee70bad15b97c23d08422f79bfee5aa5ada888562729f66fe4d",
+    "PUBLIC_QA_PRODUCT_QUALITY_RESUME.md": "4eaa5be3c0d47aa73d01d4c9b9aacb30d1e3d1d6d0d69309ba8a8647228aa7b8",
+    "index.html": "768ecac564c8195dcff0ded72280b3381822629dfd4f0a75d0a934cf8c76441f",
+    "dlp-case.html": "13e7c5df9d2026792374ddd9def83c8346fd63a79315dee21a022ba1ee6576fa",
+    "BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md": "f8e0dee3f425bdee39862d371dfa6d4dae2985ecdea94625eca1af1b4b1277ec",
+    "ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md": "a7878fb1cee907b43c22c5ba805462e2f5a5918eb13dcd949d4f345f42919d9a",
+    "TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md": "1fcd9dc133eb20c640c11a835cc9039e10c909463efe3f6b56c70bd9d950e7b5"
+  }
+}

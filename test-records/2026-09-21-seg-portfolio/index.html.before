@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>William Lu — Senior QA Engineer | Web3 &amp; Crypto</title>
+<meta name="description" content="Senior QA Engineer with direct crypto exchange testing at BTSE and nearly 13 years at Trend Micro across security QA, incident RCA, and customer engineering.">
+<meta property="og:title" content="William Lu — Senior QA Engineer | Web3 &amp; Crypto">
+<meta property="og:description" content="Senior QA Engineer with direct crypto exchange testing at BTSE and nearly 13 years at Trend Micro across security QA, incident RCA, and customer engineering.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sanyoii.github.io/">
+<meta property="og:image" content="https://sanyoii.github.io/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0c0d'/%3E%3Crect y='56' width='64' height='8' fill='%23e8853f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Menlo,Consolas,monospace' font-size='36' font-weight='600' fill='%23f0eae1'%3EW%3C/text%3E%3C/svg%3E">
+
+<style>
+  :root {
+    --bg: #091016;
+    --bg-2: #101922;
+    --bg-3: #15212b;
+    --ink: #edf1ed;
+    --ink-dim: #aab4b1;
+    --ink-faint: #6f7d7b;
+    --rule: rgba(184, 203, 195, 0.14);
+    --accent: #91b5a5;
+    --accent-strong: #b7d1c5;
+    --accent-wash: rgba(145, 181, 165, 0.09);
+    --accent-hair: rgba(145, 181, 165, 0.24);
+    --sans: "Aptos", "Segoe UI Variable", "Segoe UI", "Noto Sans TC",
+            "PingFang TC", "Microsoft JhengHei", Helvetica, Arial, sans-serif;
+    --display: "Iowan Old Style", "Palatino Linotype", "Noto Serif TC",
+               Georgia, serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+            "Liberation Mono", monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 83% 8%, rgba(145, 181, 165, 0.08), transparent 27rem),
+      radial-gradient(circle at 10% 34%, rgba(73, 105, 118, 0.08), transparent 30rem),
+      var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  /* film grain: breaks the flat digital surface. inline SVG turbulence,
+     no network request. the xmlns URL is a namespace, not a fetch. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 10px;
+    left: 12px;
+    z-index: 100;
+    transform: translateY(-160%);
+    background: var(--ink);
+    color: var(--bg);
+    padding: 10px 14px;
+    text-decoration: none;
+  }
+  .skip-link:focus { transform: none; }
+
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    border-bottom: 1px solid var(--rule);
+    background: rgba(9, 16, 22, 0.82);
+    backdrop-filter: blur(18px) saturate(130%);
+  }
+  .nav-inner {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .brand {
+    font-family: var(--display);
+    font-size: 1.08rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 24px; }
+  .nav-links { display: flex; align-items: center; gap: 22px; }
+  .nav-links a {
+    color: var(--ink-dim);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+
+  /* ---------- language toggle ---------- */
+  .lang {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(145, 181, 165, 0.06);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 4px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-dim);
+    cursor: pointer;
+  }
+  .lang:hover { border-color: var(--ink-faint); color: var(--ink); }
+  .lang:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .lang span { padding: 2px 8px; }
+  .lang .on { color: var(--accent); }
+  .lang .sep { color: var(--rule); padding: 2px 0; }
+
+  /* ---------- shared section ---------- */
+  section { border-top: 1px solid var(--rule); }
+
+  .sec-pad { padding: 112px 0 124px; }
+
+  h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 4vw, 3.15rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin: 0 0 12px;
+  }
+
+  h2.has-rule {
+    padding-top: 20px;
+    border-top: 1px solid var(--accent);
+    display: block;
+    max-width: 8.5em;
+    margin-bottom: 44px;
+  }
+
+  .sec-sub {
+    color: var(--ink-dim);
+    max-width: 58ch;
+    margin: 0 0 56px;
+  }
+
+  h2.has-rule + .sec-sub { margin-top: -30px; }
+
+  /* ---------- hero: asymmetric split ---------- */
+  .hero { padding-top: 72px; padding-bottom: 88px; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    gap: clamp(42px, 7vw, 92px);
+    align-items: center;
+    margin-bottom: 34px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 20px;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    font-weight: 500;
+    margin: 0 0 18px;
+  }
+
+  .role {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink-dim);
+    margin: 0 0 30px;
+  }
+
+  .tagline {
+    font-family: var(--display);
+    font-size: clamp(1.65rem, 3.8vw, 2.75rem);
+    line-height: 1.13;
+    letter-spacing: -0.035em;
+    font-weight: 400;
+    max-width: 25ch;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  /* CJK balances rather than fills. `ch` is the width of "0", so it under-
+     measures CJK by half: size the Chinese lines in em, and step the display
+     size down so the two lines break on the comma, not mid-phrase. */
+  /* balance optimizes for equal line length and ignores punctuation, which
+     lands the break mid-phrase. fill instead, with the measure set so line
+     one runs out just after the comma. */
+  html[lang^="zh"] .tagline {
+    font-size: clamp(1.4rem, 4vw, 2.15rem);
+    max-width: 17.6em;
+    text-wrap: normal;
+  }
+  .tagline::after {
+    content: "";
+    display: block;
+    width: 88px;
+    height: 1px;
+    background: var(--accent);
+    margin-top: 22px;
+  }
+
+  /* the numbers get their own mass on the right, not a row under the copy */
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 22px;
+    background:
+      linear-gradient(145deg, rgba(145, 181, 165, 0.08), transparent 58%),
+      var(--bg-2);
+    border: 1px solid var(--accent-hair);
+    border-radius: 24px 24px 6px 24px;
+    padding: 30px;
+    box-shadow: 0 28px 70px rgba(0, 13, 20, 0.26), inset 0 1px rgba(255,255,255,0.03);
+  }
+  .stat-n {
+    display: block;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--accent-strong);
+  }
+  .stat-l {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink-dim);
+    text-wrap: balance;
+  }
+
+  .avail {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    border-left: 1px solid var(--accent);
+    padding-left: 16px;
+    max-width: 72ch;
+    margin: 0 0 26px;
+  }
+  /* same `ch` problem here: measure the Chinese line in em so it sets in two
+     lines instead of one full-width strip. */
+  html[lang^="zh"] .avail { max-width: 40em; }
+
+  .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 13px 26px;
+    white-space: nowrap;
+    border: 1px solid var(--accent);
+    border-radius: 3px 14px 3px 14px;
+    transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  }
+  .btn-primary { background: var(--accent); color: #07110e; font-weight: 600; }
+  .btn-primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); transform: translateY(-2px); }
+  .btn-ghost { color: var(--ink); border-color: var(--rule); }
+  .btn-ghost:hover { border-color: var(--ink-faint); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .btn:active { transform: translateY(1px); }
+
+  /* ---------- track record: 4/7 split, the year is the anchor ---------- */
+  .proof {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: 52px;
+    align-items: start;
+    padding: 34px;
+    background: linear-gradient(115deg, rgba(145, 181, 165, 0.055), transparent 52%);
+    border: 1px solid var(--rule);
+    border-radius: 4px 28px 4px 4px;
+  }
+  .proof + .proof {
+    margin-top: 52px;
+    padding-top: 52px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .proof-yr {
+    display: block;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+  .proof-co {
+    font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px;
+  }
+  .proof-role { color: var(--ink-dim); font-size: 14.5px; margin: 0; }
+  .proof-body {
+    margin: 0;
+    color: var(--ink);
+    max-width: 58ch;
+    /* optical: pull the body up to sit against the company name, not the year */
+    padding-top: 8px;
+  }
+
+  /* ---------- evidence: public case studies and resume ---------- */
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .evidence-featured { grid-column: 1 / -1; }
+  .evidence-card.evidence-featured { border-color: var(--accent); min-height: 0; }
+  .evidence-featured .evidence-copy { max-width: 68ch; }
+  .resume-entry { margin: -24px 0 32px; }
+  .resume-entry a { display: inline-flex; align-items: center; min-height: 44px; }
+  .experiments { margin-top: 44px; }
+  .experiments > summary { cursor: pointer; padding: 20px 0; font-size: 1.2rem; color: var(--ink); }
+  .experiments > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .experiment-overview { color: var(--ink-dim); max-width: 68ch; margin-bottom: 24px; }
+  .experiment-overview li + li { margin-top: 10px; }
+  .evidence-card {
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+    padding: 28px;
+    color: var(--ink);
+    text-decoration: none;
+    background: linear-gradient(155deg, rgba(145, 181, 165, 0.055), transparent 58%), var(--bg-2);
+    border: 1px solid var(--rule);
+    border-radius: 4px 24px 4px 4px;
+    transition: border-color 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
+  }
+  .evidence-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .evidence-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  .evidence-kicker {
+    margin: 0 0 16px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .evidence-title {
+    margin: 0 0 14px;
+    font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .evidence-copy {
+    margin: 0;
+    color: var(--ink-dim);
+    max-width: 48ch;
+  }
+  .evidence-link {
+    margin-top: auto;
+    padding-top: 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--accent-strong);
+  }
+
+  /* ---------- work: bento ---------- */
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+  .cell {
+    background: linear-gradient(160deg, rgba(255,255,255,0.018), transparent 45%), var(--bg-2);
+    border: 1px solid var(--rule);
+    border-radius: 4px 26px 4px 4px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .cell-a { grid-column: span 7; }
+  .cell-b { grid-column: span 5; }
+  /* the third cell has no screenshot, so it earns its variation from a
+     brand-tinted wash instead of sitting there as a third gray box */
+  .cell-c {
+    grid-column: span 12;
+    background:
+      linear-gradient(155deg, var(--accent-wash), rgba(232, 133, 63, 0.015) 62%),
+      var(--bg-2);
+  }
+  .cell-c-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+    gap: 44px;
+    align-items: start;
+  }
+  .cell-wide-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+    gap: 44px;
+    align-items: center;
+  }
+
+  .work-shot { border: 1px solid var(--rule); overflow: hidden; }
+  .work-shot img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280 / 860;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cell:hover .work-shot img { transform: scale(1.025); }
+
+  .work-title {
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .work-sub { color: var(--accent); font-size: 14px; margin: 0; }
+
+  /* the problem line is bright and larger, the approach line is body copy.
+     the size step carries the structure, so the labels are gone. */
+  .work-lead {
+    margin: 0 0 14px;
+    font-size: 1.08rem;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    max-width: 46ch;
+  }
+  .work-lead--gap { margin-top: 22px; }
+  .work-body { margin: 0; color: var(--ink-dim); max-width: 52ch; }
+  #cex-lab, #btse-evidence, #support-evidence, #asml-evidence { scroll-margin-top: 100px; }
+  .review-paths { margin: 0 0 28px; line-height: 1.8; color: var(--ink-dim); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink-dim);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 4px 10px;
+  }
+
+  .fork {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    border-left: 2px solid var(--rule);
+    padding-left: 14px;
+    margin: 0 0 20px;
+  }
+
+  .cell-body { display: flex; flex-direction: column; gap: 22px; }
+
+  /* ---------- timeline: spine ---------- */
+  .rail {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0 4px 30px;
+    border-left: 1px solid var(--rule);
+  }
+  .rail li { position: relative; padding-bottom: 36px; }
+  .rail li:last-child { padding-bottom: 0; }
+  /* a tick on the spine, marking a point in time. not a decorative dot. */
+  .rail li::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 12px;
+    width: 14px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .rail-yr {
+    display: block;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .rail-what {
+    margin: 0;
+    font-size: 1.06rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    max-width: 56ch;
+  }
+
+  .edu-heading {
+    margin: 44px 0 16px;
+    padding-top: 26px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .edu {
+    margin: 0;
+    color: var(--ink-dim);
+    font-size: 15px;
+  }
+  .work-shot--dashboard img { aspect-ratio: 16 / 10; }
+  .edu + .edu {
+    margin-top: 12px;
+  }
+
+  /* ---------- toolbox: asymmetric panels ---------- */
+  .kitgrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 18px;
+  }
+  .kit {
+    background: var(--bg-2);
+    border: 1px solid var(--rule);
+    border-radius: 4px 22px 4px 4px;
+    padding: 26px;
+  }
+  .kit-1 { grid-column: span 7; }
+  .kit-2 { grid-column: span 5; }
+  .kit-3 { grid-column: span 5; }
+  .kit-4 { grid-column: span 7; }
+  .kit-5 {
+    grid-column: span 12;
+    background: linear-gradient(115deg, var(--accent-wash), transparent 60%), var(--bg-2);
+    border-color: var(--accent-hair);
+  }
+  .kit-h {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+
+  /* ---------- contact: oversized reach block ---------- */
+  .contact-line {
+    font-family: var(--display);
+    font-size: clamp(1.5rem, 4.2vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    max-width: 27ch;
+    margin: 0 0 52px;
+    text-wrap: balance;
+  }
+  .reach {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .reach-a {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 10px;
+    padding: 26px 0 0;
+    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    word-break: break-word;
+    color: var(--ink);
+    transition: color 0.18s ease;
+  }
+  .reach-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+  }
+  .reach-text { min-width: 0; }
+  .reach-rule {
+    display: block;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 1px;
+    margin-top: 14px;
+    background: var(--accent);
+    transform: scaleX(0.14);
+    transform-origin: left;
+    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reach-a:hover { color: var(--accent); }
+  .reach-a:hover .reach-rule, .reach-a:focus-visible .reach-rule { transform: scaleX(1); }
+  .reach-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--rule); padding: 40px 0 56px; }
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  .foot p { margin: 0; }
+
+  /* ---------- entrance ---------- */
+  /* only hide when JS is available to reveal it again */
+  .js .fade { opacity: 0; transform: translateY(14px); }
+  .js .fade.in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--d, 0s);
+  }
+
+  /* hero elements are all in view on load, so cascade them instead of
+     landing everything at once. scroll-triggered fades keep no delay. */
+  .js .hero h1.in       { --d: 0.06s; }
+  .js .hero .role.in    { --d: 0.12s; }
+  .js .hero .tagline.in { --d: 0.18s; }
+  .js .hero .stats.in   { --d: 0.24s; }
+  .js .hero .avail.in   { --d: 0.30s; }
+  .js .hero .ctas.in    { --d: 0.36s; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 980px) {
+    .cell-a, .cell-b { grid-column: span 12; }
+    .kit-1, .kit-2, .kit-3, .kit-4, .kit-5 { grid-column: span 12; }
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 34px; align-items: start; }
+    .cell-c-inner, .cell-wide-inner { grid-template-columns: 1fr; gap: 26px; }
+    .proof { grid-template-columns: 1fr; gap: 18px; }
+    .proof-body { padding-top: 0; }
+    .evidence-grid { grid-template-columns: 1fr; }
+    .evidence-card { min-height: 0; }
+    .reach { grid-template-columns: 1fr; gap: 0; }
+    .reach-a { padding-bottom: 24px; }
+    .reach-a + .reach-a { border-top: 1px solid var(--rule); padding-top: 24px; }
+  }
+
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
+    .hero { padding-top: 48px; padding-bottom: 64px; }
+    .sec-pad { padding: 68px 0; }
+    .cell { padding: 22px; }
+    .kit { padding: 22px; }
+    .ctas .btn { flex: 1 1 auto; text-align: center; }
+    .proof + .proof { margin-top: 40px; padding-top: 40px; }
+  }
+
+  /* short viewports (laptops, small phones): tighten the hero so the
+     availability line and the CTAs stay above the fold */
+  @media (max-height: 820px) {
+    .hero { padding-top: 44px; padding-bottom: 56px; }
+    .role { margin-bottom: 16px; }
+    .tagline::after { margin-top: 16px; }
+    .hero-grid { margin-bottom: 26px; }
+    .stats { padding: 18px; gap: 20px 20px; }
+  }
+
+  /* Phones: the stats panel is two rows here and the availability line
+     wraps to four, so the CTAs need more room reclaimed than the
+     short-screen rules above give back. */
+  @media (max-width: 620px) {
+    .hero { padding-top: 20px; }
+    /* first line shares the vertical band with the fixed lang toggle,
+       wrap before running under it */
+    .eyebrow { margin-bottom: 14px; max-width: 100%; letter-spacing: 0.08em; }
+    h1 { margin-bottom: 12px; }
+    .role { margin-bottom: 16px; }
+    .tagline::after { margin-top: 14px; }
+    .hero-grid { gap: 16px; margin-bottom: 16px; }
+    .stats { padding: 16px; gap: 16px 18px; }
+    .avail { margin-bottom: 12px; }
+    .nav-inner { gap: 12px; padding-top: 8px; padding-bottom: 8px; }
+    .nav-actions { margin-left: auto; gap: 14px; }
+    .nav-links { display: flex; gap: 14px; }
+    .nav-links a { display: none; min-height: 44px; align-items: center; }
+    .nav-links a[href="#evidence"], .nav-links a[href="#contact"] { display: inline-flex; }
+    .lang { min-height: 44px; }
+    .brand { font-size: 0; }
+    .brand-mark { font-size: 1.08rem; }
+    .ctas { display: grid; grid-template-columns: 1fr 1fr; }
+    .ctas .btn-primary { grid-column: 1 / -1; }
+    .ctas .btn { padding-left: 10px; padding-right: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      transition-delay: 0ms !important;
+    }
+    .js .fade { opacity: 1; transform: none; }
+    .reach-rule { transform: scaleX(1); }
+  }
+</style>
+
+<script>document.documentElement.classList.add('js');</script>
+
+<script>
+  try {
+    var l = localStorage.getItem('wl-lang');
+    document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-Hant' : 'en');
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-en="Skip to content" data-zh="跳到主要內容">Skip to content</a>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="William Lu home"><span class="brand-mark">W/</span> William Lu</a>
+    <div class="nav-actions">
+      <div class="nav-links">
+        <a href="#impact" data-en="Web3 impact" data-zh="Web3 經驗">Web3 impact</a>
+        <a href="#evidence" data-en="Evidence" data-zh="案例">Evidence</a>
+        <a href="#work" data-en="Systems" data-zh="作品">Systems</a>
+        <a href="#capabilities" data-en="Capabilities" data-zh="能力">Capabilities</a>
+        <a href="#contact" data-en="Contact" data-zh="聯絡">Contact</a>
+      </div>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language / 切換語言">
+        <span id="langEn" class="on">EN</span><span class="sep">/</span><span id="langZh">中</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div class="hero-grid">
+    <div class="hero-lead">
+      <p class="eyebrow fade"
+         data-en="Web3 product quality · Taiwan (UTC+8)"
+         data-zh="Web3 產品品質 · 台灣（UTC+8）">Web3 product quality · Taiwan (UTC+8)</p>
+
+      <h1 class="fade">William Lu</h1>
+
+      <p class="role fade"
+         data-en="Senior QA Engineer · Web3 and Crypto"
+         data-zh="資深 QA 工程師 · Web3 與加密產品">Senior QA Engineer · Web3 and Crypto</p>
+
+      <p class="tagline fade"
+         data-en="I test product flows where logic errors can affect users, transactions, and assets."
+         data-zh="我專注測試邏輯錯誤可能影響使用者、交易與資產的產品流程。">I test product flows where logic errors can affect users, transactions, and assets.</p>
+    </div>
+
+    <div class="stats fade">
+      <div>
+        <span class="stat-n">3</span>
+        <span class="stat-l" data-en="high-severity financial-logic defects found at BTSE" data-zh="個在 BTSE 找出的高嚴重度金融邏輯缺陷">high-severity financial-logic defects found at BTSE</span>
+      </div>
+      <div>
+        <span class="stat-n">6</span>
+        <span class="stat-l" data-en="Automation Engineers led on the ASML engagement" data-zh="位在 ASML 專案中帶領的自動化測試工程師">Automation Engineers led on the ASML engagement</span>
+      </div>
+      <div>
+        <span class="stat-n">2</span>
+        <span class="stat-l" data-en="internal SEG awards at Trend Micro (2019, 2021)" data-zh="次 Trend Micro 內部 SEG 年度獎項（2019、2021）">internal SEG awards at Trend Micro (2019, 2021)</span>
+      </div>
+      <div>
+        <span class="stat-n">12+</span>
+        <span class="stat-l" data-en="years across QA, customer engineering, and technical support" data-zh="年 QA、客戶工程與技術支援經驗">years across QA, customer engineering, and technical support</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="avail fade"
+     data-en="At BTSE, I found high-severity defects in futures pricing and referral commissions. Now focused on Web3 QA, product quality, and technical support roles. Remote from Taiwan, with 4+ hours of European overlap."
+     data-zh="我在 BTSE 找出期貨定價與推薦佣金的高嚴重度缺陷。目前鎖定 Web3 QA、產品品質與技術支援職位；可在台灣遠端工作，並能與歐洲時區重疊至少 4 小時。">At BTSE, I found high-severity defects in futures pricing and referral commissions. Now focused on Web3 QA, product quality, and technical support roles. Remote from Taiwan, with 4+ hours of European overlap.</p>
+
+  <div class="ctas fade">
+    <a class="btn btn-primary" href="#btse-evidence" data-en="Explore my QA case" data-zh="查看代表 QA 案例">Explore my QA case</a>
+    <a class="btn btn-ghost" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md" target="_blank" rel="noopener" data-en="Read resume ↗" data-zh="閱讀履歷 ↗">Read resume ↗</a>
+    <a class="btn btn-ghost" href="#contact" data-en="Discuss a role" data-zh="聯絡我">Discuss a role</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ PROOF ============ -->
+  <section class="sec-pad" id="impact">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Quality where failure has consequences" data-zh="當錯誤會帶來實際代價">Quality where failure has consequences</h2>
+      <p class="sec-sub fade"
+         data-en="My work sits at the intersection of product risk, technical investigation, and operational response—from crypto exchange logic to enterprise security incidents."
+         data-zh="我的工作涵蓋產品風險、技術調查與事故處理，從加密交易所的計算邏輯到企業資安事件都有。">My work sits at the intersection of product risk, technical investigation, and operational response—from crypto exchange logic to enterprise security incidents.</p>
+
+      <article class="proof fade">
+        <div class="proof-id">
+          <span class="proof-yr">2024</span>
+          <h3 class="proof-co">Nogle (BTSE)</h3>
+          <p class="proof-role"
+             data-en="Senior QA Engineer · centralized crypto exchange"
+             data-zh="資深 QA 工程師 · 中心化加密貨幣交易所">Senior QA Engineer · centralized crypto exchange</p>
+        </div>
+        <p class="proof-body"
+           data-en="Tested Wallet, Referral and Affiliate, Spot, Futures, Convert, fees, funding, liquidation, and KYC on BTSE's centralized crypto exchange. Identified and escalated three high-severity defects across trading, referral commission, and conversion flows."
+           data-zh="我在 BTSE 的中心化加密貨幣交易所測試 Wallet、Referral／Affiliate、Spot、Futures、Convert、Fee、Funding、Liquidation 與 KYC，找出並回報交易、推薦佣金與轉換流程中的 3 個高嚴重度缺陷，交由團隊優先處理。">Tested Wallet, Referral and Affiliate, Spot, Futures, Convert, fees, funding, liquidation, and KYC on BTSE's centralized crypto exchange. Identified and escalated three high-severity defects across trading, referral commission, and conversion flows.</p>
+      </article>
+
+      <article class="proof fade">
+        <div class="proof-id">
+          <span class="proof-yr">2023–2024</span>
+          <h3 class="proof-co">Zealogics, for ASML</h3>
+          <p class="proof-role"
+             data-en="Project Leader / Senior Automation Test Engineer"
+             data-zh="Project Leader／Senior Automation Test Engineer">Project Leader / Senior Automation Test Engineer</p>
+        </div>
+        <p class="proof-body"
+           data-en="Led six Automation Engineers across three ASML HMI modules. Designed the setup-to-reset lifecycle within the existing TestComplete architecture so the normal workflow could run unattended. Planned reusable modules and technical handover; the engineers completed most implementation coding."
+           data-zh="在 ASML 專案帶領 6 位自動化測試工程師，涵蓋 3 個 HMI 模組。在既有 TestComplete 架構中設計從環境設定到清理重置的流程，讓正常路徑能無人值守執行。我負責可重用模組規劃與技術交接，多數程式實作由團隊完成。">Led six Automation Engineers across three ASML HMI modules. Designed the setup-to-reset lifecycle within the existing TestComplete architecture so the normal workflow could run unattended. Planned reusable modules and technical handover; the engineers completed most implementation coding.</p>
+      </article>
+
+      <article class="proof fade">
+        <div class="proof-id">
+          <span class="proof-yr">2010–2023</span>
+          <h3 class="proof-co">Trend Micro</h3>
+          <p class="proof-role"
+             data-en="QA Engineer → Senior Customer Service Engineer → Senior QA / Customer Service Engineer"
+             data-zh="QA Engineer → Senior Customer Service Engineer → Senior QA／Customer Service Engineer">QA Engineer → Senior Customer Service Engineer → Senior QA / Customer Service Engineer</p>
+        </div>
+        <p class="proof-body"
+           data-en="Spent nearly 13 years across security product QA and customer engineering. Led beta programs, handled enterprise incident RCA and customer escalation, validated hotfixes, and improved testing and support processes. Received Trend Micro's internal &quot;Yearly Best SEG Engineer&quot; award in 2019 and 2021."
+           data-zh="我在 Trend Micro 工作近 13 年，歷經資安產品 QA 與客戶工程；曾主導多項 Beta 測試計畫、處理企業事件 RCA 與客戶升級案件、驗證 hotfix，也改善測試與支援流程。2019 和 2021 年兩度獲得公司內部的「Yearly Best SEG Engineer」獎項。">Spent nearly 13 years across security product QA and customer engineering. Led beta programs, handled enterprise incident RCA and customer escalation, validated hotfixes, and improved testing and support processes. Received Trend Micro's internal "Yearly Best SEG Engineer" award in 2019 and 2021.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PUBLIC EVIDENCE ============ -->
+  <section class="sec-pad" id="evidence">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Case studies and resume" data-zh="案例與履歷">Case studies and resume</h2>
+      <p class="sec-sub fade"
+         data-en="Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result."
+         data-zh="依職位查看 CEX 產品品質、自動化領導或技術支援案例。每個案例都說明我負責的部分與結果。">Choose a case for the role you are hiring: CEX product quality, automation leadership, or technical support. Each case explains my contribution and the result.</p>
+      <p class="resume-entry fade">
+        <a href="https://github.com/sanyoii/sanyoii.github.io/blob/main/PUBLIC_QA_PRODUCT_QUALITY_RESUME.md" target="_blank" rel="noopener" data-en="Read QA / Product Quality resume ↗" data-zh="閱讀 QA／產品品質履歷 ↗">Read QA / Product Quality resume ↗</a>
+      </p>
+
+      <div class="evidence-grid">
+        <a class="evidence-card evidence-featured fade"
+           id="btse-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="Start here · CEX product quality" data-zh="從這裡開始 · CEX 產品品質">Start here · CEX product quality</p>
+          <h3 class="evidence-title">BTSE</h3>
+          <p class="evidence-copy"
+             data-en="I found three high-severity defects across trading, referral commissions, and conversion. I reproduced boundary failures and compared expected commission allocations with actual results. This case explains my tests, the reported issues, and what remained unresolved."
+             data-zh="我在交易、推薦佣金與兌換流程找到三個高嚴重度缺陷，重現邊界輸入問題，並比對預期佣金與實際結果。案例說明我如何驗證、回報，以及哪些問題仍未解決。">I found three high-severity defects across trading, referral commissions, and conversion. I reproduced boundary failures and compared expected commission allocations with actual results. This case explains my tests, the reported issues, and what remained unresolved.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+        <a class="evidence-card fade"
+           id="support-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="Incident and support" data-zh="事件調查與技術支援">Incident and support</p>
+          <h3 class="evidence-title">Trend Micro</h3>
+          <p class="evidence-copy"
+             data-en="Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct."
+             data-zh="四個獨立案例，涵蓋事件調查、P1 升級處理、緊急修補與外部測試；清楚交代服務是否恢復、問題是否修復。">Four separate incident, P1 escalation, hotfix, and external-beta cases with recovery and fix states kept distinct.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+        <a class="evidence-card fade"
+           id="asml-evidence" href="https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md"
+           target="_blank" rel="noopener">
+          <p class="evidence-kicker" data-en="Automation leadership" data-zh="自動化測試團隊帶領">Automation leadership</p>
+          <h3 class="evidence-title">ASML</h3>
+          <p class="evidence-copy"
+             data-en="I led six automation engineers, designed the TestComplete test lifecycle and reusable modules, and supported training and technical handoff. The case separates my leadership and design work from the team's implementation."
+             data-zh="我帶領 6 位自動化測試工程師，設計 TestComplete 測試生命週期與共用模組，並協助培訓及技術交接。案例分開說明我的帶領、設計工作與團隊的程式實作。">I led six automation engineers, designed the TestComplete test lifecycle and reusable modules, and supported training and technical handoff. The case separates my leadership and design work from the team's implementation.</p>
+          <span class="evidence-link" data-en="Read case study ↗" data-zh="閱讀案例 ↗">Read case study ↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="sec-pad" id="work">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Systems I build" data-zh="我建立的系統">Systems I build</h2>
+      <p class="sec-sub fade"
+         data-en="I build tools around real constraints: traceable data, explicit guardrails, and workflows another person can verify."
+         data-zh="我做工具時會先處理實際限制：資料能追溯、規則寫清楚，別人也能接手驗證。">I build tools around real constraints: traceable data, explicit guardrails, and workflows another person can verify.</p>
+
+      <div class="bento">
+
+        <article class="cell cell-c fade" id="cex-lab">
+          <h3 class="work-title">CEX Market Data Quality Lab</h3>
+          <p class="work-sub" data-en="Python / pytest · REST and WebSocket testing" data-zh="Python／pytest · REST 與 WebSocket 測試">Python / pytest · REST and WebSocket testing</p>
+          <p class="work-body" data-en="Tests public market-data snapshots and updates for stale events, sequence gaps, and invalid order-book values. Includes test design, executable checks, and versioned results. Uses Binance public APIs; separate from my employment at BTSE."
+             data-zh="檢查公開市場資料的 snapshot 與更新，涵蓋過期事件、序列缺口及無效訂單簿數值。附測試設計、可執行測試與版本結果。使用 Binance 公開 API，與 BTSE 任職經驗分開。">Tests public market-data snapshots and updates for stale events, sequence gaps, and invalid order-book values. Includes test design, executable checks, and versioned results. Uses Binance public APIs; separate from my employment at BTSE.</p>
+          <p class="work-body" data-en="Public market data only. No account, order, or funds testing. Live results apply to the recorded revision and date."
+             data-zh="僅使用公開市場資料，不測帳戶、下單或資金。Live 結果只適用於紀錄中的版本與日期。">Public market data only. No account, order, or funds testing. Live results apply to the recorded revision and date.</p>
+          <p>
+            <a class="evidence-link" href="https://github.com/sanyoii/cex-market-data-quality-lab" target="_blank" rel="noopener" data-en="Source and test design ↗" data-zh="原始碼與測試設計 ↗">Source and test design ↗</a> ·
+            <a class="evidence-link" href="https://github.com/sanyoii/cex-market-data-quality-lab/actions" target="_blank" rel="noopener" data-en="CI run history ↗" data-zh="CI 執行紀錄 ↗">CI run history ↗</a>
+          </p>
+        </article>
+
+        <article class="cell cell-c fade">
+          <div class="cell-wide-inner">
+            <div>
+              <h3 class="work-title">QA Decision Desk</h3>
+              <p><a class="evidence-link" href="test-status/" data-en="Open dashboard ↗" data-zh="開啟 Dashboard ↗">Open dashboard ↗</a> · <a class="evidence-link" href="https://github.com/sanyoii/RiskQADemoSite" target="_blank" rel="noopener" data-en="Source ↗" data-zh="原始碼 ↗">Source ↗</a></p>
+              <p class="work-body" data-en="Portfolio demonstration. Check each record's scope, revision, and freshness before interpreting its status."
+                 data-zh="作品集展示。判讀狀態前，請查看各筆紀錄的範圍、版本與證據時效。">Portfolio demonstration. Check each record's scope, revision, and freshness before interpreting its status.</p>
+              <p class="work-sub"
+                 data-en="Low-tech, evidence-first testing dashboard"
+                 data-zh="低維護、以證據為主的測試 Dashboard">Low-tech, evidence-first testing dashboard</p>
+              <p class="work-lead work-lead--gap"
+                 data-en="A green test run means little without a release, scope, and evidence trail."
+                 data-zh="測試顯示 PASS，如果沒有對應的版本、測試範圍與證據紀錄，幾天後就很難再相信這個結果。">A green test run means little without a release, scope, and evidence trail.</p>
+              <p class="work-body"
+                 data-en="Consolidates test evidence from two repositories into traceable release decisions. Each row shows the decision, rationale, and evidence link. The dashboard keeps freshness, Unknown states, Gate Flow, and sanitized public boundaries explicit."
+                 data-zh="把兩個 repo 的測試證據整理成可追溯的發布判斷。每一列都會寫清楚能不能發、原因和證據在哪裡；證據時效、Unknown、Gate Flow 與公開範圍也都有明確標示。">Consolidates test evidence from two repositories into traceable release decisions. Each row shows the decision, rationale, and evidence link. The dashboard keeps freshness, Unknown states, Gate Flow, and sanitized public boundaries explicit.</p>
+              <div class="tags">
+                <span class="tag" data-en="Risk-based QA" data-zh="風險導向 QA">Risk-based QA</span>
+                <span class="tag" data-en="Evidence contract" data-zh="證據規範">Evidence contract</span>
+                <span class="tag" data-en="Release governance" data-zh="發布治理">Release governance</span>
+              </div>
+            </div>
+            <div class="work-shot work-shot--dashboard">
+              <img id="shot3" src="assets/work-qa-decision-desk.png"
+                   alt="QA Decision Desk portfolio image"
+                   data-alt-en="QA Decision Desk portfolio image"
+                   data-alt-zh="QA Decision Desk 截圖"
+                   width="1440" height="900" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <details class="experiments">
+        <summary data-en="Other experiments (3) — previews and contributions" data-zh="其他實驗（3）— 預覽與本人貢獻">Other experiments (3) — previews and contributions</summary>
+        <ul class="experiment-overview">
+          <li data-en="hd-decode: a personal AI-tooling project that generates visual reports." data-zh="hd-decode：產生視覺化報告的個人 AI 工具專案。">hd-decode: a personal AI-tooling project that generates visual reports.</li>
+          <li data-en="Codex Skill Dashboard: a searchable inventory of my active Skills." data-zh="Codex Skill Dashboard：整理我目前啟用的 Skill，提供搜尋。">Codex Skill Dashboard: a searchable inventory of my active Skills.</li>
+          <li data-en="JobSmith: my additions to an open-source fork cover PDF export, ATS checks, and parsing guards." data-zh="JobSmith：基於開源專案，我加入 PDF 匯出、ATS 檢查與解析防呆。">JobSmith: my additions to an open-source fork cover PDF export, ATS checks, and parsing guards.</li>
+        </ul>
+        <p class="experiment-overview" data-en="Preview or description only; no public demo or source is linked for these projects." data-zh="以下僅提供預覽或介紹，未連結公開 demo 或原始碼。">Preview or description only; no public demo or source is linked for these projects.</p>
+        <div class="bento">
+        <article class="cell cell-a fade">
+          <div class="work-shot">
+            <img id="shot1" src="assets/work-hd-decode.jpg"
+                 alt="Screenshot of a generated Human Design report"
+                 data-alt-en="Screenshot of a generated Human Design report"
+                 data-alt-zh="人類圖解讀報告畫面截圖"
+                 width="1280" height="860" loading="lazy" decoding="async">
+          </div>
+          <div class="cell-body">
+            <div>
+              <h3 class="work-title">hd-decode</h3>
+              <p class="work-sub" data-en="Preview only here; no public demo or source linked." data-zh="本頁僅展示預覽，未提供公開 demo 或原始碼連結。">Preview only here; no public demo or source linked.</p>
+              <p class="work-sub"
+                 data-en="Human Design reading generator, a personal AI-tooling project"
+                 data-zh="人類圖解讀報告產生器，拿來練 AI 工具開發的個人專案">Human Design reading generator, a personal AI-tooling project</p>
+            </div>
+            <div>
+              <p class="work-lead"
+                 data-en="Most personality readings are a voice memo or a flat PDF you forget by the next day."
+                 data-zh="一般的命理解讀不是一段錄音就是一頁 PDF，看完隔天就忘了。">Most personality readings are a voice memo or a flat PDF you forget by the next day.</p>
+              <p class="work-body"
+                 data-en="Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language. The jargon is folded away, so someone who knows nothing about the system can still finish it."
+                 data-zh="輸入出生資料就自動排盤，產出 13 個章節的視覺化報告。每一段都先講白話，術語收在摺疊區，完全沒碰過這套系統的人也讀得完。">Takes a birth time, runs the chart calculation, and generates a 13-section visual report that leads with plain language. The jargon is folded away, so someone who knows nothing about the system can still finish it.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag" data-en="Custom chart engine" data-zh="自建排盤引擎">Custom chart engine</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="cell cell-b fade">
+          <div class="cell-body">
+            <div>
+              <h3 class="work-title">Codex Skill Dashboard</h3>
+              <p class="work-sub" data-en="Preview only here; no public demo or source linked." data-zh="本頁僅展示預覽，未提供公開 demo 或原始碼連結。">Preview only here; no public demo or source linked.</p>
+              <p class="work-sub"
+                 data-en="Searchable capability map for my Codex setup"
+                 data-zh="我的 Codex 能力地圖">Searchable capability map for my Codex setup</p>
+            </div>
+            <div>
+              <p class="work-lead"
+                 data-en="A Skill is only useful if I can find it when the task appears."
+                 data-zh="Skill 裝得再多，找不到該用哪個，等於沒裝。">A Skill is only useful if I can find it when the task appears.</p>
+              <p class="work-body"
+                 data-en="Generates a searchable inventory from effective Codex Skills, grouped by category, source, and trigger keywords. Disabled Skills stay out, so installed files are not confused with active capabilities."
+                 data-zh="Codex Skill Dashboard 只收錄目前啟用的 Skill，可依分類、來源或觸發關鍵字搜尋。停用的 Skill 不會出現在清單裡，避免把已安裝但未啟用的項目算進來。">Generates a searchable inventory from effective Codex Skills, grouped by category, source, and trigger keywords. Disabled Skills stay out, so installed files are not confused with active capabilities.</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Next.js</span>
+              <span class="tag" data-en="Generated inventory" data-zh="自動產生清單">Generated inventory</span>
+            </div>
+          </div>
+          <div class="work-shot work-shot--dashboard">
+            <img id="shot2" src="assets/work-codex-skills.png"
+                 alt="Codex Skill Dashboard portfolio image"
+                 data-alt-en="Codex Skill Dashboard portfolio image"
+                 data-alt-zh="Codex Skill Dashboard 截圖"
+                 width="1440" height="900" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <article class="cell cell-c fade">
+          <div class="cell-c-inner">
+            <div>
+              <h3 class="work-title">jobsmith</h3>
+              <p class="work-sub" data-en="Description only here; no public demo or source linked." data-zh="本頁僅介紹專案，未提供公開 demo 或原始碼連結。">Description only here; no public demo or source linked.</p>
+              <p class="work-sub"
+                 data-en="Job-search co-pilot for the Taiwan market"
+                 data-zh="台灣求職 AI 助手">Job-search co-pilot for the Taiwan market</p>
+              <p class="work-lead work-lead--gap"
+                 data-en="The slow part of job hunting isn't writing the resume. It's re-cutting it for every single posting."
+                 data-zh="投履歷最花時間的不是寫履歷，是把同一份履歷改成每個職缺想看的樣子。">The slow part of job hunting isn't writing the resume. It's re-cutting it for every single posting.</p>
+              <p class="work-body"
+                 data-en="Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience."
+                 data-zh="解析職缺內容、跟履歷比對，再匯出 ATS 讀得懂的 PDF。關鍵字推導設了上限、解析也加了防呆，避免它自己編出你沒有的經歷。">Parses job postings, matches them against the resume, and exports ATS-safe PDFs. Guardrails cap how many keywords it may infer, so it cannot quietly fabricate experience.</p>
+            </div>
+            <div>
+              <p class="fork"
+                 data-en="Forked from an open-source project. My contributions: PDF export, ATS compatibility checks, resume-parsing guards, keyword-inference limits."
+                 data-zh="這個專案 fork 自開源專案。我加的部分：PDF 匯出、ATS 相容檢查、履歷解析防呆、關鍵字推導上限。">Forked from an open-source project. My contributions: PDF export, ATS compatibility checks, resume-parsing guards, keyword-inference limits.</p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">React</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="sec-pad">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Where I've been" data-zh="經歷">Where I've been</h2>
+
+      <ol class="rail fade">
+        <li>
+          <span class="rail-yr" data-en="2025 - now" data-zh="2025–現在">2025 - now</span>
+          <p class="rail-what"
+             data-en="Career break (caregiving) · self-directed study in AI and software architecture"
+             data-zh="照顧家人暫離職場，同時自學 AI 與軟體架構">Career break (caregiving) · self-directed study in AI and software architecture</p>
+        </li>
+        <li>
+          <span class="rail-yr" data-en="2024" data-zh="2024">2024</span>
+          <p class="rail-what"
+             data-en="Senior QA Engineer · Nogle (BTSE)"
+             data-zh="資深 QA 工程師 · Nogle（BTSE）">Senior QA Engineer · Nogle (BTSE)</p>
+        </li>
+        <li>
+          <span class="rail-yr" data-en="2023 - 2024" data-zh="2023–2024">2023 - 2024</span>
+          <p class="rail-what"
+             data-en="Project Leader / Senior Automation Test Engineer · Zealogics (client: ASML)"
+             data-zh="Project Leader／Senior Automation Test Engineer · Zealogics（客戶：ASML）">Project Leader / Senior Automation Test Engineer · Zealogics (client: ASML)</p>
+        </li>
+        <li>
+          <span class="rail-yr" data-en="2010 - 2023" data-zh="2010–2023">2010 - 2023</span>
+          <p class="rail-what"
+             data-en="QA Engineer → Senior Customer Service Engineer → Senior QA / Customer Service Engineer · Trend Micro"
+             data-zh="QA Engineer → Senior Customer Service Engineer → Senior QA／Customer Service Engineer · Trend Micro">QA Engineer → Senior Customer Service Engineer → Senior QA / Customer Service Engineer · Trend Micro</p>
+        </li>
+        <li>
+          <span class="rail-yr" data-en="2006 - 2010" data-zh="2006–2010">2006 - 2010</span>
+          <p class="rail-what"
+             data-en="Firmware Engineer · Tatung"
+             data-zh="韌體工程師 · 大同公司">Firmware Engineer · Tatung</p>
+        </li>
+      </ol>
+
+      <h3 class="edu-heading fade" data-en="Education" data-zh="學歷">Education</h3>
+      <p class="edu fade"
+         data-en="MS, Information Engineering and Computer Science · Feng Chia University · 2003–2005"
+         data-zh="資訊工程與電腦科學碩士 · 逢甲大學 · 2003–2005">MS, Information Engineering and Computer Science · Feng Chia University · 2003–2005</p>
+      <p class="edu fade"
+         data-en="BS, Information Engineering and Computer Science · Feng Chia University · 1998–2003"
+         data-zh="資訊工程與電腦科學學士 · 逢甲大學 · 1998–2003">BS, Information Engineering and Computer Science · Feng Chia University · 1998–2003</p>
+    </div>
+  </section>
+
+  <!-- ============ TOOLBOX ============ -->
+  <section class="sec-pad" id="capabilities">
+    <div class="wrap">
+      <h2 class="fade has-rule" data-en="Capabilities" data-zh="核心能力">Capabilities</h2>
+
+      <div class="kitgrid">
+        <div class="kit kit-1 fade">
+          <p class="kit-h" data-en="Test craft" data-zh="測試方法">Test craft</p>
+          <div class="tags">
+            <span class="tag" data-en="Test Design" data-zh="測試設計">Test Design</span>
+            <span class="tag" data-en="Exploratory and Manual Testing" data-zh="探索式與手動測試">Exploratory and Manual Testing</span>
+            <span class="tag" data-en="Test Strategy and Planning" data-zh="測試策略與規劃">Test Strategy and Planning</span>
+            <span class="tag" data-en="E2E and API Testing" data-zh="E2E 與 API 測試">E2E and API Testing</span>
+            <span class="tag" data-en="Regression Testing" data-zh="回歸測試">Regression Testing</span>
+            <span class="tag" data-en="Defect Management" data-zh="缺陷管理">Defect Management</span>
+            <span class="tag" data-en="Root Cause Analysis" data-zh="根因分析">Root Cause Analysis</span>
+          </div>
+        </div>
+
+        <div class="kit kit-2 fade">
+          <p class="kit-h" data-en="Automation" data-zh="自動化">Automation</p>
+          <div class="tags">
+            <span class="tag">Selenium</span>
+            <span class="tag">Robot Framework</span>
+            <span class="tag">TestComplete</span>
+            <span class="tag" data-en="Automation Framework Design" data-zh="自動化框架設計">Automation Framework Design</span>
+          </div>
+        </div>
+
+        <div class="kit kit-3 fade">
+          <p class="kit-h" data-en="Customer support" data-zh="客戶技術支援">Customer support</p>
+          <div class="tags">
+            <span class="tag" data-en="VIP Escalation" data-zh="VIP 升級案件處理">VIP Escalation</span>
+            <span class="tag" data-en="Hotfix Validation" data-zh="hotfix 驗證">Hotfix Validation</span>
+            <span class="tag" data-en="Incident Response" data-zh="事件應變">Incident Response</span>
+            <span class="tag" data-en="Beta Program Management" data-zh="Beta 測試計畫管理">Beta Program Management</span>
+            <span class="tag" data-en="Technical Training" data-zh="教育訓練">Technical Training</span>
+          </div>
+        </div>
+
+        <div class="kit kit-4 fade">
+          <p class="kit-h" data-en="Languages and platforms" data-zh="語言與平台">Languages and platforms</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">C</span>
+            <span class="tag">SQL</span>
+            <span class="tag">XML</span>
+            <span class="tag">LDAP / Directories</span>
+            <span class="tag">Azure</span>
+            <span class="tag">DLP SDK</span>
+            <span class="tag" data-en="API Security" data-zh="API 安全">API Security</span>
+          </div>
+        </div>
+
+        <div class="kit kit-5 fade">
+          <p class="kit-h" data-en="Web3 and financial product quality" data-zh="Web3 與金融產品品質">Web3 and financial product quality</p>
+          <div class="tags">
+            <span class="tag" data-en="Crypto Exchange QA" data-zh="加密交易所 QA">Crypto Exchange QA</span>
+            <span class="tag" data-en="Futures Pricing Logic" data-zh="期貨定價邏輯">Futures Pricing Logic</span>
+            <span class="tag" data-en="Commission Logic" data-zh="佣金計算邏輯">Commission Logic</span>
+            <span class="tag" data-en="Financial Risk Testing" data-zh="金融風險測試">Financial Risk Testing</span>
+            <span class="tag" data-en="E2E Web/API Testing" data-zh="E2E Web／API 測試">E2E Web/API Testing</span>
+            <span class="tag" data-en="Evidence-led Investigation" data-zh="證據導向調查">Evidence-led Investigation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="sec-pad" id="contact">
+    <div class="wrap">
+      <p class="contact-line fade"
+         data-en="Building a Web3 product where correctness, trust, and money meet? Tell me what must not fail."
+         data-zh="你的 Web3 產品同時牽涉正確性、信任和資金嗎？告訴我哪些地方絕對不能出錯。">Building a Web3 product where correctness, trust, and money meet? Tell me what must not fail.</p>
+
+      <div class="reach fade">
+        <a class="reach-a" href="mailto:sanyoii@gmail.com">
+          <svg class="reach-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.75 5.25h16.5A1.75 1.75 0 0 1 22 7v10a1.75 1.75 0 0 1-1.75 1.75H3.75A1.75 1.75 0 0 1 2 17V7a1.75 1.75 0 0 1 1.75-1.75Zm16.5 2.08-7.4 5.21a1.5 1.5 0 0 1-1.7 0l-7.4-5.21V17a.25.25 0 0 0 .25.25h16a.25.25 0 0 0 .25-.25V7.33ZM5.4 6.75 12 11.4l6.6-4.65H5.4Z"/>
+          </svg>
+          <span class="reach-text">sanyoii@gmail.com</span>
+          <span class="reach-rule" aria-hidden="true"></span>
+        </a>
+        <a class="reach-a" href="https://www.linkedin.com/in/williamlu5405"
+           target="_blank" rel="noopener">
+          <svg class="reach-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67v-8.6h2.67V18ZM7 8.23A1.55 1.55 0 1 1 7 5.14a1.55 1.55 0 0 1 0 3.09ZM18.33 18h-2.66v-4.18c0-1-.02-2.28-1.39-2.28-1.39 0-1.6 1.08-1.6 2.2V18h-2.66V9.4h2.55v1.18h.04c.35-.68 1.22-1.4 2.51-1.4 2.69 0 3.19 1.77 3.19 4.07V18Z"/>
+          </svg>
+          <span class="reach-text">LinkedIn</span>
+          <span class="reach-rule" aria-hidden="true"></span>
+        </a>
+        <a class="reach-a" href="https://github.com/sanyoii"
+           target="_blank" rel="noopener">
+          <svg class="reach-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.57 9.57 0 0 1 12 7.01c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.77c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
+          </svg>
+          <span class="reach-text">GitHub</span>
+          <span class="reach-rule" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p>© 2026 William Lu</p>
+    <p data-en="Designed, written, tested, and shipped as one dependency-free file."
+       data-zh="設計、文案、測試與發布都收在一個零依賴檔案裡。">Designed, written, tested, and shipped as one dependency-free file.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var STORE = 'wl-lang';
+    var btn = document.getElementById('langBtn');
+    var enTab = document.getElementById('langEn');
+    var zhTab = document.getElementById('langZh');
+    var nodes = document.querySelectorAll('[data-en]');
+    var imgs = document.querySelectorAll('[data-alt-en]');
+
+    function apply(lang) {
+      var key = lang === 'zh' ? 'zh' : 'en';
+      for (var i = 0; i < nodes.length; i++) {
+        var t = nodes[i].getAttribute('data-' + key);
+        if (t !== null) nodes[i].textContent = t;
+      }
+      for (var j = 0; j < imgs.length; j++) {
+        var a = imgs[j].getAttribute('data-alt-' + key);
+        if (a !== null) imgs[j].setAttribute('alt', a);
+      }
+      document.documentElement.setAttribute('lang', key === 'zh' ? 'zh-Hant' : 'en');
+      document.title = key === 'zh'
+        ? 'William Lu — 資深 QA 工程師｜Web3 與加密產品'
+        : 'William Lu — Senior QA Engineer | Web3 & Crypto';
+      var md = document.querySelector('meta[name="description"]');
+      if (md) md.setAttribute('content', key === 'zh'
+        ? '資深 QA 工程師，具 BTSE 中心化加密貨幣交易所測試經驗；在 Trend Micro 近 13 年經歷中，工作涵蓋資安產品 QA、事件 RCA 與客戶工程。'
+        : 'Senior QA Engineer with direct crypto exchange testing at BTSE and nearly 13 years at Trend Micro across security QA, incident RCA, and customer engineering.');
+      enTab.className = key === 'en' ? 'on' : '';
+      zhTab.className = key === 'zh' ? 'on' : '';
+      btn.setAttribute('aria-label',
+        key === 'en' ? 'Switch to Chinese / 切換為中文' : '切換為英文 / Switch to English');
+    }
+
+    var saved;
+    try { saved = localStorage.getItem(STORE); } catch (e) { saved = null; }
+    apply(saved === 'zh' ? 'zh' : 'en');
+
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('lang') === 'zh-Hant' ? 'en' : 'zh';
+      apply(next);
+      try { localStorage.setItem(STORE, next); } catch (e) {}
+    });
+
+    var fades = document.querySelectorAll('.fade');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduce || !('IntersectionObserver' in window)) {
+      for (var k = 0; k < fades.length; k++) fades[k].classList.add('in');
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+    for (var m = 0; m < fades.length; m++) io.observe(fades[m]);
+  })();
+</script>
+
+</body>
+</html>

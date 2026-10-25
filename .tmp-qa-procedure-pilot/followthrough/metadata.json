@@ -1,0 +1,25 @@
+{
+  "out": "C:\\Users\\sanyo\\AppData\\Local\\Temp\\qa-followthrough-v86py4uf",
+  "positive": {
+    "startedAt": "2026-09-08T14:11:49.523596+00:00",
+    "endedAt": "2026-09-08T14:11:49.835186+00:00",
+    "shellExit": 0,
+    "recordedTestExit": 0,
+    "artifact": "positive.txt"
+  },
+  "negative": {
+    "startedAt": "2026-09-08T14:11:49.949143+00:00",
+    "endedAt": "2026-09-08T14:11:50.204935+00:00",
+    "shellExit": 0,
+    "recordedTestExit": 1,
+    "artifact": "negative.txt"
+  },
+  "sourceHashes": {
+    "Templates/QA/04-test-case.md": "daca029772edd10a8169110c1f06347fb4f0cb1856628d91b40dcb8382a76a40",
+    "Templates/QA/README.md": "9ebfed222faae40e1a501e1ed6bb128a72112eea1f1fa3fad8c9eb3cc35bab2a",
+    "Templates/QA/02-test-spec.md": "3fb129e6496f2ef8e886d42e67cdaddb2d17414cb44df8d1cbd0815521bc61f6",
+    "tests/template-contract.test.mjs": "60df15c569037b8ca13d6fd420fc96c1a4bc7970173c3bb0d6936290561cbdda"
+  },
+  "node": "v24.19.0",
+  "head": "9ac6343ab3c8c27fcda0d29b654dab08f84be802"
+}

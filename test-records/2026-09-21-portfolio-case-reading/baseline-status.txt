@@ -1,0 +1,48 @@
+ M .gitignore
+ M README.md
+ M README.zh-TW.md
+ M TESTPLAN.md
+ M test-status/.vite/manifest.json
+ M test-status/404.html
+ D test-status/_next/static/5f362684-8918-42e7-9a80-7773e73877cc/_buildManifest.js
+ D test-status/_next/static/5f362684-8918-42e7-9a80-7773e73877cc/_ssgManifest.js
+ D test-status/_next/static/chunks/app-elements-yVguN3cH.js
+ D test-status/_next/static/chunks/app-rsc-cache-busting-ByqiAver.js
+ D test-status/_next/static/chunks/app-rsc-render-mode-DYHt2l4b.js
+ D test-status/_next/static/chunks/deployment-id-B-tBSFvY.js
+ D test-status/_next/static/chunks/framework-B1bjhpVd.js
+ D test-status/_next/static/chunks/hash-B-rEVVRJ.js
+ D test-status/_next/static/chunks/headers-Dc8G_mcZ.js
+ D test-status/_next/static/chunks/hybrid-client-route-owner-Ca2YO0Sh.js
+ D test-status/_next/static/chunks/index-CWKPD1hj.js
+ D test-status/_next/static/chunks/layout-segment-context-BQ3aXWia.js
+ D test-status/_next/static/chunks/link-DsRNkVJE.js
+ D test-status/_next/static/chunks/navigation-errors-CggnjdW0.js
+ D test-status/_next/static/chunks/protocol-headers-hwvZhhr2.js
+ D test-status/_next/static/chunks/query-sFRpBsgE.js
+ D test-status/_next/static/chunks/record-B2AeIiSu.js
+ D test-status/_next/static/css/index.BLjgAm0k.css
+ M test-status/dashboard-demo.rsc
+ M test-status/dashboard-demo/abc.rsc
+ M test-status/dashboard-demo/abc/index.html
+ M test-status/dashboard-demo/ac.rsc
+ M test-status/dashboard-demo/ac/index.html
+ M test-status/dashboard-demo/index.html
+ M test-status/index.html
+ M test-status/index.rsc
+ M test-status/run-records.rsc
+ M test-status/run-records/fail-demo.rsc
+ M test-status/run-records/fail-demo/index.html
+ M test-status/run-records/index.html
+ M test-status/vinext-client-entry-manifest.json
+?? .tmp-qa-procedure-pilot/
+?? PUBLICATION_CHECKLIST.md
+?? docs/
+?? test-records/2026-09-21-portfolio-case-reading/
+?? test-records/2026-09-21-seg-portfolio/
+?? test-status/_next/static/988d13b2-0074-43e7-91a9-ba9193604239/
+?? test-status/_next/static/chunks/_language-toggle-D245NYag.js
+?? test-status/_next/static/chunks/framework-BLiKpYxR.js
+?? test-status/_next/static/chunks/index-BoUcgkgQ.js
+?? test-status/_next/static/chunks/layout-segment-context-BHIR16qz.js
+?? test-status/_next/static/css/index.Btt7U_vg.css

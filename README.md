@@ -2,11 +2,13 @@
   <img src="./assets/readme/hero.svg" width="100%" alt="sanyoii.github.io — one HTML file, two languages, and the twelve automated checks that cover it">
 </p>
 
+*The illustration above shows the original smoke-test scope. Current verification is recorded below and in the linked run receipt.*
+
 <p align="center">
   <a href="https://sanyoii.github.io/"><strong>sanyoii.github.io</strong></a> ·
   <a href="TESTPLAN.md">Test plan</a> ·
   <a href="README.zh-TW.md">繁體中文</a> ·
-  <a href="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/tests.yml"><img src="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+  <a href="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/pages.yml"><img src="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/pages.yml/badge.svg" alt="Test and deploy Pages"></a>
 </p>
 
 Personal site for **William Lu** — Senior QA Engineer focused on Web3 product
@@ -18,9 +20,11 @@ external requests at runtime. It is bilingual (English / 繁體中文) through p
 
 The reason this repository is public is the other half of it. A portfolio that claims QA
 experience should be able to show its own risk analysis, so this one ships with
-[TESTPLAN.md](TESTPLAN.md) and twelve automated checks — seventeen cases once the
-parametrised viewports are counted — that run in CI on every push to `main`. If you
+[TESTPLAN.md](TESTPLAN.md) and static, runtime, responsive, and artifact checks.
+The Pages workflow runs the portfolio suite on pushes to `main`. If you
 came here to judge how I work rather than what I claim, start there.
+
+2026-09-06 release: role-specific evidence paths, CEX Lab links, and public resume updates were published in `d5a4eb6`; the subsequent Pages workflow HEAD is `643b017`. See the [public verification receipt](https://github.com/sanyoii/sanyoii.github.io/blob/main/test-records/2026-09-06-public-release.md) and [Pages run](https://github.com/sanyoii/sanyoii.github.io/actions/runs/34035105080). Portfolio tests do not certify Dashboard release readiness or independent interview performance. The homepage itself needs no build step; the Pages workflow also builds the separate Dashboard.
 
 <p align="center">
   <img src="./assets/og-card.png" width="100%" alt="The site's opening screen: name, role, a one-line summary, and four career figures">

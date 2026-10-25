@@ -10,6 +10,8 @@ __pycache__/
 /QUANTIFIED_ACHIEVEMENT_LEDGER.md
 /CLAIM_VERIFICATION_SHEET.md
 /STAR_STORY_BANK.md
+/STAR_INTERVIEW_FOLLOW_UP_BANK.md
+/WEB3_CEX_TECHNICAL_MOCK_INTERVIEW.md
 /SKILL_TO_EVIDENCE_MATRIX.md
 /WEB3_GAP_LIST.md
 /WEB3_POSITIONING_EVIDENCE_PACK.md
@@ -27,9 +29,26 @@ __pycache__/
 /APPLICATION_FIRST_14_DAY_PLAN.md
 /APPLICATION_OUTREACH_AND_SCREEN_PACK.md
 /LINKEDIN_PROFILE_UPDATE_PACK.md
+/PLATFORM_PROFILE_MATRIX.md
+/JOB_PLATFORM_PROFILE_DRAFTS.md
 /application-packets/
 /council/
 /scripts/
 /test-records/2026-08-14-application-packets.md
 /test-records/2026-08-14-linkedin-portfolio-alignment.md
+/test-records/2026-08-31-day15-profile-system.md
 /handoff/
+
+# Local application, interview, and release working material.
+/SUMSUB_QA_ENGINEER_RESUME.md
+/CEX_USER_JOURNEY_RISK_MAP.md
+/WALLET_CHAIN_CONFIRMATION_TEST_DESIGN.md
+/TRADING_EDGE_CASE_SUITE.md
+/WEB3_QUALITY_STRATEGY_TEST_REPORT.md
+/WEB3_INTERVIEW_SELF_INTRODUCTION.md
+/tests/test_day2*_artifact.py
+/test-records/2026-08-14-sumsub-qa-application-packet.md
+/test-records/2026-09-06-career-assets.md
+/cex-market-data-quality-lab/
+/.riskqa-pages-candidate/
+/({src
