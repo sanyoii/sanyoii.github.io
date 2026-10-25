@@ -6,7 +6,7 @@
 |---|---|
 | Record ID | TR_20260810_PYTEST_001 |
 | Date / timezone | 2026-08-10 / Asia/Taipei |
-| Repository | `D:\Codex\Web3` |
+| Repository | `<local workspace>` |
 | Branch | `main` |
 | Revision under test | `24f68e97230a4f4224be4ce3cdf25761cf6cf814` plus current uncommitted test-environment documentation changes |
 | Runtime | Windows, Python 3.12.13, pytest 9.1.1, Playwright 1.58.0, Chromium headless shell 1208 |
@@ -50,7 +50,7 @@ Unit, UAT, Performance/Load, and Stress tests were not executed because they are
 
 **Environment and pre-conditions**
 
-- Pre-conditions: Repository is available at `D:\Codex\Web3`; Python 3.12.13 can create `.venv`; `tests\requirements.txt` exists.
+- Pre-conditions: Repository is available at `<local workspace>`; Python 3.12.13 can create `.venv`; `tests\requirements.txt` exists.
 - Test Data: `pytest==9.1.1`, `playwright==1.58.0`.
 
 **Test steps**
@@ -130,7 +130,8 @@ Unit, UAT, Performance/Load, and Stress tests were not executed because they are
 
 - Expected Result: Static tests run; any sandbox restriction is explicitly classified and preserved.
 - Actual Result: 4 static tests passed; 13 runtime tests errored during fixture setup with `BrowserType.launch: spawn EPERM`.
-- Status / Result: Blocked for runtime coverage; static subset Pass.
+- Status / Result: Blocked for runtime coverage.
+- Status / Result: static subset Pass.
 
 **Traceability and follow-up**
 
