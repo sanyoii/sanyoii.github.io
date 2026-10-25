@@ -5,8 +5,8 @@ site: change a headline or a job title and rerun this. The layout is card-specif
 (1200x630 needs its own composition), but the palette and font stack are taken from the
 page's own :root tokens.
 
-    C:/Python314/python.exe make_og_card.py           # write assets/og-card.png
-    C:/Python314/python.exe make_og_card.py --check   # render beside it and compare
+    python make_og_card.py           # write assets/og-card.png
+    python make_og_card.py --check   # render beside it and compare
 """
 
 import html

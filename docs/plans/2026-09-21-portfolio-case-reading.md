@@ -1,6 +1,6 @@
 # Portfolio 案例閱讀與求職入口：執行／驗收計畫
 
-狀態：原本機實作完成，但使用者指出履歷版本、繁中文案與入口安排問題，內容驗收重新開啟。修訂草稿見 `docs/reviews/2026-09-21-portfolio-revision/REVIEW.md`，待確認後套用。原功能測試結果見 `test-records/2026-09-21-portfolio-case-reading/RESULT.md`；尚未 commit／push／發布。
+狀態：原本機實作完成，但使用者指出履歷版本、繁中文案與入口安排問題，內容驗收重新開啟。修訂草稿屬於內部審閱紀錄，已自公開倉庫移除，當時待確認後套用。原功能測試結果見 `test-records/2026-09-21-portfolio-case-reading/RESULT.md`；尚未 commit／push／發布。
 
 ## 1. 目標與設計
 
@@ -98,7 +98,7 @@
 
 ## 5. 驗證命令與紀錄
 
-在 `D:/Codex/Web3` 執行。以下建置器與新測試為本計畫預定新增，核准前不執行不存在的檔案。
+在 `<local workspace>` 執行。以下建置器與新測試為本計畫預定新增，核准前不執行不存在的檔案。
 
 ```bash
 # 實作前的既有基準

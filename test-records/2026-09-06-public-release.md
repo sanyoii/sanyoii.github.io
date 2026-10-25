@@ -12,7 +12,7 @@ The user reviewed the revised resume and Portfolio, then authorized commit and p
 ## Verification
 
 - Windows / Python 3.14.2 / pytest 9.1.1 / Playwright 1.58.0.
-- Isolated public checkout: `D:/Codex/Web3/.venv/Scripts/python.exe -B -m pytest tests/ -q -p no:cacheprovider`: **22 passed in 11.37s**, exit 0, Chromium outside the sandbox.
+- Isolated public checkout: `<local workspace>/.venv/Scripts/python.exe -B -m pytest tests/ -q -p no:cacheprovider`: **22 passed in 11.37s**, exit 0, Chromium outside the sandbox.
 - The earlier local total included private training-artifact checks; it is not the public CI count.
 - Prior same-session visual review checked desktop, mobile, EN/Traditional Chinese, and the corrected anchor offset. No claim of independent accessibility certification.
 - CEX Lab is published separately to its existing repository; its test evidence is kept there.
