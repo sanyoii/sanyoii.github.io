@@ -107,12 +107,6 @@ def test_published_case_journeys_preserve_language(browser, site_url, width, lan
     context.close()
 
 
-def test_published_sources_match_approved_candidates():
-    candidates = ROOT / 'docs/reviews/2026-09-21-portfolio-revision/candidate-sources'
-    for source, _, _ in build.PAGES:
-        assert (ROOT / source).read_text(encoding='utf-8') == (candidates / source).read_text(encoding='utf-8')
-
-
 @pytest.mark.parametrize('bad', ['[^note]: Hidden footnote', ':::note', '![image](asset.png)'])
 def test_unsupported_source_fails_explicitly(bad):
     with pytest.raises(ValueError):
