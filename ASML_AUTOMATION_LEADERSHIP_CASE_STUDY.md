@@ -31,9 +31,9 @@ I included the environment lifecycle in the automation architecture.
 I planned the technical work and tracked progress, risks, and requests for help across teams.
 
 - Daily syncs surfaced environment blockers, dependencies, and work that needed help from another ASML function owner.
-- I represented STA in management and weekly status meetings. Jira filters and JQL supported ticket and test case status reviews, but the original queries and counts are no longer available.
-- I used one-on-ones for blockers, support, and direct performance feedback. Annual formal evaluations went to my direct manager; the later approval chain is unknown.
-- I reviewed the delivery scope, assigned tasks and test cases, discussed implementation details with the engineers, and tracked risk, schedule, tickets, and handoff.
+- I represented STA in management and weekly status meetings, reported team status and progress to ASML management, and discussed the engineers' training needs. Jira filters and JQL supported ticket and test case status reviews, but the original queries and counts are no longer available.
+- I used one-on-ones for blockers, support, and direct performance feedback. I conducted each engineer's annual formal performance review, based on continuous notes about assigned-work delivery, peer support, and initiative, and submitted the reviews to my direct manager; the later approval chain is unknown.
+- I reviewed the delivery scope, assigned tasks and test cases, discussed implementation details with the engineers, reviewed their automation code, and tracked risk, schedule, tickets, and handoff.
 - I created Jira and Confluence material for test cases, Test System Design, work records, operation guidance, and newcomer onboarding. I cannot confirm whether the onboarding material remained in use after my engagement.
 
 ### Training and feedback
@@ -105,9 +105,9 @@ ASML reduced its software-outsourcing budget, and STA lost funding. I documented
 我負責技術規劃，也追蹤進度、風險，以及需要其他團隊協助的事項。
 
 - 每日會議確認環境問題、工作之間的先後關係，以及需要哪些 ASML 功能負責人協助。
-- 我代表 STA 參加管理與每週進度會議，透過 Jira 篩選器和 JQL 查看工作單與測試案例的狀態。
-- 透過一對一會談了解工程師的困難，提供協助與績效回饋。年度正式考核交給直屬主管；後續如何核定，我無法確認。
-- 確認交付範圍，分派工作與測試案例，討論實作細節，並追蹤風險、時程、工作單及交接。
+- 我代表 STA 參加管理與每週進度會議，向 ASML 管理層回報團隊狀況與進度，並討論成員需要的訓練；也透過 Jira 篩選器和 JQL 查看工作單與測試案例的狀態。
+- 透過一對一會談了解工程師的困難，提供協助與績效回饋。我依平時記錄的工作交付、同儕協助與主動性，為每位工程師撰寫年度正式考核，再交給直屬主管；後續如何核定，我無法確認。
+- 確認交付範圍，分派工作與測試案例，討論實作細節，審查工程師的自動化程式碼（code review），並追蹤風險、時程、工作單及交接。
 - 在 Jira 和 Confluence 整理測試案例、系統設計、工作紀錄、操作說明與新人教材。離開專案後，我無法確認教材是否繼續使用。
 
 ### 操作訓練與後續使用

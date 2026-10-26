@@ -1,14 +1,14 @@
 # William Lu
 
-> Role: Senior QA Engineer | Software Quality Assurance, Test Automation & Root-Cause Analysis
+> Role: Senior QA Engineer / QA Lead | Software Quality Assurance, Test Automation & Root-Cause Analysis
 
-Taiwan | UTC+8 | Open to Fully Remote | [sanyoii@gmail.com](mailto:sanyoii@gmail.com)
+Taiwan | UTC+8 | Fully Remote · Flexible Hours (Americas, EMEA, APAC) | [sanyoii@gmail.com](mailto:sanyoii@gmail.com)
 
 [Portfolio](https://sanyoii.github.io/) | [LinkedIn](https://www.linkedin.com/in/williamlu5405) | [GitHub](https://github.com/sanyoii) | [Download 2-Page PDF Resume](https://sanyoii.github.io/assets/William-Lu-Public-QA-Resume.pdf)
 
 ## Professional summary
 
-Senior QA Engineer and QA/Support Leader with **12+ years in software quality assurance and escalation engineering** (plus 4 years in embedded firmware) across **Enterprise Security & DLP (Trend Micro)**, **Semiconductor Automation (Zealogics / ASML)**, and **FinTech / Crypto Exchange (BTSE)**. Proven track record of identifying and escalating high-severity financial-logic defects, leading remote automation teams, designing unattended CI test lifecycles, and resolving complex customer production incidents through deep root-cause analysis (RCA). Two-time recipient of Trend Micro's **internal Yearly Best SEG Engineer** recognition (2019, 2021).
+Senior QA Engineer and QA/Support Leader with **12+ years in software quality assurance and escalation engineering** (plus 4 years in embedded firmware), including **13 years at Trend Micro in QA and customer-escalation engineering**, across **Enterprise Security & DLP (Trend Micro)**, **Semiconductor Automation (Zealogics / ASML)**, and **FinTech / Crypto Exchange (BTSE)**. Proven track record of identifying and escalating high-severity financial-logic defects, leading remote automation teams, designing unattended CI test lifecycles, and resolving complex customer production incidents through deep root-cause analysis (RCA). Two-time recipient of Trend Micro's **internal Yearly Best SEG Engineer** recognition (2019, 2021).
 
 ## Career highlights
 
@@ -64,7 +64,7 @@ All three defects were acknowledged and escalated for priority handling, and rem
 
 May 2023–Apr 2024 | Fully Remote · [Full Case Study](https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md)
 
-- **Remote Team & Delivery Leadership:** Led **six Automation Engineers** in a fully remote ASML engagement covering HMI eP5 modules (`iCDU`, `MM Flow`, `ADEL`), managing weekly progress via custom Jira Filters/JQL, code/test reviews, annual performance evaluations, and client TOI/live demos.
+- **Remote Team & Delivery Leadership:** Led **six Automation Engineers** in a fully remote ASML engagement covering HMI eP5 modules (`iCDU`, `MM Flow`, `ADEL`), managing weekly progress via custom Jira Filters/JQL, code reviews of the engineers' automation code and test-case reviews, annual formal performance reviews I conducted for each engineer, status and training-need reporting to ASML management, and client TOI/live demos.
 - **Unattended CI Lifecycle Design:** Architected the end-to-end test execution flow (Simulator startup, initialization, Recipe loading, execution, reporting, cleanup, and environment reset) within the existing TestComplete architecture—enabling **unattended normal-path execution** via `.bat` and Atlassian Bamboo triggers (while isolating connection failures for manual investigation).
 - **Modular Reuse & Feasibility:** Assessed manual test cases for full vs. partial automation, planned shared modules prior to assignment to eliminate duplicate coding, authored Test System Design docs in Confluence, and contributed direct test implementation alongside the team.
 
@@ -123,4 +123,4 @@ Feng Chia University, Taiwan | 1998–2003
 
 ## Remote availability
 
-Based in Taiwan (UTC+8). Seeking Fully Remote roles with at least four hours of European business-hour overlap (`09:00–24:00` Taiwan time) and up to 25% travel. Languages: Mandarin Chinese (Native), English (Professional working proficiency). Weekend, holiday, shift, and on-call coverage require role-level confirmation.
+Based in Taiwan (UTC+8). Seeking Fully Remote roles with flexible working hours; open to teams in the Americas, EMEA, and APAC, and up to 25% travel. Languages: Mandarin Chinese (Native), English (Professional working proficiency). Weekend, holiday, shift, and on-call coverage require role-level confirmation.

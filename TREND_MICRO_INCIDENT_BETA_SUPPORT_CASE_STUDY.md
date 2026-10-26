@@ -36,7 +36,7 @@ The tradeoff was a narrower default scanning scope with a documented path for re
 
 ### Case information and support training
 
-As SEG Leader, I checked each case for a clear problem description, reproduction steps, and required diagnostic information. I returned incomplete cases to L2 with specific collection requests. Complete cases were assigned by priority, complexity, and team workload.
+As SEG Leader, I checked each case for a clear problem description, reproduction steps, and required diagnostic information. I returned incomplete cases to L2 with specific collection requests. Complete cases were assigned by priority, complexity, and team workload. During the DLP period, I also took part in interviewing candidates (self-reported; no employer record available).
 
 Frequent WFBS Support staff changes left newcomers struggling to handle cases. I proposed replacing the rough Survival Guide with a practical WFBS Guide Book. After rollout, missing-information case returns declined month by month, even though staff turnover did not decline.
 
@@ -117,7 +117,7 @@ Chrome 大、小版本更新，有時會讓 DLP 無法阻擋敏感檔案上傳�
 
 ### 讓轉交 SEG 的案件資料更完整
 
-擔任 SEG Leader 時，我會先看案件描述、重現步驟與診斷資料。資料不足就退回 L2，清楚列出需要補什麼；資料完整的案件，再依處理優先順序、問題難度與工程師的工作量分派。
+擔任 SEG Leader 時，我會先看案件描述、重現步驟與診斷資料。資料不足就退回 L2，清楚列出需要補什麼；資料完整的案件，再依處理優先順序、問題難度與工程師的工作量分派。DLP 時期，我也參與過面試新人（本人自述，無公司紀錄可查）。
 
 WFBS 技術支援團隊人員流動頻繁，新人常不熟悉案件處理。我建議把較簡略的 Survival Guide 改寫成 WFBS Guide Book，幫助新人認識產品並處理客戶問題。上線後，人員流動率沒有下降，但因資料不足被退回的案件比例逐月下降。
 
