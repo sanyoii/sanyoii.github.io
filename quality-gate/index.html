@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>多 Agent 品質關卡（示範）</title>
+<meta name="description" content="靜態示範：多個 Agent 檢查同一份範例變更，關卡再給出決定。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0c0d'/%3E%3Crect y='56' width='64' height='8' fill='%23e8853f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Menlo,Consolas,monospace' font-size='36' font-weight='600' fill='%23f0eae1'%3EW%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0c0c0d;
+    --bg-2: #161412;
+    --ink: #f0eae1;
+    --dim: #a09a92;
+    --line: #3a342c;
+    --accent: #e8853f;
+    --pass: #91b5a5;
+    --hold: #e8853f;
+    --block: #e07a7a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+                 "PingFang TC", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 22px 72px; }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 36px;
+    font-size: 14px;
+  }
+  .top a { color: var(--ink); text-decoration: none; }
+  .top a:hover { color: var(--accent); }
+  .eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+  h1 {
+    margin: 0 0 12px;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+  .lead { margin: 0 0 28px; color: var(--dim); max-width: 62ch; }
+  .sample, .decision, .step {
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    border-radius: 4px 18px 4px 4px;
+  }
+  .sample { padding: 18px 20px; margin-bottom: 22px; }
+  .sample p { margin: 6px 0 0; }
+  .label {
+    margin: 0;
+    color: var(--dim);
+    font-size: 13px;
+  }
+  ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .step { padding: 16px 18px; display: grid; gap: 6px; }
+  .step-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .step h2 { margin: 0; font-size: 1.05rem; }
+  .badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .badge[data-state="pass"] { color: var(--pass); }
+  .badge[data-state="hold"] { color: var(--hold); }
+  .badge[data-state="block"] { color: var(--block); }
+  .step p { margin: 0; color: var(--dim); }
+  .decision {
+    margin-top: 22px;
+    padding: 20px;
+    border-color: var(--block);
+  }
+  .decision h2 { margin: 0 0 8px; font-size: 1.15rem; }
+  .decision p { margin: 0; }
+  @media (max-width: 560px) {
+    .step-head { display: block; }
+    .badge { display: inline-block; margin-top: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="頁面">
+    <a href="../">← 返回作品集</a>
+    <a href="index.en.html" hreflang="en" lang="en">English</a>
+  </nav>
+  <p class="eyebrow">靜態示範</p>
+  <h1>多 Agent 品質關卡（示範）</h1>
+  <p class="lead">這是一頁虛構範例。幾個 Agent 各自檢查同一份變更，關卡再依檢查結果給出決定。頁面不連外，也不代表任何產品的現況。</p>
+  <section class="sample">
+    <p class="label">範例變更</p>
+    <p>訂單金額寫入帳務時，改以四捨五入。</p>
+  </section>
+  <ol>
+    <li class="step">
+      <div class="step-head">
+        <h2>範圍 Agent</h2>
+        <span class="badge" data-state="pass">通過</span>
+      </div>
+      <p>變更說明有寫出受影響的帳務欄位。</p>
+    </li>
+    <li class="step">
+      <div class="step-head">
+        <h2>風險 Agent</h2>
+        <span class="badge" data-state="hold">需補資料</span>
+      </div>
+      <p>尚未列出 0、負數與小數的邊界。</p>
+    </li>
+    <li class="step">
+      <div class="step-head">
+        <h2>證據 Agent</h2>
+        <span class="badge" data-state="block">阻擋</span>
+      </div>
+      <p>沒有可對照的測試紀錄。</p>
+    </li>
+  </ol>
+  <section class="decision">
+    <h2>關卡決定：阻擋</h2>
+    <p>缺少測試紀錄時，這次變更不標成通過。</p>
+  </section>
+</div>
+</body>
+</html>

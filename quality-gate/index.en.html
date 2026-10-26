@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-Agent Quality Gate (demo)</title>
+<meta name="description" content="A static demo: several agents check one sample change, then the gate gives a decision.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c0c0d'/%3E%3Crect y='56' width='64' height='8' fill='%23e8853f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Menlo,Consolas,monospace' font-size='36' font-weight='600' fill='%23f0eae1'%3EW%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0c0c0d;
+    --bg-2: #161412;
+    --ink: #f0eae1;
+    --dim: #a09a92;
+    --line: #3a342c;
+    --accent: #e8853f;
+    --pass: #91b5a5;
+    --hold: #e8853f;
+    --block: #e07a7a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+                 "PingFang TC", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 22px 72px; }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 36px;
+    font-size: 14px;
+  }
+  .top a { color: var(--ink); text-decoration: none; }
+  .top a:hover { color: var(--accent); }
+  .eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+  h1 {
+    margin: 0 0 12px;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+  .lead { margin: 0 0 28px; color: var(--dim); max-width: 62ch; }
+  .sample, .decision, .step {
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    border-radius: 4px 18px 4px 4px;
+  }
+  .sample { padding: 18px 20px; margin-bottom: 22px; }
+  .sample p { margin: 6px 0 0; }
+  .label {
+    margin: 0;
+    color: var(--dim);
+    font-size: 13px;
+  }
+  ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .step { padding: 16px 18px; display: grid; gap: 6px; }
+  .step-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .step h2 { margin: 0; font-size: 1.05rem; }
+  .badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .badge[data-state="pass"] { color: var(--pass); }
+  .badge[data-state="hold"] { color: var(--hold); }
+  .badge[data-state="block"] { color: var(--block); }
+  .step p { margin: 0; color: var(--dim); }
+  .decision {
+    margin-top: 22px;
+    padding: 20px;
+    border-color: var(--block);
+  }
+  .decision h2 { margin: 0 0 8px; font-size: 1.15rem; }
+  .decision p { margin: 0; }
+  @media (max-width: 560px) {
+    .step-head { display: block; }
+    .badge { display: inline-block; margin-top: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Page">
+    <a href="../">← Back to the portfolio</a>
+    <a href="index.html" hreflang="zh-Hant-TW" lang="zh-Hant-TW">繁體中文</a>
+  </nav>
+  <p class="eyebrow">Static demo</p>
+  <h1>Multi-Agent Quality Gate (demo)</h1>
+  <p class="lead">This is a fictional sample. Several agents each check the same change, and the gate then gives a decision. The page makes no external requests and does not describe a live product.</p>
+  <section class="sample">
+    <p class="label">Sample change</p>
+    <p>Round order amounts when they are written to the ledger.</p>
+  </section>
+  <ol>
+    <li class="step">
+      <div class="step-head">
+        <h2>Scope agent</h2>
+        <span class="badge" data-state="pass">Pass</span>
+      </div>
+      <p>The change note names the ledger field it affects.</p>
+    </li>
+    <li class="step">
+      <div class="step-head">
+        <h2>Risk agent</h2>
+        <span class="badge" data-state="hold">Needs more information</span>
+      </div>
+      <p>Boundaries for zero, negative, and fractional amounts are not listed.</p>
+    </li>
+    <li class="step">
+      <div class="step-head">
+        <h2>Evidence agent</h2>
+        <span class="badge" data-state="block">Block</span>
+      </div>
+      <p>There is no test record to compare against.</p>
+    </li>
+  </ol>
+  <section class="decision">
+    <h2>Gate decision: Block</h2>
+    <p>Without a test record, this change is not marked as a pass.</p>
+  </section>
+</div>
+</body>
+</html>

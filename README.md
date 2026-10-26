@@ -91,6 +91,7 @@ python -m pytest tests/ -v
 ```text
 index.html              the site
 404.html                noindexed, links home
+quality-gate/           static demo at /quality-gate/
 assets/                 images used by the site
 assets/readme/          the hero graphics on this page (en / zh)
 make_og_card.py         regenerates assets/og-card.png from index.html
