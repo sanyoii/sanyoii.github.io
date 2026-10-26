@@ -65,10 +65,10 @@ def test_language_choice_updates_metadata_and_survives_reload(browser, site_url)
     page.locator("#langBtn").click()
 
     assert page.locator("html").get_attribute("lang") == "zh-Hant"
-    assert page.title() == "William Lu — 資深 QA 工程師｜產品品質、自動化測試與事件 RCA"
+    assert page.title() == "William Lu — 資深 QA 工程師／QA Lead｜產品品質、自動化測試與事件 RCA"
     assert page.locator('meta[name="description"]').get_attribute("content") == (
-        "資深 QA 工程師，具 BTSE 中心化加密貨幣交易所測試經驗；"
-        "在 Trend Micro 近 13 年經歷中，工作涵蓋資安產品 QA、事件 RCA 與客戶工程。"
+        "資深 QA 工程師／QA Lead：曾為 ASML 帶領 6 人遠端自動化測試團隊，"
+        "在 BTSE 測試中心化加密貨幣交易所，並在 Trend Micro 從事 13 年 QA 與客戶疑難案件工程。"
     )
     image_alts = page.locator("img[data-alt-zh]").evaluate_all(
         "(images) => images.map((image) => ({"
