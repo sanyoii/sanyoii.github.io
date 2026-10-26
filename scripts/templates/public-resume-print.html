@@ -6,1063 +6,437 @@
   <meta name="robots" content="noindex, nofollow">
   <title>William Lu | Senior QA Engineer / QA Lead — Software Quality Assurance, Test Automation &amp; RCA (Executive Scannable Edition)</title>
   <style>
-    :root {
-      --bg-screen: #e2e8f0;
-      --paper: #ffffff;
-      --surface: #f8fafc;
-      --surface-accent: #f0fdfa;
-      --ink: #0f172a;
-      --body: #334155;
-      --muted: #64748b;
-      --accent: #0f766e;
-      --accent-strong: #115e59;
-      --accent-soft: #ccfbf1;
-      --border: #e2e8f0;
-      --border-strong: #cbd5e1;
-      --tag-bg: #f1f5f9;
-      --tag-ink: #1e293b;
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 9mm 0;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      background: var(--bg-screen);
-    }
+    html { background: #fff; }
 
     body {
       margin: 0;
-      color: var(--body);
-      background: var(--bg-screen);
-      font-family: "Inter", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      font-size: 10.2pt;
-      line-height: 1.52;
-      -webkit-font-smoothing: antialiased;
+      font-family: Inter, "Segoe UI", system-ui, sans-serif;
+      color: #1f2933;
+      font-size: 9.3pt;
+      line-height: 1.4;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
     }
 
-    a {
-      color: var(--accent-strong);
-      text-decoration: none;
+    main {
+      width: 210mm;
+      margin: 0 auto;
+      padding: 0 11mm;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: #92400e; text-decoration: underline; }
 
-    .resume {
-      width: min(210mm, calc(100% - 32px));
-      margin: 24px auto;
-      padding: 12mm 13mm 13mm;
-      background: var(--paper);
-      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
-    }
-
-    /* ── Header Bento Banner ── */
-    .hero-card {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10pt;
-      align-items: center;
-      padding: 12pt 14pt;
-      border-radius: 8pt;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #f8fafc;
-      margin-bottom: 9pt;
-    }
-
-    .eyebrow {
-      margin: 0 0 3pt;
-      color: #5eead4;
-      font-size: 7.8pt;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+    code {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      background: none;
+      border: 0;
+      padding: 0;
+      color: inherit;
     }
 
     h1 {
-      margin: 0 0 3pt;
+      margin: 0;
       font-size: 24pt;
       font-weight: 800;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
       line-height: 1.05;
-      color: #ffffff;
+      color: #1e293b;
     }
 
-    .role-title {
-      margin: 0;
-      color: #cbd5e1;
-      font-size: 8.65pt;
-      font-weight: 600;
-      letter-spacing: -0.015em;
-      white-space: nowrap;
-    }
-
-    .contact-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 2.5pt;
-      font-size: 8.2pt;
-      font-style: normal;
-      color: #e2e8f0;
-      white-space: nowrap;
-    }
-
-    .contact-grid a {
-      color: #5eead4;
-      font-weight: 600;
-    }
-
-    .contact-links {
-      display: flex;
-      gap: 5.5pt;
-      margin-top: 2pt;
-    }
-
-    .contact-pill {
-      padding: 1.5pt 6pt;
-      border-radius: 4pt;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(94, 234, 212, 0.35);
-      color: #5eead4 !important;
-      font-size: 7.6pt;
-      font-weight: 600;
-    }
-
-    /* ── C3 + C4 + C5 Hybrid Quantified Metrics Strip ── */
-    .metrics-bento {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 7pt;
-      width: 100%;
-      margin-bottom: 9pt;
-    }
-
-    .metric-card {
-      min-width: 0;
-      overflow: hidden;
-      padding: 7.5pt 7.5pt 7pt;
-      border-radius: 7pt;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-      border: 1px solid var(--border-strong);
-      border-bottom: 3px solid var(--accent);
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
-    }
-
-    .metric-top {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 3pt;
-      margin-bottom: 4pt;
-    }
-
-    .metric-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 2pt;
-      padding: 1.5pt 4pt;
-      border-radius: 3pt;
-      background: var(--accent-soft);
-      color: var(--accent-strong);
-      font-size: 6.3pt;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .metric-co {
-      font-family: "JetBrains Mono", "IBM Plex Mono", Consolas, monospace;
-      font-size: 6.3pt;
-      font-weight: 700;
-      color: #475569;
-      background: #e2e8f0;
-      padding: 1pt 3.5pt;
-      border-radius: 3pt;
-      white-space: nowrap;
-    }
-
-    .metric-val {
-      margin: 0 0 2pt;
-      min-height: 2.2em;
-      color: var(--ink);
-      font-size: 13.5pt;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-
-    .metric-label {
-      margin: 0;
-      color: var(--body);
-      font-size: 7.8pt;
-      font-weight: 500;
+    .role {
+      margin: 2px 0 0;
+      color: #334155;
+      font-size: 9.3pt;
       line-height: 1.3;
     }
 
-    /* ── Crisp 3-Line Elevator Pitch Summary ── */
-    .summary-box {
-      padding: 8.5pt 11pt;
-      border: 1px solid var(--border);
-      border-left: 3.5px solid var(--accent);
-      border-radius: 6pt;
-      background: var(--surface);
-      margin-bottom: 10pt;
-      font-size: 9.8pt;
-      line-height: 1.5;
-      color: var(--ink);
-    }
-
-    .summary-box strong {
-      color: var(--accent-strong);
-    }
-
-    section {
-      margin-top: 11pt;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 7pt;
-      margin: 0 0 7pt;
-    }
-
-    .section-badge {
-      display: inline-block;
-      width: 6.5pt;
-      height: 6.5pt;
-      border-radius: 1.5pt;
-      background: var(--accent);
-    }
-
-    .section-title {
-      margin: 0;
-      color: var(--ink);
-      font-size: 11pt;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border-strong);
-    }
-
-    /* ── Core Skills Bento Grid ── */
-    .skills-bento {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 7pt;
-    }
-
-    .skill-card {
-      padding: 7pt 9.5pt;
-      border: 1px solid var(--border);
-      border-radius: 6pt;
-      background: var(--paper);
-      font-size: 9pt;
-      line-height: 1.44;
-    }
-
-    .skill-card.full-span {
-      grid-column: 1 / -1;
-      background: var(--surface-accent);
-      border-color: #99f6e4;
-    }
-
-    .skill-title {
-      display: block;
-      margin-bottom: 2pt;
-      color: var(--accent-strong);
-      font-size: 8.8pt;
-      font-weight: 800;
-      letter-spacing: 0.01em;
-    }
-
-    /* ── Experience Timeline with Embedded Logos ── */
-    .experience-section {
-      break-inside: auto;
-      page-break-inside: auto;
-    }
-
-    .timeline {
-      position: relative;
-      margin-left: 16pt;
-      padding-left: 23pt;
-    }
-
-    .timeline::before {
-      position: absolute;
-      top: 6pt;
-      bottom: 6pt;
-      left: 0;
-      width: 1.5px;
-      background: var(--border-strong);
-      content: "";
-    }
-
-    .exp-card {
-      position: relative;
-      margin-bottom: 9.5pt;
-      padding: 9pt 11.5pt;
-      border: 1px solid var(--border);
-      border-radius: 7pt;
-      background: var(--paper);
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-
-    .exp-card:last-child {
-      margin-bottom: 0;
-    }
-
-    .exp-card.trend-group {
-      break-inside: auto;
-      page-break-inside: auto;
-      padding-bottom: 7pt;
-    }
-
-    .company-icon {
-      position: absolute;
-      top: 8pt;
-      left: -39pt;
-      display: grid;
-      width: 32px;
-      height: 32px;
-      place-items: center;
-      overflow: hidden;
-      border: 1.5px solid var(--border-strong);
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 0 3px var(--paper);
-    }
-
-    .company-icon img {
-      display: block;
-      width: 25px;
-      height: 25px;
-      object-fit: contain;
-    }
-
-    .company-icon.career {
-      color: #ffffff;
-      border-color: var(--accent);
-      background: var(--accent);
-      font-size: 7.8pt;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-
-    .exp-head {
+    .top {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 8pt;
-      margin-bottom: 2.5pt;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 8px;
     }
 
-    .exp-head h3 {
+    .contact {
       margin: 0;
-      color: var(--ink);
-      font-size: 10.8pt;
+      text-align: right;
+      font-style: normal;
+      font-size: 9.1pt;
+      line-height: 1.45;
+      color: #334155;
+      white-space: nowrap;
+    }
+
+    .contact p { margin: 0; }
+
+    h2 {
+      margin: 11px 0 5px;
+      font-size: 10.5pt;
       font-weight: 800;
+      color: #1e293b;
+      line-height: 1.2;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 3px;
+      background: #f59e0b;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    h3 { margin: 0; font-size: 10.2pt; font-weight: 700; color: #1e293b; line-height: 1.25; }
+    h4 { margin: 0; font-size: 9.1pt; font-weight: 700; color: #1e293b; line-height: 1.25; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #fdf8ee;
+      border-top: 3px solid #f59e0b;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .metrics article {
+      padding: 7px 8px 8px;
+      border-left: 1px solid #e8dcc4;
+    }
+
+    .metrics article:first-child { border-left: 0; }
+
+    .val {
+      margin: 0;
+      color: #1e3a5f;
+      font-size: 12.5pt;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .kick {
+      margin: 3px 0 2px;
+      color: #92400e;
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       line-height: 1.25;
     }
 
-    .exp-date {
-      color: var(--accent-strong);
-      font-size: 8.6pt;
-      font-weight: 700;
-      white-space: nowrap;
-      padding: 1.5pt 6pt;
-      border-radius: 4pt;
-      background: var(--surface-accent);
-    }
-
-    .exp-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0 0 5pt;
-      color: var(--muted);
-      font-size: 8.5pt;
-      font-weight: 500;
-    }
-
-    .case-link-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 1pt 6pt;
-      border-radius: 3.5pt;
-      background: var(--accent-soft);
-      color: var(--accent-strong) !important;
+    .desc {
+      margin: 0;
+      color: #334155;
       font-size: 7.8pt;
-      font-weight: 700;
+      line-height: 1.3;
     }
 
-    .sub-role {
-      margin-top: 7.5pt;
-      padding: 7.5pt 9.5pt;
-      border-left: 3px solid var(--accent);
-      border-radius: 0 5.5pt 5.5pt 0;
-      background: var(--surface);
-      break-inside: avoid;
-      page-break-inside: avoid;
+    .summary {
+      margin: 8px 0 0;
+      font-size: 9.3pt;
+      line-height: 1.4;
     }
 
-    .sub-role:first-of-type {
-      margin-top: 5.5pt;
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 14px;
     }
 
-    .sub-role-head {
+    .skill { margin: 0; }
+    .skill.full { grid-column: 1 / -1; }
+
+    .skill-title {
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .job {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      margin: 0 0 6px;
+    }
+
+    .lg, .badge {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      object-fit: contain;
+      border-radius: 5px;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      padding: 2px;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      color: #1e293b;
+      font-size: 8pt;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .job-body { flex: 1; min-width: 0; }
+
+    .jh {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 8pt;
-      margin-bottom: 4pt;
+      gap: 10px;
     }
 
-    .sub-role-head h4 {
-      margin: 0;
-      color: var(--ink);
-      font-size: 10pt;
-      font-weight: 800;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    li {
-      margin-bottom: 3pt;
-      line-height: 1.48;
-      color: var(--body);
-    }
-
-    li:last-child {
-      margin-bottom: 0;
-    }
-
-    li strong {
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .stack-bar {
-      margin-top: 5.5pt;
-      padding-top: 4.5pt;
-      border-top: 1px dashed var(--border-strong);
-      font-family: "JetBrains Mono", "IBM Plex Mono", Consolas, monospace;
-      font-size: 8pt;
-      color: var(--muted);
-    }
-
-    .stack-bar strong {
-      color: var(--accent-strong);
-      font-family: "Inter", sans-serif;
-      font-size: 8pt;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    code {
-      padding: 0.5pt 3.5pt;
-      border-radius: 2.5pt;
-      background: var(--tag-bg);
-      color: var(--tag-ink);
-      font-family: "JetBrains Mono", "IBM Plex Mono", Consolas, monospace;
-      font-size: 8.5pt;
-    }
-
-    /* ── Bottom Bento: Projects, Education & Availability ── */
-    .projects-bento {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8pt;
-    }
-
-    .project-card {
-      padding: 8pt 10.5pt;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 6pt;
-      background: var(--surface);
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-
-    .project-card h3 {
-      margin: 0 0 3.5pt;
-      font-size: 9.8pt;
-      font-weight: 800;
-      color: var(--ink);
-    }
-
-    .project-card p {
-      margin: 0 0 4pt;
-      font-size: 8.9pt;
-      line-height: 1.45;
-    }
-
-    .case-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4.5pt;
-      margin-top: 4pt;
-    }
-
-    .case-tag {
-      display: inline-block;
-      padding: 1.5pt 6pt;
-      border-radius: 3.5pt;
-      border: 1px solid var(--border-strong);
-      background: var(--paper);
-      font-size: 8pt;
-      font-weight: 700;
-      color: var(--accent-strong);
-    }
-
-    .footer-bento {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 8pt;
-      margin-top: 9pt;
-    }
-
-    .footer-card {
-      padding: 8pt 10.5pt;
-      border: 1px solid var(--border);
-      border-radius: 6pt;
-      background: var(--paper);
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-
-    .footer-card h3 {
-      margin: 0 0 4pt;
-      color: var(--ink);
-      font-size: 9.4pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .edu-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 6pt;
-      font-size: 8.9pt;
-      margin-bottom: 3pt;
-    }
-
-    .edu-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .edu-date {
-      color: var(--muted);
+    .when {
+      flex: 0 0 auto;
       white-space: nowrap;
+      color: #475569;
+      font-size: 8.6pt;
       font-weight: 600;
     }
 
-    /* ── Print Pagination & Page Break Rules (Comfortable ~9pt Print Size!) ── */
-    @page {
-      size: A4;
-      margin: 5.5mm 8mm 5.5mm 8mm;
+    .meta {
+      margin: 1px 0 2px;
+      color: #475569;
+      font-size: 8.3pt;
+      line-height: 1.35;
     }
 
-    @page :first {
-      margin-top: 5.5mm;
+    ul { margin: 0; padding-left: 14px; }
+    li { margin: 0 0 1px; }
+
+    .sub { margin-top: 4px; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 14px;
     }
 
-    @media print {
-      html,
-      body {
-        background: #ffffff;
-        font-size: 8.45pt;
-        line-height: 1.3;
-      }
+    .projects p { margin: 1px 0 0; }
 
-      body {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
+    .cases { margin: 4px 0 0; }
 
-      .resume {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-      }
-
-      .hero-card {
-        padding: 6.5pt 10.5pt;
-        margin-bottom: 4pt;
-      }
-
-      .eyebrow {
-        font-size: 7pt;
-        margin-bottom: 1.5pt;
-      }
-
-      h1 {
-        font-size: 18.5pt;
-        margin-bottom: 1.5pt;
-      }
-
-      .role-title {
-        font-size: 8.4pt;
-      }
-
-      .metrics-bento {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 4.5pt;
-        margin-bottom: 4pt;
-      }
-
-      .metric-card {
-        padding: 4pt 6pt 3.5pt;
-      }
-
-      .metric-top {
-        height: 26pt;
-        align-content: flex-start;
-        margin-bottom: 1.5pt;
-      }
-
-      .metric-val {
-        font-size: 11pt;
-      }
-
-      .metric-label {
-        font-size: 7pt;
-        line-height: 1.22;
-      }
-
-      .summary-box {
-        padding: 4pt 7pt;
-        margin-bottom: 4pt;
-        font-size: 8.4pt;
-        line-height: 1.31;
-      }
-
-      section {
-        margin-top: 4pt;
-      }
-
-      .section-header {
-        margin-bottom: 3pt;
-      }
-
-      .section-title {
-        font-size: 9.2pt;
-      }
-
-      .skills-bento {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3pt;
-      }
-
-      .skill-card {
-        padding: 3pt 6pt;
-        font-size: 7.85pt;
-        line-height: 1.26;
-      }
-
-      .skill-title {
-        font-size: 7.85pt;
-        margin-bottom: 1pt;
-      }
-
-      .exp-card {
-        margin-bottom: 3.5pt;
-        padding: 4pt 7pt;
-      }
-
-      .exp-head {
-        margin-bottom: 1pt;
-      }
-
-      .exp-head h3 {
-        font-size: 9.2pt;
-      }
-
-      .exp-meta {
-        margin-bottom: 1.5pt;
-        font-size: 7.7pt;
-      }
-
-      .sub-role {
-        margin-top: 3.5pt;
-        padding: 4pt 6.5pt;
-      }
-
-      .sub-role-head {
-        margin-bottom: 1.5pt;
-      }
-
-      .sub-role-head h4 {
-        font-size: 8.8pt;
-      }
-
-      li {
-        margin-bottom: 1pt;
-        line-height: 1.28;
-        orphans: 3;
-        widows: 3;
-      }
-
-      .stack-bar {
-        margin-top: 2pt;
-        padding-top: 1.5pt;
-        font-size: 7.15pt;
-      }
-
-      .projects-bento {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4.5pt;
-      }
-
-      .project-card {
-        padding: 4.5pt 7pt;
-      }
-
-      .project-card p {
-        font-size: 7.9pt;
-        line-height: 1.28;
-      }
-
-      .footer-bento {
-        grid-template-columns: 1fr 1.15fr;
-        gap: 4.5pt;
-        margin-top: 4pt;
-      }
-
-      .footer-card {
-        padding: 4.5pt 7pt;
-      }
-
-      h2,
-      h3,
-      h4,
-      .section-header {
-        break-after: avoid;
-        page-break-after: avoid;
-      }
-
-      .hero-card,
-      .metrics-bento,
-      .summary-box,
-      .skills-bento,
-      .skill-card,
-      .exp-card:not(.trend-group),
-      .sub-role,
-      .project-card,
-      .footer-bento,
-      .footer-card {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-
-      .experience-section,
-      .timeline,
-      .exp-card.trend-group {
-        break-inside: auto;
-        page-break-inside: auto;
-      }
-
-      a {
-        text-decoration: none;
-      }
+    .foot {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 8px 16px;
+      margin-top: 2px;
     }
 
-    @media screen and (max-width: 680px) {
-      .resume {
-        width: 100%;
-        margin: 0;
-        padding: 16px;
-      }
-      .hero-card,
-      .metrics-bento,
-      .skills-bento,
-      .projects-bento,
-      .footer-bento {
-        grid-template-columns: 1fr;
-      }
-      .contact-grid {
-        align-items: flex-start;
-      }
+    .edu {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 0 0 2px;
+    }
+    .avail { margin: 0; }
+
+    li, .sub, .jh, .meta { break-inside: avoid; page-break-inside: avoid; }
+    h2, h3, h4, .jh, .meta { break-after: avoid; page-break-after: avoid; }
+
+    @media screen {
+      html { background: #e2e8f0; }
+      body { padding: 16px 0 24px; }
+      main { background: #fff; box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12); }
     }
   </style>
 </head>
 <body>
-  <main class="resume" aria-label="William Lu General Software QA Resume — Executive Scannable Edition">
-    <!-- Top Bento Hero Banner -->
-    <header class="hero-card">
+  <main aria-label="William Lu General Software QA Resume — Executive Scannable Edition">
+    <header class="top">
       <div>
-        <p class="eyebrow">Senior QA Engineer / QA Lead · Software Quality, Automation &amp; RCA</p>
         <h1>William Lu</h1>
-        <p class="role-title">Senior QA Engineer / QA Lead | Software Quality Assurance, Test Automation &amp; Root-Cause Analysis</p>
+        <p class="role">Senior QA Engineer / QA Lead | Software Quality Assurance, Test Automation &amp; Root-Cause Analysis</p>
       </div>
-      <address class="contact-grid">
-        <span>Taiwan (UTC+8) · Fully Remote · Flexible Hours</span>
-        <span><a href="mailto:sanyoii@gmail.com">sanyoii@gmail.com</a></span>
-        <div class="contact-links">
-          <a class="contact-pill" href="https://www.linkedin.com/in/williamlu5405">LinkedIn</a>
-          <a class="contact-pill" href="https://sanyoii.github.io/">QA Portfolio</a>
-          <a class="contact-pill" href="https://github.com/sanyoii">GitHub</a>
-        </div>
+      <address class="contact">
+        <p>Taiwan (UTC+8) · Fully Remote · Flexible Hours</p>
+        <p><a href="mailto:sanyoii@gmail.com">sanyoii@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/williamlu5405">LinkedIn</a> · <a href="https://sanyoii.github.io/">QA Portfolio</a> · <a href="https://github.com/sanyoii">GitHub</a></p>
       </address>
     </header>
 
-    <!-- C3 + C4 + C5 Hybrid Quantified Metrics Strip -->
-    <div class="metrics-bento" aria-label="Verified Career Highlights">
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-pill">Engineering Experience</span>
-        </div>
-        <p class="metric-val">13+ Years</p>
-        <p class="metric-label">QA and support engineering across enterprise security, semiconductor automation and financial platforms.</p>
-      </div>
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-pill">Defect Discovery</span>
-          <span class="metric-co">BTSE</span>
-        </div>
-        <p class="metric-val">3 High-Severity Defects</p>
-        <p class="metric-label">Reproduced and escalated financial-logic defects in trading, referral commissions and conversion.</p>
-      </div>
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-pill">Automation Leadership</span>
-          <span class="metric-co">Zealogics / ASML</span>
-        </div>
-        <p class="metric-val">Led 6 Automation Engineers</p>
-        <p class="metric-label">Designed the standard setup-to-reset test workflow for unattended runs; the fully remote team delivered the implementation.</p>
-      </div>
-      <div class="metric-card">
-        <div class="metric-top">
-          <span class="metric-pill">Support Efficiency</span>
-          <span class="metric-co">Trend Micro</span>
-        </div>
-        <p class="metric-val">20-Point Drop in Case Return Rate</p>
-        <p class="metric-label">Initiated a DLP diagnostic guide; the share of cases SEG (Service Engineering Group) returned to L2 for missing information fell by 20 percentage points in month one (manager-reported).</p>
-      </div>
-    </div>
+    <section class="metrics" aria-label="Verified Career Highlights">
+      <article>
+        <p class="val">13+ Years</p>
+        <p class="kick">Engineering Experience</p>
+        <p class="desc">QA and support engineering across enterprise security, semiconductor automation and financial platforms.</p>
+      </article>
+      <article>
+        <p class="val">3 High-Severity Defects</p>
+        <p class="kick">Defect Discovery · BTSE</p>
+        <p class="desc">Reproduced and escalated financial-logic defects in trading, referral commissions and conversion.</p>
+      </article>
+      <article>
+        <p class="val">Led 6 Automation Engineers</p>
+        <p class="kick">Automation Leadership · Zealogics / ASML</p>
+        <p class="desc">Designed the standard setup-to-reset test workflow for unattended runs; the fully remote team delivered the implementation.</p>
+      </article>
+      <article>
+        <p class="val">20-Point Drop in Case Return Rate</p>
+        <p class="kick">Support Efficiency · Trend Micro</p>
+        <p class="desc">Initiated a DLP diagnostic guide; the share of cases SEG (Service Engineering Group) returned to L2 for missing information fell by 20 percentage points in month one (manager-reported).</p>
+      </article>
+    </section>
 
-    <!-- 3-Line Elevator Pitch Summary -->
-    <div class="summary-box">
-      <strong>Professional Summary:</strong> Senior QA Engineer / QA Lead with <strong>13+ years in software QA and support engineering</strong> (plus 4 years in embedded firmware), including <strong>13 years at Trend Micro in QA and support engineering</strong>, across <strong>Enterprise Cybersecurity, Semiconductor Automation, FinTech/Exchange Platforms, and Embedded Systems</strong>. Proven track record leading a 6-engineer remote automation team (<strong>ASML</strong>), identifying and escalating high-severity financial-logic defects via API/WebSocket/SQL validation (<strong>BTSE</strong>), and driving deep system/dump RCA and performance optimization (<strong>Trend Micro</strong>). Two-time recipient of Trend Micro's <strong>internal Yearly Best SEG Engineer</strong> recognition (<strong>2019, 2021</strong>).
-    </div>
+    <p class="summary"><strong>Professional Summary:</strong> Senior QA Engineer / QA Lead with <strong>13+ years in software QA and support engineering</strong> (plus 4 years in embedded firmware), including <strong>13 years at Trend Micro in QA and support engineering</strong>, across <strong>Enterprise Cybersecurity, Semiconductor Automation, FinTech/Exchange Platforms, and Embedded Systems</strong>. Proven track record leading a 6-engineer remote automation team (<strong>ASML</strong>), identifying and escalating high-severity financial-logic defects via API/WebSocket/SQL validation (<strong>BTSE</strong>), and driving deep system/dump RCA and performance optimization (<strong>Trend Micro</strong>). Two-time recipient of Trend Micro's <strong>internal Yearly Best SEG Engineer</strong> recognition (<strong>2019, 2021</strong>).</p>
 
-    <!-- Core Skills Bento Grid -->
     <section aria-labelledby="skills-heading">
-      <div class="section-header">
-        <span class="section-badge"></span>
-        <h2 class="section-title" id="skills-heading">Core Skills &amp; Technical Stack</h2>
-        <span class="section-line"></span>
-      </div>
-      <div class="skills-bento">
-        <div class="skill-card">
-          <span class="skill-title">Test Strategy &amp; QA Leadership</span>
-          Risk-based Testing, Test Specifications &amp; Test Data Design, Test Reviews, QA Leadership, Internal/External Beta Planning, Automation Feasibility Assessment, Reusable-Module Planning, Technical Handover (TOI) &amp; Onboarding Documentation
-        </div>
-        <div class="skill-card">
-          <span class="skill-title">Functional, Acceptance &amp; System Testing</span>
-          Manual &amp; Exploratory Testing, Functional &amp; Regression Testing, Boundary / Negative / FET (Force-Error Test), RAT / FAST / TOFT, System &amp; Compatibility Testing, Cross-browser (Chrome, Edge, Firefox), Performance, Load &amp; Stress Testing
-        </div>
-        <div class="skill-card">
-          <span class="skill-title">Automation, API &amp; Data Validation</span>
-          Python, Selenium, Robot Framework, TMSTAF, TestComplete, Jenkins, Atlassian Bamboo; E2E Web API Validation, WebSocket Event Inspection, Browser DevTools, SQL, TablePlus, Excel Formula Reconciliation
-        </div>
-        <div class="skill-card">
-          <span class="skill-title">Troubleshooting, Environments &amp; Tools</span>
-          Defect Triage, Customer-Escalation Reproduction, Incident RCA, Hotfix Validation, Log &amp; Memory Dump Analysis (<code>WinDbg</code>, <code>ProcMon</code>, <code>Process Explorer</code>, <code>Event Log</code>); TestRail, Jira, JQL, Confluence, GitHub, Bitbucket; VMware (Workstation, vSphere/ESXi), VirtualBox, Hyper-V, Windows Server, Azure
-        </div>
-        <div class="skill-card full-span">
-          <span class="skill-title">2025–Present Self-Directed Practice &amp; Product Domains</span>
-          <strong>2025–Present Projects:</strong> Python, <code>pytest</code>, <code>Playwright</code>, <code>GitHub Actions</code> &nbsp;|&nbsp; <strong>Domains:</strong> Enterprise Security &amp; DLP SDK; Financial &amp; Exchange Workflows (Wallet, Spot, Futures, Convert, Referral/Affiliate, Fees, Funding, Liquidation, KYC)
-        </div>
+      <h2 id="skills-heading">Core Skills &amp; Technical Stack</h2>
+      <div class="skills">
+        <p class="skill"><span class="skill-title">Test Strategy &amp; QA Leadership</span> Risk-based Testing, Test Specifications &amp; Test Data Design, Test Reviews, QA Leadership, Internal/External Beta Planning, Automation Feasibility Assessment, Reusable-Module Planning, Technical Handover (TOI) &amp; Onboarding Documentation</p>
+        <p class="skill"><span class="skill-title">Functional, Acceptance &amp; System Testing</span> Manual &amp; Exploratory Testing, Functional &amp; Regression Testing, Boundary / Negative / FET (Force-Error Test), RAT / FAST / TOFT, System &amp; Compatibility Testing, Cross-browser (Chrome, Edge, Firefox), Performance, Load &amp; Stress Testing</p>
+        <p class="skill"><span class="skill-title">Automation, API &amp; Data Validation</span> Python, Selenium, Robot Framework, TMSTAF, TestComplete, Jenkins, Atlassian Bamboo; E2E Web API Validation, WebSocket Event Inspection, Browser DevTools, SQL, TablePlus, Excel Formula Reconciliation</p>
+        <p class="skill"><span class="skill-title">Troubleshooting, Environments &amp; Tools</span> Defect Triage, Customer-Escalation Reproduction, Incident RCA, Hotfix Validation, Log &amp; Memory Dump Analysis (<code>WinDbg</code>, <code>ProcMon</code>, <code>Process Explorer</code>, <code>Event Log</code>); TestRail, Jira, JQL, Confluence, GitHub, Bitbucket; VMware (Workstation, vSphere/ESXi), VirtualBox, Hyper-V, Windows Server, Azure</p>
+        <p class="skill full"><span class="skill-title">2025–Present Self-Directed Practice &amp; Product Domains</span> <strong>2025–Present Projects:</strong> Python, <code>pytest</code>, <code>Playwright</code>, <code>GitHub Actions</code> &nbsp;|&nbsp; <strong>Domains:</strong> Enterprise Security &amp; DLP SDK; Financial &amp; Exchange Workflows (Wallet, Spot, Futures, Convert, Referral/Affiliate, Fees, Funding, Liquidation, KYC)</p>
       </div>
     </section>
 
-    <!-- Professional Experience Timeline with Embedded Company Logos -->
-    <section class="experience-section" aria-labelledby="experience-heading">
-      <div class="section-header">
-        <span class="section-badge"></span>
-        <h2 class="section-title" id="experience-heading">Professional Experience</h2>
-        <span class="section-line"></span>
-      </div>
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Professional Experience</h2>
 
-      <div class="timeline">
-        <!-- Career Break -->
-        <article class="exp-card">
-          <div class="company-icon career" aria-hidden="true">CB</div>
-          <div class="exp-head">
+      <article class="job">
+        <div class="badge" aria-hidden="true">CB</div>
+        <div class="job-body">
+          <div class="jh">
             <h3>Career Break | Family Caregiving</h3>
-            <span class="exp-date">Feb 2025–Present</span>
+            <span class="when">Feb 2025–Present</span>
           </div>
           <ul>
             <li>Career break for family caregiving; maintained hands-on QA engineering practice through personal software quality projects using Python, <code>pytest</code>, <code>Playwright</code>, and <code>GitHub Actions</code>.</li>
           </ul>
-        </article>
+        </div>
+      </article>
 
-        <!-- Nogle (BTSE) -->
-        <article class="exp-card">
-          <div class="company-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAJFBMVEVHcEwKUbYKUbYKUbYKUbYKUbYKUbYKUbYKUbYKUbYKUbYKUbZpj5TnAAAAC3RSTlMApV+ReU/bvBQv8ApZDlQAAAAJcEhZcwAALiMAAC4jAXilP3YAAAPPSURBVHja7ZjLT9RAGMAHEOl64hEU5AIbE4172RUSeVzWiJjoZZWAEi6EqFH3go/E6F7qBQKnGt/hosYEtCfYZQvTf0473dlO2++btuvFw/e77Uxnf+188/hmGCMIgiAIgiAIgiAIgiAIgiAIgiAIghB8vJtf+pLqyXcDKkNTK7JiYgBksFVtTFRdj70rVvjPSqXS5NCkyjRbdSPsXfIbFFyQI782d75d0pxpS+A2a3GJy6dFgzOw5JvvqKllz/WSMiBx+bjXoAeWFMW/3Q4XrmslJiRx6+JlYYmIwFa09LVGcsBAidvvtahBNY4IeqyKl3HJESJpoC0OvZo+QG6iTdYQieiUHTTuc0AcLVRSxiQbWOSLSLQaaHdxE5OcYJG34N4SbwVL/sYdkYgXqyJx34VfF5GcoBIHaXKIhOQQH8JrgYT/9giWCgZHfl/9Qmfq+tlQb4GS8UByLB7anpVV3q/evEdrThyIHxUlVo4Xn95ZpbekhKsrqhmVMKOqSHzG1OEj3OpXMXYv6C0paUaX+rCkHVSN5FRoFROW/myS1vDkGklPRMIuy95KK+lSRleCZEMWGMOsI0k9haQR32ZTSk6H9j9tTOT6nl1SCGYQJuluT4EHVkeSbjuYQZhEWdP4SyuL5OSrx2I1Fve4hNkuppEz/pGkHJKEeayVjIWeVZKV+LJSxCVNUyuJrsLrHUlGmFbSFX3+ZweSh0wvMWysRXpJK7nDJcCuVczeXaMJkl4b2mMzSnhRL2Gf4Ewtk6SVReESYy5ltqKTqBMFkrDcGJhJZJM4CRJmLEB/lyBxXglsJe3TShh7X42nGAmS48gL7idKWO6mHT0cyURiXlIBl3qZsDeSJWFNPcN+IpMtJ41EZkTRdDBR0hNNV7QSxm6p6WBaSbd6osIky8EmIjO1TBK5g1c0kpz9A94N00q63MgGDEg21SRitwPJTgpJTV2qV7MHvp0Ma7pLjA0+E64/SC/JzbrJgW818VOIt8BZlquXHkqLpkgunqonfDQlkjOQP5u/cFU9UCWdT/AVMibZRC5QEMkGLtEsKzXkAiXzmTEYbTEJfOfC0cuCOi4popI+zZdnO8cr6V2su+bcTOd4L/Kw5Jcuq7cznePRuxVe0W2/W+hLFZDbDVDyRJ8SLcd619JI6rCkbibkXQtI8lxABh4g+W4lZJCMXYTu7bDrwfG4hA+aLFHCPgRTko8m3qZ+PqcyMHQjeg685t9eDEeKjcU3vuLF/aDwDniVPPIvN9zbS/n8ikk3/QRBEARBEARBEARBEARBEARBEATxH/EH88eB/0QwGWUAAAAASUVORK5CYII=" alt="BTSE logo"></div>
-          <div class="exp-head">
+      <article class="job">
+        <img class="lg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAJFBMVEVHcEwKUbYKUbYKUbYKUbYKUbYKUbYKUbYKUbYKUbYKUbYKUbZpj5TnAAAAC3RSTlMApV+ReU/bvBQv8ApZDlQAAAAJcEhZcwAALiMAAC4jAXilP3YAAAPPSURBVHja7ZjLT9RAGMAHEOl64hEU5AIbE4172RUSeVzWiJjoZZWAEi6EqFH3go/E6F7qBQKnGt/hosYEtCfYZQvTf0473dlO2++btuvFw/e77Uxnf+188/hmGCMIgiAIgiAIgiAIgiAIgiAIgiAIghB8vJtf+pLqyXcDKkNTK7JiYgBksFVtTFRdj70rVvjPSqXS5NCkyjRbdSPsXfIbFFyQI782d75d0pxpS+A2a3GJy6dFgzOw5JvvqKllz/WSMiBx+bjXoAeWFMW/3Q4XrmslJiRx6+JlYYmIwFa09LVGcsBAidvvtahBNY4IeqyKl3HJESJpoC0OvZo+QG6iTdYQieiUHTTuc0AcLVRSxiQbWOSLSLQaaHdxE5OcYJG34N4SbwVL/sYdkYgXqyJx34VfF5GcoBIHaXKIhOQQH8JrgYT/9giWCgZHfl/9Qmfq+tlQb4GS8UByLB7anpVV3q/evEdrThyIHxUlVo4Xn95ZpbekhKsrqhmVMKOqSHzG1OEj3OpXMXYv6C0paUaX+rCkHVSN5FRoFROW/myS1vDkGklPRMIuy95KK+lSRleCZEMWGMOsI0k9haQR32ZTSk6H9j9tTOT6nl1SCGYQJuluT4EHVkeSbjuYQZhEWdP4SyuL5OSrx2I1Fve4hNkuppEz/pGkHJKEeayVjIWeVZKV+LJSxCVNUyuJrsLrHUlGmFbSFX3+ZweSh0wvMWysRXpJK7nDJcCuVczeXaMJkl4b2mMzSnhRL2Gf4Ewtk6SVReESYy5ltqKTqBMFkrDcGJhJZJM4CRJmLEB/lyBxXglsJe3TShh7X42nGAmS48gL7idKWO6mHT0cyURiXlIBl3qZsDeSJWFNPcN+IpMtJ41EZkTRdDBR0hNNV7QSxm6p6WBaSbd6osIky8EmIjO1TBK5g1c0kpz9A94N00q63MgGDEg21SRitwPJTgpJTV2qV7MHvp0Ma7pLjA0+E64/SC/JzbrJgW818VOIt8BZlquXHkqLpkgunqonfDQlkjOQP5u/cFU9UCWdT/AVMibZRC5QEMkGLtEsKzXkAiXzmTEYbTEJfOfC0cuCOi4popI+zZdnO8cr6V2su+bcTOd4L/Kw5Jcuq7cznePRuxVe0W2/W+hLFZDbDVDyRJ8SLcd619JI6rCkbibkXQtI8lxABh4g+W4lZJCMXYTu7bDrwfG4hA+aLFHCPgRTko8m3qZ+PqcyMHQjeg685t9eDEeKjcU3vuLF/aDwDniVPPIvN9zbS/n8ikk3/QRBEARBEARBEARBEARBEARBEATxH/EH88eB/0QwGWUAAAAASUVORK5CYII=" alt="BTSE logo">
+        <div class="job-body">
+          <div class="jh">
             <h3>Nogle (BTSE) | Senior QA Engineer</h3>
-            <span class="exp-date">Sep 2024–Nov 2024</span>
+            <span class="when">Sep 2024–Nov 2024</span>
           </div>
-          <div class="exp-meta">
-            <span>Taipei, Taiwan · On-site</span>
-            <a class="case-link-pill" href="https://sanyoii.github.io/btse-case.html">→ Full Case Study</a>
-          </div>
+          <p class="meta">Taipei, Taiwan · On-site · <a href="https://sanyoii.github.io/btse-case.html">→ Full Case Study</a></p>
           <ul>
-            <li><strong>Escalated 3 high-severity financial-logic defects</strong> for engineering prioritization via boundary, negative, API, WebSocket, and SQL validation: <strong>(1)</strong> Futures &amp; Spot boundary-handling defect causing inconsistent pricing or unresponsive UI across assets/browsers with an unreadable HTTP <code>200 OK</code> API response, <strong>(2)</strong> Referral &amp; Affiliate multi-tier commission allocation exceeding expected calculations under active multi-account hierarchies, and <strong>(3)</strong> Convert cross-entry boundary-handling failure across entry points and asset pairs. All three defects were acknowledged and escalated for priority handling, and remained open when I left.</li>
-            <li><strong>End-to-End Exchange Coverage &amp; Test Design:</strong> Authored <strong>30–50 Referral/Affiliate test cases in TestRail</strong> and <strong>~20 Convert test cases in the internal Wiki</strong>; used TestRail for Wallet cases and wrote internal Wiki onboarding notes. Validated Wallet (deposit/withdrawal/confirmation), Spot, Futures, Convert, maker/taker fees, funding settlement, liquidation, and Individual/Corporate KYC across Web workflows (Chrome, Edge, Firefox).</li>
+            <li><strong>Escalated 3 high-severity financial-logic defects</strong> for engineering prioritization via boundary, negative, API, WebSocket, and SQL validation: (1) Futures &amp; Spot boundary-handling defect causing inconsistent pricing or unresponsive UI across assets/browsers with an unreadable HTTP <code>200 OK</code> API response, (2) Referral &amp; Affiliate multi-tier commission allocation exceeding expected calculations under active multi-account hierarchies, and (3) Convert cross-entry boundary-handling failure across entry points and asset pairs. All three defects were acknowledged and escalated for priority handling, and remained open when I left.</li>
+            <li><strong>End-to-End Exchange Coverage &amp; Test Design:</strong> Authored 30–50 Referral/Affiliate test cases in TestRail and ~20 Convert test cases in the internal Wiki; used TestRail for Wallet cases and wrote internal Wiki onboarding notes. Validated Wallet (deposit/withdrawal/confirmation), Spot, Futures, Convert, maker/taker fees, funding settlement, liquidation, and Individual/Corporate KYC across Web workflows (Chrome, Edge, Firefox).</li>
             <li><strong>Multi-Layer Data Reconciliation:</strong> Verified real-time consistency across UI, REST APIs, WebSocket streams (<code>executionReport</code>, <code>orderUpdate</code>, <code>outboundAccountPosition</code>, <code>positionUpdate</code>, <code>Balance Update</code>), TablePlus SQL queries, and spreadsheet formula models.</li>
           </ul>
-          <div class="stack-bar"><strong>Stack:</strong> REST API · WebSocket · Browser DevTools · SQL (TablePlus) · TestRail · Excel Formula Reconciliation · Chrome/Edge/Firefox</div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Zealogics / ASML -->
-        <article class="exp-card">
-          <div class="company-icon"><img src="data:image/png;base64,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" alt="Zealogics logo"></div>
-          <div class="exp-head">
+      <article class="job">
+        <img class="lg" src="data:image/png;base64,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" alt="Zealogics logo">
+        <div class="job-body">
+          <div class="jh">
             <h3>Zealogics | Project Leader / Senior Automation Test Engineer</h3>
-            <span class="exp-date">May 2023–Apr 2024</span>
+            <span class="when">May 2023–Apr 2024</span>
           </div>
-          <div class="exp-meta">
-            <span>Fully Remote · Client Engagement: ASML</span>
-            <a class="case-link-pill" href="https://sanyoii.github.io/asml-case.html">→ Full Case Study</a>
-          </div>
+          <p class="meta">Fully Remote · Client Engagement: ASML · <a href="https://sanyoii.github.io/asml-case.html">→ Full Case Study</a></p>
           <ul>
-            <li><strong>Remote Team &amp; Delivery Leadership:</strong> Led <strong>6 Automation Engineers</strong> in a fully remote ASML engagement covering HMI eP5 modules (<code>iCDU</code>, <code>MM Flow</code>, <code>ADEL</code>), managing weekly progress via custom Jira Filters/JQL, code and test-case reviews, annual formal performance reviews I conducted, status and training-need reporting to ASML management, and client TOI/live demos.</li>
-            <li><strong>Unattended CI Lifecycle Design:</strong> Architected the end-to-end test execution flow (Simulator startup, initialization, Recipe loading, execution, reporting, cleanup, and environment reset) within the existing TestComplete architecture—enabling <strong>unattended normal-path execution</strong> via <code>.bat</code> and Atlassian Bamboo triggers (while connection failures required manual investigation).</li>
+            <li><strong>Remote Team &amp; Delivery Leadership:</strong> Led 6 Automation Engineers in a fully remote ASML engagement covering HMI eP5 modules (<code>iCDU</code>, <code>MM Flow</code>, <code>ADEL</code>), managing weekly progress via custom Jira Filters/JQL, code and test-case reviews, annual formal performance reviews I conducted, status and training-need reporting to ASML management, and client TOI/live demos.</li>
+            <li><strong>Unattended CI Lifecycle Design:</strong> Architected the end-to-end test execution flow (Simulator startup, initialization, Recipe loading, execution, reporting, cleanup, and environment reset) within the existing TestComplete architecture—enabling unattended normal-path execution via <code>.bat</code> and Atlassian Bamboo triggers (while connection failures required manual investigation).</li>
             <li><strong>Modular Reuse &amp; Feasibility:</strong> Assessed manual test cases for full vs. partial automation, planned shared modules prior to assignment to eliminate duplicate coding, authored Test System Design docs in Confluence, and contributed direct test implementation alongside the team.</li>
           </ul>
-          <div class="stack-bar"><strong>Stack:</strong> Python · TestComplete · Atlassian Bamboo · Bitbucket · VS Code · Jira (JQL) · Confluence</div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Trend Micro (Starts Cleanly on Page 2 in Print) -->
-        <article class="exp-card trend-group">
-          <div class="company-icon"><img src="data:image/png;base64,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" alt="Trend Micro logo"></div>
-          <div class="exp-head">
+      <article class="job">
+        <img class="lg" src="data:image/png;base64,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" alt="Trend Micro logo">
+        <div class="job-body">
+          <div class="jh">
             <h3>Trend Micro</h3>
-            <span class="exp-date">May 2010–Jan 2023</span>
+            <span class="when">May 2010–Jan 2023</span>
           </div>
-          <div class="exp-meta">
-            <span>Taipei, Taiwan · On-site</span>
-            <a class="case-link-pill" href="https://sanyoii.github.io/trend-support-case.html">→ Full Case Study</a>
-          </div>
+          <p class="meta">Taipei, Taiwan · On-site · <a href="https://sanyoii.github.io/trend-support-case.html">→ Full Case Study</a></p>
 
-          <div class="sub-role">
-            <div class="sub-role-head">
+          <div class="sub">
+            <div class="jh">
               <h4>Senior QA Engineer &amp; Senior Customer Service Engineer</h4>
-              <span class="exp-date">Jul 2014–Jan 2023</span>
+              <span class="when">Jul 2014–Jan 2023</span>
             </div>
             <ul>
-              <li><strong>QA &amp; SEG Leadership:</strong> Served as <strong>QA Leader and SEG Leader</strong> for the Data Loss Prevention (DLP) SDK and enterprise security products (<code>OfficeScan</code>, <code>WFBS-SVC</code>, <code>IMSVA</code>), bridging system/performance QA with global support-engineering RCA and hotfix validation.</li>
+              <li><strong>QA &amp; SEG Leadership:</strong> Served as QA Leader and SEG Leader for the Data Loss Prevention (DLP) SDK and enterprise security products (<code>OfficeScan</code>, <code>WFBS-SVC</code>, <code>IMSVA</code>), bridging system/performance QA with global support-engineering RCA and hotfix validation.</li>
               <li><strong>Proactive Chrome Compatibility Automation:</strong> Built Python monitoring via Google APIs (<code>googleapis.com</code>) to detect Chrome Beta/Stable updates, auto-run sensitive-file upload tests, and send alerts when DLP blocking failed—catching browser breaks before customer reports.</li>
-              <li><strong>Performance Optimization (-10% CPU/RAM):</strong> Proposed <strong>supported-site scanning</strong> during a DLP refactor; based on my recollection of the QA performance test report, <strong>CPU and memory usage each fell by at least 10%</strong> relative to the previous design (unlisted sites were explicitly unsupported, with a config-file test path).</li>
-              <li><strong>Support Diagnostic Standardization (-20pp Returns):</strong> Initiated an issue-type-based DLP diagnostic guide; in its first month, <strong>the share of cases SEG returned to L2 for missing information fell by 20 percentage points</strong> (per manager-shared figures).</li>
-              <li><strong>Deep Escalation RCA &amp; Recognition:</strong> Automated regression suites and reproduced complex customer crashes/leaks across multi-hypervisor labs using memory dump and kernel/process diagnostics; received Trend Micro's <strong>internal Yearly Best SEG Engineer recognition in 2019 and 2021</strong>.</li>
+              <li><strong>Performance Optimization (-10% CPU/RAM):</strong> Proposed supported-site scanning during a DLP refactor; based on my recollection of the QA performance test report, CPU and memory usage each fell by at least 10% relative to the previous design (unlisted sites were explicitly unsupported, with a config-file test path).</li>
+              <li><strong>Support Diagnostic Standardization (-20pp Returns):</strong> Initiated an issue-type-based DLP diagnostic guide; in its first month, the share of cases SEG returned to L2 for missing information fell by 20 percentage points (per manager-shared figures).</li>
+              <li><strong>Deep Escalation RCA &amp; Recognition:</strong> Automated regression suites and reproduced complex customer crashes/leaks across multi-hypervisor labs using memory dump and kernel/process diagnostics; received Trend Micro's internal Yearly Best SEG Engineer recognition in 2019 and 2021.</li>
             </ul>
-            <div class="stack-bar"><strong>Stack:</strong> Python · Selenium · Robot Framework · TMSTAF · Jenkins · WinDbg · ProcMon · Process Explorer · VMware · Hyper-V · Azure</div>
           </div>
 
-          <div class="sub-role">
-            <div class="sub-role-head">
+          <div class="sub">
+            <div class="jh">
               <h4>Senior Customer Service Engineer</h4>
-              <span class="exp-date">Jun 2013–Jul 2014</span>
+              <span class="when">Jun 2013–Jul 2014</span>
             </div>
             <ul>
               <li>Served as SEG Leader and final escalation point for critical WFBS Advanced incidents across APAC, Europe, and the US; led dump/upgrade-log RCA, reconstructed customer-upgrade-path hotfix validation, and proposed the WFBS Guide Book to reduce missing-info case returns.</li>
             </ul>
           </div>
 
-          <div class="sub-role">
-            <div class="sub-role-head">
+          <div class="sub">
+            <div class="jh">
               <h4>QA Engineer</h4>
-              <span class="exp-date">May 2010–Jun 2013</span>
+              <span class="when">May 2010–Jun 2013</span>
             </div>
             <ul>
-              <li>Owned module, system, and long-running performance testing (Python + Windows Performance Monitor) for WFBS Advanced (<code>6.0 SP1–7.0 SP1</code>); served as <strong>Internal &amp; External Beta Owner</strong>, leading on-site production beta deployments and field diagnostics across Europe.</li>
+              <li>Owned module, system, and long-running performance testing (Python + Windows Performance Monitor) for WFBS Advanced (<code>6.0 SP1–7.0 SP1</code>); served as Internal &amp; External Beta Owner, leading on-site production beta deployments and field diagnostics across Europe.</li>
             </ul>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Tatung -->
-        <article class="exp-card">
-          <div class="company-icon"><img src="data:image/png;base64,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" alt="Tatung logo"></div>
-          <div class="exp-head">
+      <article class="job">
+        <img class="lg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABsUExURf////Hv7n19feElIvz9/QICAuceIAAAAP7+/gEBAfr49+EfGcbGxhAQEExMTDY2Nt41M9/f3/ri4O6hnyEhIeBNS8zMzJaWlvbPzfO7uuNfXtXV1YeHh+mIhuZ0cbGxsZ2dnbi4uGBgYI6OjvZ1lzcAAAgvSURBVHja7Zptd7I4EIZBJhqCFuSlBSy2tf//P+7ck6CisU/PftizPmeu4+5qhZA785KZuEmiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKP8BZEl4eiEWQuxfIERU/BVCLB27rpss85Qe5a0h5uiydXbEe/uElvFCJEBct84gRFzsaS1SD0fWUWRVNw0plDybgyEkLNVTVqyz9brAq6immp5OCKzhpooFZNCwhhyW0jjEiih94GeiNMQSXDNca++vk5e/jrwHXD5b3OIXk8Ktsg1YGYtuEo9c9yAZWXJ1h/kX1bFiId1YFVmWrceUnBdAbhvlIE+bPzlcuo+/mVraH4R5yNR/ZB++3OP8BMOIe8yX3OF+MLIPXGsQGxx7Rxwk6yO5YWQ3K7p6XrU3k0cwuxQ6/Hcb8wH7lGYTuda8ULozwmuw8rv/WPICv4Q7zId/Hl/q72EdH6Uxd4O5eEa1Q8W5qut5/YnT7xrpl5qKbdKlwV2+zSaC2e0poVWO9xgfQlp+7u11OebrZ5fnr2Fx3vkjDyFCchnemFaeh0tNbnIWYj/4zd2z25gQdriadRRH/rKeePbsVV2TwtvY2UbnU/G7n6w8G0+cl5CFuFYelG9yyLKtnxSEYTLmSoj/+2twCx4SZizZOV/yedxvNoKFRfDphX2+NDJWfhaDx7YuEiN88eh1uCkLcc7B0hCl7F7FhCyc0Ld/UHggj5sHi1j6mi1gNisLi8xWyEVLEPlLIWwSXrZZCNFeBsiDVXJ/HYTEMtbAyYp1pCNv6iwCSZhf+AtHflXLJv8tJjBBwGwSuBad5pnnBivVhq+MvDbhw+8swhe+E/LARYifuVnGSetinuU4LKrapShOsuPQ9/0wcnisR+f6UK/wgG+el9kF/MdPR/tdsA7UfRF9hStbI+tYho+vvxHCsncHSuzFtfbBNd/fPmfwzsU8a2ADNOSO7FMc74gi6xD964bsxM5Vz1keqXblV3+X2jndf/PT2cda2Cs/heuYEpNDArB+w+XZ5T8JycXMBqlq4Vpe/V7yfBLGpmiIsEdVKftXARtINuD5If7Zq/qsYJFXV98IkWiEx5XfYnOEe+BaiN83/iAE9jN8x5biQi7ria33TgmnrGw9ScCzf4UdnPMwJEycjdlMV7vPnUXsK3Tk5vMg/83fbUSIv/UPQozZrYxEk6OYEEo/znylkW2E46Doed5wpUtJQnRkZY6aYl1dRdatkMSexB92e4d9i6flHgn5k0U4PPatrMZHXMghP+9P5vV+H7GNeFbD2Sq9dj07cBruXV8UWX9tkXxpET+7vCS7gmeIY/ivSnNnkZtgN8tg5zLhE9p4MVJJIPdCMOJijGtkzS2H+rjoC21awUY1Z+OBHgpJPv02sRIfwyxO1rcFd0LoF0Kw/fF6vMWFbGSpHgmBhM7BkcZlKnAVkllacbQ/tEhCpd+v2A5UYmI8Gy/7X1mEPsRR233UtXxt9lAIb+ciBHv4QgiHf4Ps9YMQDI6PHBmWwwezyd9sXMhvLILyESXBKZa1DiWzMz+4FoL62ElPeOlPKO0n7khqTl6PXYt39RwGWaEg20JUjkrvUdbykRomYW83RFiEXo2vBzZLIZt96GI/fxDCu3dNdTpJMXI+FuLKvqlT3tt/Cva0lUxiWixW6csiriPtg6y1EBJ1LeIseK52bywi+8f2cbCjDOnd0HEsuIsQIq4Yu975VPBACGrsufQSa8hDVtb+xiJR1+JI2Jk5zS6F+B19+9giaTX2fcd1I3Zyez7fwsZSZGM9VNdJ4EbIy1kI6rpQwYbS9LFFnCfiWnjw6tzPLFwr3LTdRIVg5V1fTyh7Ucr7HdEfC0kRnFVT3dOlRb4WgtWTvB66ok3uN/fN1xzsm+iG2AZ2Uumbkluzs5DQHd4K4UQ23+Qtso0JadAe8qtq6mbwh9iu6c9nKt1wdZqyEJKs8lCkb861PdzlZO0PQqS8l5081Pdkz0JwKb1t7oWc75FnYdu9E9Kjt12jgGcvKrg37Ot+6riArOvRKynGmiKuZa1r/VxevgLv0kGi2+IZ3QqRzlwmtZnbCmk0OKTsQohvCkUIq2/9RhXOASQOuTZNI0KgIyvG3rmj+FeB11oqxqGThrGKCknQGoYmJIwlXTlPDv3qnRCyXzs/jfzcbaIX2yfJQojlXfFiEQ6Z0JPOfS4GXUX6KuzsBbyKK/gG/Trsw38ZuGkfHE4grup4Ox80IFPSKfj8XFRae8pDscTvS3+2cLEIz3B3czDBvn+wPmmgB0i9YFd6vXKK4k43Zw8og1xyX8ZzNcUBzZvJyEV83XQVInyELE5l3cCh0l3SL+fxlfDGk6dP//7zcqoWvn1HHg/ffl3tTbQPfzzj63H7EW4LrcFh/jZB37u9uWe1jZ+Auob7J8R7NeDEJK17aUuQA1CFuX64Kpnt5XTQnk8Y6cpVcYAo/xBJKiGbnC2S3J0mzz+OhQNFCq0Bza2EN2SycCRKHp3O4TSLlXA4dA1aRLzSBuFRwErLn+JCqxlOLsMKXo0lNsfkJXMt6+n7c85ZpfXLYefrwqJEb7N+FnEx7FScohAa4zQMzXGs5DD76J7tJ5LgSpkPdf8vxHusN/6//whqOdKrAmdzmWRfHDaSTZ7shwX/q7RNh2msqqzqxql3clL6jL8l+t8dEpemqbPJk/4auvg/BpBCnl1HCO7nFhFytH16ayiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiK8mv+AT+co3nPr91mAAAAAElFTkSuQmCC" alt="Tatung logo">
+        <div class="job-body">
+          <div class="jh">
             <h3>Tatung | Firmware Engineer</h3>
-            <span class="exp-date">Apr 2006–Apr 2010</span>
+            <span class="when">Apr 2006–Apr 2010</span>
           </div>
-          <div class="exp-meta">
-            <span>Taipei, Taiwan · On-site</span>
-          </div>
+          <p class="meta">Taipei, Taiwan · On-site</p>
           <ul>
             <li>Developed and validated embedded C firmware for European/US LCD TVs (from-scratch OSD UI and A/V hardware calibration) and Java control systems for smart meters, supporting stable mass-production releases and a GE OEM engagement.</li>
           </ul>
-        </article>
-      </div>
+        </div>
+      </article>
     </section>
 
-    <!-- Selected Personal Projects & Case Studies -->
     <section aria-labelledby="projects-heading">
-      <div class="section-header">
-        <span class="section-badge"></span>
-        <h2 class="section-title" id="projects-heading">Selected QA Projects &amp; Engineering Case Studies (2025–Present)</h2>
-        <span class="section-line"></span>
-      </div>
-      <div class="projects-bento">
-        <article class="project-card">
+      <h2 id="projects-heading">Selected QA Projects &amp; Engineering Case Studies (2025–Present)</h2>
+      <div class="projects">
+        <article>
           <h3><a href="https://github.com/sanyoii/cex-market-data-quality-lab">Market Data Quality Lab ↗</a></h3>
           <p>Python &amp; <code>pytest</code> validation suites checking REST snapshots, WebSocket sequencing, latency boundaries, and order-book invariants on public market feeds.</p>
         </article>
-        <article class="project-card">
+        <article>
           <h3><a href="https://sanyoii.github.io/">QA Portfolio &amp; Risk-Based QA Decision Desk ↗</a></h3>
           <p>Bilingual QA portfolio validated by Python, <code>pytest</code>, <code>Playwright</code>, and <code>GitHub Actions</code> across static, runtime, responsive, and accessibility checks.</p>
-          <div class="case-links">
-            <a class="case-tag" href="https://sanyoii.github.io/btse-case.html">BTSE Financial-Logic Case Study</a>
-            <a class="case-tag" href="https://sanyoii.github.io/asml-case.html">ASML Automation Leadership</a>
-            <a class="case-tag" href="https://sanyoii.github.io/trend-support-case.html">Trend Micro RCA &amp; Beta</a>
-            <a class="case-tag" href="https://sanyoii.github.io/dlp-case.html">Trend Micro DLP Compatibility &amp; Perf.</a>
-            <a class="case-tag" href="https://sanyoii.github.io/how-i-lead-qa.html">How I lead QA</a>
-            <a class="case-tag" href="https://sanyoii.github.io/quality-gate/">Multi-Agent Quality Gate (synthetic)</a>
-          </div>
         </article>
       </div>
+      <p class="cases">Case studies: <a href="https://sanyoii.github.io/btse-case.html">BTSE Financial-Logic Case Study</a> · <a href="https://sanyoii.github.io/asml-case.html">ASML Automation Leadership</a> · <a href="https://sanyoii.github.io/trend-support-case.html">Trend Micro RCA &amp; Beta</a> · <a href="https://sanyoii.github.io/dlp-case.html">Trend Micro DLP Compatibility &amp; Perf.</a> · <a href="https://sanyoii.github.io/how-i-lead-qa.html">How I lead QA</a> · <a href="https://sanyoii.github.io/quality-gate/">Multi-Agent Quality Gate (synthetic)</a></p>
     </section>
 
-    <!-- Education & Remote Availability Footer Bento -->
-    <div class="footer-bento">
-      <section class="footer-card" aria-labelledby="edu-heading">
+    <div class="foot">
+      <section aria-labelledby="edu-heading">
         <h3 id="edu-heading">Education</h3>
-        <div class="edu-item">
-          <span><strong>MS, Information Engineering &amp; CS</strong> — Feng Chia University</span>
-          <span class="edu-date">2003–2005</span>
-        </div>
-        <div class="edu-item">
-          <span><strong>BS, Information Engineering &amp; CS</strong> — Feng Chia University</span>
-          <span class="edu-date">1998–2003</span>
-        </div>
+        <p class="edu"><span><strong>MS, Information Engineering &amp; CS</strong> — Feng Chia University</span> <span class="when">2003–2005</span></p>
+        <p class="edu"><span><strong>BS, Information Engineering &amp; CS</strong> — Feng Chia University</span> <span class="when">1998–2003</span></p>
       </section>
-      <section class="footer-card" aria-labelledby="avail-heading">
+      <section aria-labelledby="avail-heading">
         <h3 id="avail-heading">Work Preferences &amp; Availability</h3>
-        <p style="margin: 0; font-size: 8.8pt; line-height: 1.44; color: var(--body);">
-          Based in <strong>Taiwan (UTC+8)</strong>; targeting <strong>Fully Remote</strong> roles with <strong>flexible working hours</strong>, open to teams in the <strong>Americas, EMEA, and APAC</strong>, and up to <strong>25% travel</strong>. Languages: <strong>Mandarin</strong> (Native), <strong>English</strong> (Professional working proficiency).
-        </p>
+        <p class="avail">Based in <strong>Taiwan (UTC+8)</strong>; targeting <strong>Fully Remote</strong> roles with <strong>flexible working hours</strong>, open to teams in the <strong>Americas, EMEA, and APAC</strong>, and up to <strong>25% travel</strong>. Languages: <strong>Mandarin</strong> (Native), <strong>English</strong> (Professional working proficiency).</p>
       </section>
     </div>
   </main>
