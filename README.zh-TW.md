@@ -80,6 +80,7 @@ python -m pytest tests/ -v
 ```text
 index.html              網站
 404.html                設為 noindex，並連回首頁
+quality-gate/           /quality-gate/ 靜態示範
 assets/                 網站使用的圖片
 assets/readme/          本頁的 hero 圖（en／zh）
 make_og_card.py         依 index.html 重新產生 assets/og-card.png
