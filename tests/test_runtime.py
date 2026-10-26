@@ -68,7 +68,7 @@ def test_language_choice_updates_metadata_and_survives_reload(browser, site_url)
     assert page.title() == "William Lu — 資深 QA 工程師／QA Lead｜產品品質、自動化測試與事件 RCA"
     assert page.locator('meta[name="description"]').get_attribute("content") == (
         "資深 QA 工程師／QA Lead：曾為 ASML 帶領 6 人遠端自動化測試團隊，"
-        "在 BTSE 測試中心化加密貨幣交易所，並在 Trend Micro 從事 13 年 QA 與客戶疑難案件工程。"
+        "在 BTSE 測試中心化加密貨幣交易所，並在 Trend Micro 從事 13 年 QA 與技術支援工程。"
     )
     image_alts = page.locator("img[data-alt-zh]").evaluate_all(
         "(images) => images.map((image) => ({"

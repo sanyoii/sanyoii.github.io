@@ -8,7 +8,7 @@ Taiwan | UTC+8 | Fully Remote · Flexible Hours (Americas, EMEA, APAC) | [sanyoi
 
 ## Professional summary
 
-Senior QA Engineer and QA/Support Leader with **12+ years in software quality assurance and escalation engineering** (plus 4 years in embedded firmware), including **13 years at Trend Micro in QA and customer-escalation engineering**, across **Enterprise Security & DLP (Trend Micro)**, **Semiconductor Automation (Zealogics / ASML)**, and **FinTech / Crypto Exchange (BTSE)**. Proven track record of identifying and escalating high-severity financial-logic defects, leading remote automation teams, designing unattended CI test lifecycles, and resolving complex customer production incidents through deep root-cause analysis (RCA). Two-time recipient of Trend Micro's **internal Yearly Best SEG Engineer** recognition (2019, 2021).
+Senior QA Engineer and QA/Support Leader with **12+ years in software quality assurance and escalation engineering** (plus 4 years in embedded firmware), including **13 years at Trend Micro in QA and support engineering**, across **Enterprise Security & DLP (Trend Micro)**, **Semiconductor Automation (Zealogics / ASML)**, and **FinTech / Crypto Exchange (BTSE)**. Proven track record of identifying and escalating high-severity financial-logic defects, leading remote automation teams, designing unattended CI test lifecycles, and resolving complex customer production incidents through deep root-cause analysis (RCA). Two-time recipient of Trend Micro's **internal Yearly Best SEG (Service Engineering Group) Engineer** recognition (2019, 2021).
 
 ## Career highlights
 
@@ -72,7 +72,7 @@ May 2023–Apr 2024 | Fully Remote · [Full Case Study](https://github.com/sanyo
 
 Jul 2014–Jan 2023 | Taipei, Taiwan | On-site · [Incident & Beta Case Study](https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md) · [DLP Compatibility & Perf. Case Study](https://sanyoii.github.io/dlp-case.html)
 
-- **QA & SEG Leadership:** Served as **QA Leader and Service Engineer Group (SEG) Leader** for the Data Loss Prevention (DLP) SDK and enterprise security products (`OfficeScan`, `WFBS-SVC`, `IMSVA`), bridging system/performance QA with global customer-escalation RCA and hotfix validation.
+- **QA & SEG Leadership:** Served as **QA Leader and SEG Leader** for the Data Loss Prevention (DLP) SDK and enterprise security products (`OfficeScan`, `WFBS-SVC`, `IMSVA`), bridging system/performance QA with global customer-escalation RCA and hotfix validation.
 - **Proactive Chrome Compatibility Automation:** Built Python monitoring via Google APIs (`googleapis.com`) to detect Chrome Beta and Stable releases, trigger browser updates and sensitive-file upload tests, and send email alerts when DLP failed to block an upload—catching browser breaks before customer reports.
 - **Performance Optimization (-10% CPU/RAM):** Proposed **supported-site scanning**, adopted and implemented by the team during a DLP refactor; based on my recollection of the QA performance test report, **CPU and memory usage each fell by at least 10%** relative to the previous design (unlisted sites were explicitly unsupported; users could test adding sites to a configuration file and report failures to Support for team assessment).
 - **Support Diagnostic Standardization (-20pp Returns):** Initiated an issue-type-based DLP diagnostic guide; in its first month, **the share of cases SEG returned to L2 for missing information fell by 20 percentage points** according to figures shared by my manager.

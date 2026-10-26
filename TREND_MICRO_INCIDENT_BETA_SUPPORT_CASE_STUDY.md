@@ -22,7 +22,7 @@ I wrote a Python program that checked Google's official API for Chrome Beta and 
 
 `New Chrome version → browser update → DLP upload-blocking test → email alert on failure`
 
-This helped the team address compatibility issues before customers discovered them and reduced manual effort around Chrome releases. DLP QA usually had four people and at most five, combining feature QA and SEG work; this case occurred with four. I do not have retained measurements of time saved or defects caught. The API endpoint and proprietary implementation are not reproduced here.
+This helped the team address compatibility issues before customers discovered them and reduced manual effort around Chrome releases. DLP QA usually had four people and at most five, combining feature QA and SEG (Service Engineering Group) work; this case occurred with four. I do not have retained measurements of time saved or defects caught. The API endpoint and proprietary implementation are not reproduced here.
 
 ### Supported-site scanning: performance and scope
 
@@ -103,7 +103,7 @@ Chrome 大、小版本更新，有時會讓 DLP 無法阻擋敏感檔案上傳�
 
 `偵測 Chrome 新版本 → 更新瀏覽器 → 測試能否擋下敏感檔案上傳 → 失敗時寄信通知`
 
-這讓團隊能在客戶回報前處理相容性問題，也減少每次 Chrome 更新時需要人工處理的工作。DLP QA 通常 4 人、最多 5 人，同時負責新功能 QA 與 SEG；這個案例發生時有 4 人。節省多少工時、提早找到多少缺陷，沒有保留量測資料。本文也不公開 API 網址細節或公司的專有實作。
+這讓團隊能在客戶回報前處理相容性問題，也減少每次 Chrome 更新時需要人工處理的工作。DLP QA 通常 4 人、最多 5 人，同時負責新功能 QA 與 SEG（Service Engineering Group）；這個案例發生時有 4 人。節省多少工時、提早找到多少缺陷，沒有保留量測資料。本文也不公開 API 網址細節或公司的專有實作。
 
 ### 改用網站清單，調整掃描範圍
 
