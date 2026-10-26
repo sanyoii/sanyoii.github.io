@@ -25,7 +25,8 @@ def test_resume_preserves_case_ownership_and_unresolved_outcome():
 
 def test_home_short_metric_keeps_scope_and_return_direction():
     text = (ROOT / 'index.html').read_text(encoding='utf-8')
-    assert 'First-Month SEG-to-L2 Missing-Info Returns' in text
+    assert 'first-month SEG-to-L2 missing-info returns' in text
     assert 'SEG 因缺件退回 L2' in text
-    assert 'Manager Figures' in text
+    assert '(manager-reported)' in text
+    assert 'CPU/RAM' not in text
     assert '≥10% DLP CPU/RAM Cut' not in text

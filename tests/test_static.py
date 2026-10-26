@@ -155,7 +155,7 @@ def test_role_paths_and_work_evidence_are_reachable(repo_root):
     html = (repo_root / "index.html").read_text(encoding="utf-8")
     for anchor in ("btse-evidence", "support-evidence", "asml-evidence", "cex-lab"):
         assert f'id="{anchor}"' in html
-    assert 'href="#btse-evidence"' in html
+    assert 'href="#evidence"' in html
     for case in ('btse-case.html', 'trend-support-case.html', 'asml-case.html', 'dlp-case.html'):
         assert f'href="{case}"' in html
         assert (repo_root / case).is_file()
@@ -165,5 +165,7 @@ def test_role_paths_and_work_evidence_are_reachable(repo_root):
     assert (repo_root / "test-status/index.html").is_file()
     assert 'href="https://github.com/sanyoii/cex-market-data-quality-lab"' in html
     assert 'href="https://github.com/sanyoii/cex-market-data-quality-lab/actions"' in html
-    assert html.count("no public demo or source linked.") == 6
+    # Non-QA experiments live off the homepage; their assets stay in the repo.
+    for off_home in ("hd-decode", "Codex Skill Dashboard", "jobsmith"):
+        assert off_home not in html
     assert "my work at Binance" not in html

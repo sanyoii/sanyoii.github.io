@@ -22,7 +22,7 @@ I wrote a Python program that checked Google's official API for Chrome Beta and 
 
 `New Chrome version → browser update → DLP upload-blocking test → email alert on failure`
 
-This helped the team address compatibility issues before customers discovered them and reduced manual effort around Chrome releases. DLP QA usually had four people and at most five, combining feature QA and SEG work; this case occurred with four. I do not have retained measurements of time saved or defects caught. The API endpoint and proprietary implementation are not reproduced here.
+This helped the team address compatibility issues before customers discovered them and reduced manual effort around Chrome releases. DLP QA usually had four people and at most five, combining feature QA and SEG (Service Engineering Group) work; this case occurred with four. I do not have retained measurements of time saved or defects caught. The API endpoint and proprietary implementation are not reproduced here.
 
 ### Supported-site scanning: performance and scope
 
@@ -36,7 +36,7 @@ The tradeoff was a narrower default scanning scope with a documented path for re
 
 ### Case information and support training
 
-As SEG Leader, I checked each case for a clear problem description, reproduction steps, and required diagnostic information. I returned incomplete cases to L2 with specific collection requests. Complete cases were assigned by priority, complexity, and team workload.
+As SEG Leader, I checked each case for a clear problem description, reproduction steps, and required diagnostic information. I returned incomplete cases to L2 with specific collection requests. Complete cases were assigned by priority, complexity, and team workload. During the DLP period, I also took part in interviewing candidates (self-reported; no employer record available).
 
 Frequent WFBS Support staff changes left newcomers struggling to handle cases. I proposed replacing the rough Survival Guide with a practical WFBS Guide Book. After rollout, missing-information case returns declined month by month, even though staff turnover did not decline.
 
@@ -103,7 +103,7 @@ Chrome 大、小版本更新，有時會讓 DLP 無法阻擋敏感檔案上傳�
 
 `偵測 Chrome 新版本 → 更新瀏覽器 → 測試能否擋下敏感檔案上傳 → 失敗時寄信通知`
 
-這讓團隊能在客戶回報前處理相容性問題，也減少每次 Chrome 更新時需要人工處理的工作。DLP QA 通常 4 人、最多 5 人，同時負責新功能 QA 與 SEG；這個案例發生時有 4 人。節省多少工時、提早找到多少缺陷，沒有保留量測資料。本文也不公開 API 網址細節或公司的專有實作。
+這讓團隊能在客戶回報前處理相容性問題，也減少每次 Chrome 更新時需要人工處理的工作。DLP QA 通常 4 人、最多 5 人，同時負責新功能 QA 與 SEG（Service Engineering Group）；這個案例發生時有 4 人。節省多少工時、提早找到多少缺陷，沒有保留量測資料。本文也不公開 API 網址細節或公司的專有實作。
 
 ### 改用網站清單，調整掃描範圍
 
@@ -117,7 +117,7 @@ Chrome 大、小版本更新，有時會讓 DLP 無法阻擋敏感檔案上傳�
 
 ### 讓轉交 SEG 的案件資料更完整
 
-擔任 SEG Leader 時，我會先看案件描述、重現步驟與診斷資料。資料不足就退回 L2，清楚列出需要補什麼；資料完整的案件，再依處理優先順序、問題難度與工程師的工作量分派。
+擔任 SEG Leader 時，我會先看案件描述、重現步驟與診斷資料。資料不足就退回 L2，清楚列出需要補什麼；資料完整的案件，再依處理優先順序、問題難度與工程師的工作量分派。DLP 時期，我也參與過面試新人（本人自述，無公司紀錄可查）。
 
 WFBS 技術支援團隊人員流動頻繁，新人常不熟悉案件處理。我建議把較簡略的 Survival Guide 改寫成 WFBS Guide Book，幫助新人認識產品並處理客戶問題。上線後，人員流動率沒有下降，但因資料不足被退回的案件比例逐月下降。
 

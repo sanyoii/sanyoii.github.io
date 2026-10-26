@@ -93,7 +93,7 @@ def test_published_case_journeys_preserve_language(browser, site_url, width, lan
     assert page.locator('a[href="resume.html"]').count() == 1
     assert page.locator('.review-banner, .experience-strip, .full-notes').count() == 0
     for filename in ['btse-case.html', 'asml-case.html', 'trend-support-case.html', 'dlp-case.html']:
-        page.locator(f'#evidence a[href="{filename}"]').click()
+        page.locator(f'#evidence .hcase a[href="{filename}"]').click()
         assert page.locator('html').get_attribute('lang') == lang
         if filename != 'dlp-case.html':
             selected = 'en' if lang == 'en' else 'zh'
@@ -187,13 +187,13 @@ def test_home_destinations_and_mobile_baseline(browser, site_url):
     page = context.new_page()
     page.goto(site_url)
     for lang in ['en', 'zh']:
-        assert page.locator('#btse-evidence').bounding_box()['y'] <= baseline[f'index-390-{lang}'] + 1
+        assert page.locator('#asml-evidence').bounding_box()['y'] <= baseline[f'index-390-{lang}'] + 1
         cta = page.locator('.ctas').bounding_box()
         assert cta['y'] + cta['height'] <= 844
-        assert not page.locator('.experiments').get_attribute('open')
+        assert page.locator('.experiments').count() == 0
         if lang == 'en':
             page.locator('#langBtn').click()
-    for selector, dest in [('#btse-evidence a', 'btse-case.html'), ('#support-evidence a[href="trend-support-case.html"]', 'trend-support-case.html'), ('#asml-evidence a', 'asml-case.html'), ('.ctas a[href="resume.html"]', 'resume.html')]:
+    for selector, dest in [('#btse-evidence a[href="btse-case.html"]', 'btse-case.html'), ('#support-evidence a[href="trend-support-case.html"]', 'trend-support-case.html'), ('#asml-evidence a[href="asml-case.html"]', 'asml-case.html'), ('.ctas a[href="resume.html"]', 'resume.html')]:
         page.goto(site_url)
         page.locator(selector).click()
         assert page.url.endswith(dest)
