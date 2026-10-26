@@ -13,7 +13,7 @@ class HeadingCounter(HTMLParser):
 
 
 def test_bilingual_text_and_alt_attributes_are_paired(repo_root):
-    for filename in ("index.html", "404.html", "dlp-case.html"):
+    for filename in ("index.html", "404.html", "dlp-case.html", "how-i-lead-qa.html"):
         html = (repo_root / filename).read_text(encoding="utf-8")
 
         assert html.count("data-en=") == html.count("data-zh="), f"Unpaired data-en/data-zh in {filename}"
@@ -29,6 +29,7 @@ def test_personal_phone_number_is_not_published(repo_root):
         "btse-case.html",
         "trend-support-case.html",
         "asml-case.html",
+        "how-i-lead-qa.html",
     ):
         html = (repo_root / filename).read_text(encoding="utf-8")
         assert "0922" not in html, f"{filename} contains a mobile-number fragment"
@@ -55,6 +56,7 @@ def test_external_urls_are_allowlisted(repo_root):
         "btse-case.html",
         "trend-support-case.html",
         "asml-case.html",
+        "how-i-lead-qa.html",
     ):
         html = (repo_root / filename).read_text(encoding="utf-8")
         urls = re.findall(r"https?://[^\"'\s<>]+", html)
