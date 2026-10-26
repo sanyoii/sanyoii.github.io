@@ -13,7 +13,7 @@
 
 ASML engineers in different time zones shared complex HMI eP5 test environments. A test run required Simulator startup, function-specific Recipe loading, manual operation, and cleanup. Long-running cases kept an engineer at the environment. An incomplete reset could also prevent the next engineer from starting.
 
-I led six Zealogics Automation Engineers in the ASML-side STA team. ASML supplied the base TestComplete automation architecture. I improved its configurability and cross-product use, designed the setup-to-cleanup lifecycle, planned reusable modules, and coordinated delivery across iCDU, MM Flow, and ADEL. I implemented some test cases; the six engineers completed most coding.
+I led six Zealogics Automation Engineers in the ASML-side STA team. ASML supplied the base TestComplete automation architecture. I improved its configurability and cross-product use, designed the setup-to-cleanup lifecycle, planned reusable modules, and coordinated delivery across iCDU, MM Flow, and ADEL. The six engineers completed most coding.
 
 ### Architecture and test strategy
 
@@ -33,7 +33,7 @@ I planned the technical work and tracked progress, risks, and requests for help 
 - Daily syncs surfaced environment blockers, dependencies, and work that needed help from another ASML function owner.
 - I represented STA in management and weekly status meetings, reported team status and progress to ASML management, and discussed the engineers' training needs. Jira filters and JQL supported ticket and test case status reviews, but the original queries and counts are no longer available.
 - I used one-on-ones for blockers, support, and direct performance feedback. I conducted each engineer's annual formal performance review, based on continuous notes about assigned-work delivery, peer support, and initiative, and submitted the reviews to my direct manager; the later approval chain is unknown.
-- I reviewed the delivery scope, assigned tasks and test cases, discussed implementation details with the engineers, reviewed their automation code, and tracked risk, schedule, tickets, and handoff.
+- I reviewed the delivery scope, assigned tasks and test cases, discussed implementation details with the engineers, and tracked risk, schedule, tickets, and handoff. Implemented a portion of test cases as Python automation scripts within the TestComplete framework and reviewed the team's code.
 - I created Jira and Confluence material for test cases, Test System Design, work records, operation guidance, and newcomer onboarding. I cannot confirm whether the onboarding material remained in use after my engagement.
 
 ### Training and feedback
@@ -87,7 +87,7 @@ ASML reduced its software-outsourcing budget, and STA lost funding. I documented
 
 不同時區的 ASML 工程師共用 HMI eP5 測試環境。每次測試都要啟動模擬器、載入對應功能的 Recipe、執行操作，再清理環境。有些案例跑很久，工程師必須持續操作；環境如果沒有完整重置，也會影響下一個使用的人。
 
-我在 ASML 的 STA 團隊帶領 6 位 Zealogics 自動化測試工程師。ASML 已有 TestComplete 架構；我負責讓設定更有彈性、支援跨產品使用，並規劃環境設定、測試執行、清理重置與共用模組。我也協調 iCDU、MM Flow、ADEL 三個模組的工作。我寫了部分測試案例，多數程式由 6 位工程師完成。
+我在 ASML 的 STA 團隊帶領 6 位 Zealogics 自動化測試工程師。ASML 已有 TestComplete 架構；我負責讓設定更有彈性、支援跨產品使用，並規劃環境設定、測試執行、清理重置與共用模組。我也協調 iCDU、MM Flow、ADEL 三個模組的工作。多數程式由 6 位工程師完成。
 
 ### 我怎麼規劃自動化
 
@@ -107,7 +107,7 @@ ASML reduced its software-outsourcing budget, and STA lost funding. I documented
 - 每日會議確認環境問題、工作之間的先後關係，以及需要哪些 ASML 功能負責人協助。
 - 我代表 STA 參加管理與每週進度會議，向 ASML 管理層回報團隊狀況與進度，並討論成員需要的訓練；也透過 Jira 篩選器和 JQL 查看工作單與測試案例的狀態。
 - 透過一對一會談了解工程師的困難，提供協助與績效回饋。我依平時記錄的工作交付、同儕協助與主動性，為每位工程師撰寫年度正式考核，再交給直屬主管；後續如何核定，我無法確認。
-- 確認交付範圍，分派工作與測試案例，討論實作細節，審查工程師的自動化程式碼（code review），並追蹤風險、時程、工作單及交接。
+- 確認交付範圍，分派工作與測試案例，討論實作細節，並追蹤風險、時程、工作單及交接。親自以 Python 在 TestComplete 框架中將部分 test case 實作為自動化腳本，並審查團隊程式碼。
 - 在 Jira 和 Confluence 整理測試案例、系統設計、工作紀錄、操作說明與新人教材。離開專案後，我無法確認教材是否繼續使用。
 
 ### 操作訓練與後續使用
