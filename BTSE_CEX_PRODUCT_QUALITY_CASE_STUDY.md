@@ -21,7 +21,7 @@ I started with product behavior, then checked the data path behind it.
 - I mapped the user flow and tested normal values before moving to boundary and negative cases.
 - I compared behavior across assets, browsers, entry points, and connected product flows.
 - I used Browser DevTools for E2E Web API and WebSocket inspection.
-- I used TestRail for Wallet, Referral and Affiliate, and Convert cases.
+- I authored 30–50 Referral and Affiliate test cases in TestRail (first review completed before departure), documented ~20 Convert test cases and study scenarios in the internal Wiki, and used TestRail for Wallet cases.
 - I used SQL through TablePlus to validate Wallet balances, collateral details, fund transfers, order and trade history, fees, and settlement data.
 - I built spreadsheet calculations to compare expected and observed results. For fees, funding, and liquidation, I used BTSE's published formulas. For commissions, I confirmed the expected allocation with my QA mentor.
 
@@ -78,7 +78,7 @@ The following controls describe the test approach I would carry into another CEX
 - 先整理操作流程，用正常輸入建立對照，再測邊界值與異常輸入。
 - 換不同資產、瀏覽器和操作入口，比對相連功能的結果。
 - 用瀏覽器開發者工具檢查端到端 Web API 與 WebSocket 通訊。
-- 用 TestRail 管理 Wallet、Referral／Affiliate 與 Convert 的測試案例。
+- 在 TestRail 撰寫 30–50 個 Referral／Affiliate 測試案例（離職前完成第一輪審查），在內部 Wiki 整理約 20 個 Convert 測試案例與研究情境，並使用 TestRail 執行 Wallet 測試案例。
 - 透過 TablePlus 執行 SQL，核對錢包餘額、抵押品、帳戶間轉帳、掛單與成交紀錄、手續費及結算資料。
 - 用試算表比對預期與實際金額。手續費、資金費用與強制平倉依 BTSE 當時的公開公式計算；佣金分配則先向指導我的資深 QA 確認。
 

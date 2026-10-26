@@ -33,7 +33,13 @@ __pycache__/
 /JOB_PLATFORM_PROFILE_DRAFTS.md
 /application-packets/
 /council/
-/scripts/
+/scripts/*
+!/scripts/build_portfolio_pages.py
+!/scripts/build_public_resume_pdf.py
+!/scripts/templates/
+/scripts/templates/*
+!/scripts/templates/portfolio-page.html
+!/scripts/templates/public-resume-print.html
 /test-records/2026-08-14-application-packets.md
 /test-records/2026-08-14-linkedin-portfolio-alignment.md
 /test-records/2026-08-31-day15-profile-system.md

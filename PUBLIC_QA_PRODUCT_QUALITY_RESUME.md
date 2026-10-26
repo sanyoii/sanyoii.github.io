@@ -15,7 +15,7 @@ Senior QA Engineer and QA/Support Leader with **12+ years in software quality as
 - **12+ Yrs QA · 2× Internal Best SEG Engineer:** 12+ years in QA & escalation leadership (+4 yrs firmware); received Trend Micro's **internal Yearly Best SEG Engineer** recognition in **2019 & 2021**.
 - **3 High-Severity Financial Logic Defects @BTSE:** Reproduced, documented, and escalated across trading (Futures/Spot), referral commission, and conversion flows, alongside **30–50 Referral/Affiliate TestRail cases** and **~20 Convert internal Wiki cases**.
 - **Led 6 Remote Automation Engineers @ASML:** Directed HMI eP5 automation delivery (`iCDU`, `MM Flow`, `ADEL`) within the existing TestComplete architecture and designed the **unattended normal-path execution lifecycle** via Atlassian Bamboo.
-- **-10% CPU/RAM & -20pp Escalation Returns @Trend Micro:** Proposed DLP supported-site scanning (**≥10% CPU/RAM reduction** per recalled QA performance report; unlisted sites unsupported) and initiated a diagnostic guide cutting first-month L2 missing-info returns by **20 percentage points** (per manager-shared figures).
+- **-10% CPU/RAM & -20pp Escalation Returns @Trend Micro:** Proposed DLP supported-site scanning (**≥10% CPU/RAM reduction** per recalled QA performance report; unlisted sites unsupported) and initiated a diagnostic guide cutting first-month SEG-to-L2 missing-info returns by **20 percentage points** (per manager-shared figures).
 
 ## Core skills
 
@@ -56,7 +56,9 @@ Sep 2024–Nov 2024 | Taipei, Taiwan | On-site · [Full Case Study](https://gith
   1. *Futures & Spot Boundary Handling:* Boundary purchase quantity/value inputs produced inconsistent pricing or left the UI without a usable result across multiple assets and three browsers (`Chrome`, `Edge`, `Firefox`), while the API returned HTTP `200 OK` with an unreadable response body.
   2. *Referral & Affiliate Multi-Tier Commission:* Under a deeper multi-account hierarchy with active trading, actual commission values across upper tiers exceeded the expected allocation when reconciled against a multi-account test model, admin results, and spreadsheet calculations.
   3. *Convert Cross-Entry Boundary Handling:* Boundary inputs across different product entry points, three browsers, and source/target asset pairs left the UI without a usable result and returned an unreadable Convert API response body, exposing a shared-service risk for connected flows.
-- **Test Case Design & Onboarding Documentation:** Authored **30–50 Referral/Affiliate test cases in TestRail** (first review completed before departure), **~20 Convert test cases and study scenarios in the internal Wiki**, Wallet test cases in TestRail, and newcomer onboarding study notes and defect investigation pages in the internal Wiki.
+- **Test Case Design & Onboarding Documentation:** Authored **30–50 Referral/Affiliate test cases in TestRail** (first review completed before departure) and **~20 Convert test cases and study scenarios in the internal Wiki**; used TestRail for Wallet cases and wrote newcomer onboarding study notes and defect investigation pages in the internal Wiki.
+
+All three defects were acknowledged and escalated for priority handling, and remained open when I left.
 
 ### Zealogics / ASML | Project Leader / Senior Automation Test Engineer
 
@@ -98,7 +100,7 @@ Apr 2006–Apr 2010 | Taipei, Taiwan | On-site
 
 - [BTSE CEX Product Quality](https://github.com/sanyoii/sanyoii.github.io/blob/main/BTSE_CEX_PRODUCT_QUALITY_CASE_STUDY.md): trading, referral commission, and conversion cases, with test methods and known outcomes.
 - [Trend Micro Incident, Beta, and Support](https://github.com/sanyoii/sanyoii.github.io/blob/main/TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md): proactive Chrome regression checks, SEG intake improvement, incident RCA, and external beta work.
-- [Trend Micro DLP Compatibility & Performance](https://sanyoii.github.io/dlp-case.html): proactive Chrome compatibility guard, supported-site scanning optimization, and L2 diagnostic guide rollout.
+- [Trend Micro DLP Compatibility & Performance](https://sanyoii.github.io/dlp-case.html): proactive Chrome compatibility guard, supported-site scanning optimization, and SEG-led diagnostic guidance for L2.
 - [ASML Automation and Leadership](https://github.com/sanyoii/sanyoii.github.io/blob/main/ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md): test workflow design, leadership of six automation engineers, training, and technical handover.
 
 The case studies describe my direct work without confidential customer or implementation details. Original employer records are no longer available for independent verification. The DLP case-return change comes from figures shared by my manager; resource reductions come from my recollection of the QA performance report. Baseline values and original reports are unavailable.
