@@ -1,1 +1,0 @@
-import{i as e}from"./framework-BLiKpYxR.js";var t=e();function n({en:e,zh:n}){return(0,t.jsx)(`span`,{"data-en":e,"data-zh":n,children:e})}export{n as t};

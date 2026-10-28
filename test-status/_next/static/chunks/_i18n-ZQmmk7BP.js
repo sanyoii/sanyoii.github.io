@@ -1,0 +1,1 @@
+import{i as e}from"./framework-BLiKpYxR.js";var t=e(),n=`wl-lang`;function r(e){return e===`zh`?`zh`:`en`}function i(e){return e===`zh`?`zh-Hant`:`en`}function a(e){return e===`zh-Hant`?`zh`:`en`}function o({en:e,zh:n}){return(0,t.jsx)(`span`,{"data-en":e,"data-zh":n,children:e})}export{r as a,a as i,o as n,i as r,n as t};
