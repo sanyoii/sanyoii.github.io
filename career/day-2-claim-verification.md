@@ -7,11 +7,11 @@
 
 | Claim topic | Decision | Approved public wording |
 |---|---|---|
-| Career duration | Allowed as date-derived | `More than twelve years across QA, customer engineering, and technical support.` |
+| Career duration | Allowed as date-derived | `More than twelve years across QA and sustaining engineering.` |
 | Tatung product work | Qualitative | `Developed embedded firmware and control systems that supported stable releases across multiple markets.` |
 | Trend Micro beta programs | Qualitative | `Led large-scale external beta deployments across customer environments.` |
 | Trend Micro support improvement | Qualitative | `Converted recurring escalations into product fixes, standardized validation, and support documentation.` |
-| Trend Micro internal recognition | Optional, accurately scoped | `Received internal Service Engineering Group recognition twice.` |
+| Trend Micro internal recognition | Optional, accurately scoped | `Received internal Sustain Engineering Group recognition twice.` |
 | ASML leadership scope | Allowed | `Led the ASML-side STA team of six Zealogics Automation Engineers, maintained Jira Wiki evidence for annual reviews, created Test Case, system-design, and newcomer-onboarding documentation, and used Jira Filters with JQL for delivery reporting.` |
 | ASML team transition | Allowed | `After STA funding ended, documented each engineer's capabilities and arranged work handoffs while coordinating with my direct manager; the Engineering Head and HR made the final placement decisions.` |
 | ASML automation impact | Qualitative | `Improved an existing automation architecture, modularized repeated Test Case behavior, and proposed partial-automation solutions when full automation was impractical.` |

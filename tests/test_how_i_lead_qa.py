@@ -39,7 +39,6 @@ FORBIDDEN = (
     'D:\\',
     '/workspace',
     'PROFILE_CONTENT',
-    'Service Engineer Group',
 )
 
 
@@ -88,8 +87,8 @@ def test_how_i_lead_page_has_no_forbidden_figures_or_local_records():
     text = PAGE.read_text(encoding='utf-8')
     found = [item for item in FORBIDDEN if item in text]
     assert found == []
-    assert 'QA and support engineering' in text
-    assert 'QA 與技術支援工程' in text
+    assert 'QA and sustaining engineering' in text
+    assert 'QA 與產品維護工程' in text
     assert 'manager-reported' in text
     assert '主管提供數據' in text
     assert 'self-reported' in text
@@ -100,12 +99,12 @@ def test_seg_is_expanded_on_first_use_in_each_language():
     html = PAGE.read_text(encoding='utf-8')
     english = language_block(html, 'en')
     chinese = language_block(html, 'zh')
-    assert english.count('SEG (Service Engineering Group)') == 1
-    assert chinese.count('SEG（Service Engineering Group）') == 1
-    assert english[english.find('SEG'):].startswith('SEG (Service Engineering Group)')
-    assert chinese[chinese.find('SEG'):].startswith('SEG（Service Engineering Group）')
-    assert 'SEG (Service Engineering Group)' not in chinese
-    assert 'SEG（Service Engineering Group）' not in english
+    assert english.count('SEG (Sustain Engineering Group)') == 1
+    assert chinese.count('SEG（Sustain Engineering Group）') == 1
+    assert english[english.find('SEG'):].startswith('SEG (Sustain Engineering Group)')
+    assert chinese[chinese.find('SEG'):].startswith('SEG（Sustain Engineering Group）')
+    assert 'SEG (Sustain Engineering Group)' not in chinese
+    assert 'SEG（Sustain Engineering Group）' not in english
 
 
 @pytest.mark.parametrize('width', [390, 1280])

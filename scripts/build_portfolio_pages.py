@@ -24,6 +24,7 @@ PAGES = (
     ('TREND_MICRO_INCIDENT_BETA_SUPPORT_CASE_STUDY.md', 'trend-support-case.html', '客戶問題排查與產品改善'),
     ('ASML_AUTOMATION_LEADERSHIP_CASE_STUDY.md', 'asml-case.html', '自動化測試規劃與團隊帶領'),
     ('PUBLIC_QA_PRODUCT_QUALITY_RESUME.md', 'resume.html', None),
+    ('PUBLIC_QA_LEAD_RESUME.md', 'resume-qa-lead.html', None),
 )
 LINKS = {SOURCE_BASE + source: output for source, output, _ in PAGES}
 LINKS['https://sanyoii.github.io/'] = 'index.html'
@@ -111,12 +112,17 @@ def build_page(root, source, output, chinese_title):
     for name in [source, 'scripts/build_portfolio_pages.py', 'scripts/templates/portfolio-page.html', 'assets/portfolio-pages.css', 'assets/portfolio-pages.js']:
         digest.update((root / name).read_text(encoding='utf-8-sig').encode('utf-8'))
     digest.update(version('markdown-it-py').encode())
-    page_title = title if chinese_title else 'Public QA Resume'
+    if chinese_title:
+        page_title, kind, kind_zh = title, 'Case study', '工作案例'
+    elif output == 'resume-qa-lead.html':
+        page_title, kind, kind_zh = 'QA Lead Resume', 'QA Lead resume', 'QA Lead resume'
+    else:
+        page_title, kind, kind_zh = 'Public QA Resume', 'Public QA resume', 'Public QA resume'
     return Template(template).substitute(
         title=escape(title), title_zh=escape(chinese_title or title),
         page_title=escape(page_title),
-        kind='Case study' if chinese_title else 'Public QA resume',
-        kind_zh='工作案例' if chinese_title else 'Public QA resume',
+        kind=kind,
+        kind_zh=kind_zh,
         bilingual='true' if chinese_title else 'false', toggle=toggle,
         provenance=meta_html, navigation='\n'.join(navs), content='\n'.join(articles),
         source=escape(SOURCE_BASE + source), digest=digest.hexdigest(),
