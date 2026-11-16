@@ -40,6 +40,7 @@ __pycache__/
 /scripts/templates/*
 !/scripts/templates/portfolio-page.html
 !/scripts/templates/public-resume-print.html
+!/scripts/templates/public-resume-print-qa-lead.html
 /test-records/2026-08-14-application-packets.md
 /test-records/2026-08-14-linkedin-portfolio-alignment.md
 /test-records/2026-08-31-day15-profile-system.md

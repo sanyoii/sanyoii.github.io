@@ -4,7 +4,7 @@
 
 Taiwan | UTC+8 | Fully Remote · Flexible Hours (Americas, EMEA, APAC) | [sanyoii@gmail.com](mailto:sanyoii@gmail.com)
 
-[Portfolio](https://sanyoii.github.io/) | [LinkedIn](https://www.linkedin.com/in/williamlu5405) | [GitHub](https://github.com/sanyoii) | [Download 2-Page PDF Resume](https://sanyoii.github.io/assets/William-Lu-Public-QA-Resume.pdf)
+[Portfolio](https://sanyoii.github.io/) | [LinkedIn](https://www.linkedin.com/in/williamlu5405) | [GitHub](https://github.com/sanyoii) | [Download 2-Page PDF Resume](https://sanyoii.github.io/assets/William-Lu-QA-Lead-Resume.pdf)
 
 ## Professional summary
 
