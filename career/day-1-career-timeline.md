@@ -10,7 +10,7 @@
 | Apr 2006–Apr 2010 | Tatung Co. | Firmware Engineer | LCD TV embedded firmware; smart-meter electronic control systems | Developed firmware in C and control-system software in Java; collaborated with hardware, manufacturing, and product teams on stable releases for Taiwan, European, and US markets. | Taipei, on-site |
 | May 2010–Jun 2013 | Trend Micro | QA Engineer | Worry-Free Business Security Advanced; Scan、WRS、URL Filtering、WIFI-Advisor、MSA | Owned feature QA, test design, internal beta, and external beta activities; deployed beta builds in customer environments and analyzed logs and telemetry. | Taipei, on-site |
 | Jun 2013–Jul 2014 | Trend Micro | Senior Customer Service Engineer | Worry-Free Business Security Advanced | Led final-escalation work for severe post-release performance issues; provided live troubleshooting, dump analysis, workarounds, and engineering feedback. | Taipei, on-site |
-| Jul 2014–Jan 2023 | Trend Micro | Senior QA Engineer & Senior Customer Service Engineer | DLP SDK for enterprise security products | Served as SEG (Service Engineering Group)／QA leader, primary escalation engineer, and owner of hotfix validation, incident response, system／performance testing, and root-cause analysis. | Taipei, on-site |
+| Jul 2014–Jan 2023 | Trend Micro | Senior QA Engineer & Senior Customer Service Engineer | DLP SDK for enterprise security products | Served as SEG (Sustain Engineering Group)／QA leader, primary escalation engineer, and owner of hotfix validation, incident response, system／performance testing, and root-cause analysis. | Taipei, on-site |
 | May 2023–Apr 2024 | Zealogics | Project Leader / Senior Automation Test Engineer | ASML HMI eP5; iCDU、MM Flow、ADEL | Led the ASML-side STA team of six Zealogics Automation Engineers, maintained Jira Wiki evidence for annual reviews, created Test Case／system-design and newcomer-onboarding documentation, reported to ASML Management, planned reusable modules, and improved the existing automation architecture. | Fully remote |
 | Sep 2024–Nov 2024 | Nogle／BTSE | Senior QA Engineer | Centralized crypto exchange; wallet-related、Referral／Affiliate、Spot、Futures、Convert flows | Performed manual and E2E Web API testing and escalated high-severity financial-logic defects in sanitized trading, commission, and conversion scenarios. | Taipei, on-site |
 | Feb 2025–Present | Career break | — | Continuing education, personal tools, and Web3 portfolio development | Maintained technical development in AI and software architecture while preparing for a Web3 product-quality transition. | Available for full-time remote work |
@@ -32,8 +32,8 @@
 
 ### Trend Micro
 
-- EN: `After a long tenure spanning QA, customer engineering, and enterprise product support, I pursued exposure to a different product domain and engineering model.`
-- ZH: `在 QA、Customer Engineering 與企業產品支援累積長期經驗後，我希望接觸不同的產品領域與工程模式。`
+- EN: `After a long tenure spanning QA, sustaining engineering, and enterprise product support, I pursued exposure to a different product domain and engineering model.`
+- ZH: `在 QA、產品維護工程與企業產品支援累積長期經驗後，我希望接觸不同的產品領域與工程模式。`
 
 ### Zealogics
 
@@ -54,9 +54,8 @@
 ## Current search boundary
 
 - Fully Remote only.
-- Available for remote collaboration on weekdays from 09:00 to 24:00 Taiwan time, including 4+ hours of European overlap.
-- Travel up to 25%.
-- Target direction: Web3／Crypto／Fintech QA, Product Quality, and Technical Support roles.
+- Available for remote collaboration on weekdays from 09:00 to 24:00 Taiwan time. Working hours adjustable; open to remote roles in the Americas, APAC and Europe.
+- Target direction: QA and QA Lead roles (Senior QA, QA Lead), including Web3／Crypto／Fintech product quality.
 
 ## Evidence boundary
 

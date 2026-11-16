@@ -22,7 +22,7 @@ I wrote a Python program that checked Google's official API for Chrome Beta and 
 
 `New Chrome version → browser update → DLP upload-blocking test → email alert on failure`
 
-This helped the team address compatibility issues before customers discovered them and reduced manual effort around Chrome releases. DLP QA usually had four people and at most five, combining feature QA and SEG (Service Engineering Group) work; this case occurred with four. I do not have retained measurements of time saved or defects caught. The API endpoint and proprietary implementation are not reproduced here.
+This helped the team address compatibility issues before customers discovered them and reduced manual effort around Chrome releases. DLP QA usually had four people and at most five, combining feature QA and SEG (Sustain Engineering Group) work; this case occurred with four. I do not have retained measurements of time saved or defects caught. The API endpoint and proprietary implementation are not reproduced here.
 
 ### Supported-site scanning: performance and scope
 
@@ -64,6 +64,8 @@ I applied that experience to DLP by initiating an illustrated diagnostic-data co
 
 ### Quality decisions
 
+Whitelisting delayed the crash. Enforcement still failed. I did not call that fixed.
+
 1. Preserve evidence before recovery. An uninstall or clean installation can restore service and also erase the state needed for root-cause analysis.
 2. Separate recovery from correction. A fresh install or product-isolation workaround can restore operations without proving that the underlying defect is fixed.
 3. Test the customer's path. A generic clean environment does not replace the upgrade sequence, software interaction, policy state, or system condition that triggered the failure.
@@ -103,7 +105,7 @@ Chrome 大、小版本更新，有時會讓 DLP 無法阻擋敏感檔案上傳�
 
 `偵測 Chrome 新版本 → 更新瀏覽器 → 測試能否擋下敏感檔案上傳 → 失敗時寄信通知`
 
-這讓團隊能在客戶回報前處理相容性問題，也減少每次 Chrome 更新時需要人工處理的工作。DLP QA 通常 4 人、最多 5 人，同時負責新功能 QA 與 SEG（Service Engineering Group）；這個案例發生時有 4 人。節省多少工時、提早找到多少缺陷，沒有保留量測資料。本文也不公開 API 網址細節或公司的專有實作。
+這讓團隊能在客戶回報前處理相容性問題，也減少每次 Chrome 更新時需要人工處理的工作。DLP QA 通常 4 人、最多 5 人，同時負責新功能 QA 與 SEG（Sustain Engineering Group）；這個案例發生時有 4 人。節省多少工時、提早找到多少缺陷，沒有保留量測資料。本文也不公開 API 網址細節或公司的專有實作。
 
 ### 改用網站清單，調整掃描範圍
 
@@ -144,6 +146,8 @@ WFBS 技術支援團隊人員流動頻繁，新人常不熟悉案件處理。我
 | WFBS 7.0 外部 Beta | 在不同客戶的正式環境升級用戶端後，出現功能遺失、當機、停止回應或速度變慢 | 復原前先蒐集日誌、系統資訊、事件與記憶體傾印，再完整移除並重新安裝。每天將診斷資料交給產品團隊，後續版本則在下一個客戶環境檢查 | 現場資料幫助團隊修正後續版本，同時先讓客戶環境恢復可用 | 換到下一個客戶環境驗證，不等於在原本的電腦重測。正式版發布後仍有升級問題，Beta 並沒有消除這項風險 |
 
 ### 處理問題時的幾個原則
+
+排除清單只是把當機往後延。攔截仍然失敗。我沒有把這當成已修復。
 
 1. 復原前先保存資料。移除或重新安裝雖然可能恢復服務，也可能清掉分析原因所需的狀態。
 2. 分開記錄「服務恢復」與「問題修好」。重新安裝或隔離衝突產品，不代表根本問題已經解決。

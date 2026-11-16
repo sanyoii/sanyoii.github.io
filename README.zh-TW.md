@@ -13,7 +13,7 @@
   <a href="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/pages.yml"><img src="https://github.com/sanyoii/sanyoii.github.io/actions/workflows/pages.yml/badge.svg" alt="測試並部署 Pages"></a>
 </p>
 
-這是 **William Lu** 的個人網站。他是資深 QA 工程師，專注於 Web3 產品品質、金融科技風險與技術支援，自台灣（UTC+8）遠端工作。
+這是 **William Lu** 的個人網站。他是資深 QA 工程師／QA Lead，專注於測試自動化、根因分析與產品品質，自台灣（UTC+8）遠端工作。
 
 網站本身是一份手寫的 `index.html`。沒有框架、沒有建置步驟，執行時也沒有外部請求。它以雙語呈現（English／繁體中文），靠成對的 `data-en` 與 `data-zh` 屬性，而不是路由層或翻譯函式庫。
 
